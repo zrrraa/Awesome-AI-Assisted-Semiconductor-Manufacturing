@@ -1,18 +1,77 @@
-# Datasets, benchmarks and code
+# Datasets & code
 
-[Home](README.md) · [Browse papers](README.md#browse-by-manufacturing-task)
+[← Home](README.md) · [Paper collection](README.md#browse-by-manufacturing-task) · [Reading guide](docs/getting-started.md)
 
-Starting points for hands-on work. Follow each project’s documentation for data access, installation and terms of use.
+Public datasets, benchmarks and implementations for hands-on work. Each entry links to its project or dataset paper.
 
-| Resource | Tasks | What you can use it for |
-|---|---|---|
-| [WM-811K (dataset paper)](https://doi.org/10.1109/TSM.2014.2364237) | [A1](papers/artifacts.md#a1) | Wafer-map pattern recognition. The dataset paper introduces a large collection of wafer maps and the pattern-recognition problem. |
-| [MixedWM38](https://github.com/Junliangwangdhu/WaferMap) | [A1](papers/artifacts.md#a1) | Wafer maps with single and mixed defect patterns, download links and baseline code. The release includes generated maps used to balance patterns. |
-| [MIIC](https://github.com/wenbihan/MIIC-IAD) | [A2](papers/artifacts.md#a2) | SEM images of integrated circuits for anomaly detection and localization, with bounding boxes and pixel masks. The project specifies non-commercial research use. |
-| [LithoBench](https://github.com/shelljane/lithobench) | [A3](papers/artifacts.md#a3) | Circuit-layout datasets and a learning framework for lithography simulation and mask optimization, with baseline models. |
-| [OpenILT](https://github.com/OpenOPC/OpenILT) | [A3](papers/artifacts.md#a3) | An implementation platform for inverse lithography, including lithography models, mask optimizers and benchmark examples. |
-| [SECOM](https://archive.ics.uci.edu/dataset/179/secom) | [A4](papers/artifacts.md#a4) | Process measurements and pass/fail outcomes for feature selection and quality classification: 1,567 examples, 591 features and missing values. |
-| [PySCFabSim](https://github.com/prosysscience/PySCFabSim-release) | [R2](papers/production.md#r2) | A semiconductor fab simulator with dispatching experiments and reinforcement-learning interfaces. Its documentation links to the SMT2020 testbed. |
+[Wafer patterns](#wafer-patterns) &nbsp; / &nbsp; [Image defects](#image-defects) &nbsp; / &nbsp; [Lithography](#lithography) &nbsp; / &nbsp; [Quality prediction](#quality-prediction) &nbsp; / &nbsp; [Scheduling](#scheduling)
+
+## Wafer patterns
+
+<a id="wm811k"></a>
+
+### [WM-811K (dataset paper)](https://doi.org/10.1109/TSM.2014.2364237)
+
+Wafer-map pattern recognition. The dataset paper introduces a large collection of wafer maps and the pattern-recognition problem.
+
+[A1 · Wafer spatial-pattern analysis](papers/artifacts.md#a1)
+
+<a id="mixedwm38"></a>
+
+### [MixedWM38](https://github.com/Junliangwangdhu/WaferMap)
+
+Wafer maps with single and mixed defect patterns, download links and baseline code. The release includes generated maps used to balance patterns.
+
+[A1 · Wafer spatial-pattern analysis](papers/artifacts.md#a1)
+
+## Image defects
+
+<a id="miic"></a>
+
+### [MIIC](https://github.com/wenbihan/MIIC-IAD)
+
+SEM images of integrated circuits for anomaly detection and localization, with bounding boxes and pixel masks. The project specifies non-commercial research use.
+
+[A2 · Local defect detection and localization](papers/artifacts.md#a2)
+
+## Lithography
+
+<a id="lithobench"></a>
+
+### [LithoBench](https://github.com/shelljane/lithobench)
+
+Circuit-layout datasets and a learning framework for lithography simulation and mask optimization, with baseline models.
+
+[A3 · Computational lithography](papers/artifacts.md#a3)
+
+<a id="openilt"></a>
+
+### [OpenILT](https://github.com/OpenOPC/OpenILT)
+
+An implementation platform for inverse lithography, including lithography models, mask optimizers and benchmark examples.
+
+[A3 · Computational lithography](papers/artifacts.md#a3)
+
+## Quality prediction
+
+<a id="secom"></a>
+
+### [SECOM](https://archive.ics.uci.edu/dataset/179/secom)
+
+Process measurements and pass/fail outcomes for feature selection and quality classification: 1,567 examples, 591 features and missing values.
+
+[A4 · Product quality and yield inference](papers/artifacts.md#a4)
+
+## Scheduling
+
+<a id="pyscfabsim"></a>
+
+### [PySCFabSim](https://github.com/prosysscience/PySCFabSim-release)
+
+A semiconductor fab simulator with dispatching experiments and reinforcement-learning interfaces. Its documentation links to the SMT2020 testbed.
+
+[R2 · Scheduling and dispatching](papers/production.md#r2)
+
 
 ## Choosing an evaluation
 

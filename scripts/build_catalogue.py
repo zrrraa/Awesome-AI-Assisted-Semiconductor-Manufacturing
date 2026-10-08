@@ -1,7 +1,9 @@
 """Build the public reading lists and bibliography with Python 3.10+ (no dependencies)."""
 from collections import Counter
 from pathlib import Path
-from urllib.parse import quote, urlsplit
+from urllib.parse import quote, unquote, urlsplit
+from html import escape, unescape
+from html.parser import HTMLParser
 import argparse
 import csv
 import io
@@ -25,6 +27,21 @@ def link(url):
 
 def tex(text):
     return ''.join({'&': r'\&', '%': r'\%', '_': r'\_', '#': r'\#'}.get(c, c) for c in text)
+
+
+def scope_card(scope, counts):
+    target = f"papers/{scope['slug']}.md"
+    total = sum(counts[t['id']] for t in scope['tasks'])
+    lines = [
+        '<td width="50%" valign="top">',
+        f'<h3><a href="{target}">{scope["id"]} · {escape(scope["title"])}</a></h3>',
+        f'<p><b>{total} papers</b> · {len(scope["tasks"])} tasks</p>',
+        f'<p>{escape(scope["description"])}</p>',
+        '<ul>',
+    ]
+    for task in scope['tasks']:
+        lines.append(f'<li><a href="{target}#{task["id"].lower()}">{task["id"]} · {escape(task["title"])}</a> <sub>({counts[task["id"]]})</sub></li>')
+    return '\n'.join(lines + ['</ul>', '</td>'])
 
 
 def build():
@@ -56,28 +73,61 @@ def build():
         assert urlsplit(resource['url']).scheme in ['https', 'http']
     counts = Counter(p['task'] for p in papers)
     outputs = {}
-    task_table = ['| Scope | Task | Manufacturing question | Papers |', '|---|---|---|---:|']
+    cards = []
     for scope in scopes:
         target = f"papers/{scope['slug']}.md"
         total = sum(counts[t['id']] for t in scope['tasks'])
-        lines = [f"# AI for {scope['title']}", '', '[Home](../README.md) · [Datasets and code](../RESOURCES.md) · [BibTeX](../references.bib)', '', scope['description'], '', f"**{total} papers across {len(scope['tasks'])} tasks.** Papers are listed by publication year, newest first.", '', '## Tasks', '']
+        cards.append(scope_card(scope, counts))
+        scope_nav = ' &nbsp; / &nbsp; '.join(
+            f'<b>{s["title"]}</b>' if s == scope else f'<a href="{s["slug"]}.md">{s["title"]}</a>'
+            for s in scopes
+        )
+        lines = [
+            f'# {scope["title"]}', '',
+            '[← Home](../README.md) · [Datasets & code](../RESOURCES.md) · [BibTeX](../references.bib)', '',
+            f'<p>{scope_nav}</p>', '',
+            scope['description'], '',
+            f'**{total} papers · {len(scope["tasks"])} tasks** &nbsp; · &nbsp; Newest first', '',
+            '## In this collection', '',
+        ]
         for t in scope['tasks']:
             lines.append(f"- [{t['id']} · {t['title']}](#{t['id'].lower()}) — {counts[t['id']]} papers")
-            task_table.append(f"| {scope['title']} | [{t['id']} · {t['title']}]({target}#{t['id'].lower()}) | {t['question']} | {counts[t['id']]} |")
         for t in scope['tasks']:
-            lines += ['', f'<a id="{t["id"].lower()}"></a>', '', f"## {t['id']} · {t['title']}", '', t['question'], '']
+            lines += ['', f'<a id="{t["id"].lower()}"></a>', '', f"## {t['id']} · {t['title']}", '', f'> {t["question"]}', '', f'{counts[t["id"]]} papers · [Task index](#in-this-collection)', '']
             for p in sorted((p for p in papers if p['task'] == t['id']), key=lambda p: (-p['year'], p['title'].casefold())):
                 names = p['authors'].split(' and ')
                 authors = ', '.join(n.split(',')[0] for n in names[:2]) if len(names) <= 2 else names[0].split(',')[0] + ' et al.'
-                extra = ' **Preprint.**' if p['publication_type'] == 'Preprint' else ''
+                extra = ' · **Preprint**' if p['publication_type'] == 'Preprint' else ''
                 related = [x for x in resources if p['id'] in x['paper_ids']]
-                extra += ''.join(f" [{md(x['name'])}]({link(x['url'])})." for x in related if x['url'] != p['url'])
-                lines += [f'<a id="{p["id"]}"></a>', '', f"- **{p['year']}** · [{md(p['title'])}]({link(p['url'])}). {md(authors).rstrip('.')}. *{md(p['venue'])}*.{extra}", '']
+                extra += ''.join(f" · [{md(x['name'])}]({link(x['url'])})" for x in related if x['url'] != p['url'])
+                lines += [f'- <a id="{p["id"]}"></a>**[{md(p["title"])}]({link(p["url"])})**<br>',
+                          f'  {p["year"]} · {md(authors).rstrip(".")}. · *{md(p["venue"])}*{extra}', '']
+        lines += ['---', '', '[← All manufacturing scopes](../README.md#browse-by-manufacturing-task) · [Suggest a paper](../CONTRIBUTING.md)', '']
         outputs[target] = '\n'.join(lines).rstrip() + '\n'
-    resources_md = ['# Datasets, benchmarks and code', '', '[Home](README.md) · [Browse papers](README.md#browse-by-manufacturing-task)', '', 'Starting points for hands-on work. Follow each project’s documentation for data access, installation and terms of use.', '', '| Resource | Tasks | What you can use it for |', '|---|---|---|']
-    for x in resources:
-        ts = ', '.join(f"[{t}](papers/{scope_for_task[t]['slug']}.md#{t.lower()})" for t in x['tasks'])
-        resources_md.append(f"| [{md(x['name'])}]({link(x['url'])}) | {ts} | {md(x['description'])} |")
+    cards.append('<td width="50%" valign="top">\n<h3>New to the field?</h3>\n<p>Start with the manufacturing problem, then follow the data, model and decision.</p>\n<ul>\n<li><a href="docs/getting-started.md">A chip’s path through a factory</a></li>\n<li><a href="docs/getting-started.md#choose-a-reading-path">Reading paths for AI researchers</a></li>\n<li><a href="docs/getting-started.md#terms-you-will-meet">Manufacturing glossary</a></li>\n<li><a href="RESOURCES.md">Datasets and implementations</a></li>\n</ul>\n</td>')
+    task_cards = ['<table>']
+    for i in range(0, len(cards), 2):
+        task_cards += ['<tr>', *cards[i:i + 2], '</tr>']
+    task_cards += ['</table>']
+    resources_md = [
+        '# Datasets & code', '',
+        '[← Home](README.md) · [Paper collection](README.md#browse-by-manufacturing-task) · [Reading guide](docs/getting-started.md)', '',
+        'Public datasets, benchmarks and implementations for hands-on work. Each entry links to its project or dataset paper.', '',
+        '[Wafer patterns](#wafer-patterns) &nbsp; / &nbsp; [Image defects](#image-defects) &nbsp; / &nbsp; [Lithography](#lithography) &nbsp; / &nbsp; [Quality prediction](#quality-prediction) &nbsp; / &nbsp; [Scheduling](#scheduling)', '',
+    ]
+    resource_groups = [('Wafer patterns', ['A1']), ('Image defects', ['A2']), ('Lithography', ['A3']),
+                       ('Quality prediction', ['A4']), ('Scheduling', ['R2'])]
+    grouped = set()
+    for title, group_tasks in resource_groups + [('More resources', list(tasks))]:
+        group = [x for x in resources if set(x['tasks']) & set(group_tasks) and x['id'] not in grouped]
+        if not group:
+            continue
+        resources_md += [f'## {title}', '']
+        for x in group:
+            grouped.add(x['id'])
+            ts = ' · '.join(f"[{t} · {md(tasks[t]['title'])}](papers/{scope_for_task[t]['slug']}.md#{t.lower()})" for t in x['tasks'])
+            resources_md += [f'<a id="{x["id"]}"></a>', '', f'### [{md(x["name"])}]({link(x["url"])})',
+                             '', md(x['description']), '', ts, '']
     resources_md += ['', '## Choosing an evaluation', '', 'Match the evaluation to the decision you want to support. For wafer maps, record which patterns and label definitions are used. For lithography, report the layout set, lithography model and optimization objective. For scheduling, specify the factory configuration, product mix and dispatching rules. These choices determine what a result means.', '', 'Resource descriptions were checked against their project or publisher pages on ' + survey['updated'] + '. New resources and corrected links are welcome through [an issue](https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing/issues/new/choose) or a pull request.', '']
     outputs['RESOURCES.md'] = '\n'.join(resources_md)
     header = ['id', 'title', 'authors', 'year', 'venue', 'publication_type', 'doi', 'url', 'task']
@@ -97,7 +147,14 @@ def build():
         bib += [f"@{p['bibtex_type']}{{{p['id']},"] + [f'  {k} = {{{v}}},' for k, v in fields.items()] + ['}', '']
     outputs['references.bib'] = '\n'.join(bib)
     readme = (ROOT / 'README.md').read_text(encoding='utf-8')
-    blocks = {'COUNTS': f"**{len(papers)} papers · {len(scopes)} manufacturing scopes · {len(tasks)} tasks**\n\nCatalogue updated: {survey['updated']}.", 'TASKS': '\n'.join(task_table)}
+    counts_badges = '\n'.join([
+        '<p align="center">',
+        f'  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Papers-{len(papers)}-355C7D?style=flat-square" alt="{len(papers)} papers"></a>',
+        f'  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Manufacturing_scopes-{len(scopes)}-557B83?style=flat-square" alt="{len(scopes)} manufacturing scopes"></a>',
+        f'  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Tasks-{len(tasks)}-6C5B7B?style=flat-square" alt="{len(tasks)} tasks"></a>',
+        '</p>',
+    ])
+    blocks = {'COUNTS': counts_badges, 'TASKS': '\n'.join(task_cards)}
     for name, content in blocks.items():
         pattern = f'<!-- BEGIN {name} -->.*?<!-- END {name} -->'
         assert len(re.findall(pattern, readme, re.S)) == 1, name
@@ -106,21 +163,40 @@ def build():
     return outputs, len(papers), len(tasks)
 
 
+class HTMLLinks(HTMLParser):
+    """Include HTML image sources and navigation in the local-link check."""
+
+    def __init__(self, content):
+        super().__init__()
+        self.links = []
+        self.anchors = set()
+        self.feed(content)
+
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            if value and name in ['href', 'src']:
+                self.links.append(value)
+            elif value and name == 'id':
+                self.anchors.add(value)
+
+
 def check_links(outputs):
     documents = {p.relative_to(ROOT).as_posix(): p.read_text(encoding='utf-8') for p in ROOT.rglob('*.md') if '.git' not in p.parts}
     documents.update({k: v for k, v in outputs.items() if k.endswith('.md')})
     for name, content in documents.items():
-        for raw in re.findall(r'\]\(([^\s)]+)\)', content):
+        html = HTMLLinks(content)
+        for raw in re.findall(r'\]\(([^\s)]+)\)', content) + html.links:
+            raw = unescape(raw)
             if urlsplit(raw).scheme or raw.startswith('//'):
                 continue
-            path, _, anchor = raw.partition('#')
+            path, _, anchor = unquote(raw).partition('#')
             target = (ROOT / name).parent / path if path else ROOT / name
             assert target.resolve().is_relative_to(ROOT), f'Outside repository: {raw}'
             rel = target.resolve().relative_to(ROOT).as_posix()
             assert rel in outputs or target.exists(), f'{name}: broken local link {raw}'
             if anchor and rel in documents:
                 doc = documents[rel]
-                anchors = set(re.findall(r'<a id="([^"]+)"', doc))
+                anchors = HTMLLinks(doc).anchors
                 for title in re.findall(r'^#+\s+(.+)$', doc, re.M):
                     anchors.add(re.sub(r'[^\w\- ]', '', title.lower()).replace(' ', '-'))
                 assert anchor in anchors, f'{name}: missing anchor {raw}'

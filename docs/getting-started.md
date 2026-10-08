@@ -19,6 +19,20 @@ AI can help at each of these scales. A defect detector interprets an image. A pr
 
 For a practical starting point, try MixedWM38 for wafer patterns, MIIC for image anomalies, LithoBench for lithography, SECOM for tabular quality prediction or PySCFabSim for dispatching. Their [project pages](../RESOURCES.md) provide the data or implementation instructions.
 
+## From Perception to Autonomy
+
+The survey follows five stages of AI's growing role in manufacturing:
+
+| Stage | What it adds | Manufacturing example |
+|---|---|---|
+| Perception | Extract useful information from observations | Locate defects in an inspection image |
+| Prediction | Estimate an unknown or future result | Estimate film thickness or a lot’s completion time |
+| Reasoning | Explain observations and relate possible causes | Trace a yield loss to process or equipment conditions |
+| Planning | Choose actions and their sequence | Select experiments, process settings or dispatching decisions |
+| Autonomy | Connect decisions to execution and learn from feedback | Coordinate actions and update decisions as manufacturing results arrive |
+
+A workflow can span several stages or connect nonadjacent ones. For example, a virtual-metrology model predicts film thickness; a controller uses that prediction to adjust the next run. The practical question is how these stages work together to improve a manufacturing outcome.
+
 ## Terms you will meet
 
 | Term | Plain meaning |

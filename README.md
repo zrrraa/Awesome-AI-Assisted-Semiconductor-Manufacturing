@@ -1,87 +1,132 @@
-# Awesome AI-Assisted Semiconductor Manufacturing
+<h1 align="center">From Perception to Autonomy</h1>
 
-Papers, datasets and code for applying AI to semiconductor manufacturing: understanding defects, improving processes, maintaining tools and coordinating a fab.
+<h3 align="center">A Survey on AI-Assisted Semiconductor Manufacturing</h3>
+
+<p align="center">
+  Rui Zhong · Zhikun Huang · Xue Zhang · Qian Jin · Yu Li<br>
+  Qi Sun · Dawei Gao · Yi Song · Hanming Wu · Cheng Zhuo
+</p>
+
+<p align="center"><sub>Zhejiang University &nbsp; · &nbsp; Zhejiang ICsprout Semiconductor Co., Ltd.</sub></p>
 
 <!-- BEGIN COUNTS -->
-**475 papers · 5 manufacturing scopes · 19 tasks**
-
-Catalogue updated: 2026-10-08.
+<p align="center">
+  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Papers-475-355C7D?style=flat-square" alt="475 papers"></a>
+  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Manufacturing_scopes-5-557B83?style=flat-square" alt="5 manufacturing scopes"></a>
+  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Tasks-19-6C5B7B?style=flat-square" alt="19 tasks"></a>
+</p>
 <!-- END COUNTS -->
 
-[Browse papers](#browse-by-manufacturing-task) · [Datasets & code](RESOURCES.md) · [Getting started](docs/getting-started.md) · [BibTeX](references.bib) · [CSV](data/papers.csv) · [Contribute](CONTRIBUTING.md)
+<p align="center">
+  <a href="#browse-by-manufacturing-task"><b>Paper collection</b></a> &nbsp; / &nbsp;
+  <a href="RESOURCES.md"><b>Datasets &amp; code</b></a> &nbsp; / &nbsp;
+  <a href="docs/getting-started.md"><b>Reading guide</b></a> &nbsp; / &nbsp;
+  <a href="docs/citation.md"><b>Citation</b></a>
+</p>
 
-## About the survey
+<p align="center">
+  <img src="assets/overview.png" width="900" alt="Survey overview: AI for artifacts, processes, equipment, production and fabs, spanning Perception, Prediction, Reasoning, Planning and Autonomy.">
+</p>
 
-This repository accompanies **From Perception to Autonomy: A Survey on AI-Assisted Semiconductor Manufacturing**.
+<p align="center"><sub>Five manufacturing scopes. Nineteen tasks. From interpreting observations to acting and learning through feedback.</sub></p>
 
-Rui Zhong, Zhikun Huang, Xue Zhang, Qian Jin, Yu Li, Qi Sun, Dawei Gao, Yi Song, Hanming Wu and Cheng Zhuo.
+AI can help find defects, predict process results, diagnose tool faults and coordinate a factory. This collection organizes the literature around **what needs to be understood, predicted or changed in manufacturing**, connecting AI methods to the decisions they support.
 
-Zhejiang University · Zhejiang ICsprout Semiconductor Co., Ltd.
-
-The survey follows AI from interpreting manufacturing observations to predicting outcomes, explaining problems, planning actions and learning through execution. It connects these stages to the objects and decisions that matter in a factory. The paper link will be added when the preprint is available.
-
-The initial catalogue contains the survey’s 475 manufacturing studies. New papers and resources are welcome as the field develops.
-
-## Where to start
-
-| Your interest | Start here |
-|---|---|
-| Recognize wafer patterns or locate defects | [Wafer patterns](papers/artifacts.md#a1), [local defects](papers/artifacts.md#a2) |
-| Try a public dataset or implementation | [Datasets and code](RESOURCES.md) |
-| Predict quality from process measurements | [Virtual metrology](papers/processes.md#p2), [quality and yield](papers/artifacts.md#a4) |
-| Optimize mask patterns or process settings | [Computational lithography](papers/artifacts.md#a3), [process development](papers/processes.md#p3) |
-| Keep tools healthy and available | [Fault diagnosis](papers/equipment.md#e1), [maintenance](papers/equipment.md#e2) |
-| Improve delivery, transport or resource use | [Production](papers/production.md), [fab facilities](papers/fabs.md) |
-
-New to manufacturing? The [getting-started guide](docs/getting-started.md) explains the terminology and connects familiar AI problems to factory decisions.
+The repository accompanies our survey and welcomes new papers, datasets and implementations. The preprint link will be added when it is available.
 
 ## Browse by manufacturing task
 
-Papers are grouped by their main manufacturing task and listed newest first. Each title links to its DOI, proceedings page or preprint. Code and data links appear alongside entries where they have been added.
+Choose a scope below to explore its tasks and papers. Each list is ordered newest first, with links to the original publications and available resources.
 
 <!-- BEGIN TASKS -->
-| Scope | Task | Manufacturing question | Papers |
-|---|---|---|---:|
-| Artifacts | [A1 · Wafer spatial-pattern analysis](papers/artifacts.md#a1) | What does the spatial pattern of failing dies reveal about a wafer? | 43 |
-| Artifacts | [A2 · Local defect detection and localization](papers/artifacts.md#a2) | Where is a defect, and what does it look like? | 44 |
-| Artifacts | [A3 · Computational lithography](papers/artifacts.md#a3) | Which mask pattern will print the intended structure on a wafer? | 67 |
-| Artifacts | [A4 · Product quality and yield inference](papers/artifacts.md#a4) | Will a product meet its quality requirements? | 23 |
-| Artifacts | [A5 · Yield-loss diagnosis and root-cause analysis](papers/artifacts.md#a5) | What caused a loss of yield, and where should engineers investigate? | 30 |
-| Artifacts | [A6 · Adaptive testing and inspection](papers/artifacts.md#a6) | Which dies or locations should be tested or inspected next? | 16 |
-| Processes | [P1 · Process monitoring and endpoint detection](papers/processes.md#p1) | Is a process running normally, and when should it stop? | 41 |
-| Processes | [P2 · Virtual metrology](papers/processes.md#p2) | Can sensor data estimate a measurement that is slow or expensive to obtain? | 36 |
-| Processes | [P3 · Process development and recipe optimization](papers/processes.md#p3) | Which process settings or experiments should be tried next? | 19 |
-| Processes | [P4 · Run-to-run and feedback control](papers/processes.md#p4) | How should settings change after observing a process result? | 20 |
-| Equipment | [E1 · Fault detection and diagnosis](papers/equipment.md#e1) | Is a tool faulty, and which fault explains its signals? | 25 |
-| Equipment | [E2 · Prognostics and maintenance](papers/equipment.md#e2) | When is a tool likely to fail, and when should it be maintained? | 22 |
-| Equipment | [E3 · Calibration, matching and qualification](papers/equipment.md#e3) | Is a tool or chamber ready for a specified manufacturing operation? | 3 |
-| Production | [R1 · Cycle-time and delivery prediction](papers/production.md#r1) | When will a lot finish, and will it be delivered on time? | 6 |
-| Production | [R2 · Scheduling and dispatching](papers/production.md#r2) | Which job should each machine process next? | 30 |
-| Production | [R3 · Material handling](papers/production.md#r3) | How should wafers move between tools? | 7 |
-| Production | [R4 · Bottleneck and production-state analysis](papers/production.md#r4) | Where is production constrained, and what factory state explains the delay? | 12 |
-| Fabs | [F1 · Utility and resource operation](papers/fabs.md#f1) | How should cooling, power, air and water systems serve production efficiently? | 18 |
-| Fabs | [F2 · Capacity planning](papers/fabs.md#f2) | What equipment, qualifications or factory space should be added or reassigned? | 13 |
+<table>
+<tr>
+<td width="50%" valign="top">
+<h3><a href="papers/artifacts.md">A · Artifacts</a></h3>
+<p><b>223 papers</b> · 6 tasks</p>
+<p>Products and their structures, from wafer patterns and local defects to masks, quality and yield.</p>
+<ul>
+<li><a href="papers/artifacts.md#a1">A1 · Wafer spatial-pattern analysis</a> <sub>(43)</sub></li>
+<li><a href="papers/artifacts.md#a2">A2 · Local defect detection and localization</a> <sub>(44)</sub></li>
+<li><a href="papers/artifacts.md#a3">A3 · Computational lithography</a> <sub>(67)</sub></li>
+<li><a href="papers/artifacts.md#a4">A4 · Product quality and yield inference</a> <sub>(23)</sub></li>
+<li><a href="papers/artifacts.md#a5">A5 · Yield-loss diagnosis and root-cause analysis</a> <sub>(30)</sub></li>
+<li><a href="papers/artifacts.md#a6">A6 · Adaptive testing and inspection</a> <sub>(16)</sub></li>
+</ul>
+</td>
+<td width="50%" valign="top">
+<h3><a href="papers/processes.md">P · Processes</a></h3>
+<p><b>116 papers</b> · 4 tasks</p>
+<p>Manufacturing operations: monitoring their progress, estimating results and choosing or adjusting settings.</p>
+<ul>
+<li><a href="papers/processes.md#p1">P1 · Process monitoring and endpoint detection</a> <sub>(41)</sub></li>
+<li><a href="papers/processes.md#p2">P2 · Virtual metrology</a> <sub>(36)</sub></li>
+<li><a href="papers/processes.md#p3">P3 · Process development and recipe optimization</a> <sub>(19)</sub></li>
+<li><a href="papers/processes.md#p4">P4 · Run-to-run and feedback control</a> <sub>(20)</sub></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3><a href="papers/equipment.md">E · Equipment</a></h3>
+<p><b>50 papers</b> · 3 tasks</p>
+<p>The tools and chambers that carry out operations, including their health, maintenance and readiness.</p>
+<ul>
+<li><a href="papers/equipment.md#e1">E1 · Fault detection and diagnosis</a> <sub>(25)</sub></li>
+<li><a href="papers/equipment.md#e2">E2 · Prognostics and maintenance</a> <sub>(22)</sub></li>
+<li><a href="papers/equipment.md#e3">E3 · Calibration, matching and qualification</a> <sub>(3)</sub></li>
+</ul>
+</td>
+<td width="50%" valign="top">
+<h3><a href="papers/production.md">R · Production</a></h3>
+<p><b>55 papers</b> · 4 tasks</p>
+<p>The movement and processing of lots through shared machines, queues and transport systems.</p>
+<ul>
+<li><a href="papers/production.md#r1">R1 · Cycle-time and delivery prediction</a> <sub>(6)</sub></li>
+<li><a href="papers/production.md#r2">R2 · Scheduling and dispatching</a> <sub>(30)</sub></li>
+<li><a href="papers/production.md#r3">R3 · Material handling</a> <sub>(7)</sub></li>
+<li><a href="papers/production.md#r4">R4 · Bottleneck and production-state analysis</a> <sub>(12)</sub></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3><a href="papers/fabs.md">F · Fabs</a></h3>
+<p><b>31 papers</b> · 2 tasks</p>
+<p>Factory utilities and longer-term capacity decisions that support production.</p>
+<ul>
+<li><a href="papers/fabs.md#f1">F1 · Utility and resource operation</a> <sub>(18)</sub></li>
+<li><a href="papers/fabs.md#f2">F2 · Capacity planning</a> <sub>(13)</sub></li>
+</ul>
+</td>
+<td width="50%" valign="top">
+<h3>New to the field?</h3>
+<p>Start with the manufacturing problem, then follow the data, model and decision.</p>
+<ul>
+<li><a href="docs/getting-started.md">A chip’s path through a factory</a></li>
+<li><a href="docs/getting-started.md#choose-a-reading-path">Reading paths for AI researchers</a></li>
+<li><a href="docs/getting-started.md#terms-you-will-meet">Manufacturing glossary</a></li>
+<li><a href="RESOURCES.md">Datasets and implementations</a></li>
+</ul>
+</td>
+</tr>
+</table>
 <!-- END TASKS -->
 
-## From Perception to Autonomy
+## Start exploring
 
-| AI stage | What it adds | Manufacturing example |
-|---|---|---|
-| Perception | Extract useful information from observations | Locate defects in an inspection image |
-| Prediction | Estimate an unknown or future result | Estimate film thickness or a lot’s completion time |
-| Reasoning | Explain observations and relate possible causes | Trace a yield loss to process or equipment conditions |
-| Planning | Choose actions and their sequence | Select experiments, process settings or dispatching decisions |
-| Autonomy | Connect decisions to execution and learn from feedback | Coordinate actions and update decisions as manufacturing results arrive |
+| Find papers | Try an implementation | Work with the catalogue |
+| :--- | :--- | :--- |
+| [Wafer patterns](papers/artifacts.md#a1) · [Defect detection](papers/artifacts.md#a2)<br>[Virtual metrology](papers/processes.md#p2) · [Scheduling](papers/production.md#r2) | [MixedWM38](RESOURCES.md#mixedwm38) · [LithoBench](RESOURCES.md#lithobench)<br>[SECOM](RESOURCES.md#secom) · [PySCFabSim](RESOURCES.md#pyscfabsim) | [BibTeX](references.bib) · [CSV](data/papers.csv) · [JSON](data/papers.json)<br>[Data format](data/README.md) · [Citation](docs/citation.md) |
 
-These stages describe AI’s growing role in manufacturing. A workflow can span several stages or connect nonadjacent ones; its value depends on the manufacturing decisions and outcomes it improves.
+New to the field? The [reading guide](docs/getting-started.md) introduces manufacturing terms, explains the five AI stages and suggests paths from familiar AI problems to factory decisions.
 
-## Use and contribute
+## Contribute
 
-- Browse the five topic pages, or download the [CSV](data/papers.csv), [JSON](data/papers.json) and [BibTeX](references.bib) catalogue.
-- Suggest a paper, dataset, implementation or correction through [Issues](https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing/issues/new/choose).
-- See [CONTRIBUTING.md](CONTRIBUTING.md) to update the catalogue through a pull request.
-- For attribution, see [how to cite](docs/citation.md). Please also cite the original papers and resources you use.
+Help the collection grow: [suggest a paper or resource](https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing/issues/new/choose), report a correction, or submit a pull request. See the [contribution guide](CONTRIBUTING.md) for the format and scope.
+
+If you use this collection, please [cite the survey](docs/citation.md) and the original papers or resources that inform your work.
 
 ## Updates
 
-- **2026-10-08** — Initial release: 475 manufacturing studies organized into 19 tasks, with public resource links and a guide for new readers.
+- **2026-10-08** — Initial release: 475 manufacturing studies across 19 tasks, with public resources and a reading guide.

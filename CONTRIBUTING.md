@@ -22,7 +22,7 @@ python scripts/build_catalogue.py --check
 
 5. Include the source record and generated files in your pull request. Explain the change and link to its source.
 
-The script builds the five topic pages, resource page, CSV, BibTeX and README task counts from the JSON files. It checks duplicate identifiers, task assignments, required metadata and local links. GitHub Actions runs the same check on pull requests.
+The script builds the five topic pages, resource page, CSV, BibTeX and README navigation and counts from the JSON files. It checks duplicate identifiers, task assignments, required metadata, local links and image paths. GitHub Actions runs the same check on pull requests.
 
 ## Editorial conventions
 
