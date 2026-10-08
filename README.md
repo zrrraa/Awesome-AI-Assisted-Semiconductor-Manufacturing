@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/overview.png" width="900" alt="Survey overview: AI for artifacts, processes, equipment, production and fabs, spanning Perception, Prediction, Reasoning, Planning and Autonomy.">
+  <img src="assets/overview.jpg" width="900" alt="Survey overview: AI for artifacts, processes, equipment, production and fabs, spanning Perception, Prediction, Reasoning, Planning and Autonomy.">
 </p>
 
 <p align="center"><sub>Five manufacturing scopes. Nineteen tasks. From interpreting observations to acting and learning through feedback.</sub></p>
