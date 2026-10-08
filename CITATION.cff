@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+type: dataset
+message: "For the companion survey citation, see docs/citation.md. Please also cite the original papers and resources you use."
+title: "Awesome AI-Assisted Semiconductor Manufacturing"
+url: "https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing"
+date-released: 2026-10-08
+authors:
+  - family-names: Zhong
+    given-names: Rui
+  - family-names: Huang
+    given-names: Zhikun
+  - family-names: Zhang
+    given-names: Xue
+  - family-names: Jin
+    given-names: Qian
+  - family-names: Li
+    given-names: Yu
+  - family-names: Sun
+    given-names: Qi
+  - family-names: Gao
+    given-names: Dawei
+  - family-names: Song
+    given-names: Yi
+  - family-names: Wu
+    given-names: Hanming
+  - family-names: Zhuo
+    given-names: Cheng
+keywords:
+  - semiconductor manufacturing
+  - artificial intelligence
+  - literature catalogue
+  - computational lithography
+  - smart manufacturing

@@ -1,0 +1,137 @@
+[
+  {
+    "id": "A",
+    "title": "Artifacts",
+    "slug": "artifacts",
+    "description": "Products and their structures, from wafer patterns and local defects to masks, quality and yield.",
+    "tasks": [
+      {
+        "id": "A1",
+        "title": "Wafer spatial-pattern analysis",
+        "question": "What does the spatial pattern of failing dies reveal about a wafer?"
+      },
+      {
+        "id": "A2",
+        "title": "Local defect detection and localization",
+        "question": "Where is a defect, and what does it look like?"
+      },
+      {
+        "id": "A3",
+        "title": "Computational lithography",
+        "question": "Which mask pattern will print the intended structure on a wafer?"
+      },
+      {
+        "id": "A4",
+        "title": "Product quality and yield inference",
+        "question": "Will a product meet its quality requirements?"
+      },
+      {
+        "id": "A5",
+        "title": "Yield-loss diagnosis and root-cause analysis",
+        "question": "What caused a loss of yield, and where should engineers investigate?"
+      },
+      {
+        "id": "A6",
+        "title": "Adaptive testing and inspection",
+        "question": "Which dies or locations should be tested or inspected next?"
+      }
+    ]
+  },
+  {
+    "id": "P",
+    "title": "Processes",
+    "slug": "processes",
+    "description": "Manufacturing operations: monitoring their progress, estimating results and choosing or adjusting settings.",
+    "tasks": [
+      {
+        "id": "P1",
+        "title": "Process monitoring and endpoint detection",
+        "question": "Is a process running normally, and when should it stop?"
+      },
+      {
+        "id": "P2",
+        "title": "Virtual metrology",
+        "question": "Can sensor data estimate a measurement that is slow or expensive to obtain?"
+      },
+      {
+        "id": "P3",
+        "title": "Process development and recipe optimization",
+        "question": "Which process settings or experiments should be tried next?"
+      },
+      {
+        "id": "P4",
+        "title": "Run-to-run and feedback control",
+        "question": "How should settings change after observing a process result?"
+      }
+    ]
+  },
+  {
+    "id": "E",
+    "title": "Equipment",
+    "slug": "equipment",
+    "description": "The tools and chambers that carry out operations, including their health, maintenance and readiness.",
+    "tasks": [
+      {
+        "id": "E1",
+        "title": "Fault detection and diagnosis",
+        "question": "Is a tool faulty, and which fault explains its signals?"
+      },
+      {
+        "id": "E2",
+        "title": "Prognostics and maintenance",
+        "question": "When is a tool likely to fail, and when should it be maintained?"
+      },
+      {
+        "id": "E3",
+        "title": "Calibration, matching and qualification",
+        "question": "Is a tool or chamber ready for a specified manufacturing operation?"
+      }
+    ]
+  },
+  {
+    "id": "R",
+    "title": "Production",
+    "slug": "production",
+    "description": "The movement and processing of lots through shared machines, queues and transport systems.",
+    "tasks": [
+      {
+        "id": "R1",
+        "title": "Cycle-time and delivery prediction",
+        "question": "When will a lot finish, and will it be delivered on time?"
+      },
+      {
+        "id": "R2",
+        "title": "Scheduling and dispatching",
+        "question": "Which job should each machine process next?"
+      },
+      {
+        "id": "R3",
+        "title": "Material handling",
+        "question": "How should wafers move between tools?"
+      },
+      {
+        "id": "R4",
+        "title": "Bottleneck and production-state analysis",
+        "question": "Where is production constrained, and what factory state explains the delay?"
+      }
+    ]
+  },
+  {
+    "id": "F",
+    "title": "Fabs",
+    "slug": "fabs",
+    "description": "Factory utilities and longer-term capacity decisions that support production.",
+    "tasks": [
+      {
+        "id": "F1",
+        "title": "Utility and resource operation",
+        "question": "How should cooling, power, air and water systems serve production efficiently?"
+      },
+      {
+        "id": "F2",
+        "title": "Capacity planning",
+        "question": "What equipment, qualifications or factory space should be added or reassigned?"
+      }
+    ]
+  }
+]

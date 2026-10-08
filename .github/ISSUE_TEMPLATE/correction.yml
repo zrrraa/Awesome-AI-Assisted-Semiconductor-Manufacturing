@@ -1,0 +1,17 @@
+name: Correct an entry or link
+description: Report incorrect metadata, a broken link or a task assignment to review.
+title: "[Correction] "
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Paper or page to correct
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction and supporting source
+      description: Describe the change and include a source URL if available.
+    validations:
+      required: true

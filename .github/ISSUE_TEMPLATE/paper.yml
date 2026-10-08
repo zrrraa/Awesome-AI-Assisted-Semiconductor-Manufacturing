@@ -1,0 +1,31 @@
+name: Suggest a paper or resource
+description: Add a relevant paper, dataset, benchmark or implementation.
+title: "[Suggestion] "
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title or project name
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: DOI or source URL
+      description: Prefer the publisher, authors or original project.
+    validations:
+      required: true
+  - type: input
+    id: task
+    attributes:
+      label: Manufacturing task
+      description: Use a task ID from the README, or describe the manufacturing problem.
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Why include it?
+      description: What can readers learn or use? Include publication year and related code or data links when available.
+    validations:
+      required: true
