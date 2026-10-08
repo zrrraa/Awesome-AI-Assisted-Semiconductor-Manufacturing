@@ -1,4 +1,4 @@
-# Fabs
+# 🏭 Fabs
 
 [← Home](../README.md) · [Datasets & code](../RESOURCES.md) · [BibTeX](../references.bib)
 
@@ -6,20 +6,18 @@
 
 Factory utilities and longer-term capacity decisions that support production.
 
-**31 papers · 2 tasks** &nbsp; · &nbsp; Newest first
+Papers are listed newest first within each task.
 
 ## In this collection
 
-- [F1 · Utility and resource operation](#f1) — 18 papers
-- [F2 · Capacity planning](#f2) — 13 papers
+- [F1 · Utility and resource operation](#f1)
+- [F2 · Capacity planning](#f2)
 
 <a id="f1"></a>
 
 ## F1 · Utility and resource operation
 
 > How should cooling, power, air and water systems serve production efficiently?
-
-18 papers · [Task index](#in-this-collection)
 
 - <a id="lee20268643f"></a>**[A Data-Driven Framework for Energy-Efficient Design Optimization of Semiconductor Cleanroom HVAC Systems](https://doi.org/10.1016/j.csite.2026.108351)**<br>
   2026 · Lee et al. · *Case Studies in Thermal Engineering*
@@ -75,14 +73,14 @@ Factory utilities and longer-term capacity decisions that support production.
 - <a id="chien201821d47"></a>**[AI and Big Data Analytics for Wafer Fab Energy Saving and Chiller Optimization to Empower Intelligent Manufacturing](https://ieeexplore.ieee.org/document/8514238)**<br>
   2018 · Chien et al. · *2018 e-Manufacturing and Design Collaboration Symposium*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="f2"></a>
 
 ## F2 · Capacity planning
 
 > What equipment, qualifications or factory space should be added or reassigned?
-
-13 papers · [Task index](#in-this-collection)
 
 - <a id="andelfinger202675e11"></a>**[Learning to Optimize Capacity Planning in Semiconductor Manufacturing](https://doi.org/10.1007/978-981-95-4472-1_6)**<br>
   2026 · Andelfinger et al. · *Methods and Applications for Modeling and Simulation of Complex Systems*
@@ -122,6 +120,8 @@ Factory utilities and longer-term capacity decisions that support production.
 
 - <a id="wu2005d9097"></a>**[A Tool Planning Approach Considering Cycle Time Constraints and Demand Uncertainty](https://doi.org/10.1007/s00170-003-2030-2)**<br>
   2005 · Wu et al. · *The International Journal of Advanced Manufacturing Technology*
+
+[↑ Task index](#in-this-collection)
 
 ---
 

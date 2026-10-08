@@ -1,5 +1,4 @@
 """Build the public reading lists and bibliography with Python 3.10+ (no dependencies)."""
-from collections import Counter
 from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit
 from html import escape, unescape
@@ -11,6 +10,19 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+
+SCOPE_ICONS = {'A': '💠', 'P': '⚙️', 'E': '🔧', 'R': '🚚', 'F': '🏭'}
+TASK_LABELS = {
+    'A1': 'Wafer patterns', 'A2': 'Local defects', 'A3': 'Computational lithography',
+    'A4': 'Quality & yield', 'A5': 'Yield diagnosis', 'A6': 'Adaptive inspection',
+    'P1': 'Monitoring & endpoints', 'P2': 'Virtual metrology',
+    'P3': 'Recipe optimization', 'P4': 'Feedback control',
+    'E1': 'Fault diagnosis', 'E2': 'Prognostics & maintenance',
+    'E3': 'Calibration & qualification',
+    'R1': 'Cycle time & delivery', 'R2': 'Scheduling & dispatching',
+    'R3': 'Material handling', 'R4': 'Bottlenecks',
+    'F1': 'Utilities & resources', 'F2': 'Capacity planning',
+}
 
 
 def read_json(name):
@@ -29,19 +41,19 @@ def tex(text):
     return ''.join({'&': r'\&', '%': r'\%', '_': r'\_', '#': r'\#'}.get(c, c) for c in text)
 
 
-def scope_card(scope, counts):
+def scope_row(scope):
     target = f"papers/{scope['slug']}.md"
-    total = sum(counts[t['id']] for t in scope['tasks'])
-    lines = [
-        '<td width="50%" valign="top">',
-        f'<h3><a href="{target}">{scope["id"]} · {escape(scope["title"])}</a></h3>',
-        f'<p><b>{total} papers</b> · {len(scope["tasks"])} tasks</p>',
-        f'<p>{escape(scope["description"])}</p>',
-        '<ul>',
+    task_links = [
+        f'<a href="{target}#{t["id"].lower()}">{t["id"]} {escape(TASK_LABELS.get(t["id"], t["title"]))}</a>'
+        for t in scope['tasks']
     ]
-    for task in scope['tasks']:
-        lines.append(f'<li><a href="{target}#{task["id"].lower()}">{task["id"]} · {escape(task["title"])}</a> <sub>({counts[task["id"]]})</sub></li>')
-    return '\n'.join(lines + ['</ul>', '</td>'])
+    rows = [' &nbsp; · &nbsp; '.join(task_links[i:i + 2]) for i in range(0, len(task_links), 2)]
+    return '\n'.join([
+        '<tr>',
+        f'<td valign="top"><b><a href="{target}">{SCOPE_ICONS[scope["id"]]} {escape(scope["title"])}</a></b></td>',
+        '<td>' + '<br>\n'.join(rows) + '</td>',
+        '</tr>',
+    ])
 
 
 def build():
@@ -71,29 +83,27 @@ def build():
         assert all(t in tasks for t in resource['tasks'])
         assert all(i in ids for i in resource['paper_ids'])
         assert urlsplit(resource['url']).scheme in ['https', 'http']
-    counts = Counter(p['task'] for p in papers)
     outputs = {}
-    cards = []
+    task_rows = []
     for scope in scopes:
         target = f"papers/{scope['slug']}.md"
-        total = sum(counts[t['id']] for t in scope['tasks'])
-        cards.append(scope_card(scope, counts))
+        task_rows.append(scope_row(scope))
         scope_nav = ' &nbsp; / &nbsp; '.join(
             f'<b>{s["title"]}</b>' if s == scope else f'<a href="{s["slug"]}.md">{s["title"]}</a>'
             for s in scopes
         )
         lines = [
-            f'# {scope["title"]}', '',
+            f'# {SCOPE_ICONS[scope["id"]]} {scope["title"]}', '',
             '[← Home](../README.md) · [Datasets & code](../RESOURCES.md) · [BibTeX](../references.bib)', '',
             f'<p>{scope_nav}</p>', '',
             scope['description'], '',
-            f'**{total} papers · {len(scope["tasks"])} tasks** &nbsp; · &nbsp; Newest first', '',
+            'Papers are listed newest first within each task.', '',
             '## In this collection', '',
         ]
         for t in scope['tasks']:
-            lines.append(f"- [{t['id']} · {t['title']}](#{t['id'].lower()}) — {counts[t['id']]} papers")
+            lines.append(f"- [{t['id']} · {t['title']}](#{t['id'].lower()})")
         for t in scope['tasks']:
-            lines += ['', f'<a id="{t["id"].lower()}"></a>', '', f"## {t['id']} · {t['title']}", '', f'> {t["question"]}', '', f'{counts[t["id"]]} papers · [Task index](#in-this-collection)', '']
+            lines += ['', f'<a id="{t["id"].lower()}"></a>', '', f"## {t['id']} · {t['title']}", '', f'> {t["question"]}', '']
             for p in sorted((p for p in papers if p['task'] == t['id']), key=lambda p: (-p['year'], p['title'].casefold())):
                 names = p['authors'].split(' and ')
                 authors = ', '.join(n.split(',')[0] for n in names[:2]) if len(names) <= 2 else names[0].split(',')[0] + ' et al.'
@@ -102,15 +112,12 @@ def build():
                 extra += ''.join(f" · [{md(x['name'])}]({link(x['url'])})" for x in related if x['url'] != p['url'])
                 lines += [f'- <a id="{p["id"]}"></a>**[{md(p["title"])}]({link(p["url"])})**<br>',
                           f'  {p["year"]} · {md(authors).rstrip(".")}. · *{md(p["venue"])}*{extra}', '']
+            lines += ['[↑ Task index](#in-this-collection)', '']
         lines += ['---', '', '[← All manufacturing scopes](../README.md#browse-by-manufacturing-task) · [Suggest a paper](../CONTRIBUTING.md)', '']
         outputs[target] = '\n'.join(lines).rstrip() + '\n'
-    cards.append('<td width="50%" valign="top">\n<h3>New to the field?</h3>\n<p>Start with the manufacturing problem, then follow the data, model and decision.</p>\n<ul>\n<li><a href="docs/getting-started.md">A chip’s path through a factory</a></li>\n<li><a href="docs/getting-started.md#choose-a-reading-path">Reading paths for AI researchers</a></li>\n<li><a href="docs/getting-started.md#terms-you-will-meet">Manufacturing glossary</a></li>\n<li><a href="RESOURCES.md">Datasets and implementations</a></li>\n</ul>\n</td>')
-    task_cards = ['<table>']
-    for i in range(0, len(cards), 2):
-        task_cards += ['<tr>', *cards[i:i + 2], '</tr>']
-    task_cards += ['</table>']
+    task_table = ['<table>', '<tr><th align="left">Scope</th><th align="left">Tasks</th></tr>', *task_rows, '</table>']
     resources_md = [
-        '# Datasets & code', '',
+        '# 🧰 Datasets & code', '',
         '[← Home](README.md) · [Paper collection](README.md#browse-by-manufacturing-task) · [Reading guide](docs/getting-started.md)', '',
         'Public datasets, benchmarks and implementations for hands-on work. Each entry links to its project or dataset paper.', '',
         '[Wafer patterns](#wafer-patterns) &nbsp; / &nbsp; [Image defects](#image-defects) &nbsp; / &nbsp; [Lithography](#lithography) &nbsp; / &nbsp; [Quality prediction](#quality-prediction) &nbsp; / &nbsp; [Scheduling](#scheduling)', '',
@@ -147,14 +154,11 @@ def build():
         bib += [f"@{p['bibtex_type']}{{{p['id']},"] + [f'  {k} = {{{v}}},' for k, v in fields.items()] + ['}', '']
     outputs['references.bib'] = '\n'.join(bib)
     readme = (ROOT / 'README.md').read_text(encoding='utf-8')
-    counts_badges = '\n'.join([
-        '<p align="center">',
-        f'  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Papers-{len(papers)}-355C7D?style=flat-square" alt="{len(papers)} papers"></a>',
-        f'  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Manufacturing_scopes-{len(scopes)}-557B83?style=flat-square" alt="{len(scopes)} manufacturing scopes"></a>',
-        f'  <a href="#browse-by-manufacturing-task"><img src="https://img.shields.io/badge/Tasks-{len(tasks)}-6C5B7B?style=flat-square" alt="{len(tasks)} tasks"></a>',
-        '</p>',
-    ])
-    blocks = {'COUNTS': counts_badges, 'TASKS': '\n'.join(task_cards)}
+    citation_doc = (ROOT / 'docs/citation.md').read_text(encoding='utf-8')
+    fence = chr(96) * 3
+    citation = re.search(fence + r'bibtex\n(.*?)\n' + fence, citation_doc, re.S)
+    assert citation, 'Survey BibTeX is missing from docs/citation.md.'
+    blocks = {'CITATION': fence + 'bibtex\n' + citation.group(1) + '\n' + fence, 'TASKS': '\n'.join(task_table)}
     for name, content in blocks.items():
         pattern = f'<!-- BEGIN {name} -->.*?<!-- END {name} -->'
         assert len(re.findall(pattern, readme, re.S)) == 1, name

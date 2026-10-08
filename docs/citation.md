@@ -1,4 +1,4 @@
-# Citation
+# 📝 Citation
 
 [Home](../README.md) · [Full bibliography](../references.bib)
 

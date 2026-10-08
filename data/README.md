@@ -10,7 +10,7 @@
 | `survey.json` | Survey information, catalogue update date and IDs in the original survey collection |
 | `papers.csv` | Generated spreadsheet-friendly paper index |
 
-The initial collection contains the 475 manufacturing studies analyzed in the companion survey. The survey also cites background literature; those general references are outside this task catalogue. Each paper has one primary task for navigation and counting. A task’s paper count describes the collection, not the number of independent experiments or a measure of research quality.
+The collection grows from the manufacturing studies analyzed in the companion survey. Each paper has one primary task for navigation. General background references are outside this task catalogue.
 
 The public catalogue contains bibliographic information and links. Full texts remain with the publishers, authors or repositories linked from each record.
 

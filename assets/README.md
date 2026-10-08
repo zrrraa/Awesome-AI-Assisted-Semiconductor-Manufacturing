@@ -1,5 +1,6 @@
-# Survey artwork
+# Artwork
 
-The homepage overview reproduces Figure 1 of *From Perception to Autonomy: A Survey on AI-Assisted Semiconductor Manufacturing*.
+- **logo.png** — Repository emblem combining a semiconductor wafer and connected AI nodes, generated with the built-in imagegen tool.
+- **overview.jpg** — Web preview of Figure 1 from the companion survey, exported from the PDF and based on the Figma artwork.
 
-It is a web preview exported from the figure region in the survey PDF, based on the current Figma artwork. For attribution, see the [survey citation](../docs/citation.md).
+For attribution, see the [survey citation](../docs/citation.md).

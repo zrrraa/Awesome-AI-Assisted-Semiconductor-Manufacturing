@@ -1,4 +1,4 @@
-# Production
+# 🚚 Production
 
 [← Home](../README.md) · [Datasets & code](../RESOURCES.md) · [BibTeX](../references.bib)
 
@@ -6,22 +6,20 @@
 
 The movement and processing of lots through shared machines, queues and transport systems.
 
-**55 papers · 4 tasks** &nbsp; · &nbsp; Newest first
+Papers are listed newest first within each task.
 
 ## In this collection
 
-- [R1 · Cycle-time and delivery prediction](#r1) — 6 papers
-- [R2 · Scheduling and dispatching](#r2) — 30 papers
-- [R3 · Material handling](#r3) — 7 papers
-- [R4 · Bottleneck and production-state analysis](#r4) — 12 papers
+- [R1 · Cycle-time and delivery prediction](#r1)
+- [R2 · Scheduling and dispatching](#r2)
+- [R3 · Material handling](#r3)
+- [R4 · Bottleneck and production-state analysis](#r4)
 
 <a id="r1"></a>
 
 ## R1 · Cycle-time and delivery prediction
 
 > When will a lot finish, and will it be delivered on time?
-
-6 papers · [Task index](#in-this-collection)
 
 - <a id="kuo2026ff460"></a>**[Explainable Artificial Intelligence Framework for Cycle Time Prediction and an Empirical Study for Smart Semiconductor Manufacturing](https://doi.org/10.2139/ssrn.6556811)**<br>
   2026 · Kuo et al. · *SSRN preprint 6556811* · **Preprint**
@@ -41,14 +39,14 @@ The movement and processing of lots through shared machines, queues and transpor
 - <a id="backus2006cycletime"></a>**[Factory Cycle-Time Prediction With a Data-Mining Approach](https://doi.org/10.1109/TSM.2006.873400)**<br>
   2006 · Backus et al. · *IEEE Transactions on Semiconductor Manufacturing*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="r2"></a>
 
 ## R2 · Scheduling and dispatching
 
 > Which job should each machine process next?
-
-30 papers · [Task index](#in-this-collection)
 
 - <a id="xiang2026c5b20"></a>**[Adversarial learning enhanced multi-agent cooperative reinforcement learning for parallel batch processing machine scheduling in wafer fabrication](https://doi.org/10.1016/j.cie.2025.111660)**<br>
   2026 · Xiang et al. · *Computers &amp; Industrial Engineering*
@@ -140,14 +138,14 @@ The movement and processing of lots through shared machines, queues and transpor
 - <a id="min200395f77"></a>**[Selection of Dispatching Rules on Multiple Dispatching Decision Points in Real-Time Scheduling of a Semiconductor Wafer Fabrication System](https://doi.org/10.1080/0020754031000118099)**<br>
   2003 · Min, Yih. · *International Journal of Production Research*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="r3"></a>
 
 ## R3 · Material handling
 
 > How should wafers move between tools?
-
-7 papers · [Task index](#in-this-collection)
 
 - <a id="koo2026linkweights"></a>**[Alleviation of OHT vehicle congestion in semiconductor FAB with dynamic link weight control: A reinforcement learning approach](https://doi.org/10.1080/00207543.2026.2656773)**<br>
   2026 · Koo et al. · *International Journal of Production Research*
@@ -170,14 +168,14 @@ The movement and processing of lots through shared machines, queues and transpor
 - <a id="hwang2020ohtrouting"></a>**[Q(λ) learning-based dynamic route guidance algorithm for overhead hoist transport systems in semiconductor fabs](https://doi.org/10.1080/00207543.2019.1614692)**<br>
   2020 · Hwang, Jang. · *International Journal of Production Research*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="r4"></a>
 
 ## R4 · Bottleneck and production-state analysis
 
 > Where is production constrained, and what factory state explains the delay?
-
-12 papers · [Task index](#in-this-collection)
 
 - <a id="behrendt2026d5585"></a>**[Real-to-Sim: Automatic Simulation Model Generation for a Digital Twin in Semiconductor Manufacturing](https://doi.org/10.1007/s10845-025-02572-x)**<br>
   2026 · Behrendt et al. · *Journal of Intelligent Manufacturing*
@@ -214,6 +212,8 @@ The movement and processing of lots through shared machines, queues and transpor
 
 - <a id="bagchi200805af9"></a>**[A Full-Factory Simulator as a Daily Decision-Support Tool for 300mm Wafer Fabrication Productivity](https://doi.org/10.1109/wsc.2008.4736297)**<br>
   2008 · Bagchi et al. · *2008 Winter Simulation Conference*
+
+[↑ Task index](#in-this-collection)
 
 ---
 

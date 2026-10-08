@@ -1,4 +1,4 @@
-# Processes
+# ⚙️ Processes
 
 [← Home](../README.md) · [Datasets & code](../RESOURCES.md) · [BibTeX](../references.bib)
 
@@ -6,22 +6,20 @@
 
 Manufacturing operations: monitoring their progress, estimating results and choosing or adjusting settings.
 
-**116 papers · 4 tasks** &nbsp; · &nbsp; Newest first
+Papers are listed newest first within each task.
 
 ## In this collection
 
-- [P1 · Process monitoring and endpoint detection](#p1) — 41 papers
-- [P2 · Virtual metrology](#p2) — 36 papers
-- [P3 · Process development and recipe optimization](#p3) — 19 papers
-- [P4 · Run-to-run and feedback control](#p4) — 20 papers
+- [P1 · Process monitoring and endpoint detection](#p1)
+- [P2 · Virtual metrology](#p2)
+- [P3 · Process development and recipe optimization](#p3)
+- [P4 · Run-to-run and feedback control](#p4)
 
 <a id="p1"></a>
 
 ## P1 · Process monitoring and endpoint detection
 
 > Is a process running normally, and when should it stop?
-
-41 papers · [Task index](#in-this-collection)
 
 - <a id="kim2025cecca"></a>**[Adaptive learning strategies for addressing chamber variations in real-time endpoint detection of semiconductor plasma etching](https://doi.org/10.1007/s10845-025-02715-0)**<br>
   2026 · Kim et al. · *Journal of Intelligent Manufacturing*
@@ -146,14 +144,14 @@ Manufacturing operations: monitoring their progress, estimating results and choo
 - <a id="wise199712719"></a>**[Development and Benchmarking of Multivariate Statistical Process Control Tools for a Semiconductor Etch Process: Impact of Measurement Selection and Data Treatment on Sensitivity](https://doi.org/10.1016/s1474-6670%2817%2942377-9)**<br>
   1997 · Wise et al. · *IFAC Proceedings Volumes*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="p2"></a>
 
 ## P2 · Virtual metrology
 
 > Can sensor data estimate a measurement that is slow or expensive to obtain?
-
-36 papers · [Task index](#in-this-collection)
 
 - <a id="chien2025conformalnil"></a>**[Deep-CNN-Based Layout-to-SEM Image Reconstruction with Conformal Uncertainty Calibration for Nanoimprint Lithography in Semiconductor Manufacturing](https://doi.org/10.3390/electronics14152973)**<br>
   2025 · Chien, Lee. · *Electronics*
@@ -263,14 +261,14 @@ Manufacturing operations: monitoring their progress, estimating results and choo
 - <a id="hung20077cdb8"></a>**[A Novel Virtual Metrology Scheme for Predicting CVD Thickness in Semiconductor Manufacturing](https://doi.org/10.1109/tmech.2007.897275)**<br>
   2007 · Hung et al. · *IEEE/ASME Transactions on Mechatronics*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="p3"></a>
 
 ## P3 · Process development and recipe optimization
 
 > Which process settings or experiments should be tried next?
-
-19 papers · [Task index](#in-this-collection)
 
 - <a id="oh2026aa64b"></a>**[Accelerating DRAM Manufacturing Yield Using AI/ML and Physics-Based Process Models](https://doi.org/10.1109/imw68301.2026.11532900)**<br>
   2026 · OH et al. · *2026 IEEE International Memory Workshop (IMW)*
@@ -329,14 +327,14 @@ Manufacturing operations: monitoring their progress, estimating results and choo
 - <a id="card2000bbfce"></a>**[A Study in Dynamic Neural Control of Semiconductor Fabrication Processes](https://doi.org/10.1109/66.857946)**<br>
   2000 · Card. · *IEEE Transactions on Semiconductor Manufacturing*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="p4"></a>
 
 ## P4 · Run-to-run and feedback control
 
 > How should settings change after observing a process result?
-
-20 papers · [Task index](#in-this-collection)
 
 - <a id="fan2026mixedr2r"></a>**[A New Deep Reinforcement Learning Run-to-Run Control Algorithm for Mixed-Product Production Mode in Semiconductor Manufacturing](https://doi.org/10.1109/tase.2025.3526675)**<br>
   2026 · Fan, Chen. · *IEEE Transactions on Automation Science and Engineering*
@@ -397,6 +395,8 @@ Manufacturing operations: monitoring their progress, estimating results and choo
 
 - <a id="card1998845e8"></a>**[Run-to-Run Process Control of a Plasma Etch Process with Neural Network Modelling](https://doi.org/10.1002/%28sici%291099-1638%28199807/08%2914:4%3C247::aid-qre188%3E3.0.co;2-v)**<br>
   1998 · Card et al. · *Quality and Reliability Engineering International*
+
+[↑ Task index](#in-this-collection)
 
 ---
 

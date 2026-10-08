@@ -1,4 +1,4 @@
-# Contributing
+# 🤝 Contributing
 
 Suggestions for papers, datasets, implementations and corrections are welcome. You can [open an issue](https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing/issues/new/choose) without editing any files.
 
@@ -12,7 +12,7 @@ The catalogue covers semiconductor manufacturing: products and their structures,
 
 1. Add or correct the record in `data/papers.json`. Keep an existing paper’s `id` when updating its metadata. Use a DOI link when one exists; otherwise use a publisher, proceedings or preprint page.
 2. For a dataset or implementation, edit `data/resources.json`. Set `paper_ids` to any associated catalogue entries and use task IDs from `data/taxonomy.json`.
-3. Update `data/survey.json`’s `updated` date and add a short entry to the README’s Updates section when adding resources or papers.
+3. Update `data/survey.json`’s `updated` date and add a short entry to the README’s News section when adding resources or papers.
 4. Regenerate and check the reading lists with Python 3.10 or newer:
 
 ```sh
@@ -22,7 +22,7 @@ python scripts/build_catalogue.py --check
 
 5. Include the source record and generated files in your pull request. Explain the change and link to its source.
 
-The script builds the five topic pages, resource page, CSV, BibTeX and README navigation and counts from the JSON files. It checks duplicate identifiers, task assignments, required metadata, local links and image paths. GitHub Actions runs the same check on pull requests.
+The script builds the five topic pages, resource page, CSV, BibTeX and README navigation from the JSON files. It also copies the survey citation from `docs/citation.md` to the homepage. It checks duplicate identifiers, task assignments, required metadata, local links and image paths. GitHub Actions runs the same check on pull requests.
 
 ## Editorial conventions
 

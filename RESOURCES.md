@@ -1,4 +1,4 @@
-# Datasets & code
+# 🧰 Datasets & code
 
 [← Home](README.md) · [Paper collection](README.md#browse-by-manufacturing-task) · [Reading guide](docs/getting-started.md)
 

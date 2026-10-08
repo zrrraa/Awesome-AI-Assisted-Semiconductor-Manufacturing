@@ -1,4 +1,4 @@
-# Artifacts
+# 💠 Artifacts
 
 [← Home](../README.md) · [Datasets & code](../RESOURCES.md) · [BibTeX](../references.bib)
 
@@ -6,24 +6,22 @@
 
 Products and their structures, from wafer patterns and local defects to masks, quality and yield.
 
-**223 papers · 6 tasks** &nbsp; · &nbsp; Newest first
+Papers are listed newest first within each task.
 
 ## In this collection
 
-- [A1 · Wafer spatial-pattern analysis](#a1) — 43 papers
-- [A2 · Local defect detection and localization](#a2) — 44 papers
-- [A3 · Computational lithography](#a3) — 67 papers
-- [A4 · Product quality and yield inference](#a4) — 23 papers
-- [A5 · Yield-loss diagnosis and root-cause analysis](#a5) — 30 papers
-- [A6 · Adaptive testing and inspection](#a6) — 16 papers
+- [A1 · Wafer spatial-pattern analysis](#a1)
+- [A2 · Local defect detection and localization](#a2)
+- [A3 · Computational lithography](#a3)
+- [A4 · Product quality and yield inference](#a4)
+- [A5 · Yield-loss diagnosis and root-cause analysis](#a5)
+- [A6 · Adaptive testing and inspection](#a6)
 
 <a id="a1"></a>
 
 ## A1 · Wafer spatial-pattern analysis
 
 > What does the spatial pattern of failing dies reveal about a wafer?
-
-43 papers · [Task index](#in-this-collection)
 
 - <a id="cao2026zeroshotwafer"></a>**[Efficient Zero-shot Wafer Classification Method based on the Large Multi-modal Model](https://doi.org/10.1109/tcad.2026.3699293)**<br>
   2026 · Cao et al. · *IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems*
@@ -154,14 +152,14 @@ Products and their structures, from wafer patterns and local defects to masks, q
 - <a id="chien2013f3d27"></a>**[A System for Online Detection and Classification of Wafer Bin Map Defect Patterns for Manufacturing Intelligence](https://doi.org/10.1080/00207543.2012.737943)**<br>
   2013 · Chien et al. · *International Journal of Production Research*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="a2"></a>
 
 ## A2 · Local defect detection and localization
 
 > Where is a defect, and what does it look like?
-
-44 papers · [Task index](#in-this-collection)
 
 - <a id="liang2026556ee"></a>**[Annotated dataset for surface defect detection on ceramic substrates in manufacturing](https://doi.org/10.1016/j.dib.2026.113192)**<br>
   2026 · Liang et al. · *Data in Brief*
@@ -295,14 +293,14 @@ Products and their structures, from wafer patterns and local defects to masks, q
 - <a id="cheon2019unknown"></a>**[Convolutional Neural Network for Wafer Surface Defect Classification and the Detection of Unknown Defect Class](https://doi.org/10.1109/tsm.2019.2902657)**<br>
   2019 · Cheon et al. · *IEEE Transactions on Semiconductor Manufacturing*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="a3"></a>
 
 ## A3 · Computational lithography
 
 > Which mask pattern will print the intended structure on a wafer?
-
-67 papers · [Task index](#in-this-collection)
 
 - <a id="rashid2026e2920"></a>**[Adaptive Reinforcement Learning for Lithography Optimization: A Scalable AI-Driven Solution for Next-Generation Semiconductor Manufacturing](https://doi.org/10.1038/s41598-026-43555-z)**<br>
   2026 · Rashid et al. · *Scientific Reports*
@@ -505,14 +503,14 @@ Products and their structures, from wafer patterns and local defects to masks, q
 - <a id="zhang2016onlinehotspot"></a>**[Enabling online learning in lithography hotspot detection with information-theoretic feature optimization](https://doi.org/10.1145/2966986.2967032)**<br>
   2016 · Zhang et al. · *Proceedings of the 35th International Conference on Computer-Aided Design*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="a4"></a>
 
 ## A4 · Product quality and yield inference
 
 > Will a product meet its quality requirements?
-
-23 papers · [Task index](#in-this-collection)
 
 - <a id="jo202640d49"></a>**[HAN-Semi: A Hierarchical Attention Network for Yield Prediction Based on Production Resources in Semiconductor Manufacturing](https://doi.org/10.1109/access.2026.3665663)**<br>
   2026 · Jo et al. · *IEEE Access*
@@ -583,14 +581,14 @@ Products and their structures, from wafer patterns and local defects to masks, q
 - <a id="zhang2011virtualprobe"></a>**[Virtual Probe: A Statistical Framework for Low-Cost Silicon Characterization of Nanoscale Integrated Circuits](https://doi.org/10.1109/TCAD.2011.2164536)**<br>
   2011 · Zhang et al. · *IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="a5"></a>
 
 ## A5 · Yield-loss diagnosis and root-cause analysis
 
 > What caused a loss of yield, and where should engineers investigate?
-
-30 papers · [Task index](#in-this-collection)
 
 - <a id="doh2026f57e1"></a>**[Comprehensive Framework for Identifying and Visualizing Key Yield Factors in Semiconductor Manufacturing](https://doi.org/10.1109/tsm.2026.3673232)**<br>
   2026 · Doh et al. · *IEEE Transactions on Semiconductor Manufacturing*
@@ -682,14 +680,14 @@ Products and their structures, from wafer patterns and local defects to masks, q
 - <a id="chien2007yieldmining"></a>**[Data mining for yield enhancement in semiconductor manufacturing and an empirical study](https://doi.org/10.1016/j.eswa.2006.04.014)**<br>
   2007 · Chien et al. · *Expert Systems with Applications*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="a6"></a>
 
 ## A6 · Adaptive testing and inspection
 
 > Which dies or locations should be tested or inspected next?
-
-16 papers · [Task index](#in-this-collection)
 
 - <a id="shaik2026fbca2"></a>**[A Reinforcement Learning Framework for Good Die in Bad Neighborhood Analysis](https://doi.org/10.23919/date69613.2026.11539490)**<br>
   2026 · Shaik et al. · *2026 Design, Automation &amp; Test in Europe Conference (DATE)*
@@ -738,6 +736,8 @@ Products and their structures, from wafer patterns and local defects to masks, q
 
 - <a id="gun2015bdbee"></a>**[Package Yield Enhancement Using Machine Learning in Semiconductor Manufacturing](https://doi.org/10.1109/iaeac.2015.7428567)**<br>
   2015 · Kim et al. · *2015 IEEE Advanced Information Technology, Electronic and Automation Control Conference (IAEAC)*
+
+[↑ Task index](#in-this-collection)
 
 ---
 

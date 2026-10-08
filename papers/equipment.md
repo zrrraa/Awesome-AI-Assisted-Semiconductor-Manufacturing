@@ -1,4 +1,4 @@
-# Equipment
+# 🔧 Equipment
 
 [← Home](../README.md) · [Datasets & code](../RESOURCES.md) · [BibTeX](../references.bib)
 
@@ -6,21 +6,19 @@
 
 The tools and chambers that carry out operations, including their health, maintenance and readiness.
 
-**50 papers · 3 tasks** &nbsp; · &nbsp; Newest first
+Papers are listed newest first within each task.
 
 ## In this collection
 
-- [E1 · Fault detection and diagnosis](#e1) — 25 papers
-- [E2 · Prognostics and maintenance](#e2) — 22 papers
-- [E3 · Calibration, matching and qualification](#e3) — 3 papers
+- [E1 · Fault detection and diagnosis](#e1)
+- [E2 · Prognostics and maintenance](#e2)
+- [E3 · Calibration, matching and qualification](#e3)
 
 <a id="e1"></a>
 
 ## E1 · Fault detection and diagnosis
 
 > Is a tool faulty, and which fault explains its signals?
-
-25 papers · [Task index](#in-this-collection)
 
 - <a id="lee2026423c6"></a>**[AI-Powered Electrostatic Chuck Arcing Prediction Model in Dry Etch Chambers](https://doi.org/10.1109/asmc69324.2026.11551234)**<br>
   2026 · Lee et al. · *2026 37th Annual SEMI Advanced Semiconductor Manufacturing Conference (ASMC)*
@@ -97,14 +95,14 @@ The tools and chambers that carry out operations, including their health, mainte
 - <a id="chen2009movingvariance"></a>**[Recipe-Independent Indicator for Tool Health Diagnosis and Predictive Maintenance](https://doi.org/10.1109/TSM.2009.2028215)**<br>
   2009 · Chen, Blue. · *IEEE Transactions on Semiconductor Manufacturing*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="e2"></a>
 
 ## E2 · Prognostics and maintenance
 
 > When is a tool likely to fail, and when should it be maintained?
-
-22 papers · [Task index](#in-this-collection)
 
 - <a id="siswandi2026dd47c"></a>**[Interpretable Machine Learning for Predicting Lifetime of High-Value Parts in Etch Processes](https://doi.org/10.1109/asmc69324.2026.11551258)**<br>
   2026 · Siswandi et al. · *2026 37th Annual SEMI Advanced Semiconductor Manufacturing Conference (ASMC)*
@@ -172,14 +170,14 @@ The tools and chambers that carry out operations, including their health, mainte
 - <a id="susto2012calibration"></a>**[A Predictive Maintenance System for Epitaxy Processes Based on Filtering and Prediction Techniques](https://doi.org/10.1109/TSM.2012.2209131)**<br>
   2012 · Susto et al. · *IEEE Transactions on Semiconductor Manufacturing*
 
+[↑ Task index](#in-this-collection)
+
 
 <a id="e3"></a>
 
 ## E3 · Calibration, matching and qualification
 
 > Is a tool or chamber ready for a specified manufacturing operation?
-
-3 papers · [Task index](#in-this-collection)
 
 - <a id="kotcher2025bd3ec"></a>**[Implementation &amp; Application of Coherent Control Systems: Digital Twin (High-Frequency Open Loop) with R2R (Low-Frequency Closed Loop)](https://doi.org/10.1109/asmc64512.2025.11010422)**<br>
   2025 · Kotcher et al. · *2025 36th Annual SEMI Advanced Semiconductor Manufacturing Conference (ASMC)*
@@ -189,6 +187,8 @@ The tools and chambers that carry out operations, including their health, mainte
 
 - <a id="zhu20235859f"></a>**[Cross-Chamber Data Transferability Evaluation for Fault Detection and Classification in Semiconductor Manufacturing](https://doi.org/10.1109/tsm.2022.3222475)**<br>
   2023 · Zhu et al. · *IEEE Transactions on Semiconductor Manufacturing*
+
+[↑ Task index](#in-this-collection)
 
 ---
 

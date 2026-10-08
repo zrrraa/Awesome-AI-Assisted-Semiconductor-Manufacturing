@@ -1,4 +1,4 @@
-# Getting started
+# 🧭 Reading guide
 
 [Home](../README.md) · [Datasets and code](../RESOURCES.md)
 
