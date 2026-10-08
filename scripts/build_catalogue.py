@@ -97,7 +97,7 @@ def build():
         bib += [f"@{p['bibtex_type']}{{{p['id']},"] + [f'  {k} = {{{v}}},' for k, v in fields.items()] + ['}', '']
     outputs['references.bib'] = '\n'.join(bib)
     readme = (ROOT / 'README.md').read_text(encoding='utf-8')
-    blocks = {'COUNTS': f"**{len(papers)} papers · {len(scopes)} manufacturing scopes · {len(tasks)} tasks**  \nCatalogue updated: {survey['updated']}.", 'TASKS': '\n'.join(task_table)}
+    blocks = {'COUNTS': f"**{len(papers)} papers · {len(scopes)} manufacturing scopes · {len(tasks)} tasks**\n\nCatalogue updated: {survey['updated']}.", 'TASKS': '\n'.join(task_table)}
     for name, content in blocks.items():
         pattern = f'<!-- BEGIN {name} -->.*?<!-- END {name} -->'
         assert len(re.findall(pattern, readme, re.S)) == 1, name

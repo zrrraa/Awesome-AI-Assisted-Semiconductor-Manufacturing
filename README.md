@@ -3,7 +3,8 @@
 Papers, datasets and code for applying AI to semiconductor manufacturing: understanding defects, improving processes, maintaining tools and coordinating a fab.
 
 <!-- BEGIN COUNTS -->
-**475 papers · 5 manufacturing scopes · 19 tasks**  
+**475 papers · 5 manufacturing scopes · 19 tasks**
+
 Catalogue updated: 2026-10-08.
 <!-- END COUNTS -->
 
@@ -13,7 +14,8 @@ Catalogue updated: 2026-10-08.
 
 This repository accompanies **From Perception to Autonomy: A Survey on AI-Assisted Semiconductor Manufacturing**.
 
-Rui Zhong, Zhikun Huang, Xue Zhang, Qian Jin, Yu Li, Qi Sun, Dawei Gao, Yi Song, Hanming Wu and Cheng Zhuo.  
+Rui Zhong, Zhikun Huang, Xue Zhang, Qian Jin, Yu Li, Qi Sun, Dawei Gao, Yi Song, Hanming Wu and Cheng Zhuo.
+
 Zhejiang University · Zhejiang ICsprout Semiconductor Co., Ltd.
 
 The survey follows AI from interpreting manufacturing observations to predicting outcomes, explaining problems, planning actions and learning through execution. It connects these stages to the objects and decisions that matter in a factory. The paper link will be added when the preprint is available.
