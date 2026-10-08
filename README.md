@@ -1,18 +1,23 @@
-<p align="center">
-  <img src="assets/logo.png" width="80" height="80" alt="AI-assisted semiconductor manufacturing logo: a wafer connected to AI nodes">
-</p>
-
 <h1 align="center">From Perception to Autonomy</h1>
 <h3 align="center">A Survey on AI-Assisted Semiconductor Manufacturing</h3>
 
+<p align="center">
+  Rui Zhong<sup>1</sup> · Zhikun Huang<sup>1</sup> · Xue Zhang<sup>1</sup> · Qian Jin<sup>1</sup> · Yu Li<sup>1</sup><br>
+  Qi Sun<sup>1</sup> · Dawei Gao<sup>2,1</sup> · Yi Song<sup>1</sup> · Hanming Wu<sup>1,*</sup> · Cheng Zhuo<sup>1,*</sup>
+</p>
+
 <p align="center"><sub>
-  Rui Zhong · Zhikun Huang · Xue Zhang · Qian Jin · Yu Li<br>
-  Qi Sun · Dawei Gao · Yi Song · Hanming Wu · Cheng Zhuo<br><br>
-  Zhejiang University &nbsp; · &nbsp; Zhejiang ICsprout Semiconductor Co., Ltd.
+  <sup>1</sup> College of Integrated Circuits, Zhejiang University, Hangzhou 311200, China<br>
+  <sup>2</sup> Zhejiang ICsprout Semiconductor Co., Ltd., Hangzhou, China<br>
+  * Corresponding authors: Hanming Wu (<a href="mailto:hanmingwu@zju.edu.cn">hanmingwu@zju.edu.cn</a>); Cheng Zhuo (<a href="mailto:czhuo@zju.edu.cn">czhuo@zju.edu.cn</a>)
 </sub></p>
 
 <p align="center">
-  <a href="#news">📰 <b>News</b></a> &nbsp; · &nbsp;
+  <img src="assets/overview.jpg" width="900" alt="Survey framework across artifacts, processes, equipment, production and fabs, from Perception to Autonomy">
+</p>
+
+<p align="center">
+  <a href="#news">🔥 <b>News</b></a> &nbsp; · &nbsp;
   <a href="#citation">📝 <b>Citation</b></a> &nbsp; · &nbsp;
   <a href="#papers">📚 <b>Papers</b></a> &nbsp; · &nbsp;
   <a href="RESOURCES.md">🧰 <b>Datasets &amp; code</b></a>
@@ -22,7 +27,7 @@ A growing collection of research, datasets and tools for **AI-assisted semicondu
 
 <a id="news"></a>
 
-## 📰 News
+## 🔥 News
 
 - **2026-10-08** — The survey companion is online, with task-based reading lists, datasets, code and a guide for new readers.
 
@@ -87,17 +92,6 @@ Choose a manufacturing task below. New to the field? Start with the [reading gui
 <!-- END TASKS -->
 
 **Download the collection:** [BibTeX](references.bib) · [CSV](data/papers.csv) · [JSON](data/papers.json)
-
-<details>
-<summary><b>🧭 Explore the survey framework</b></summary>
-
-The survey connects manufacturing tasks to five AI stages: Perception, Prediction, Reasoning, Planning and Autonomy.
-
-<p align="center">
-  <img src="assets/overview.jpg" width="900" alt="Survey framework across artifacts, processes, equipment, production and fabs, from Perception to Autonomy">
-</p>
-
-</details>
 
 ## 🤝 Contribute
 
