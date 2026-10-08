@@ -2,6 +2,13 @@
 <h3 align="center">A Survey on AI-Assisted Semiconductor Manufacturing</h3>
 
 <p align="center">
+  <a href="https://awesome.re"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
+  <a href="#citation"><img src="https://img.shields.io/badge/Cite-BibTeX-526DAB?style=flat-square" alt="Cite the survey with BibTeX"></a>
+  <a href="RESOURCES.md"><img src="https://img.shields.io/badge/Data_%26_Code-Resources-008B95?style=flat-square&amp;logo=github&amp;logoColor=white" alt="Datasets and code"></a>
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-36875B?style=flat-square&amp;logo=git&amp;logoColor=white" alt="Pull requests welcome"></a>
+</p>
+
+<p align="center">
   Rui Zhong<sup>1</sup> · Zhikun Huang<sup>1</sup> · Xue Zhang<sup>1</sup> · Qian Jin<sup>1</sup> · Yu Li<sup>1</sup><br>
   Qi Sun<sup>1</sup> · Dawei Gao<sup>2,1</sup> · Yi Song<sup>1</sup> · Hanming Wu<sup>1,*</sup> · Cheng Zhuo<sup>1,*</sup>
 </p>
@@ -23,7 +30,7 @@
   <a href="RESOURCES.md">🧰 <b>Datasets &amp; code</b></a>
 </p>
 
-A growing collection of research, datasets and tools for **AI-assisted semiconductor manufacturing**, organized by the problems and decisions that matter in a fab.
+Curated papers, datasets and code for **AI-assisted semiconductor manufacturing**, organized by manufacturing task.
 
 <a id="news"></a>
 
@@ -35,12 +42,11 @@ A growing collection of research, datasets and tools for **AI-assisted semicondu
 
 ## 📝 Citation
 
-If you find the survey useful, please cite it. [Citation details](docs/citation.md).
+If you find the survey useful, please cite it:
 
 <details>
 <summary><b>Copy BibTeX</b></summary>
 
-<!-- BEGIN CITATION -->
 ```bibtex
 @unpublished{zhong2026perception,
   title = {From Perception to Autonomy: A Survey on {AI}-Assisted Semiconductor Manufacturing},
@@ -49,7 +55,6 @@ If you find the survey useful, please cite it. [Citation details](docs/citation.
   note = {Manuscript}
 }
 ```
-<!-- END CITATION -->
 
 </details>
 
@@ -60,7 +65,6 @@ If you find the survey useful, please cite it. [Citation details](docs/citation.
 
 Choose a manufacturing task below. New to the field? Start with the [reading guide](docs/getting-started.md).
 
-<!-- BEGIN TASKS -->
 <table>
 <tr><th align="left">Scope</th><th align="left">Tasks</th></tr>
 <tr>
@@ -89,9 +93,8 @@ Choose a manufacturing task below. New to the field? Start with the [reading gui
 <td><a href="papers/fabs.md#f1">F1 Utilities &amp; resources</a> &nbsp; · &nbsp; <a href="papers/fabs.md#f2">F2 Capacity planning</a></td>
 </tr>
 </table>
-<!-- END TASKS -->
 
-**Download the collection:** [BibTeX](references.bib) · [CSV](data/papers.csv) · [JSON](data/papers.json)
+[Full bibliography →](references.bib)
 
 ## 🤝 Contribute
 

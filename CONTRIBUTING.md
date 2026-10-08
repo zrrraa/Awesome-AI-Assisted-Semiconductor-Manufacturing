@@ -1,34 +1,26 @@
 # 🤝 Contributing
 
-Suggestions for papers, datasets, implementations and corrections are welcome. You can [open an issue](https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing/issues/new/choose) without editing any files.
+Know a useful paper, dataset or implementation? [Open an issue](https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing/issues/new/choose) with its title, source link and manufacturing task. Corrections are welcome too.
 
-## Suggest a paper or resource
+## Send a pull request
 
-Include its title, year, DOI or project URL, the manufacturing task it addresses, and a sentence explaining what readers can learn or use. For code and data, link to the author’s or project’s release when available. Label a third-party implementation as such.
+1. Add the paper to its main task in `papers/`, keeping the list newest first. Copy a neighboring entry’s format.
+2. Include the full title, year, authors and venue. Link to the DOI, publisher or author’s preprint, and label preprints clearly.
+3. Add its BibTeX entry to `references.bib`, using the same citation key as the paper’s anchor. For a dataset or implementation, update `RESOURCES.md` and link to the original project.
 
-The catalogue covers semiconductor manufacturing: products and their structures, manufacturing processes, equipment, production and fab facilities. Assign a paper to the task defined by its main manufacturing objective or action. The same study may inform other tasks; its primary entry is counted once.
+The five scopes and task links are on the [homepage](README.md#papers). Choose the task by the paper’s manufacturing objective or action.
 
-## Make a pull request
+## Entry format
 
-1. Add or correct the record in `data/papers.json`. Keep an existing paper’s `id` when updating its metadata. Use a DOI link when one exists; otherwise use a publisher, proceedings or preprint page.
-2. For a dataset or implementation, edit `data/resources.json`. Set `paper_ids` to any associated catalogue entries and use task IDs from `data/taxonomy.json`.
-3. Update `data/survey.json`’s `updated` date and add a short entry to the README’s News section when adding resources or papers.
-4. Regenerate and check the reading lists with Python 3.10 or newer:
-
-```sh
-python scripts/build_catalogue.py
-python scripts/build_catalogue.py --check
+```markdown
+- <a id="surname2026keyword"></a>**[Full paper title](https://doi.org/...)**<br>
+  2026 · Surname et al. · *Venue* · [Code](https://github.com/owner/project)
 ```
 
-5. Include the source record and generated files in your pull request. Explain the change and link to its source.
+Code and data links are optional. Prefer original releases and label third-party implementations. Keep reported results with the dataset and evaluation conditions needed to interpret them.
 
-The script builds the five topic pages, resource page, CSV, BibTeX and README navigation from the JSON files. It also copies the survey citation from `docs/citation.md` to the homepage. It checks duplicate identifiers, task assignments, required metadata, local links and image paths. GitHub Actions runs the same check on pull requests.
+Automated checks verify local links, unique entries and matching bibliography keys. You can also run them locally:
 
-## Editorial conventions
-
-- Preserve complete paper titles and distinguish preprints from journal or conference publications.
-- Describe a method’s manufacturing purpose in plain language. Keep factual descriptions tied to the linked source.
-- Keep reported metrics with the dataset, split and operating conditions needed to interpret them. Different evaluation setups belong in contextual comparisons rather than a shared ranking.
-- Link to papers and dataset releases; keep source PDFs and dataset archives at their original locations.
-
-The initial survey collection is recorded by `survey_baseline_ids` in `data/survey.json`. Add new papers to the live catalogue without changing that historical set. If a baseline record is found to duplicate another, explain the correction and update both together.
+```sh
+python .github/scripts/check_catalogue.py
+```

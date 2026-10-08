@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 type: dataset
-message: "For the companion survey citation, see docs/citation.md. Please also cite the original papers and resources you use."
+message: "For the companion survey citation, see the Citation section in README.md. Please also cite the original papers and resources you use."
 title: "Awesome AI-Assisted Semiconductor Manufacturing"
 url: "https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing"
 date-released: 2026-10-08

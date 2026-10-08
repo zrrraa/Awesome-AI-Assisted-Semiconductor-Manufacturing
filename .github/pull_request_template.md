@@ -8,5 +8,6 @@ Link to the publication or project supporting the change.
 
 ## Check
 
-- [ ] The manufacturing task and publication information match the source.
-- [ ] I ran `python scripts/build_catalogue.py` and `python scripts/build_catalogue.py --check` when changing catalogue data.
+- [ ] The task, full title and publication information match the source.
+- [ ] New papers have a matching entry in `references.bib`.
+- [ ] I checked the preview and links.
