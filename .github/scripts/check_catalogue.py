@@ -33,7 +33,7 @@ def main():
     ).decode('utf-8')
     files = {name for name in listing.split('\0') if name}
     documents = {name: (ROOT / name).read_text(encoding='utf-8')
-                 for name in files if name.endswith('.md')}
+                 for name in files if name.endswith(('.md', '.html'))}
     errors = []
     for name, content in documents.items():
         links = re.findall(r'\]\(([^\s)]+)\)', content) + HTMLReferences(content).links
