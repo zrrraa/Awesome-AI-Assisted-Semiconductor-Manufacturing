@@ -73,77 +73,62 @@ Together, these findings motivate an **AI-native autonomous virtual fab**: model
 Start from a manufacturing question, then follow the papers. New to the field? See the [reading guide](docs/getting-started.md).
 
 <table>
-<tr><td width="150" align="center" valign="middle"><a href="papers/artifacts.md"><img src="docs/assets/icons/artifact_wide.png" width="110" alt="Artifacts"><br><b>Artifacts</b></a></td><td><b>What are we making?</b><br>Products, patterns and quality.</td></tr>
-</table>
-
-<table>
+<tr><td colspan="2" width="900"><img src="docs/assets/icons/artifact_wide.png" width="90" align="right" alt=""><h3><a href="papers/artifacts.md">Artifacts</a></h3><b>What are we making?</b><br>Products, patterns and quality.</td></tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a1"><img src="docs/assets/icons/wafer.png" width="42" height="42" align="left" alt=""><b>A1 · Wafer spatial-pattern analysis</b></a><br><sub>What does the spatial pattern of failing dies reveal about a wafer?</sub></td>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a2"><img src="docs/assets/icons/local.png" width="42" height="42" align="left" alt=""><b>A2 · Local defect detection and localization</b></a><br><sub>Where is a defect, and what does it look like?</sub></td>
+<td width="50%" valign="top"><a href="papers/artifacts.md#a1"><img src="docs/assets/icons/wafer.png" width="42" height="42" alt=""><br><b>A1 · Wafer spatial-pattern analysis</b></a><br><sub>What does the spatial pattern of failing dies reveal about a wafer?</sub></td>
+<td width="50%" valign="top"><a href="papers/artifacts.md#a2"><img src="docs/assets/icons/local.png" width="42" height="42" alt=""><br><b>A2 · Local defect detection and localization</b></a><br><sub>Where is a defect, and what does it look like?</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a3"><img src="docs/assets/icons/lithography.png" width="42" height="42" align="left" alt=""><b>A3 · Computational lithography</b></a><br><sub>Which mask pattern will print the intended structure on a wafer?</sub></td>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a4"><img src="docs/assets/icons/quality.png" width="42" height="42" align="left" alt=""><b>A4 · Product quality and yield inference</b></a><br><sub>Will a product meet its quality requirements?</sub></td>
+<td width="50%" valign="top"><a href="papers/artifacts.md#a3"><img src="docs/assets/icons/lithography.png" width="42" height="42" alt=""><br><b>A3 · Computational lithography</b></a><br><sub>Which mask pattern will print the intended structure on a wafer?</sub></td>
+<td width="50%" valign="top"><a href="papers/artifacts.md#a4"><img src="docs/assets/icons/quality.png" width="42" height="42" alt=""><br><b>A4 · Product quality and yield inference</b></a><br><sub>Will a product meet its quality requirements?</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a5"><img src="docs/assets/icons/root_cause.png" width="42" height="42" align="left" alt=""><b>A5 · Yield-loss diagnosis and root-cause analysis</b></a><br><sub>What caused a loss of yield, and where should engineers investigate?</sub></td>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a6"><img src="docs/assets/icons/probe.png" width="42" height="42" align="left" alt=""><b>A6 · Adaptive testing and inspection</b></a><br><sub>Which dies or locations should be tested or inspected next?</sub></td>
+<td width="50%" valign="top"><a href="papers/artifacts.md#a5"><img src="docs/assets/icons/root_cause.png" width="42" height="42" alt=""><br><b>A5 · Yield-loss diagnosis and root-cause analysis</b></a><br><sub>What caused a loss of yield, and where should engineers investigate?</sub></td>
+<td width="50%" valign="top"><a href="papers/artifacts.md#a6"><img src="docs/assets/icons/probe.png" width="42" height="42" alt=""><br><b>A6 · Adaptive testing and inspection</b></a><br><sub>Which dies or locations should be tested or inspected next?</sub></td>
 </tr>
 </table>
 
 <table>
-<tr><td width="150" align="center" valign="middle"><a href="papers/processes.md"><img src="docs/assets/icons/process.png" width="110" alt="Processes"><br><b>Processes</b></a></td><td><b>How do we make it?</b><br>Measurements, recipes and control.</td></tr>
-</table>
-
-<table>
+<tr><td colspan="2" width="900"><img src="docs/assets/icons/process.png" width="90" align="right" alt=""><h3><a href="papers/processes.md">Processes</a></h3><b>How do we make it?</b><br>Measurements, recipes and control.</td></tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/processes.md#p1"><img src="docs/assets/icons/monitoring_clear.png" width="42" height="42" align="left" alt=""><b>P1 · Process monitoring and endpoint detection</b></a><br><sub>Is a process running normally, and when should it stop?</sub></td>
-<td width="50%" valign="top"><a href="papers/processes.md#p2"><img src="docs/assets/icons/vm_clear.png" width="42" height="42" align="left" alt=""><b>P2 · Virtual metrology</b></a><br><sub>Can sensor data estimate a measurement that is slow or expensive to obtain?</sub></td>
+<td width="50%" valign="top"><a href="papers/processes.md#p1"><img src="docs/assets/icons/monitoring_clear.png" width="42" height="42" alt=""><br><b>P1 · Process monitoring and endpoint detection</b></a><br><sub>Is a process running normally, and when should it stop?</sub></td>
+<td width="50%" valign="top"><a href="papers/processes.md#p2"><img src="docs/assets/icons/vm_clear.png" width="42" height="42" alt=""><br><b>P2 · Virtual metrology</b></a><br><sub>Can sensor data estimate a measurement that is slow or expensive to obtain?</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/processes.md#p3"><img src="docs/assets/icons/recipes_clear.png" width="42" height="42" align="left" alt=""><b>P3 · Process development and recipe optimization</b></a><br><sub>Which process settings or experiments should be tried next?</sub></td>
-<td width="50%" valign="top"><a href="papers/processes.md#p4"><img src="docs/assets/icons/feedback_clear.png" width="42" height="42" align="left" alt=""><b>P4 · Run-to-run and feedback control</b></a><br><sub>How should settings change after observing a process result?</sub></td>
+<td width="50%" valign="top"><a href="papers/processes.md#p3"><img src="docs/assets/icons/recipes_clear.png" width="42" height="42" alt=""><br><b>P3 · Process development and recipe optimization</b></a><br><sub>Which process settings or experiments should be tried next?</sub></td>
+<td width="50%" valign="top"><a href="papers/processes.md#p4"><img src="docs/assets/icons/feedback_clear.png" width="42" height="42" alt=""><br><b>P4 · Run-to-run and feedback control</b></a><br><sub>How should settings change after observing a process result?</sub></td>
 </tr>
 </table>
 
 <table>
-<tr><td width="150" align="center" valign="middle"><a href="papers/equipment.md"><img src="docs/assets/icons/equipment.png" width="110" alt="Equipment"><br><b>Equipment</b></a></td><td><b>Can the tools do the job?</b><br>Tool health, maintenance and readiness.</td></tr>
-</table>
-
-<table>
+<tr><td colspan="2" width="900"><img src="docs/assets/icons/equipment.png" width="90" align="right" alt=""><h3><a href="papers/equipment.md">Equipment</a></h3><b>Can the tools do the job?</b><br>Tool health, maintenance and readiness.</td></tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/equipment.md#e1"><img src="docs/assets/icons/diagnosis.png" width="42" height="42" align="left" alt=""><b>E1 · Fault detection and diagnosis</b></a><br><sub>Is a tool faulty, and which fault explains its signals?</sub></td>
-<td width="50%" valign="top"><a href="papers/equipment.md#e2"><img src="docs/assets/icons/prognosis.png" width="42" height="42" align="left" alt=""><b>E2 · Prognostics and maintenance</b></a><br><sub>When is a tool likely to fail, and when should it be maintained?</sub></td>
+<td width="50%" valign="top"><a href="papers/equipment.md#e1"><img src="docs/assets/icons/diagnosis.png" width="42" height="42" alt=""><br><b>E1 · Fault detection and diagnosis</b></a><br><sub>Is a tool faulty, and which fault explains its signals?</sub></td>
+<td width="50%" valign="top"><a href="papers/equipment.md#e2"><img src="docs/assets/icons/prognosis.png" width="42" height="42" alt=""><br><b>E2 · Prognostics and maintenance</b></a><br><sub>When is a tool likely to fail, and when should it be maintained?</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/equipment.md#e3"><img src="docs/assets/icons/qualification.png" width="42" height="42" align="left" alt=""><b>E3 · Calibration, matching and qualification</b></a><br><sub>Is a tool or chamber ready for a specified manufacturing operation?</sub></td>
+<td width="50%" valign="top"><a href="papers/equipment.md#e3"><img src="docs/assets/icons/qualification.png" width="42" height="42" alt=""><br><b>E3 · Calibration, matching and qualification</b></a><br><sub>Is a tool or chamber ready for a specified manufacturing operation?</sub></td>
 <td></td>
 </tr>
 </table>
 
 <table>
-<tr><td width="150" align="center" valign="middle"><a href="papers/production.md"><img src="docs/assets/icons/production.png" width="110" alt="Production"><br><b>Production</b></a></td><td><b>What should happen next?</b><br>Lots, schedules and material flow.</td></tr>
-</table>
-
-<table>
+<tr><td colspan="2" width="900"><img src="docs/assets/icons/production.png" width="90" align="right" alt=""><h3><a href="papers/production.md">Production</a></h3><b>What should happen next?</b><br>Lots, schedules and material flow.</td></tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/production.md#r1"><img src="docs/assets/icons/cycle_time.png" width="42" height="42" align="left" alt=""><b>R1 · Cycle-time and delivery prediction</b></a><br><sub>When will a lot finish, and will it be delivered on time?</sub></td>
-<td width="50%" valign="top"><a href="papers/production.md#r2"><img src="docs/assets/icons/schedule.png" width="42" height="42" align="left" alt=""><b>R2 · Scheduling and dispatching</b></a><br><sub>Which job should each machine process next?</sub></td>
+<td width="50%" valign="top"><a href="papers/production.md#r1"><img src="docs/assets/icons/cycle_time.png" width="42" height="42" alt=""><br><b>R1 · Cycle-time and delivery prediction</b></a><br><sub>When will a lot finish, and will it be delivered on time?</sub></td>
+<td width="50%" valign="top"><a href="papers/production.md#r2"><img src="docs/assets/icons/schedule.png" width="42" height="42" alt=""><br><b>R2 · Scheduling and dispatching</b></a><br><sub>Which job should each machine process next?</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/production.md#r3"><img src="docs/assets/icons/transport.png" width="42" height="42" align="left" alt=""><b>R3 · Material handling</b></a><br><sub>How should wafers move between tools?</sub></td>
-<td width="50%" valign="top"><a href="papers/production.md#r4"><img src="docs/assets/icons/bottleneck.png" width="42" height="42" align="left" alt=""><b>R4 · Bottleneck and production-state analysis</b></a><br><sub>Where is production constrained, and what factory state explains the delay?</sub></td>
+<td width="50%" valign="top"><a href="papers/production.md#r3"><img src="docs/assets/icons/transport.png" width="42" height="42" alt=""><br><b>R3 · Material handling</b></a><br><sub>How should wafers move between tools?</sub></td>
+<td width="50%" valign="top"><a href="papers/production.md#r4"><img src="docs/assets/icons/bottleneck.png" width="42" height="42" alt=""><br><b>R4 · Bottleneck and production-state analysis</b></a><br><sub>Where is production constrained, and what factory state explains the delay?</sub></td>
 </tr>
 </table>
 
 <table>
-<tr><td width="150" align="center" valign="middle"><a href="papers/fabs.md"><img src="docs/assets/icons/fab_vertical.png" width="110" alt="Fabs"><br><b>Fabs</b></a></td><td><b>What keeps the factory running?</b><br>Utilities, resources and capacity.</td></tr>
-</table>
-
-<table>
+<tr><td colspan="2" width="900"><img src="docs/assets/icons/fab_vertical.png" width="90" align="right" alt=""><h3><a href="papers/fabs.md">Fabs</a></h3><b>What keeps the factory running?</b><br>Utilities, resources and capacity.</td></tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/fabs.md#f1"><img src="docs/assets/icons/utility.png" width="42" height="42" align="left" alt=""><b>F1 · Utility and resource operation</b></a><br><sub>How should cooling, power, air and water systems serve production efficiently?</sub></td>
-<td width="50%" valign="top"><a href="papers/fabs.md#f2"><img src="docs/assets/icons/capacity.png" width="42" height="42" align="left" alt=""><b>F2 · Capacity planning</b></a><br><sub>What equipment, qualifications or factory space should be added or reassigned?</sub></td>
+<td width="50%" valign="top"><a href="papers/fabs.md#f1"><img src="docs/assets/icons/utility.png" width="42" height="42" alt=""><br><b>F1 · Utility and resource operation</b></a><br><sub>How should cooling, power, air and water systems serve production efficiently?</sub></td>
+<td width="50%" valign="top"><a href="papers/fabs.md#f2"><img src="docs/assets/icons/capacity.png" width="42" height="42" alt=""><br><b>F2 · Capacity planning</b></a><br><sub>What equipment, qualifications or factory space should be added or reassigned?</sub></td>
 </tr>
 </table>
 
