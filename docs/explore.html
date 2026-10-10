@@ -6,7 +6,7 @@
     <title>Paper library · AI-Assisted Semiconductor Manufacturing</title>
     <meta
       name="description"
-      content="Explore AI-assisted semiconductor manufacturing: an interactive task atlas, a guide from wafer to chip, and a curated research library."
+      content="Explore AI-assisted semiconductor manufacturing: manufacturing tasks and AI stages, a guide from wafer to chip, and a curated research library."
     />
     <meta name="theme-color" content="#fbf8ef" />
     <meta
@@ -39,7 +39,7 @@
         ></a
       >
       <nav aria-label="Main navigation">
-        <a href="index.html#atlas">Atlas</a
+        <a href="index.html#tasks">Tasks</a
         ><a href="index.html#manufacturing">Manufacturing</a
         ><a href="index.html#stages">AI stages</a
         ><a href="explore.html" aria-current="page">Papers</a>
@@ -186,8 +186,8 @@
             <p class="eyebrow">The research collection</p>
             <h1 id="library-title">Explore the literature<span>.</span></h1>
             <p id="library-question">
-              Search across manufacturing tasks, or start with a question from
-              the atlas.
+              Explore manufacturing tasks and AI stages. Combine filters to
+              follow the questions that interest you.
             </p>
           </div>
           <img
@@ -197,6 +197,22 @@
             height="130"
             alt=""
           />
+        </div>
+        <div class="library-stages" aria-label="Filter by AI stage">
+          <button data-filter-stage="" aria-pressed="true">All stages</button
+          ><button data-filter-stage="L1" aria-pressed="false">
+            <small>L1</small> Perception</button
+          ><button data-filter-stage="L2" aria-pressed="false">
+            <small>L2</small> Prediction</button
+          ><button data-filter-stage="L3" aria-pressed="false">
+            <small>L3</small> Reasoning</button
+          ><button data-filter-stage="L4" aria-pressed="false">
+            <small>L4</small> Planning</button
+          ><button data-filter-stage="L5" aria-pressed="false">
+            <small>L5</small> Autonomy</button
+          ><button data-filter-stage="supporting" aria-pressed="false">
+            Testbeds
+          </button>
         </div>
         <form class="library-controls" role="search">
           <label class="search-field"
@@ -238,6 +254,7 @@
           <p id="result-count" role="status" aria-live="polite"></p>
           <button class="text-link" id="reset-filters">Reset filters ↺</button>
         </div>
+        <div id="active-filters" aria-label="Active filters"></div>
         <div id="paper-results"></div>
         <div class="load-more">
           <button class="button" id="load-more">Show more papers ↓</button>

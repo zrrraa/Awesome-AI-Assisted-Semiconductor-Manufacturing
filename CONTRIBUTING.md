@@ -7,15 +7,17 @@ Know a useful paper, dataset or implementation? [Open an issue](https://github.c
 1. Add the paper to its main task in `papers/`, keeping the list newest first. Copy a neighboring entry’s format.
 2. Include the full title, year, authors and venue. Link to the DOI, publisher or author’s preprint, and label preprints clearly.
 3. Add its BibTeX entry to `references.bib`, using the same citation key as the paper’s anchor. For a dataset or implementation, update `RESOURCES.md` and link to the original project.
-4. Run `python scripts/build_catalogue.py` to update the project page's paper library from the reading lists, and include the generated `docs/assets/catalogue.js` in your commit.
+4. Add the paper’s reviewed AI-stage labels and catalogue scope to `data/ai-stages.json`, following the [stage guide](docs/ai-stages.md). Match those labels in the reading-list entry.
+5. Run `python scripts/build_catalogue.py` and include the generated `docs/assets/catalogue.js` and `docs/assets/coverage.csv` in your commit. These power the on-site filters and research visualizations.
 
 The five scopes and task links are on the [homepage](README.md#papers). Choose the task by the paper’s manufacturing objective or action.
 
 ## Entry format
 
 ```markdown
-- <a id="surname2026keyword"></a>**[Full paper title](https://doi.org/...)**<br>
-  2026 · Surname et al. · *Venue* · [Code](https://github.com/owner/project)
+- <a id="surname2026keyword"></a>**Full paper title**<br>
+  2026 · Surname et al. · *Venue*<br>
+  [Paper ↗](https://doi.org/...) · [Code](https://github.com/owner/project) · `L2 Prediction`
 ```
 
 Code and data links are optional. Prefer original releases and label third-party implementations. Keep reported results with the dataset and evaluation conditions needed to interpret them.

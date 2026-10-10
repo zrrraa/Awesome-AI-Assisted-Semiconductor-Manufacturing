@@ -8,8 +8,8 @@
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-36875B?style=flat-square" alt="Pull requests welcome"></a>
 </p>
 
-<p align="center"><span><a href="mailto:rzhong@zju.edu.cn">Rui Zhong</a><sup>1</sup></span> · <span>Zhikun Huang<sup>1</sup></span> · <span>Xue Zhang<sup>1</sup></span> · <span>Qian Jin<sup>1</sup></span> · <span><a href="mailto:li.yu@zju.edu.cn">Yu Li</a><sup>1</sup></span><br>
-<span>Qi Sun<sup>1</sup></span> · <span>Dawei Gao<sup>2,1</sup></span> · <span>Yi Song<sup>1</sup></span> · <span>Hanming Wu<sup>1,*</sup></span> · <span><a href="mailto:czhuo@zju.edu.cn">Cheng Zhuo</a><sup>1,*</sup></span></p>
+<p align="center"><span><a href="mailto:rzhong@zju.edu.cn">Rui Zhong</a><sup>1</sup></span> · <span><a href="mailto:3230106225@zju.edu.cn">Zhikun Huang</a><sup>1</sup></span> · <span><a href="mailto:xuezhangxz@zju.edu.cn">Xue Zhang</a><sup>1</sup></span> · <span><a href="mailto:jinqian2022@zju.edu.cn">Qian Jin</a><sup>1</sup></span> · <span><a href="mailto:li.yu@zju.edu.cn">Yu Li</a><sup>1</sup></span><br>
+<span><a href="mailto:qisunchn@zju.edu.cn">Qi Sun</a><sup>1</sup></span> · <span><a href="mailto:dawei_gao@zju.edu.cn">Dawei Gao</a><sup>2,1</sup></span> · <span><a href="mailto:yi.song@zju.edu.cn">Yi Song</a><sup>1</sup></span> · <span><a href="mailto:hanmingwu@zju.edu.cn">Hanming Wu</a><sup>1,*</sup></span> · <span><a href="mailto:czhuo@zju.edu.cn">Cheng Zhuo</a><sup>1,*</sup></span></p>
 <p align="center"><sub><span><sup>1</sup> College of Integrated Circuits, Zhejiang University</span> &nbsp; <span><sup>2</sup> Zhejiang ICsprout Semiconductor Co., Ltd.</span><br>* Corresponding authors.</sub></p>
 
 <p align="center"><img src="docs/assets/overview.jpg" width="1000" alt="Fig. 1. Five manufacturing scopes and nineteen tasks, connected with five AI stages from Perception to Autonomy."></p>
@@ -26,7 +26,7 @@
 
 ## 🔥 News
 
-- **2026-10-10** — The [interactive atlas and paper library](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/) are live: explore manufacturing tasks, follow the wafer-to-chip process, and browse research directly on the project page.
+- **2026-10-10** — The [interactive research guide and paper library](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/) are live: explore manufacturing tasks, follow the wafer-to-chip process, and browse research directly on the project page.
 - **2026-10-08** — Task-based reading lists and the survey companion are online.
 
 <a id="citation"></a>
@@ -48,6 +48,16 @@ If you find the survey useful, please cite it:
 ```
 
 </details>
+
+## ✳ From Perception to Autonomy
+
+The survey follows AI’s growing role in manufacturing: recognizing observations, predicting outcomes, explaining causes, choosing actions and improving through feedback. A paper can address several stages; the labels follow the survey’s reviewed literature coding.
+
+<p align="center"><img src="docs/assets/web/stages.webp" width="1000" alt="Five AI stages from Perception to Autonomy"></p>
+
+[◉ **Perception**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1) · [◇ **Prediction**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2) · [✳ **Reasoning**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L3) · [⤴ **Planning**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4) · [↻ **Autonomy**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L5)
+
+[Explore manufacturing scope × AI stage →](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/#coverage)
 
 <a id="papers"></a>
 <a id="browse-by-manufacturing-task"></a>

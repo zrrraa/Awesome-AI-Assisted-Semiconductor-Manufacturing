@@ -1,7 +1,7 @@
 /* The public reading lists are the source of truth; no server or API is needed. */
 (() => {
   "use strict";
-  const { tasks, papers } = window.MANUFACTURING_CATALOGUE;
+  const { tasks, papers, stages } = window.MANUFACTURING_CATALOGUE;
   const byTask = new Map(tasks.map((t) => [t.id, t]));
   const scopes = ["artifacts", "processes", "equipment", "production", "fabs"];
   const scopeIcons = [
@@ -58,10 +58,10 @@
     const task = byTask.has(q.get("task")) ? q.get("task") : "";
     return {
       task,
-      scope: task
-        ? byTask.get(task).scope
-        : scopes.includes(q.get("scope"))
-          ? q.get("scope")
+      scope: scopes.includes(q.get("scope")) ? q.get("scope") : "",
+      stage:
+        stages[q.get("stage")] || q.get("stage") === "supporting"
+          ? q.get("stage")
           : "",
       q: q.get("q") || "",
       year: /^\d{4}$/.test(q.get("year") || "") ? q.get("year") : "",
@@ -74,7 +74,8 @@
     limit = 24;
     const q = new URLSearchParams();
     if (state.task) q.set("task", state.task);
-    else if (state.scope) q.set("scope", state.scope);
+    if (state.scope) q.set("scope", state.scope);
+    if (state.stage) q.set("stage", state.stage);
     if (state.q) q.set("q", state.q);
     if (state.year) q.set("year", state.year);
     if (state.sort !== "newest") q.set("sort", state.sort);
@@ -108,11 +109,7 @@
     card.append(el("div", "paper-year", p.year));
     const body = el("div", "paper-body"),
       h = el("h2");
-    const link = external(p.url, p.title),
-      arrow = el("span", "", "↗");
-    arrow.setAttribute("aria-hidden", "true");
-    link.append(arrow);
-    h.append(link);
+    h.textContent = p.title;
     body.append(h, el("p", "paper-meta", p.authors + " · " + p.venue));
     const bottom = el("div", "paper-bottom"),
       tag = el(
@@ -122,12 +119,22 @@
       );
     tag.href = "explore.html?task=" + p.task;
     tag.dataset.selectTask = p.task;
-    bottom.append(tag);
+    bottom.append(external(p.url, "Paper ↗", "paper-resource"));
     for (const resource of p.resources)
       bottom.append(
         external(resource.url, resource.label + " ↗", "paper-resource"),
       );
-    body.append(bottom);
+    const tags = el("div", "paper-tags");
+    tags.append(tag);
+    if (p.preprint) tags.append(el("span", "support-chip", "Preprint"));
+    for (const stage of p.stages) {
+      const chip = el("a", "stage-chip", stage + " · " + stages[stage]);
+      chip.href = "explore.html?stage=" + stage;
+      chip.dataset.selectStage = stage;
+      tags.append(chip);
+    }
+    if (!p.stages.length) tags.append(el("span", "support-chip", p.role));
+    body.append(bottom, tags);
     card.append(body);
     return card;
   }
@@ -135,7 +142,11 @@
     return papers.filter(
       (p) =>
         (!state.task || p.task === state.task) &&
-        (!state.scope || p.scope === state.scope),
+        (!state.scope || p.catalogueScope === state.scope) &&
+        (!state.stage ||
+          (state.stage === "supporting"
+            ? !p.stages.length
+            : p.stages.includes(state.stage))),
     );
   }
   function render(append = false) {
@@ -145,12 +156,14 @@
       ? task.id + " · " + task.title
       : state.scope
         ? "AI for " + state.scope
-        : "Explore the literature.";
+        : state.stage
+          ? stages[state.stage] || "Research testbeds"
+          : "Explore the literature.";
     $("#library-question").textContent =
       task?.question ||
       (state.scope
         ? "Browse the tasks and research within this manufacturing scope."
-        : "Search across manufacturing tasks, or start with a question from the atlas.");
+        : "Explore manufacturing tasks and AI stages. Combine filters to follow the questions that interest you.");
     $("#library-icon").src = task
       ? "assets/icons/" + icons[tasks.indexOf(task)] + ".png"
       : scopeIndex >= 0
@@ -162,6 +175,28 @@
         : state.scope
           ? "AI for " + state.scope
           : "Paper library") + " · AI × Manufacturing";
+    document
+      .querySelectorAll("[data-filter-stage]")
+      .forEach((b) =>
+        b.setAttribute(
+          "aria-pressed",
+          String(b.dataset.filterStage === state.stage),
+        ),
+      );
+    const active = $("#active-filters");
+    active.replaceChildren();
+    for (const [key, value, label] of [
+      ["task", state.task, task?.title],
+      ["scope", state.scope, state.scope],
+      ["stage", state.stage, stages[state.stage] || "Research testbeds"],
+      ["year", state.year, state.year],
+    ]) {
+      if (!value) continue;
+      const b = el("button", "", label + " ×");
+      b.setAttribute("aria-label", "Remove " + label + " filter");
+      b.addEventListener("click", () => setState({ [key]: "" }));
+      active.append(b);
+    }
     search.value = state.q;
     scopeFilter.value = state.scope;
     sortFilter.value = state.sort;
@@ -217,7 +252,7 @@
         (task ? " in " + task.id : "")
       : "No papers match these filters";
     more.hidden = limit >= filtered.length;
-    if (!append) window.AtlasUI?.reveal(results, { y: 8, duration: 0.3 });
+    if (!append) window.SurveyUI?.reveal(results, { y: 8, duration: 0.3 });
   }
   document.addEventListener("click", (e) => {
     const a = e.target.closest("[data-select-task], [data-all-papers]");
@@ -226,7 +261,8 @@
     e.preventDefault();
     setState({
       task: a.dataset.selectTask || "",
-      scope: a.dataset.selectTask ? byTask.get(a.dataset.selectTask).scope : "",
+      scope: "",
+      ...(a.hasAttribute("data-all-papers") ? { stage: "" } : {}),
       q: "",
       year: "",
       sort: "newest",
@@ -243,6 +279,20 @@
       });
     }
   });
+  document
+    .querySelectorAll("[data-filter-stage]")
+    .forEach((b) =>
+      b.addEventListener("click", () =>
+        setState({ stage: b.dataset.filterStage, year: "" }),
+      ),
+    );
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-select-stage]");
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button)
+      return;
+    e.preventDefault();
+    setState({ stage: a.dataset.selectStage, year: "" });
+  });
   $(".library-controls").addEventListener("submit", (e) => e.preventDefault());
   search.addEventListener("input", () => {
     clearTimeout(searchTimer);
@@ -258,7 +308,14 @@
     setState({ sort: sortFilter.value }),
   );
   $("#reset-filters").addEventListener("click", () => {
-    setState({ q: "", year: "", sort: "newest" });
+    setState({
+      task: "",
+      scope: "",
+      stage: "",
+      q: "",
+      year: "",
+      sort: "newest",
+    });
     search.focus();
   });
   more.addEventListener("click", () => {
@@ -266,7 +323,7 @@
     limit += 24;
     render(true);
     results.children[first]
-      ?.querySelector("h2 a")
+      ?.querySelector(".paper-resource")
       ?.focus({ preventScroll: true });
   });
   window.addEventListener("popstate", () => {
@@ -286,7 +343,10 @@
     document
       .querySelectorAll(".scope-nav")
       .forEach(
-        (d) => (d.open = !!state.task && d.classList.contains(state.scope)),
+        (d) =>
+          (d.open =
+            !!state.task &&
+            d.classList.contains(byTask.get(state.task)?.scope)),
       );
   render();
 })();

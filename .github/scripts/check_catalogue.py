@@ -60,7 +60,7 @@ def main():
     entries = []
     for name, content in documents.items():
         if name.startswith('papers/'):
-            ids = re.findall(r'^- <a id="([a-zA-Z0-9_-]+)"></a>\*\*\[', content, re.M)
+            ids = re.findall(r'^- <a id="([a-zA-Z0-9_-]+)"></a>\*\*', content, re.M)
             if not ids:
                 errors.append(f'{name}: no paper entries found')
             entries.extend(ids)

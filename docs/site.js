@@ -1,4 +1,4 @@
-/* Interaction and motion shared by the atlas and the reading library. */
+/* Interaction and motion shared by the research guide and the reading library. */
 (() => {
   "use strict";
   const $ = (s, root = document) => root.querySelector(s);
@@ -24,19 +24,42 @@
     );
     running.set(el, animation);
   }
-  window.AtlasUI = { reveal, toast };
+  window.SurveyUI = { reveal, toast };
   if (window.Motion && !reduced.matches) {
     Motion.inView(
-      ".section-heading, .journey, .stage-detail, .vision, .cite-card",
+      ".section-heading, .journey, .stage-detail, .vision-sheet, .cite-card",
       (el) => {
         reveal(el, { y: 22, duration: 0.7 });
       },
     );
-    Motion.inView(".insight-grid", (el) => {
-      $$(".insight-card", el).forEach((card, i) =>
-        reveal(card, { delay: i * 0.08, y: 18 }),
+    Motion.inView(".map-wrap", (el) => {
+      Motion.animate(
+        el,
+        { opacity: [0.2, 1], y: [48, 0], rotate: [-1.8, 0] },
+        { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
       );
     });
+    Motion.inView(".coverage", (el) => {
+      reveal(el, { y: 35, duration: 0.85 });
+      Motion.animate(
+        $$(".matrix-cell", el),
+        { opacity: [0, 1], scale: [0.6, 1] },
+        {
+          delay: Motion.stagger(0.025),
+          duration: 0.65,
+          ease: [0.22, 1, 0.36, 1],
+        },
+      );
+    });
+    if ($(".interlude"))
+      Motion.scroll(
+        Motion.animate(
+          ".interlude",
+          { x: [-10, 10], rotate: [-2.3, 0.8] },
+          { ease: "linear" },
+        ),
+        { target: $(".interlude"), offset: ["start end", "end start"] },
+      );
     reveal($(".hero-heading"), { duration: 0.8, y: 16 });
     reveal($(".hero-side"), { duration: 0.8, delay: 0.1, y: 14 });
   }
@@ -263,36 +286,244 @@
       "Explore feedback control",
     ],
   ];
-  wireTabs("[data-stage]", (index, tab) => {
-    const [name, title, body, example, label, task, link] = stages[index];
+  let currentStage = 0,
+    stageTimer;
+  const stopStageTour = () => {
+    clearInterval(stageTimer);
+    stageTimer = undefined;
+    const button = $(".play-stages");
+    if (button) {
+      button.setAttribute("aria-pressed", "false");
+      button.innerHTML =
+        '<span aria-hidden="true">▶</span> Play the progression';
+    }
+  };
+  const activateStage = wireTabs("[data-stage]", (index, tab) => {
+    currentStage = index;
+    const [name, title, body, example] = stages[index];
     $("#stage-detail").setAttribute("aria-labelledby", tab.id);
-    // The five scenes share one continuous illustration, with unequal widths.
-    const slices = [
-      [0, 0.22],
-      [0.1833, 0.25],
-      [0.3861, 0.22],
-      [0.5639, 0.225],
-      [0.75, 0.25],
-    ];
-    $(".stage-visual").style.setProperty("--strip-start", slices[index][0]);
-    $(".stage-visual").style.setProperty("--strip-slice", slices[index][1]);
-    $(".stage-giant").textContent = String(index + 1).padStart(2, "0");
-    $(".stage-mini-label").textContent = label;
+    $(".robot-strip").style.setProperty("--active-part", index);
+    $(".stage-index").textContent = String(index + 1).padStart(2, "0");
     $(".stage-copy .eyebrow").textContent = "L" + (index + 1) + " / " + name;
     $(".stage-copy h3").textContent = title;
     $(".stage-copy>p:not(.eyebrow)").textContent = body;
     $(".stage-example>p").textContent = example;
-    const a = $(".stage-copy>.text-link");
-    a.href = "explore.html?task=" + task;
-    a.textContent = link + " ↗";
-    reveal($(".stage-copy"), { y: 10, duration: 0.45 });
+    const a = $(".stage-library");
+    a.href = "explore.html?stage=L" + (index + 1);
+    a.textContent = "Explore " + name + " papers ↗";
+    $$(".robot-hotspot").forEach((b, i) =>
+      b.setAttribute("aria-pressed", String(i === index)),
+    );
+    const rail = $(".robot-scroll"),
+      strip = $(".robot-strip");
+    if (rail.scrollWidth > rail.clientWidth)
+      rail.scrollTo({
+        left: Math.max(
+          0,
+          (strip.clientWidth * (index + 0.5)) / 5 - rail.clientWidth / 2,
+        ),
+        behavior: reduced.matches ? "instant" : "smooth",
+      });
+    reveal($(".stage-copy"), { y: 12, duration: 0.5 });
+    reveal($(".stage-example"), { y: 8, delay: 0.06 });
   });
+  $$("[data-robot]").forEach((b) =>
+    b.addEventListener("click", () => activateStage(Number(b.dataset.robot))),
+  );
+  if (activateStage) activateStage(0);
+  $(".play-stages")?.addEventListener("click", () => {
+    if (stageTimer) return stopStageTour();
+    if (currentStage === 4) activateStage(0);
+    const button = $(".play-stages");
+    button.setAttribute("aria-pressed", "true");
+    button.innerHTML = '<span aria-hidden="true">Ⅱ</span> Pause progression';
+    stageTimer = setInterval(
+      () =>
+        currentStage === 4 ? stopStageTour() : activateStage(currentStage + 1),
+      5500,
+    );
+  });
+  $$("[data-stage],[data-robot]").forEach((button) => {
+    button.addEventListener("pointerdown", stopStageTour);
+    button.addEventListener("keydown", stopStageTour);
+  });
+  if ($("#stages"))
+    new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) stopStageTour();
+    }).observe($("#stages"));
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopStageTour();
+  });
+  const catalogue = window.MANUFACTURING_CATALOGUE;
+  if ($(".coverage-matrix") && catalogue) {
+    const { papers, stages: stageNames, coverage } = catalogue;
+    const names = ["Artifacts", "Processes", "Equipment", "Production", "Fabs"];
+    const icons = [
+      "artifact_wide",
+      "process",
+      "equipment",
+      "production",
+      "fab_vertical",
+    ];
+    const colors = ["#cbb0eb", "#c5d599", "#efbd8c", "#9ccfd8", "#a7bce7"];
+    const matrix = $("#coverage-matrix");
+    const node = (tag, cls, txt) => {
+      const n = document.createElement(tag);
+      n.className = cls;
+      if (txt !== undefined) n.textContent = txt;
+      return n;
+    };
+    matrix.append(node("div", "matrix-corner", "MANUFACTURING / AI"));
+    Object.entries(stageNames).forEach(([k, name]) => {
+      const h = node("a", "matrix-heading");
+      h.href = "explore.html?stage=" + k;
+      h.append(node("small", "", k), document.createTextNode(name));
+      matrix.append(h);
+    });
+    coverage.forEach((row, i) => {
+      const label = node("a", "matrix-row");
+      label.href = "explore.html?scope=" + row.scope;
+      const icon = node("img", "");
+      icon.src = "assets/icons/" + icons[i] + ".png";
+      icon.alt = "";
+      icon.width = 35;
+      icon.height = 39;
+      const text = node("span", "", names[i]);
+      text.append(node("small", "", row.total + " papers"));
+      label.append(icon, text);
+      matrix.append(label);
+      Object.entries(row.counts).forEach(([stage, count]) => {
+        const a = node("a", "matrix-cell");
+        a.href = "explore.html?scope=" + row.scope + "&stage=" + stage;
+        a.dataset.count = count;
+        a.dataset.share = (count / row.total) * 100;
+        a.dataset.scope = row.scope;
+        a.dataset.stage = stage;
+        a.style.setProperty("--bubble", colors[i]);
+        a.append(node("span", "", ""));
+        const description =
+          names[i] +
+          " × " +
+          stageNames[stage] +
+          ": " +
+          count +
+          " of " +
+          row.total +
+          " papers (" +
+          ((count / row.total) * 100).toFixed(1) +
+          "%).";
+        a.setAttribute("aria-label", description + " Browse papers.");
+        ["mouseenter", "focus"].forEach((evt) =>
+          a.addEventListener(
+            evt,
+            () => ($("#coverage-readout").textContent = description),
+          ),
+        );
+        matrix.append(a);
+      });
+    });
+    const maxCount = Math.max(
+      ...coverage.flatMap((r) => Object.values(r.counts)),
+    );
+    function changeUnit(unit) {
+      $$("[data-unit]").forEach((b) =>
+        b.setAttribute("aria-pressed", String(b.dataset.unit === unit)),
+      );
+      $$(".matrix-cell").forEach((a) => {
+        const value = Number(a.dataset[unit]),
+          fraction = unit === "share" ? value / 100 : value / maxCount;
+        const size = 72 * Math.sqrt(fraction);
+        a.style.setProperty("--size", Math.max(5, size) + "px");
+        a.classList.toggle("small-value", size < 31);
+        a.firstChild.textContent =
+          unit === "share" ? Math.round(value) + "%" : value;
+      });
+      $(".size-key").lastChild.textContent =
+        " Circle area = " +
+        (unit === "share" ? "share of scope" : "paper count");
+    }
+    $$("[data-unit]").forEach((b) =>
+      b.addEventListener("click", () => changeUnit(b.dataset.unit)),
+    );
+    changeUnit("share");
+    const counts = new Map();
+    papers.forEach((p) => counts.set(p.year, (counts.get(p.year) || 0) + 1));
+    const years = [...counts.keys()].sort((a, b) => a - b),
+      max = Math.max(...counts.values());
+    for (let year = years[0]; year <= years.at(-1); year++) {
+      const count = counts.get(year) || 0,
+        a = node("a", "year-bar");
+      a.href = "explore.html?year=" + year;
+      a.style.setProperty("--share", count / max);
+      a.setAttribute(
+        "aria-label",
+        year + ": " + count + " papers. Browse papers.",
+      );
+      a.append(
+        node("span", "year-value", count),
+        node("span", "bar"),
+        node(
+          "span",
+          "year-label",
+          year % 2 === 0 || year === years.at(-1) ? year : "",
+        ),
+      );
+      $("#timeline-chart").append(a);
+    }
+    wireTabs("[data-chart]", (i) => {
+      $("#scope-chart").hidden = i !== 0;
+      $("#year-chart").hidden = i !== 1;
+      $(".chart-unit").hidden = i !== 0;
+      reveal($(i ? "#year-chart" : "#scope-chart"), { y: 10 });
+    });
+  }
+  if (catalogue)
+    $$(".figure-hotspot").forEach((a) => {
+      const t = catalogue.tasks.find((t) => t.id === a.dataset.task);
+      ["mouseenter", "focus"].forEach((evt) =>
+        a.addEventListener(
+          evt,
+          () => ($("#map-selection").textContent = t.id + " · " + t.title),
+        ),
+      );
+      a.addEventListener(
+        "mouseleave",
+        () => ($("#map-selection").textContent = "Choose a manufacturing task"),
+      );
+    });
+  // Small spring-like magnetic feedback stays outside the figure coordinate system.
+  if (matchMedia("(pointer:fine)").matches) {
+    $$(".button, .round-stamp").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        if (reduced.matches) return;
+        const r = el.getBoundingClientRect();
+        el.style.translate =
+          (e.clientX - r.left - r.width / 2) * 0.09 +
+          "px " +
+          (e.clientY - r.top - r.height / 2) * 0.14 +
+          "px";
+      });
+      el.addEventListener("pointerleave", () => (el.style.translate = "0 0"));
+    });
+  }
   const dialog = $(".diagram-dialog");
-  $("[data-open-diagram]")?.addEventListener("click", () => {
-    dialog.showModal();
-    document.body.style.overflow = "hidden";
-    reveal(dialog, { y: 15, duration: 0.3 });
-  });
+  $$("[data-open-diagram]").forEach((button) =>
+    button.addEventListener("click", () => {
+      const vision = button.dataset.openDiagram === "vision";
+      $(".diagram-scroll img").src = vision
+        ? "assets/web/virtual-fab.webp"
+        : "assets/overview.jpg";
+      $(".diagram-scroll img").alt = vision
+        ? "AI-native autonomous virtual fab diagram"
+        : "Manufacturing tasks and AI stages diagram";
+      $("#diagram-title").textContent = vision
+        ? "AI-native autonomous virtual fab"
+        : "Manufacturing tasks & AI stages";
+      dialog.showModal();
+      document.body.style.overflow = "hidden";
+      reveal(dialog, { y: 15, duration: 0.3 });
+    }),
+  );
   $(".close-dialog")?.addEventListener("click", () => dialog.close());
   dialog?.addEventListener("click", (e) => {
     if (e.target === dialog) {

@@ -1,0 +1,3048 @@
+{
+  "description": "Reviewed multi-label AI-stage assignments used by the survey manufacturing-scope coverage figure. Scope follows the survey catalogue; task assignment is maintained in papers/*.md.",
+  "stages": {
+    "L1": "Perception",
+    "L2": "Prediction",
+    "L3": "Reasoning",
+    "L4": "Planning",
+    "L5": "Autonomy"
+  },
+  "papers": {
+    "chien2013f3d27": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "wu2015wafermap": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "alawieh2018waferpatterns": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "kim201867e53": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "kyeong20181169e": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "nakazawa2018wafercnn": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "tello2018494e4": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "nakazawa20199c306": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "alawieh2020selective": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "kong202040838": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "tsai2020wafer": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "wang2020dcnet": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "chen20210cf5d": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "geng2021c3c37": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "hu2021contrastivewafer": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "kim202138343": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "shon2021d0034": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "yu2021ccaa7": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "ebayyeh2022wafercaps": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "liao202229014": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "nafi2022swin": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "nag2022waferseg": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "sarpietro20228b9f2": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "tziolas2022imbalanced": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "wei2022msftrans": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "batool2023a2cnn": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "lee20232e276": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "rundo202387b0b": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "sang2023f1df5": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "shin2023efficient": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "wang2023semicontrastive": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "yan2023wafersegmentation": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "kim202405b6d": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "mishra2024wafercap": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "pandaram2024wassabi": {
+      "stages": [
+        "L1",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "wang2024defectglm": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "lee2025ensemblewafer": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "mohammad2025tinyvit": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "nagamura2025capsnet": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "shin2025unknownwafer": {
+      "stages": [
+        "L1",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "tsai2025g2lgan": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "cao2026zeroshotwafer": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "yue2026incilm": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "cheon2019unknown": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "imoto2019transfer": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "patel20201ba46": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "phua2020d8bb3": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2021xraywire": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "evanschitzky2021e806e": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "kim2021fe009": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "dey202280520": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "dey202281985": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "dey2022ec5d2": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "ofir20222f400": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "schlosser2022078e8": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "sweeney2022db52a": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "yan202279ccc": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "de20232711d": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "deridder2023semidiff": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "huang2023atnet": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "zhan2023lmnet": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "choi202459d1e": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "dey2024semgeneration": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "jin2024selectivenet": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "jin2024semclip": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "qiao20249632b": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "qiao2024semlabels": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "bae2025renin": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "barusco2025ad0c4": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "dey20256ec4f": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "gu2025nanotomography": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "hasic2025carinthia": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "huang2025semvit": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "jeong2025mtformer": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "made2025anomalyspy": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "park2025semdenoise": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "stegmann2025fibsem": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "zhao2025intrinsic": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "cai20269b965": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2026segsem": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "friedrich2026dicing": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "jin2026semclip2": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "liang2026556ee": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "poniatowski2026semda": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "shao2026recamenet": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "zeng202688ade": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "zhao2026snapsem": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "zhang2016onlinehotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "park2018lithoaware": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "xu2018sraflearning": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2019regionhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "choi2019nncopc": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "geng2019sraf": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "lin2019lithotransfer": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "reddy2019hotspotpitfalls": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2019hotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "ye2019lithogan": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "ye2019lithogpa": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zepka201942c07": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2020damo": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang2020neuralilt": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "li2020layoutdecomposition": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "ma2020ade32": {
+      "stages": [
+        "L1",
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2020ganopc": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zepka2020ee692": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "alawieh2021gansraf": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "cai2021neurfill": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2021develset": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "huang2021hybridhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang2021binarizedhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "shao2021lithonet": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhu2021transformerhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "ciou20223e031": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "gai2022fcntransferhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "geng2022metrichotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2022cfno": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2022doinn": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "zhao2022adaopc": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhong2022decompositionmask": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "liu2023lada": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zheng2023e64a8": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2024diffsmo": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2024llmhd": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "chiu202482b38": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "liang2024camo": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "liang2024rlopc": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2024ililt": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhu2024l2oilt": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2025d393f": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "he2025lithosim": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "hu2025maskopt": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "jin2025unitho": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "shao2025lithohod": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "sun2025errormarkerhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "tseng202595bad": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "wang2025lmlitho": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "wang2025polygonhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "wu20258bd25": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "yu2025rulelearner": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zheng2025lithopatternbase": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2026bismo": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "he2026lithomamba": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "hu2026morphopc": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang2026lithodreamer": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "lai2026lithogrpo": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "li2026nonmanhattanhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "ma2026vectorcorrection": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "rashid2026e2920": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "xu2026hiilt": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2026generativeilt": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhang2026circlemwco": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhu2026innilt": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhang2011virtualprobe": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "kim201950127": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "fan2020ffc2d": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang20200e8fa": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "kim202087f46": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "kim202095dd9": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang202163d26": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "choe2022fefetvariation": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "lenhard20228f006": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "xu202264482": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "jayaram20237b80c": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "lee202307f0d": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "guo2024040f0": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "liu2024scatterometry": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "busch2025twostep": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2025hierarchical": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2025warpagefloorplan": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "dey2025069aa": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "kim20252e296": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "kottur2025289c0": {
+      "stages": [
+        "L1",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "wang2025warpage": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "bae2026ccdc8": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "jo202640d49": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "chien2007yieldmining": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "chien2014retrospectivedoe": {
+      "stages": [
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "nakata201732228": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "chen20187a527": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "bankapalli201965162": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "lee2019541c8": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "teo2019b221c": {
+      "stages": [
+        "L2",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "cheng2020testpathdiagnosis": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "kwan202100cc1": {
+      "stages": [
+        "L1",
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "ngow2021a4492": {
+      "stages": [
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "shim2021c035d": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "lee2022a06d0": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "zhang2022fef35": {
+      "stages": [
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "chen202341da3": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "kim2023sensormining": {
+      "stages": [
+        "L2",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "braakman20246d915": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang2024fabgpt": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "dobrovsky2025c34c6": {
+      "stages": [
+        "L3",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "gu2025wamglm": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "ide2025fa115": {
+      "stages": [
+        "L2",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang2025fabthink": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "miyaguchi202570622": {
+      "stages": [
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "miyaguchi202598da9": {
+      "stages": [
+        "L2",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "shon202567e58": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "choi202635868": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "doh2026f57e1": {
+      "stages": [
+        "L2",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang2026fabgpt": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "liao2026c957f": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "mitard202681444": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "yin20263df6e": {
+      "stages": [
+        "L2",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "gun2015bdbee": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhao20188521a": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chen20192dc25": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "fazil2019869d1": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chuang2020ef69d": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "liu2020adaptivetest": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "selg2020bfd5e": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "xanthopoulos202094a1d": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "kim2021e5c50": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "najafihaghi2023resistiveopenfeatures": {
+      "stages": [
+        "L1",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "shao2023lithoactive": {
+      "stages": [
+        "L1",
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhou20239bd46": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "dekhovich2025ccb3b": {
+      "stages": [
+        "L1",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "pan2025imbalance": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "jeon2026ad613": {
+      "stages": [
+        "L1",
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "shaik2026fbca2": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "wise199712719": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "wise1999d6164": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "yue2000c1aea": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "wise2001491ec": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "goodlin2003f1a0e": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "cherry200678cba": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "yu200931383": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "processes"
+    },
+    "yang2010f5084": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "yang2011e904f": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "hong2013c1001": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "chien2014e02f6": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "processes"
+    },
+    "yang2014e6d7e": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "qin2015aa8d7": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "lee2016f61d1": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "jang2017f6576": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "lee2017668e6": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "liu20175c61a": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "susto201774541": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "fan20192b3a7": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "processes"
+    },
+    "jang201950f5c": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "kim20196674f": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "azamfar2020d7394": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "fan202054ae2": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "kim202045b7b": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "yong20202ad46": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "chang202153a98": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "hsu2021e0887": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "tchatchoua2021c146e": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "chien20221d9f3": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "fan20221bbda": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "jebril20227d2f9": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "lang2022e8b8a": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "maggipinto2022ebaeb": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "hwang2023e645d": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "alamin2024415c4": {
+      "stages": [
+        "L1",
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "kim2024endpoint": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "yang20249b221": {
+      "stages": [
+        "L3"
+      ],
+      "scope": "processes"
+    },
+    "yun2024f86e4": {
+      "stages": [
+        "L2",
+        "L3"
+      ],
+      "scope": "processes"
+    },
+    "kim2025cecca": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "hwang2026fdff6": {
+      "stages": [
+        "L1",
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "li202676457": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "hung20077cdb8": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "kang2009fc6bb": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "zhenyu201028502": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "besnard201268520": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "lynn2012globalvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "hwang2014e385c": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "purwins2014regression": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "roeder2014804ed": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "susto2015multistepvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "kang20161f504": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "di2017cmp": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "jang201748e2f": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "processes"
+    },
+    "jia2018gmdh": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "li2018cmpmodels": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "li2018stacking": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "maggipinto2018visionvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "park20189d296": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "maggipinto2019deepvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "yu2019physicscmp": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "gentner2020domainvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "choi20218784a": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "xie2021cvdvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "yan2021e7690": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "zhang2021rescnn": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "choi20228b458": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "ji2022multitaskvm": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "liu2022fusioncmp": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "shim2022activevm": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "tin20227d20a": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "xia2022hgcn": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "fan202382079": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "ou2024da0be": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "breidung20257f82a": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "chien2025conformalnil": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "lau2025c3fd5": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "xu2025afcaf": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "card2000bbfce": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "guler20215c53c": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "yu2021cmpoptimization": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "li2022atomisticprocess": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "senoner20223145a": {
+      "stages": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "kanarik20237f4c0": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "feng2024mlmdetch": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "james2024757f5": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "chang2025bcdfa": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "chen2025161c4": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "gu2025mfl": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "hu2025etchbo": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "seo2025aldsurrogate": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "wang20256a2b5": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "guo2026offlineetch": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "oh2026aa64b": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "taye20266e9b8": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "zeng2026pgnn": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "card1998845e8": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "khan2008adaptivevm": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "cheng20117ab1f": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "cheng2012automaticvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "tamaki2012b7398": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "fan2013adaptivecontrol": {
+      "stages": [
+        "L1",
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "kao2013reliablevm": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "tanaka2013280a0": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "wan2018ed057": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "feng2019onlinevm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "yang2020physicsr2r": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "zhong2021cautious": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "chien2022fb17f": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "li2024rlcontrol": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "ma2024cef19": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "han2025309c6": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "jee202539713": {
+      "stages": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "lin2025075d4": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "ma2025scntd3": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "fan2026mixedr2r": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "myung2026832ec": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "processes"
+    },
+    "chen2009movingvariance": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "equipment"
+    },
+    "hong20123d45f": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "equipment"
+    },
+    "nawaz20143858a": {
+      "stages": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "scope": "equipment"
+    },
+    "biebl202097a6d": {
+      "stages": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "burch2020c2f39": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "park2021401c5": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "fu2022143f5": {
+      "stages": [
+        "L3",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "kim2022edc63": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "kwon20222cd2a": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "choi20234516b": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "hsieh2023b5358": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "kim2023aa035": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "tchatchoua20230dea5": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "choi20249939e": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "jeon2024c0186": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "hosseinpour202567aeb": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "lin20256a3c7": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "suh2025flssdan": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "tsai2025ef896": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "equipment"
+    },
+    "yin2025aaaed": {
+      "stages": [
+        "L1",
+        "L3",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "bejani20261f69d": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "bejani2026d51c1": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "kotcher20265a285": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "lee2026423c6": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "equipment"
+    },
+    "zhang202690939": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "susto2012calibration": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "susto2012implantation": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "susto2015multiclassifier": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "huang2018abrupt": {
+      "stages": [
+        "L1",
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "singh2018ionrul": {
+      "stages": [
+        "L1",
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "vishnu2018ionrul": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "jalali20195522b": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "liu2021iontransfer": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "wu2021flowcool": {
+      "stages": [
+        "L1",
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "geurtsen2022maintenance": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "hsu2022tclstm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "zhao2022rultransformer": {
+      "stages": [
+        "L1",
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "amato20239360b": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "umeda20232b853": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "wright2024dbf27": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "yuan2024multibranch": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "minami2025similarity": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "phongmoo202500cfe": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "wright2025f54b8": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "yin2025277ec": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "lee2026d8c0d": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "siswandi2026dd47c": {
+      "stages": [
+        "L1",
+        "L2"
+      ],
+      "scope": "equipment"
+    },
+    "zhu20235859f": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "pitz202483362": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "kotcher2025bd3ec": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "equipment"
+    },
+    "backus2006cycletime": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "meidan2011ee25e": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "wang2018e3c55": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "wang2018e90e0": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "lee2021fd093": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "kuo2026ff460": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "jain20033768a": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "min200395f77": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "chen20117ff96": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "zhang2011testscheduling": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "li201352d3d": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "waschneck201839410": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "ao2019jointmaintenance": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "kuhnle2019f619c": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "kopp2020cqt": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "kopp2020smt": {
+      "stages": [],
+      "scope": "production",
+      "role": "Research testbed"
+    },
+    "wang2020518ac": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "wang20215fc36": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "konstantelos20222142f": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "adamson20232c945": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "park2023packagingrl": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "tassel202378b79": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "kim2024a6c40": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "kong20244f826": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "may20243037e": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "sood2024212cc": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "chen2025decisiongraph": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "choi2026cluster": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "jang20254f60d": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "jin20255ee21": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "martin2025b4dff": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "stockermann2025scalability": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "immordino2026c973d": {
+      "stages": [
+        "L3",
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "ma2026batch": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "xiang20260f869": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "xiang2026c5b20": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "hwang2020ohtrouting": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "hong2022oht": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "lee2022274c9": {
+      "stages": [],
+      "scope": "production",
+      "role": "Research testbed"
+    },
+    "cho2025rtsrtd": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "chou2025emptyvehicles": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "kang20250ee32": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "koo2026linkweights": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "bagchi200805af9": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "kuo2011892b4": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "production"
+    },
+    "lee2017a0dc6": {
+      "stages": [
+        "L1",
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "seok2021250cd": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "singgih2021637f5": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "production"
+    },
+    "kovacs202260e51": {
+      "stages": [],
+      "scope": "production",
+      "role": "Research testbed"
+    },
+    "deenen2024d39d8": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "hong2025capacity": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "kuo2025a4102": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "pendyala202551ba8": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "behrendt2026d5585": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "production"
+    },
+    "cho202698db8": {
+      "stages": [
+        "L3"
+      ],
+      "scope": "production"
+    },
+    "chien201821d47": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "tsai2019a2c0c": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "chang2021a0c48": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "chien2021ee213": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "chang202264832": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "lin202239606": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "lee2025b106d": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "fabs"
+    },
+    "li2025096d4": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "fabs"
+    },
+    "ni202536ea7": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "fabs"
+    },
+    "ni2025c0070": {
+      "stages": [
+        "L3",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "chang2026615da": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "fabs"
+    },
+    "jeon2026wastewater": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "kim20264b9bc": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "fabs"
+    },
+    "kim202676e8d": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "fabs"
+    },
+    "lee20268643f": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "li20268f0ba": {
+      "stages": [
+        "L1",
+        "L3",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "li2026ultrapurewater": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "fabs"
+    },
+    "musa20265fc32": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "wu2005d9097": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "hu2007waferlayout": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "khan2007d8b08": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "fabs"
+    },
+    "wu2007capacitytrading": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "kopp2016qualification": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "pianne2016flexibility": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "romauch2017cluster": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "ko2022cbec7": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "suh202246d72": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "kuo20230c628": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "sekiya2025planning": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "andelfinger202675e11": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "fabs"
+    },
+    "lee2026e9b08": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "shim2017resist3d": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "kwon2023resistcnn": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    }
+  }
+}

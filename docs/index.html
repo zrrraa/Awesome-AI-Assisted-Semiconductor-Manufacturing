@@ -6,7 +6,7 @@
     <title>Awesome AI-Assisted Semiconductor Manufacturing</title>
     <meta
       name="description"
-      content="Explore AI-assisted semiconductor manufacturing: an interactive task atlas, a guide from wafer to chip, and a curated research library."
+      content="Explore AI-assisted semiconductor manufacturing: manufacturing tasks and AI stages, a guide from wafer to chip, and a curated research library."
     />
     <meta name="theme-color" content="#fbf8ef" />
     <meta
@@ -21,6 +21,7 @@
     <link rel="apple-touch-icon" href="assets/web/brand.png" />
     <link rel="stylesheet" href="style.css" />
     <script src="assets/vendor/motion-14.1.0.js" defer></script>
+    <script src="assets/catalogue.js" defer></script>
     <script src="site.js" defer></script>
   </head>
   <body>
@@ -37,7 +38,7 @@
         ></a
       >
       <nav aria-label="Main navigation">
-        <a href="index.html#atlas">Atlas</a
+        <a href="index.html#tasks">Tasks</a
         ><a href="index.html#manufacturing">Manufacturing</a
         ><a href="index.html#stages">AI stages</a
         ><a href="explore.html">Papers</a>
@@ -71,512 +72,337 @@
             Awesome AI-Assisted<br /><em>Semiconductor</em
             ><br />Manufacturing<span class="title-dot">.</span>
           </h1>
+          <div class="hero-index">
+            <a href="#tasks"><span>01—02</span> Manufacturing <b>↓</b></a
+            ><a href="#stages"
+              ><span>03—04</span> Artificial intelligence <b>↓</b></a
+            >
+          </div>
         </div>
         <div class="hero-side">
           <div class="round-stamp" aria-hidden="true">
-            <span>PERCEPTION</span><b>✳</b><span>AUTONOMY</span>
+            <span>OBSERVE · DECIDE</span><b>✳</b><span>ACT · LEARN</span>
           </div>
-          <h2>
-            From wafer patterns<br />
-            to factory decisions.
-          </h2>
+          <h2>From <em>Perception</em><br />to <em>Autonomy.</em></h2>
           <p>
-            Explore how AI interprets manufacturing data, guides decisions and
-            learns from their outcomes.
+            How does AI move from recognizing a defect to coordinating a
+            factory? Explore the manufacturing tasks, the methods and the
+            decisions that connect them.
           </p>
           <div class="actions">
-            <a class="button primary" href="#atlas"
-              >Explore the atlas <span>↓</span></a
+            <a class="button primary" href="explore.html"
+              >Explore the papers <span>↗</span></a
             ><a class="text-link" href="#citation">Cite the survey ↗</a>
           </div>
         </div>
       </section>
-      <div class="scope-ribbon" aria-label="Browse by manufacturing scope">
-        <a class="artifacts" href="explore.html?scope=artifacts"
-          ><img
-            src="assets/icons/artifact_wide.png"
-            alt=""
-            width="64"
-            height="58"
-          /><span>Artifacts</span><b aria-hidden="true">↗</b></a
-        ><a class="processes" href="explore.html?scope=processes"
-          ><img
-            src="assets/icons/process.png"
-            alt=""
-            width="64"
-            height="58"
-          /><span>Processes</span><b aria-hidden="true">↗</b></a
-        ><a class="equipment" href="explore.html?scope=equipment"
-          ><img
-            src="assets/icons/equipment.png"
-            alt=""
-            width="64"
-            height="58"
-          /><span>Equipment</span><b aria-hidden="true">↗</b></a
-        ><a class="production" href="explore.html?scope=production"
-          ><img
-            src="assets/icons/production.png"
-            alt=""
-            width="64"
-            height="58"
-          /><span>Production</span><b aria-hidden="true">↗</b></a
-        ><a class="fabs" href="explore.html?scope=fabs"
-          ><img
-            src="assets/icons/fab_vertical.png"
-            alt=""
-            width="64"
-            height="58"
-          /><span>Fabs</span><b aria-hidden="true">↗</b></a
-        >
-      </div>
-      <section class="section atlas-section" id="atlas">
+      <section class="section research-map" id="tasks">
+        <span id="atlas" class="anchor-alias"></span>
         <div class="section-heading">
           <div>
-            <p class="eyebrow">01 / The manufacturing atlas</p>
+            <p class="eyebrow">01 / Manufacturing tasks</p>
             <h2>Many tasks.<br /><em>One connected factory.</em></h2>
           </div>
           <div class="section-aside">
             <p>
-              Start with a manufacturing question.<br />Select any task to
-              explore its research.
+              Products, processes, equipment, production and facilities. Select
+              a task in the figure to explore the papers.
             </p>
-            <a class="text-link" href="explore.html">Browse all papers ↗</a>
+            <button class="text-link" data-open-diagram="overview">
+              View full figure ⤢
+            </button>
           </div>
         </div>
-        <div class="atlas-map">
-          <section
-            class="atlas-scope artifacts"
-            aria-labelledby="scope-artifacts"
+        <div class="map-wrap">
+          <span class="map-sticker" aria-hidden="true"
+            >Find your<br /><em>next question.</em><b>↙</b></span
           >
-            <div class="scope-heading">
+          <div class="figure-scroll">
+            <div class="original-map">
               <img
-                src="assets/icons/artifact_wide.png"
-                alt=""
-                width="65"
-                height="65"
+                src="assets/overview.jpg"
+                width="3200"
+                height="2368"
+                fetchpriority="high"
+                alt="AI-assisted semiconductor manufacturing: nineteen tasks across five manufacturing scopes, and five stages from Perception to Autonomy."
               />
-              <div>
-                <h3 id="scope-artifacts">Artifacts</h3>
-                <p>Products, patterns &amp; quality</p>
+              <div class="figure-hotspots">
+                <a
+                  class="figure-hotspot"
+                  style="
+                    left: 18.6961%;
+                    top: 7.6475%;
+                    width: 26.0776%;
+                    height: 6.4822%;
+                  "
+                  href="explore.html?task=A1"
+                  data-task="A1"
+                  aria-label="A1: Wafer spatial-pattern analysis. Browse papers"
+                  ><span>A1 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 45.4741%;
+                    top: 7.6475%;
+                    width: 26.0776%;
+                    height: 6.4822%;
+                  "
+                  href="explore.html?task=A2"
+                  data-task="A2"
+                  aria-label="A2: Local defect detection and localization. Browse papers"
+                  ><span>A2 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 72.3599%;
+                    top: 7.6475%;
+                    width: 26.0776%;
+                    height: 6.4822%;
+                  "
+                  href="explore.html?task=A3"
+                  data-task="A3"
+                  aria-label="A3: Computational lithography. Browse papers"
+                  ><span>A3 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 18.6961%;
+                    top: 14.9308%;
+                    width: 26.0776%;
+                    height: 6.4822%;
+                  "
+                  href="explore.html?task=A4"
+                  data-task="A4"
+                  aria-label="A4: Product quality and yield inference. Browse papers"
+                  ><span>A4 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 45.4741%;
+                    top: 14.9308%;
+                    width: 26.0776%;
+                    height: 6.4822%;
+                  "
+                  href="explore.html?task=A5"
+                  data-task="A5"
+                  aria-label="A5: Yield-loss diagnosis and root-cause analysis. Browse papers"
+                  ><span>A5 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 72.3599%;
+                    top: 14.9308%;
+                    width: 26.0776%;
+                    height: 6.4822%;
+                  "
+                  href="explore.html?task=A6"
+                  data-task="A6"
+                  aria-label="A6: Adaptive testing and inspection. Browse papers"
+                  ><span>A6 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 12.3384%;
+                    top: 28.2593%;
+                    width: 17.7802%;
+                    height: 6.555%;
+                  "
+                  href="explore.html?task=P1"
+                  data-task="P1"
+                  aria-label="P1: Process monitoring and endpoint detection. Browse papers"
+                  ><span>P1 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 12.3384%;
+                    top: 35.5426%;
+                    width: 17.7802%;
+                    height: 5.1712%;
+                  "
+                  href="explore.html?task=P2"
+                  data-task="P2"
+                  aria-label="P2: Virtual metrology. Browse papers"
+                  ><span>P2 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 12.3384%;
+                    top: 41.4421%;
+                    width: 17.7802%;
+                    height: 5.8267%;
+                  "
+                  href="explore.html?task=P3"
+                  data-task="P3"
+                  aria-label="P3: Process development and recipe optimization. Browse papers"
+                  ><span>P3 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 1.0237%;
+                    top: 48.2156%;
+                    width: 29.1487%;
+                    height: 4.1515%;
+                  "
+                  href="explore.html?task=P4"
+                  data-task="P4"
+                  aria-label="P4: Run-to-run and feedback control. Browse papers"
+                  ><span>P4 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 69.8815%;
+                    top: 28.2593%;
+                    width: 15.9483%;
+                    height: 8.0845%;
+                  "
+                  href="explore.html?task=E1"
+                  data-task="E1"
+                  aria-label="E1: Fault detection and diagnosis. Browse papers"
+                  ><span>E1 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 69.8815%;
+                    top: 37.1449%;
+                    width: 15.9483%;
+                    height: 8.0117%;
+                  "
+                  href="explore.html?task=E2"
+                  data-task="E2"
+                  aria-label="E2: Prognostics and maintenance. Browse papers"
+                  ><span>E2 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 69.8815%;
+                    top: 46.1763%;
+                    width: 29.1487%;
+                    height: 6.1908%;
+                  "
+                  href="explore.html?task=E3"
+                  data-task="E3"
+                  aria-label="E3: Calibration, matching and qualification. Browse papers"
+                  ><span>E3 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 15.3556%;
+                    top: 58.6307%;
+                    width: 21.9828%;
+                    height: 5.9723%;
+                  "
+                  href="explore.html?task=R1"
+                  data-task="R1"
+                  aria-label="R1: Cycle-time and delivery prediction. Browse papers"
+                  ><span>R1 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 38.0927%;
+                    top: 58.6307%;
+                    width: 21.875%;
+                    height: 5.9723%;
+                  "
+                  href="explore.html?task=R2"
+                  data-task="R2"
+                  aria-label="R2: Scheduling and dispatching. Browse papers"
+                  ><span>R2 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 15.3556%;
+                    top: 65.1857%;
+                    width: 21.9828%;
+                    height: 5.9723%;
+                  "
+                  href="explore.html?task=R3"
+                  data-task="R3"
+                  aria-label="R3: Material handling. Browse papers"
+                  ><span>R3 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 38.0927%;
+                    top: 65.1857%;
+                    width: 21.875%;
+                    height: 5.9723%;
+                  "
+                  href="explore.html?task=R4"
+                  data-task="R4"
+                  aria-label="R4: Bottleneck and production-state analysis. Browse papers"
+                  ><span>R4 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 75.5927%;
+                    top: 58.6307%;
+                    width: 23.4375%;
+                    height: 5.9723%;
+                  "
+                  href="explore.html?task=F1"
+                  data-task="F1"
+                  aria-label="F1: Utility and resource operation. Browse papers"
+                  ><span>F1 ↗</span></a
+                ><a
+                  class="figure-hotspot"
+                  style="
+                    left: 75.5927%;
+                    top: 65.1857%;
+                    width: 23.4375%;
+                    height: 5.9723%;
+                  "
+                  href="explore.html?task=F2"
+                  data-task="F2"
+                  aria-label="F2: Capacity planning. Browse papers"
+                  ><span>F2 ↗</span></a
+                >
               </div>
-              <a
-                href="explore.html?scope=artifacts"
-                aria-label="Browse all artifacts papers"
-                >↗</a
-              >
             </div>
-            <div class="atlas-tasks">
-              <a
-                class="atlas-task"
-                href="explore.html?task=A1"
-                data-task="A1"
-                aria-label="A1: Wafer spatial-pattern analysis. Browse papers"
-                ><img
-                  src="assets/icons/wafer.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>A1</small
-                  ><strong>Wafer spatial-pattern analysis</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=A2"
-                data-task="A2"
-                aria-label="A2: Local defect detection and localization. Browse papers"
-                ><img
-                  src="assets/icons/local.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>A2</small
-                  ><strong
-                    >Local defect detection and localization</strong
-                  ></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=A3"
-                data-task="A3"
-                aria-label="A3: Computational lithography. Browse papers"
-                ><img
-                  src="assets/icons/lithography.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>A3</small
-                  ><strong>Computational lithography</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=A4"
-                data-task="A4"
-                aria-label="A4: Product quality and yield inference. Browse papers"
-                ><img
-                  src="assets/icons/quality.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>A4</small
-                  ><strong>Product quality and yield inference</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=A5"
-                data-task="A5"
-                aria-label="A5: Yield-loss diagnosis and root-cause analysis. Browse papers"
-                ><img
-                  src="assets/icons/root_cause.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>A5</small
-                  ><strong
-                    >Yield-loss diagnosis and root-cause analysis</strong
-                  ></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=A6"
-                data-task="A6"
-                aria-label="A6: Adaptive testing and inspection. Browse papers"
-                ><img
-                  src="assets/icons/probe.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>A6</small
-                  ><strong>Adaptive testing and inspection</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              >
-            </div>
-          </section>
-          <section
-            class="atlas-scope processes"
-            aria-labelledby="scope-processes"
-          >
-            <div class="scope-heading">
-              <img
-                src="assets/icons/process.png"
-                alt=""
-                width="65"
-                height="65"
-              />
-              <div>
-                <h3 id="scope-processes">Processes</h3>
-                <p>Measurements, recipes &amp; control</p>
-              </div>
-              <a
-                href="explore.html?scope=processes"
-                aria-label="Browse all processes papers"
-                >↗</a
-              >
-            </div>
-            <div class="atlas-tasks">
-              <a
-                class="atlas-task"
-                href="explore.html?task=P1"
-                data-task="P1"
-                aria-label="P1: Process monitoring and endpoint detection. Browse papers"
-                ><img
-                  src="assets/icons/monitoring_clear.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>P1</small
-                  ><strong
-                    >Process monitoring and endpoint detection</strong
-                  ></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=P2"
-                data-task="P2"
-                aria-label="P2: Virtual metrology. Browse papers"
-                ><img
-                  src="assets/icons/vm_clear.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>P2</small><strong>Virtual metrology</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=P3"
-                data-task="P3"
-                aria-label="P3: Process development and recipe optimization. Browse papers"
-                ><img
-                  src="assets/icons/recipes_clear.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>P3</small
-                  ><strong
-                    >Process development and recipe optimization</strong
-                  ></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=P4"
-                data-task="P4"
-                aria-label="P4: Run-to-run and feedback control. Browse papers"
-                ><img
-                  src="assets/icons/feedback_clear.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>P4</small
-                  ><strong>Run-to-run and feedback control</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              >
-            </div>
-          </section>
-          <div class="atlas-center" aria-hidden="true">
-            <div class="factory-halo"></div>
-            <svg class="atlas-path" viewBox="0 0 400 300">
-              <path d="M200 0V300 M0 150H400" />
-              <circle r="4">
-                <animateMotion
-                  dur="7s"
-                  repeatCount="indefinite"
-                  path="M0 150H200V0"
-                />
-              </circle>
-              <circle r="4">
-                <animateMotion
-                  dur="9s"
-                  repeatCount="indefinite"
-                  path="M400 150H200V300"
-                />
-              </circle></svg
+          </div>
+          <div class="map-status">
+            <span
+              ><i></i>
+              <span id="map-selection">Choose a manufacturing task</span></span
+            ><a href="explore.html">Open paper library ↗</a>
+          </div>
+        </div>
+        <div class="scope-ribbon" aria-label="Browse by manufacturing scope">
+          <a class="artifacts" href="explore.html?scope=artifacts"
             ><img
-              src="assets/web/factory.webp"
-              width="660"
-              height="395"
+              src="assets/icons/artifact_wide.png"
               alt=""
-            /><span>Data · Decisions · Feedback</span>
-          </div>
-          <section
-            class="atlas-scope equipment"
-            aria-labelledby="scope-equipment"
+              width="64"
+              height="58"
+            /><span>Artifacts</span><b aria-hidden="true">↗</b></a
+          ><a class="processes" href="explore.html?scope=processes"
+            ><img
+              src="assets/icons/process.png"
+              alt=""
+              width="64"
+              height="58"
+            /><span>Processes</span><b aria-hidden="true">↗</b></a
+          ><a class="equipment" href="explore.html?scope=equipment"
+            ><img
+              src="assets/icons/equipment.png"
+              alt=""
+              width="64"
+              height="58"
+            /><span>Equipment</span><b aria-hidden="true">↗</b></a
+          ><a class="production" href="explore.html?scope=production"
+            ><img
+              src="assets/icons/production.png"
+              alt=""
+              width="64"
+              height="58"
+            /><span>Production</span><b aria-hidden="true">↗</b></a
+          ><a class="fabs" href="explore.html?scope=fabs"
+            ><img
+              src="assets/icons/fab_vertical.png"
+              alt=""
+              width="64"
+              height="58"
+            /><span>Fabs</span><b aria-hidden="true">↗</b></a
           >
-            <div class="scope-heading">
-              <img
-                src="assets/icons/equipment.png"
-                alt=""
-                width="65"
-                height="65"
-              />
-              <div>
-                <h3 id="scope-equipment">Equipment</h3>
-                <p>Health, maintenance &amp; readiness</p>
-              </div>
-              <a
-                href="explore.html?scope=equipment"
-                aria-label="Browse all equipment papers"
-                >↗</a
-              >
-            </div>
-            <div class="atlas-tasks">
-              <a
-                class="atlas-task"
-                href="explore.html?task=E1"
-                data-task="E1"
-                aria-label="E1: Fault detection and diagnosis. Browse papers"
-                ><img
-                  src="assets/icons/diagnosis.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>E1</small
-                  ><strong>Fault detection and diagnosis</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=E2"
-                data-task="E2"
-                aria-label="E2: Prognostics and maintenance. Browse papers"
-                ><img
-                  src="assets/icons/prognosis.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>E2</small
-                  ><strong>Prognostics and maintenance</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=E3"
-                data-task="E3"
-                aria-label="E3: Calibration, matching and qualification. Browse papers"
-                ><img
-                  src="assets/icons/qualification.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>E3</small
-                  ><strong
-                    >Calibration, matching and qualification</strong
-                  ></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              >
-            </div>
-          </section>
-          <section
-            class="atlas-scope production"
-            aria-labelledby="scope-production"
-          >
-            <div class="scope-heading">
-              <img
-                src="assets/icons/production.png"
-                alt=""
-                width="65"
-                height="65"
-              />
-              <div>
-                <h3 id="scope-production">Production</h3>
-                <p>Lots, schedules &amp; material flow</p>
-              </div>
-              <a
-                href="explore.html?scope=production"
-                aria-label="Browse all production papers"
-                >↗</a
-              >
-            </div>
-            <div class="atlas-tasks">
-              <a
-                class="atlas-task"
-                href="explore.html?task=R1"
-                data-task="R1"
-                aria-label="R1: Cycle-time and delivery prediction. Browse papers"
-                ><img
-                  src="assets/icons/cycle_time.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>R1</small
-                  ><strong>Cycle-time and delivery prediction</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=R2"
-                data-task="R2"
-                aria-label="R2: Scheduling and dispatching. Browse papers"
-                ><img
-                  src="assets/icons/schedule.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>R2</small
-                  ><strong>Scheduling and dispatching</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=R3"
-                data-task="R3"
-                aria-label="R3: Material handling. Browse papers"
-                ><img
-                  src="assets/icons/transport.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>R3</small><strong>Material handling</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=R4"
-                data-task="R4"
-                aria-label="R4: Bottleneck and production-state analysis. Browse papers"
-                ><img
-                  src="assets/icons/bottleneck.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>R4</small
-                  ><strong
-                    >Bottleneck and production-state analysis</strong
-                  ></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              >
-            </div>
-          </section>
-          <section class="atlas-scope fabs" aria-labelledby="scope-fabs">
-            <div class="scope-heading">
-              <img
-                src="assets/icons/fab_vertical.png"
-                alt=""
-                width="65"
-                height="65"
-              />
-              <div>
-                <h3 id="scope-fabs">Fabs</h3>
-                <p>Utilities, resources &amp; capacity</p>
-              </div>
-              <a
-                href="explore.html?scope=fabs"
-                aria-label="Browse all fabs papers"
-                >↗</a
-              >
-            </div>
-            <div class="atlas-tasks">
-              <a
-                class="atlas-task"
-                href="explore.html?task=F1"
-                data-task="F1"
-                aria-label="F1: Utility and resource operation. Browse papers"
-                ><img
-                  src="assets/icons/utility.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>F1</small
-                  ><strong>Utility and resource operation</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              ><a
-                class="atlas-task"
-                href="explore.html?task=F2"
-                data-task="F2"
-                aria-label="F2: Capacity planning. Browse papers"
-                ><img
-                  src="assets/icons/capacity.png"
-                  width="45"
-                  height="45"
-                  alt=""
-                /><span
-                  ><small>F2</small><strong>Capacity planning</strong></span
-                ><span class="task-arrow" aria-hidden="true">↗</span></a
-              >
-            </div>
-          </section>
-        </div>
-        <div class="atlas-bottom">
-          <p>
-            <span class="dot-set" aria-hidden="true"
-              ><i></i><i></i><i></i><i></i><i></i
-            ></span>
-            Five scopes, connected through manufacturing decisions.
-          </p>
-          <button class="text-link" data-open-diagram>
-            View the complete diagram ↗
-          </button>
         </div>
       </section>
       <section class="team" aria-label="About the survey">
@@ -585,16 +411,29 @@
           Manufacturing
         </p>
         <div class="authors">
-          <a href="mailto:rzhong@zju.edu.cn">Rui Zhong<sup>1</sup></a
-          ><span>Zhikun Huang<sup>1</sup></span
-          ><span>Xue Zhang<sup>1</sup></span
-          ><span>Qian Jin<sup>1</sup></span
-          ><a href="mailto:li.yu@zju.edu.cn">Yu Li<sup>1</sup></a
-          ><span>Qi Sun<sup>1</sup></span
-          ><span>Dawei Gao<sup>2,1</sup></span
-          ><span>Yi Song<sup>1</sup></span
-          ><span>Hanming Wu<sup>1,*</sup></span
-          ><a href="mailto:czhuo@zju.edu.cn">Cheng Zhuo<sup>1,*</sup></a>
+          <a href="mailto:rzhong@zju.edu.cn" title="rzhong@zju.edu.cn"
+            >Rui Zhong<sup>1</sup></a
+          ><a href="mailto:3230106225@zju.edu.cn" title="3230106225@zju.edu.cn"
+            >Zhikun Huang<sup>1</sup></a
+          ><a href="mailto:xuezhangxz@zju.edu.cn" title="xuezhangxz@zju.edu.cn"
+            >Xue Zhang<sup>1</sup></a
+          ><a
+            href="mailto:jinqian2022@zju.edu.cn"
+            title="jinqian2022@zju.edu.cn"
+            >Qian Jin<sup>1</sup></a
+          ><a href="mailto:li.yu@zju.edu.cn" title="li.yu@zju.edu.cn"
+            >Yu Li<sup>1</sup></a
+          ><a href="mailto:qisunchn@zju.edu.cn" title="qisunchn@zju.edu.cn"
+            >Qi Sun<sup>1</sup></a
+          ><a href="mailto:dawei_gao@zju.edu.cn" title="dawei_gao@zju.edu.cn"
+            >Dawei Gao<sup>2,1</sup></a
+          ><a href="mailto:yi.song@zju.edu.cn" title="yi.song@zju.edu.cn"
+            >Yi Song<sup>1</sup></a
+          ><a href="mailto:hanmingwu@zju.edu.cn" title="hanmingwu@zju.edu.cn"
+            >Hanming Wu<sup>1,*</sup></a
+          ><a href="mailto:czhuo@zju.edu.cn" title="czhuo@zju.edu.cn"
+            >Cheng Zhuo<sup>1,*</sup></a
+          >
         </div>
         <div class="affiliations">
           <span
@@ -605,18 +444,15 @@
         <p class="corresponding">* Corresponding authors.</p>
       </section>
       <aside class="news" id="news">
-        <b><span aria-hidden="true">🔥</span> News</b
-        ><time datetime="2026-10-10">10 OCT 2026</time>
-        <p>
-          The interactive atlas and on-site paper library are now available.
-        </p>
+        <b>🔥 News</b><time datetime="2026-10-10">10 OCT 2026</time>
+        <p>Explore the research by manufacturing task and AI stage.</p>
         <a href="explore.html" aria-label="Explore the paper library">↗</a>
       </aside>
       <section class="section manufacturing" id="manufacturing">
         <div class="section-heading">
           <div>
             <p class="eyebrow">02 / Inside manufacturing</p>
-            <h2>A chip is made<br /><em>one operation at a time.</em></h2>
+            <h2>From wafer<br /><em>to finished chip.</em></h2>
           </div>
           <div class="section-aside">
             <p>
@@ -628,13 +464,15 @@
         </div>
         <div class="journey">
           <div class="journey-window">
-            <img
-              src="assets/web/journey.webp"
-              width="3600"
-              height="1260"
-              loading="lazy"
-              alt="Illustrated semiconductor production line, showing material transformations from a bare wafer through fabrication, wafer testing, dicing, packaging and final testing."
-            /><span class="journey-badge"><i></i> Inside the fab</span>
+            <div class="panorama">
+              <img
+                src="assets/wafer-to-chip.jpg"
+                width="3600"
+                height="1260"
+                loading="lazy"
+                alt="Illustrated semiconductor production line, showing material transformations from a bare wafer through fabrication, wafer testing, dicing, packaging and final testing."
+              />
+            </div>
           </div>
           <div
             class="journey-tabs"
@@ -767,246 +605,294 @@
           </div>
         </div>
       </section>
+
+      <div class="interlude" aria-hidden="true">
+        <span>Recognize</span><b>↗</b><em>Predict</em><b>✳</b
+        ><span>Explain</span><b>→</b><em>Plan</em><b>↗</b
+        ><span>Act & learn</span>
+      </div>
       <section class="section stages" id="stages">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">03 / From Perception to Autonomy</p>
-            <h2>From recognizing patterns<br /><em>to acting on them.</em></h2>
+            <p class="eyebrow">03 / Five AI stages</p>
+            <h2>From Perception<br /><em>to Autonomy.</em></h2>
           </div>
           <div class="section-aside">
             <p>
-              Each stage extends what AI does with manufacturing data—from
-              recognizing a pattern to carrying out decisions and learning from
-              feedback.
+              Recognize what is happening, anticipate outcomes, explain causes,
+              choose actions and learn from their effects.
             </p>
+            <span class="hand-note">Follow the progression ↙</span>
           </div>
         </div>
-        <div class="stage-tabs" role="tablist" aria-label="Five AI stages">
-          <button
-            role="tab"
-            id="stage-0"
-            aria-selected="true"
-            aria-controls="stage-detail"
-            tabindex="0"
-            data-stage="0"
-          >
-            <small>L1</small>Perception<span aria-hidden="true"
-              >↗</span
-            ></button
-          ><button
-            role="tab"
-            id="stage-1"
-            aria-selected="false"
-            aria-controls="stage-detail"
-            tabindex="-1"
-            data-stage="1"
-          >
-            <small>L2</small>Prediction<span aria-hidden="true"
-              >↗</span
-            ></button
-          ><button
-            role="tab"
-            id="stage-2"
-            aria-selected="false"
-            aria-controls="stage-detail"
-            tabindex="-1"
-            data-stage="2"
-          >
-            <small>L3</small>Reasoning<span aria-hidden="true">↗</span></button
-          ><button
-            role="tab"
-            id="stage-3"
-            aria-selected="false"
-            aria-controls="stage-detail"
-            tabindex="-1"
-            data-stage="3"
-          >
-            <small>L4</small>Planning<span aria-hidden="true">↗</span></button
-          ><button
-            role="tab"
-            id="stage-4"
-            aria-selected="false"
-            aria-controls="stage-detail"
-            tabindex="-1"
-            data-stage="4"
-          >
-            <small>L5</small>Autonomy<span aria-hidden="true">↗</span>
-          </button>
-        </div>
-        <div
-          class="stage-detail"
-          id="stage-detail"
-          role="tabpanel"
-          aria-labelledby="stage-0"
-          tabindex="0"
-        >
-          <div class="stage-visual">
-            <span class="stage-orbit" aria-hidden="true"></span
-            ><span class="stage-giant" aria-hidden="true">01</span>
-            <div class="robot-window">
-              <img
+        <div class="stage-board">
+          <div class="stage-tabs" role="tablist" aria-label="Five AI stages">
+            <button
+              role="tab"
+              id="stage-0"
+              aria-selected="true"
+              aria-controls="stage-detail"
+              tabindex="0"
+              data-stage="0"
+            >
+              <small>L1</small><span>Perception</span
+              ><b aria-hidden="true">↘</b></button
+            ><button
+              role="tab"
+              id="stage-1"
+              aria-selected="false"
+              aria-controls="stage-detail"
+              tabindex="-1"
+              data-stage="1"
+            >
+              <small>L2</small><span>Prediction</span
+              ><b aria-hidden="true">↘</b></button
+            ><button
+              role="tab"
+              id="stage-2"
+              aria-selected="false"
+              aria-controls="stage-detail"
+              tabindex="-1"
+              data-stage="2"
+            >
+              <small>L3</small><span>Reasoning</span
+              ><b aria-hidden="true">↘</b></button
+            ><button
+              role="tab"
+              id="stage-3"
+              aria-selected="false"
+              aria-controls="stage-detail"
+              tabindex="-1"
+              data-stage="3"
+            >
+              <small>L4</small><span>Planning</span
+              ><b aria-hidden="true">↘</b></button
+            ><button
+              role="tab"
+              id="stage-4"
+              aria-selected="false"
+              aria-controls="stage-detail"
+              tabindex="-1"
+              data-stage="4"
+            >
+              <small>L5</small><span>Autonomy</span><b aria-hidden="true">↘</b>
+            </button>
+          </div>
+          <div class="robot-scroll">
+            <div class="robot-strip" style="--active-part: 0">
+              <span class="robot-spotlight" aria-hidden="true"></span
+              ><img
                 src="assets/web/stages.webp"
                 width="3600"
                 height="520"
                 loading="lazy"
-                alt="Illustrated robots representing the five stages of AI in manufacturing."
-              />
+                alt="The survey’s continuous illustration of Perception, Prediction, Reasoning, Planning and Autonomy."
+              /><button
+                class="robot-hotspot"
+                style="--part: 0"
+                data-robot="0"
+                aria-label="Explore Perception"
+              >
+                <span class="sr-only">Perception</span></button
+              ><button
+                class="robot-hotspot"
+                style="--part: 1"
+                data-robot="1"
+                aria-label="Explore Prediction"
+              >
+                <span class="sr-only">Prediction</span></button
+              ><button
+                class="robot-hotspot"
+                style="--part: 2"
+                data-robot="2"
+                aria-label="Explore Reasoning"
+              >
+                <span class="sr-only">Reasoning</span></button
+              ><button
+                class="robot-hotspot"
+                style="--part: 3"
+                data-robot="3"
+                aria-label="Explore Planning"
+              >
+                <span class="sr-only">Planning</span></button
+              ><button
+                class="robot-hotspot"
+                style="--part: 4"
+                data-robot="4"
+                aria-label="Explore Autonomy"
+              >
+                <span class="sr-only">Autonomy</span>
+              </button>
             </div>
-            <span class="stage-mini-label">Observe → Recognize</span>
           </div>
-          <div class="stage-copy">
-            <p class="eyebrow">L1 / Perception</p>
-            <h3>What is happening?</h3>
-            <p>
-              Recognize patterns, defects and operating states in images or
-              sensor data.
-            </p>
+          <div
+            class="stage-detail"
+            id="stage-detail"
+            role="tabpanel"
+            aria-labelledby="stage-0"
+            tabindex="0"
+          >
+            <div class="stage-index" aria-hidden="true">01</div>
+            <div class="stage-copy">
+              <p class="eyebrow">L1 / Perception</p>
+              <h3>What is happening?</h3>
+              <p>
+                Recognize patterns, defects and operating states in images or
+                sensor data.
+              </p>
+            </div>
             <div class="stage-example">
               <span>In manufacturing</span>
               <p>
                 Locate a defect in an inspection image, or recognize a spatial
                 failure pattern on a wafer.
               </p>
+              <a class="text-link stage-library" href="explore.html?stage=L1"
+                >Explore Perception papers ↗</a
+              >
             </div>
-            <a class="text-link" href="explore.html?task=A2"
-              >Explore defect detection ↗</a
-            >
           </div>
         </div>
-        <p class="stage-foot">
-          A manufacturing task can span several stages as observations lead to
-          decisions and feedback.
-        </p>
+        <div class="stage-footer">
+          <p class="stage-foot">
+            A paper can span several stages. Select a stage to explore its role
+            and find the related research.
+          </p>
+          <button class="play-stages" aria-pressed="false">
+            <span aria-hidden="true">▶</span> Play the progression
+          </button>
+        </div>
       </section>
-      <section class="section findings" id="insights">
+      <section class="section coverage" id="coverage">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">04 / What connects the research</p>
-            <h2>Better predictions.<br /><em>Better decisions?</em></h2>
+            <p class="eyebrow">04 / The research landscape</p>
+            <h2>Where manufacturing<br /><em>meets intelligence.</em></h2>
           </div>
           <div class="section-aside">
             <p>
-              Manufacturing outcomes depend on how predictions are used. Three
-              connections recur across the review.
+              Explore how the literature is distributed across manufacturing
+              scopes, AI stages and years.
             </p>
+            <a class="text-link" href="explore.html">Explore every paper ↗</a>
           </div>
         </div>
-        <div class="insight-grid">
-          <a class="insight-card artifacts" href="explore.html?task=A1"
-            ><span class="insight-index">01 / Context</span>
-            <div class="insight-art">
-              <img
-                src="assets/icons/wafer.png"
-                width="120"
-                height="120"
-                loading="lazy"
-                alt="Wafer map"
-              /><span class="annotation-tag">Where? When?</span>
-            </div>
-            <h3>The average can hide<br />the important part.</h3>
-            <p>
-              Spatial patterns and process histories reveal differences that a
-              single summary value can miss.
-            </p>
-            <span class="insight-link">Explore wafer patterns ↗</span></a
+        <div class="chart-toolbar">
+          <div
+            class="chart-tabs"
+            role="tablist"
+            aria-label="Research visualizations"
           >
-          <a class="insight-card processes" href="explore.html?task=P4"
-            ><span class="insight-index">02 / Consequences</span>
-            <div class="insight-art">
-              <img
-                src="assets/icons/feedback_clear.png"
-                width="120"
-                height="120"
-                loading="lazy"
-                alt="Process control"
-              /><span class="annotation-tag">What changes next?</span>
-            </div>
-            <h3>A prediction matters<br />through the action it guides.</h3>
-            <p>
-              Choosing a measurement or adjusting a recipe requires
-              understanding what the intervention will change.
-            </p>
-            <span class="insight-link">Explore process control ↗</span></a
-          >
-          <a class="insight-card production" href="explore.html?task=R2"
-            ><span class="insight-index">03 / Coordination</span>
-            <div class="insight-art">
-              <img
-                src="assets/icons/schedule.png"
-                width="120"
-                height="120"
-                loading="lazy"
-                alt="Scheduling"
-              /><span class="annotation-tag">Who else is affected?</span>
-            </div>
-            <h3>Local decisions affect<br />the rest of the factory.</h3>
-            <p>
-              A faster schedule on average can still delay particular products.
-              Factory decisions must account for shared resources.
-            </p>
-            <span class="insight-link">Explore scheduling ↗</span></a
-          >
+            <button
+              id="scope-chart-tab"
+              role="tab"
+              aria-selected="true"
+              aria-controls="scope-chart"
+              tabindex="0"
+              data-chart="scope"
+            >
+              Scope × stage</button
+            ><button
+              id="year-chart-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="year-chart"
+              tabindex="-1"
+              data-chart="year"
+            >
+              Over time
+            </button>
+          </div>
+          <div class="chart-unit" aria-label="Coverage measure">
+            <button aria-pressed="true" data-unit="share">Share of scope</button
+            ><button aria-pressed="false" data-unit="count">Paper count</button>
+          </div>
         </div>
-      </section>
-      <section class="vision">
-        <div class="vision-copy">
-          <p class="eyebrow">A direction for the field</p>
-          <h2>AI-native<br /><em>autonomous virtual fab.</em></h2>
-          <p>
-            A digital environment where models, agents and physical systems
-            support factory decisions and improve them through operating
-            experience.
-          </p>
-          <a class="button" href="explore.html"
-            >Explore the research behind it <span>↗</span></a
-          >
+        <div id="scope-chart" role="tabpanel" aria-labelledby="scope-chart-tab">
+          <div class="matrix-scroll">
+            <div class="coverage-matrix" id="coverage-matrix"></div>
+          </div>
+          <div class="chart-readout">
+            <p id="coverage-readout" role="status">
+              Select a circle to read the papers at that intersection.
+            </p>
+            <span class="size-key"
+              ><i></i><i></i><i></i> Circle area = share of scope</span
+            >
+          </div>
         </div>
         <div
-          class="vision-loop"
-          aria-label="Models predict action consequences; agents coordinate decisions; physical systems produce outcomes; operating experience feeds back to improve decisions."
+          id="year-chart"
+          role="tabpanel"
+          aria-labelledby="year-chart-tab"
+          hidden
         >
-          <svg class="loop-line" viewBox="0 0 500 400" aria-hidden="true">
-            <path d="M250 55C505 55 505 345 250 345C-5 345-5 55 250 55Z" />
-            <circle r="6">
-              <animateMotion
-                dur="12s"
-                repeatCount="indefinite"
-                path="M250 55C505 55 505 345 250 345C-5 345-5 55 250 55Z"
-              />
-            </circle></svg
+          <div class="timeline-chart" id="timeline-chart"></div>
+          <p class="timeline-note">
+            Publication year · Each paper is counted once. Select a year to
+            explore its papers.
+          </p>
+        </div>
+        <div class="coverage-bottom">
+          <p>
+            Papers may span multiple AI stages. Three research testbeds have no
+            stage assignment.
+          </p>
+          <a href="assets/coverage.csv" download>Download data ↓</a>
+        </div>
+      </section>
+      <section class="section fab-vision" id="vision">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">05 / A shared direction</p>
+            <h2>AI-native<br /><em>autonomous virtual fab.</em></h2>
+          </div>
+          <div class="section-aside">
+            <p>
+              Manufacturing outcomes depend on sequences of connected actions.
+              World models and agents can help coordinate these actions and
+              learn from operating experience.
+            </p>
+            <button class="text-link" data-open-diagram="vision">
+              Explore the full diagram ⤢
+            </button>
+          </div>
+        </div>
+        <div class="vision-sheet">
+          <span class="vision-tag">A vision for manufacturing <b>↗</b></span
           ><img
-            class="loop-factory"
-            src="assets/web/factory.webp"
-            width="660"
-            height="395"
+            src="assets/web/virtual-fab.webp"
+            width="3200"
+            height="1778"
             loading="lazy"
-            alt=""
+            alt="AI-native autonomous virtual fab: world models predict outcomes; humans and agents coordinate plans; automation and Physical AI execute them; operating experience improves models, workflows and experiment planning."
           />
-          <div class="loop-node models">
-            <img
-              src="assets/icons/vm_clear.png"
-              alt=""
-              width="38"
-              height="38"
-            /><span>Models<small>Predict consequences</small></span>
+        </div>
+        <div class="vision-principles">
+          <div>
+            <span>01</span>
+            <h3>Predict consequences.</h3>
+            <p>
+              Connect wafer quality, equipment availability and production
+              queues.
+            </p>
           </div>
-          <div class="loop-node agents">
-            <img
-              src="assets/icons/schedule.png"
-              alt=""
-              width="38"
-              height="38"
-            /><span>Agents<small>Coordinate decisions</small></span>
+          <div>
+            <span>02</span>
+            <h3>Coordinate actions.</h3>
+            <p>
+              Bring process changes, maintenance and scheduling into a common
+              plan.
+            </p>
           </div>
-          <div class="loop-node systems">
-            <img
-              src="assets/icons/equipment.png"
-              alt=""
-              width="38"
-              height="38"
-            /><span>Physical systems<small>Generate outcomes</small></span>
+          <div>
+            <span>03</span>
+            <h3>Learn from experience.</h3>
+            <p>
+              Use measured outcomes to improve models, agents and the next
+              experiment.
+            </p>
           </div>
-          <span class="loop-label">Learn through experience ↶</span>
         </div>
       </section>
       <section class="section citation" id="citation">
@@ -1055,7 +941,7 @@
     </main>
     <dialog class="diagram-dialog" aria-labelledby="diagram-title">
       <div class="dialog-toolbar">
-        <h2 id="diagram-title">The complete manufacturing atlas</h2>
+        <h2 id="diagram-title">Manufacturing tasks & AI stages</h2>
         <button class="close-dialog" aria-label="Close diagram">×</button>
       </div>
       <div class="diagram-scroll">
@@ -1075,7 +961,7 @@
           >AI × Manufacturing</span
         ></a
       >
-      <p>From observations to actions. From experience to better decisions.</p>
+      <p>From Perception to Autonomy.</p>
       <div>
         <a href="index.html#citation">Citation</a
         ><a href="mailto:rzhong@zju.edu.cn">Contact</a
