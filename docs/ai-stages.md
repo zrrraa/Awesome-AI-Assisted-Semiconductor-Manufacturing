@@ -14,4 +14,6 @@ Code what a study investigates, using its methods and evaluation. Do not infer s
 
 The coverage chart uses each paper’s **catalogue scope**, while the task lists group papers by their primary manufacturing objective. Those fields are kept separately: maintenance study `geurtsen2022maintenance` belongs to task E2 and catalogue scope Production; `hong2025capacity` belongs to task R4 and catalogue scope Fab. This preserves the survey’s reviewed scope statistics without changing the task lists.
 
-The build script checks bibliography coverage and the stage labels in every entry. It derives chart counts, scope totals and the downloadable CSV from the same records as the paper library. The timeline counts each paper once by publication year.
+The build script checks bibliography coverage and generates each entry’s stage labels from the reviewed coding. The charts and downloadable CSV files use the same records as the paper library.
+
+The timeline has three views. **All papers** counts each paper once by publication year. **M1–M5** splits that count by catalogue scope. **L1–L5** counts stage assignments: a paper contributes once to every stage it addresses, so the stack can exceed the number of papers in that year. The three testbeds without stage labels do not contribute to the stage view.

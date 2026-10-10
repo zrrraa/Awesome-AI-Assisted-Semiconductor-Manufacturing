@@ -5,10 +5,10 @@ Know a useful paper, dataset or implementation? [Open an issue](https://github.c
 ## Send a pull request
 
 1. Add the paper to its main task in `papers/`, keeping the list newest first. Copy a neighboring entry’s format.
-2. Include the full title, year, authors and venue. Link to the DOI, publisher or author’s preprint, and label preprints clearly.
-3. Add its BibTeX entry to `references.bib`, using the same citation key as the paper’s anchor. For a dataset or implementation, update `RESOURCES.md` and link to the original project.
-4. Add the paper’s reviewed AI-stage labels and catalogue scope to `data/ai-stages.json`, following the [stage guide](docs/ai-stages.md). Match those labels in the reading-list entry.
-5. Run `python scripts/build_catalogue.py` and include the generated `docs/assets/catalogue.js` and `docs/assets/coverage.csv` in your commit. These power the on-site filters and research visualizations.
+2. Add its full BibTeX entry to `references.bib`, using the same citation key as the paper’s anchor. Include every author, publication year, venue and a DOI, publisher or arXiv URL.
+3. Add additional paper versions and author-released code, project pages, models or datasets to `data/paper-resources.json`. Include the original paper page or official project URL that confirms the connection. Verified venue updates go in that file’s `venues` object; venue badges use the publication record.
+4. Add the paper’s reviewed AI-stage labels and catalogue scope to `data/ai-stages.json`, following the [stage guide](docs/ai-stages.md).
+5. Run `python scripts/build_catalogue.py`. Commit the regenerated `papers/*.md`, `docs/assets/catalogue.js`, `docs/assets/coverage.csv` and `docs/assets/timeline.csv`. Authors, venue badges, resource chips and category labels are generated together for the repository and project page.
 
 The five scopes and task links are on the [homepage](README.md#papers). Choose the task by the paper’s manufacturing objective or action.
 
@@ -16,11 +16,11 @@ The five scopes and task links are on the [homepage](README.md#papers). Choose t
 
 ```markdown
 - <a id="surname2026keyword"></a>**Full paper title**<br>
-  2026 · Surname et al. · *Venue*<br>
-  [Paper ↗](https://doi.org/...) · [Code](https://github.com/owner/project) · `L2 Prediction`
 ```
 
-Code and data links are optional. Prefer original releases and label third-party implementations. Keep reported results with the dataset and evaluation conditions needed to interpret them.
+The build command fills the remaining lines from the bibliography and reviewed metadata. It preserves the title and task placement. Long author lists use an expandable section.
+
+Resource links are optional. Link to the paper’s own releases; dependencies and baseline implementations belong in the resource guide. Keep reported results with the dataset and evaluation conditions needed to interpret them.
 
 Automated checks verify local links, unique entries and matching bibliography keys. You can also run them locally:
 

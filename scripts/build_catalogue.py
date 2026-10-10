@@ -1,6 +1,7 @@
 """Build the project-page reading catalogue from the repository's Markdown lists.
 
-Run after editing papers/*.md. --check verifies the checked-in browser data.
+Run after editing paper membership, references.bib or data/*.json.
+--check verifies the browser data, Markdown entries and chart downloads.
 """
 from pathlib import Path
 import argparse
@@ -9,6 +10,8 @@ import json
 import re
 import csv
 import io
+from urllib.parse import quote
+from paper_metadata import bibliography, author_names, venue_badge, enrichment, text as bibtext
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'docs/assets/catalogue.js'
@@ -26,6 +29,10 @@ def plain(value):
 
 def build():
     coding = json.loads((ROOT / 'data/ai-stages.json').read_text(encoding='utf-8'))
+    bib = bibliography()
+    extra = enrichment()
+    resource_file = ROOT/'data/paper-resources.json'
+    venue_overrides = json.loads(resource_file.read_text(encoding='utf-8')).get('venues', {}) if resource_file.exists() else {}
     stages = coding['stages']
     tasks = []
     papers = []
@@ -40,47 +47,91 @@ def build():
             elif line.startswith('> ') and task and not task['question']:
                 task['question'] = plain(line[2:])
             elif line.startswith('- <a id='):
-                match = re.fullmatch(r'- <a id="([^"]+)"></a>\*\*(.*)\*\*<br>', line)
+                match = re.fullmatch(r'- <a id="([^"]+)"></a>\*\*(.*?)\*\*(?: <code[^>]*>.*?</code>)?<br>', line)
                 if not match or not task:
                     raise ValueError(f'Unrecognized paper entry: {scope}:{i+1}')
-                metadata = re.fullmatch(r'\s*(\d{4}) · (.*?) · \*(.*?)\*(.*?)<br>', lines[i+1])
-                if not metadata:
-                    raise ValueError(f'Unrecognized metadata: {scope}:{i+2}')
-                links = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', lines[i+2])
-                assert links and links[0][0] == 'Paper ↗', f'Missing Paper chip: {match[1]}'
-                url = plain(links[0][1])
+                record = bib[match[1]]
+                url = quote(plain(record['url']), safe=':/?=&%#;,+@!~*-_.')
                 if not url.startswith(('https://', 'http://')):
                     raise ValueError(f'Unsupported paper URL: {url}')
                 code = coding['papers'][match[1]]
                 assert code['scope'] in SCOPES and len(code['stages']) == len(set(code['stages']))
                 assert all(s in stages for s in code['stages'])
                 assert code['stages'] or code.get('role') == 'Research testbed'
-                expected = ['`'+s+' '+stages[s]+'`' for s in code['stages']] or ['`Research testbed`']
-                assert re.findall(r'`[^`]+`', lines[i+2]) == expected, f'Stage chips differ: {match[1]}'
+                authors = author_names(record['author'])
+                venue = venue_overrides.get(match[1], {}).get('name') or bibtext(record.get('journal', record.get('booktitle', '')))
+                year = int(record['year'])
+                resources = extra.get(match[1], [])
                 papers.append({'id': match[1], 'title': plain(match[2]), 'url': url,
-                               'year': int(metadata[1]), 'authors': plain(metadata[2]),
-                               'venue': plain(metadata[3]), 'task': task['id'], 'scope': scope,
+                               'year': year, 'authors': ', '.join(authors), 'authorList': authors,
+                               'venue': venue, 'venueBadge': venue_badge(venue,year), 'task': task['id'], 'scope': scope,
                                'stages': code['stages'], 'catalogueScope': code['scope'],
-                               'preprint': '**Preprint**' in metadata[4],
                                'role': code.get('role', ''),
-                               'resources': [{'label':plain(label),'url':plain(link)} for label,link in links[1:]]})
+                               'resources': [{'label':r['label'],'url':r['url']} for r in resources]})
     assert len(tasks) == 19 and len({t['id'] for t in tasks}) == 19
     assert len(papers) == len({p['id'] for p in papers})
     assert all(t['question'] for t in tasks)
     bibkeys = set(re.findall(r'^@\w+\{([^,\s]+),', (ROOT/'references.bib').read_text(encoding='utf-8'), re.M))
     assert {p['id'] for p in papers} == bibkeys, 'Reading list and BibTeX coverage differ'
     assert set(coding['papers']) == bibkeys, 'AI-stage coding and BibTeX coverage differ'
+    assert set(extra) <= bibkeys and set(venue_overrides) <= bibkeys, 'Unknown paper in resource metadata'
+    for key, resources in extra.items():
+        assert len({r['url'].rstrip('/').lower() for r in resources}) == len(resources), f'Duplicate resource: {key}'
+        assert all(r['url'].startswith('https://') and r['source'].startswith('https://') and r['label'] for r in resources), f'Invalid resource or source: {key}'
     coverage = [{'scope': scope, 'total': sum(p['catalogueScope']==scope for p in papers),
                  'counts': {s:sum(p['catalogueScope']==scope and s in p['stages'] for p in papers) for s in stages}}
                 for scope in SCOPES]
-    content = '// Generated by scripts/build_catalogue.py from papers/*.md and data/ai-stages.json.\nwindow.MANUFACTURING_CATALOGUE = '+json.dumps({'tasks':tasks,'papers':papers,'stages':stages,'coverage':coverage}, ensure_ascii=False,separators=(',',':'))+';\n'
+    content = '// Generated by scripts/build_catalogue.py from papers/*.md, references.bib and data/*.json.\nwindow.MANUFACTURING_CATALOGUE = '+json.dumps({'tasks':tasks,'papers':papers,'stages':stages,'coverage':coverage}, ensure_ascii=False,separators=(',',':'))+';\n'
     buffer = io.StringIO(newline='')
     writer = csv.writer(buffer, lineterminator='\n')
     writer.writerow(['scope','stage','papers','scope_total','share_percent'])
     for row in coverage:
         for stage, count in row['counts'].items():
             writer.writerow([row['scope'], stages[stage], count, row['total'], f"{count/row['total']*100:.4f}"])
-    return {OUTPUT:content, ROOT/'docs/assets/coverage.csv':buffer.getvalue()}, len(papers)
+    outputs={OUTPUT:content, ROOT/'docs/assets/coverage.csv':buffer.getvalue()}
+    timeline=io.StringIO(newline='')
+    writer=csv.writer(timeline,lineterminator='\n')
+    writer.writerow(['year','dimension','category','papers'])
+    for year in range(min(p['year'] for p in papers),max(p['year'] for p in papers)+1):
+        subset=[p for p in papers if p['year']==year]
+        writer.writerow([year,'total','all',len(subset)])
+        for scope in SCOPES: writer.writerow([year,'scope',scope,sum(p['catalogueScope']==scope for p in subset)])
+        for stage in stages: writer.writerow([year,'stage',stage,sum(stage in p['stages'] for p in subset)])
+    outputs[ROOT/'docs/assets/timeline.csv']=timeline.getvalue()
+    icons={'Paper':'📄','arXiv':'📑','GitHub':'🐙','GitLab':'🦊','Project page':'🌐','Hugging Face':'🤗','Dataset':'🗃️'}
+    def markdown_entry(p):
+        title='- <a id="'+p['id']+'"></a>**'+html.escape(p['title'],quote=False)+'** <code title="'+html.escape(p['venue'] or str(p['year']),quote=True)+'">'+html.escape(p['venueBadge'])+'</code><br>\n'
+        names=p['authorList']
+        if len(names)>8:
+            author_line='  <sub>'+html.escape(', '.join(names[:5]))+'</sub>\n  <details><summary>Show all '+str(len(names))+' authors</summary>\n\n  <sub>'+html.escape(p['authors'])+'</sub>\n\n  </details>\n\n'
+        else: author_line='  <sub>'+html.escape(p['authors'])+'</sub><br>\n'
+        links=paper_links(p)
+        link_line='  '+' · '.join('['+icons.get(r['label'].split(' · ')[0],'🔗')+' '+r['label']+']('+r['url']+')' for r in links)+'<br>\n'
+        category=['M'+str(SCOPES.index(p['catalogueScope'])+1)+' '+p['catalogueScope'].capitalize(),p['task']]
+        category += [s+' '+stages[s] for s in p['stages']] or [p['role']]
+        return title+author_line+link_line+'  '+' · '.join('`'+c+'`' for c in category)+'\n'
+    by_id={p['id']:p for p in papers}
+    for scope in SCOPES:
+        path=ROOT/'papers'/f'{scope}.md'
+        original=path.read_text(encoding='utf-8')
+        pattern=r'^- <a id="([^"]+)"></a>\*\*.*?(?=\n- <a id=|\n<a id=|\n## |\Z)'
+        updated=re.sub(pattern,lambda m:markdown_entry(by_id[m[1]])+'\n',original,flags=re.M|re.S)
+        updated=re.sub(r'\n{3,}','\n\n',updated)
+        outputs[path]=updated.rstrip()+'\n'
+    return outputs, len(papers)
+
+
+def paper_links(p):
+    """Use a distinct chip for each destination; arXiv-only papers need no duplicate Paper link."""
+    primary=p['url']
+    arxiv=re.search(r'(?:arxiv\.(?:org/(?:abs|pdf)/)|arxiv[.:/])(\d{4}\.\d{4,5})',primary,re.I)
+    links=[] if arxiv else [{'label':'Paper','url':primary}]
+    if arxiv: links.append({'label':'arXiv','url':'https://arxiv.org/abs/'+arxiv[1]})
+    seen={r['url'].rstrip('/').lower() for r in links}
+    for r in p['resources']:
+        if r['url'].rstrip('/').lower() not in seen:
+            links.append(r);seen.add(r['url'].rstrip('/').lower())
+    return links
 
 
 if __name__ == '__main__':
@@ -89,7 +140,7 @@ if __name__ == '__main__':
     for output,content in outputs.items():
         if args.check:
             if not output.exists() or output.read_text(encoding='utf-8') != content:
-                raise SystemExit('Browser catalogue is stale. Run python scripts/build_catalogue.py')
+                raise SystemExit(str(output.relative_to(ROOT))+': generated catalogue is stale. Run python scripts/build_catalogue.py')
         else:
             output.parent.mkdir(parents=True,exist_ok=True);output.write_text(content,encoding='utf-8')
     print(f'19 tasks / {count} paper entries match the repository bibliography.')

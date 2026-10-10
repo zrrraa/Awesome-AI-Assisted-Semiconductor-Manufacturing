@@ -1,0 +1,735 @@
+{
+  "description": "Additional paper versions and author-released resources. Links are supported by the original paper or the cited author/project page.",
+  "papers": {
+    "andelfinger202675e11": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2509.15767",
+        "source": "https://doi.org/10.1007/978-981-95-4472-1_6",
+        "page": 1
+      }
+    ],
+    "barusco2025ad0c4": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2505.07576",
+        "source": "https://doi.org/10.1016/j.ifacol.2025.12.018",
+        "page": 1
+      }
+    ],
+    "chen2026segsem": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2602.20471",
+        "source": "https://doi.org/10.1109/iscas66217.2026.11562669",
+        "page": 1
+      }
+    ],
+    "de20232711d": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2308.07180",
+        "source": "https://doi.org/10.1117/12.2675570",
+        "page": 1
+      }
+    ],
+    "deridder2023semidiff": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2307.08693",
+        "source": "https://doi.org/10.1109/elmar59410.2023.10253920",
+        "page": 1
+      }
+    ],
+    "dey202281985": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2211.02185",
+        "source": "https://doi.org/10.1117/12.2618178",
+        "page": 1
+      }
+    ],
+    "dey2022ec5d2": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2206.13505",
+        "source": "https://doi.org/10.1117/12.2622550",
+        "page": 1
+      }
+    ],
+    "dey2024semgeneration": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2407.10348",
+        "source": "https://doi.org/10.1109/ELMAR62909.2024.10694600",
+        "page": 1
+      }
+    ],
+    "dey2025069aa": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2312.09462",
+        "source": "https://doi.org/10.1007/978-3-031-74640-6_36",
+        "page": 1
+      }
+    ],
+    "dobrovsky2025c34c6": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2506.15567",
+        "source": "https://doi.org/10.31399/asm.cp.istfa2025p0041",
+        "page": 1
+      }
+    ],
+    "gu2025mfl": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2505.16060",
+        "source": "https://doi.org/10.48550/arXiv.2505.16060",
+        "page": 1
+      }
+    ],
+    "hu2025maskopt": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2512.20655",
+        "source": "https://doi.org/10.48550/arXiv.2512.20655",
+        "page": 1
+      }
+    ],
+    "hu2026morphopc": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2605.12528",
+        "source": "https://doi.org/10.48550/arXiv.2605.12528",
+        "page": 1
+      }
+    ],
+    "ide2025fa115": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2508.00895",
+        "source": "https://doi.org/10.1109/wsc68292.2025.11339057",
+        "page": 1
+      }
+    ],
+    "jalali20195522b": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/1904.07686",
+        "source": "https://doi.org/10.1109/icphm.2019.8819404",
+        "page": 1
+      }
+    ],
+    "jiang2024fabgpt": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2407.10810",
+        "source": "https://doi.org/10.1145/3676536.3676750",
+        "page": 1
+      }
+    ],
+    "jiang2026lithodreamer": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2606.26713",
+        "source": "https://proceedings.mlr.press/v306/jiang26ae.html",
+        "page": 1
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/7jiangyq/lithodreamer",
+        "source": "https://proceedings.mlr.press/v306/jiang26ae.html",
+        "page": 1
+      }
+    ],
+    "jin2024semclip": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2502.14884",
+        "source": "https://doi.org/10.1145/3676536.3676752",
+        "page": 1
+      }
+    ],
+    "lai2026lithogrpo": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2606.00228",
+        "source": "https://doi.org/10.48550/arXiv.2606.00228",
+        "page": 1
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/laiyao1/LithoGRPO",
+        "source": "https://doi.org/10.48550/arXiv.2606.00228",
+        "page": 1
+      }
+    ],
+    "liang2024camo": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2404.00980",
+        "source": "https://doi.org/10.1145/3649329.3656254",
+        "page": 1
+      }
+    ],
+    "lin2019lithotransfer": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/1807.03257",
+        "source": "https://doi.org/10.1109/tcad.2018.2864251",
+        "page": 1
+      }
+    ],
+    "miyaguchi202570622": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2507.20364",
+        "source": "https://doi.org/10.1109/asmc64512.2025.11010308",
+        "page": 1
+      }
+    ],
+    "miyaguchi202598da9": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2507.20357",
+        "source": "https://doi.org/10.1109/asmc64512.2025.11010733",
+        "page": 1
+      }
+    ],
+    "mohammad2025tinyvit": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2504.02494",
+        "source": "https://doi.org/10.48550/arXiv.2504.02494",
+        "page": 1
+      }
+    ],
+    "shao2023lithoactive": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2201.09717",
+        "source": "https://doi.org/10.1109/tcad.2022.3192175",
+        "page": 1
+      }
+    ],
+    "shao2025lithohod": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2409.10021",
+        "source": "https://doi.org/10.1109/tcad.2024.3463539",
+        "page": 1
+      }
+    ],
+    "shao2026recamenet": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2510.19463",
+        "source": "https://doi.org/10.1109/tcad.2025.3625105",
+        "page": 1
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/YoursEver/ReCAME-Net",
+        "source": "https://doi.org/10.1109/tcad.2025.3625105",
+        "page": 1
+      }
+    ],
+    "tassel202378b79": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2302.07162",
+        "source": "https://doi.org/10.1109/wsc60868.2023.10407747",
+        "page": 1
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ingambe/RL4SemiconductorFabSched",
+        "source": "https://doi.org/10.1109/wsc60868.2023.10407747",
+        "page": 3
+      }
+    ],
+    "xie2021cvdvm": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2107.05071",
+        "source": "https://doi.org/10.48550/arXiv.2107.05071",
+        "page": 1
+      }
+    ],
+    "yang2022cfno": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2207.04056",
+        "source": "https://doi.org/10.48550/arXiv.2207.04056",
+        "page": 1
+      }
+    ],
+    "yang2022doinn": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2203.08616",
+        "source": "https://doi.org/10.1145/3489517.3530580",
+        "page": 1
+      }
+    ],
+    "yang2024ililt": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2405.03574",
+        "source": "https://proceedings.mlr.press/v235/yang24s.html",
+        "page": 1
+      }
+    ],
+    "yang2026generativeilt": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2602.19027",
+        "source": "https://doi.org/10.48550/arXiv.2602.19027",
+        "page": 1
+      }
+    ],
+    "zhao2022adaopc": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2303.12723",
+        "source": "https://doi.org/10.1145/3508352.3549468",
+        "page": 1
+      }
+    ],
+    "zhao2025intrinsic": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2511.03120",
+        "source": "https://doi.org/10.48550/arXiv.2511.03120",
+        "page": 1
+      }
+    ],
+    "wang2020dcnet": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/Junliangwangdhu/WaferMap",
+        "source": "https://doi.org/10.1109/TSM.2020.3020985",
+        "page": 4
+      }
+    ],
+    "nag2022waferseg": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ckmvigil/WaferSegClassNet",
+        "source": "https://doi.org/10.1016/j.compind.2022.103720",
+        "page": 1
+      },
+      {
+        "label": "Project page",
+        "url": "https://ckmvigil.github.io/wscn/",
+        "source": "https://github.com/ckmvigil/WaferSegClassNet"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2207.00960",
+        "source": "https://arxiv.org/abs/2207.00960",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "tziolas2022imbalanced": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/theotziol/Wafer-Map-Defect-Pattern-Recognition-with-Imbalanced-Data-Processing",
+        "source": "https://doi.org/10.1109/IISA56318.2022.9904402",
+        "page": 5
+      }
+    ],
+    "schlosser2022078e8": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/TSchlosser13/Hexnet/blob/master/_ML/models/contrib/visual_inspection.py",
+        "source": "https://doi.org/10.1007/s10845-021-01906-9",
+        "page": 11
+      }
+    ],
+    "bae2025renin": [
+      {
+        "label": "Project page",
+        "url": "https://renin-paper.github.io/ReNIn_page",
+        "source": "https://doi.org/10.1093/mam/ozaf084",
+        "page": 11
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ReNIn-paper/ReNIn_code",
+        "source": "https://renin-paper.github.io/ReNIn_page/"
+      }
+    ],
+    "friedrich2026dicing": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/TSchlosser13/Hexnet/blob/master/_ML/misc/augmenters.py",
+        "source": "https://doi.org/10.1007/s10845-024-02559-0",
+        "page": 7
+      }
+    ],
+    "liang2026556ee": [
+      {
+        "label": "Dataset",
+        "url": "https://data.mendeley.com/datasets/55yb7hh55r/1",
+        "source": "https://doi.org/10.1016/j.dib.2026.113192",
+        "page": 2
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/lly118/ceramic-substrate-defect-benchmark",
+        "source": "https://doi.org/10.1016/j.dib.2026.113192",
+        "page": 2
+      }
+    ],
+    "yang2019hotspot": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/phdyang007/dlhsd",
+        "source": "https://doi.org/10.1109/TCAD.2018.2837078",
+        "page": 1
+      }
+    ],
+    "zheng2023e64a8": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/shelljane/lithobench",
+        "source": "https://doi.org/10.52202/075280-1315",
+        "page": 1
+      }
+    ],
+    "he2025lithosim": [
+      {
+        "label": "Hugging Face · data",
+        "url": "https://huggingface.co/datasets/grandiflorum/LithoSim",
+        "source": "https://doi.org/10.52202/085713-5259",
+        "page": 1
+      },
+      {
+        "label": "Hugging Face · models",
+        "url": "https://huggingface.co/grandiflorum/LithoSim",
+        "source": "https://doi.org/10.52202/085713-5259",
+        "page": 1
+      },
+      {
+        "label": "Project page",
+        "url": "https://dw-hongquan.github.io/LithoSim",
+        "source": "https://doi.org/10.52202/085713-5259",
+        "page": 1
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/dw-hongquan/LithoSim",
+        "source": "https://dw-hongquan.github.io/LithoSim/"
+      }
+    ],
+    "wang2025lmlitho": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/LMLitho/LMLitho",
+        "source": "https://doi.org/10.1109/iccad66269.2025.11240940",
+        "page": 1
+      }
+    ],
+    "zheng2025lithopatternbase": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/shelljane/litho-pattbase",
+        "source": "https://doi.org/10.1109/tcad.2025.3562158",
+        "page": 12
+      }
+    ],
+    "chen2026bismo": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/dekura/BiSMO",
+        "source": "https://doi.org/10.1109/tcad.2025.3650385",
+        "page": 1
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2405.09548",
+        "source": "https://arxiv.org/abs/2405.09548",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "li2026nonmanhattanhotspot": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/yb-hitsz/DATE2026-GNN4LSD",
+        "source": "https://doi.org/10.23919/date69613.2026.11539144",
+        "page": 1
+      }
+    ],
+    "gu2025wamglm": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ZihaoLei/WamGLM",
+        "source": "https://doi.org/10.1016/j.asoc.2025.113962",
+        "page": 1
+      }
+    ],
+    "dekhovich2025ccb3b": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/adekhovich/sequential_wafer_inspection",
+        "source": "https://doi.org/10.1016/j.eswa.2025.126996",
+        "page": 2
+      }
+    ],
+    "jebril20227d2f9": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/mpleschberger/DeepAutoEncoder",
+        "source": "https://doi.org/10.1109/tsm.2022.3146988",
+        "page": 7
+      },
+      {
+        "label": "Dataset · key numbers",
+        "url": "https://doi.org/10.5281/zenodo.4533818",
+        "source": "https://doi.org/10.1109/tsm.2022.3146988",
+        "page": 4
+      },
+      {
+        "label": "Dataset · traces",
+        "url": "https://doi.org/10.5281/zenodo.4322353",
+        "source": "https://doi.org/10.1109/tsm.2022.3146988",
+        "page": 4
+      }
+    ],
+    "maggipinto2018visionvm": [
+      {
+        "label": "GitLab",
+        "url": "https://gitlab.dei.unipd.it/dl_dei/cnn_oes",
+        "source": "https://doi.org/10.1109/TSM.2018.2849206",
+        "page": 2
+      }
+    ],
+    "maggipinto2019deepvm": [
+      {
+        "label": "GitLab",
+        "url": "https://gitlab.dei.unipd.it/dl_dei/DeepVM",
+        "source": "https://doi.org/10.1016/j.jprocont.2019.08.006",
+        "page": 3
+      }
+    ],
+    "chang2025bcdfa": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/albertlin11/BRL",
+        "source": "https://doi.org/10.1007/s10845-024-02363-w",
+        "page": 12
+      }
+    ],
+    "guo2026offlineetch": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/JimmyxGuo/Etch-RL",
+        "source": "https://doi.org/10.1016/j.mssp.2026.110640",
+        "page": 4
+      }
+    ],
+    "han2025309c6": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/IntelligentMetrologySystems/Semiconductor_Virtual_Metrology",
+        "source": "https://doi.org/10.1109/tsm.2025.3531920",
+        "page": 8
+      }
+    ],
+    "bejani2026d51c1": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/MehdiBejani/Transformer-OSP-probe-cards",
+        "source": "https://doi.org/10.1007/s00521-026-12233-6",
+        "page": 37
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2509.07603",
+        "source": "https://github.com/MehdiBejani/Transformer-OSP-probe-cards"
+      }
+    ],
+    "choi2026cluster": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/jongwon8707/Semiconductor_ClusterTool_Simulator",
+        "source": "https://doi.org/10.1038/s41598-025-31722-7",
+        "page": 16
+      }
+    ],
+    "lee2022274c9": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/kwoo-lee/SMAT2022",
+        "source": "https://doi.org/10.1109/wsc57314.2022.10015476",
+        "page": 3
+      }
+    ],
+    "singgih2021637f5": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ivanksinggih/Intel_minifab_Anylogic/tree/data",
+        "source": "https://doi.org/10.3390/pr9030407",
+        "page": 10
+      }
+    ],
+    "kovacs202260e51": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/prosysscience/PySCFabSim-release",
+        "source": "https://doi.org/10.1109/asmc54647.2022.9792520",
+        "page": 2
+      }
+    ],
+    "cho202698db8": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/SeongHoCho99/Copilot-twin-Orchestrator-Specification",
+        "source": "https://doi.org/10.1016/j.cie.2026.112281",
+        "page": 1
+      }
+    ],
+    "mishra2024wafercap": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/abhishekkumarm98/WaferCap",
+        "source": "https://doi.org/10.1109/vts60656.2024.10538764",
+        "page": 2
+      }
+    ],
+    "reddy2019hotspotpitfalls": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/gauravr1991/ICCAD2019Benchmarks",
+        "source": "https://doi.org/10.1109/iccad45719.2019.8942128",
+        "page": 8
+      }
+    ],
+    "jiang2020neuralilt": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/cuhk-eda/neural-ilt",
+        "source": "https://github.com/cuhk-eda/neural-ilt"
+      }
+    ],
+    "yang2020ganopc": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/phdyang007/GAN-OPC",
+        "source": "https://github.com/phdyang007/GAN-OPC"
+      }
+    ],
+    "chen2020damo": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2008.00806",
+        "source": "https://arxiv.org/abs/2008.00806",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "chen2025d393f": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2408.12775",
+        "source": "https://arxiv.org/abs/2408.12775",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "chen2021develset": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2303.12529",
+        "source": "https://arxiv.org/abs/2303.12529",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "dey20256ec4f": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2409.04310",
+        "source": "https://arxiv.org/abs/2409.04310",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "fan202382079": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2301.08974",
+        "source": "https://arxiv.org/abs/2301.08974",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "huang2025semvit": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2506.03345",
+        "source": "https://arxiv.org/abs/2506.03345",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "jiang2026fabgpt": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2407.10810",
+        "source": "https://arxiv.org/abs/2407.10810",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "li2024rlcontrol": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2110.11572",
+        "source": "https://arxiv.org/abs/2110.11572",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "ofir20222f400": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2202.02998",
+        "source": "https://arxiv.org/abs/2202.02998",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "poniatowski2026semda": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2506.15260",
+        "source": "https://arxiv.org/abs/2506.15260",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "romauch2017cluster": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/1605.00914",
+        "source": "https://arxiv.org/abs/1605.00914",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "stockermann2025scalability": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2505.11135",
+        "source": "https://arxiv.org/abs/2505.11135",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "zhou20239bd46": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2303.07062",
+        "source": "https://arxiv.org/abs/2303.07062",
+        "verification": "Title and author identity matched to the publication record."
+      }
+    ]
+  },
+  "venues": {
+    "lai2026lithogrpo": {
+      "name": "International Conference on Machine Learning",
+      "source": "https://github.com/laiyao1/LithoGRPO"
+    }
+  }
+}

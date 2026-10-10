@@ -288,6 +288,8 @@
   ];
   let currentStage = 0,
     stageTimer;
+  // Boundaries follow complete illustrated scenes in the continuous source image.
+  const stageBounds = [0, 20.1, 40.6, 56.4, 76.5, 100];
   const stopStageTour = () => {
     clearInterval(stageTimer);
     stageTimer = undefined;
@@ -302,7 +304,14 @@
     currentStage = index;
     const [name, title, body, example] = stages[index];
     $("#stage-detail").setAttribute("aria-labelledby", tab.id);
-    $(".robot-strip").style.setProperty("--active-part", index);
+    $(".robot-strip").style.setProperty(
+      "--stage-left",
+      stageBounds[index] + "%",
+    );
+    $(".robot-strip").style.setProperty(
+      "--stage-width",
+      stageBounds[index + 1] - stageBounds[index] + "%",
+    );
     $(".stage-index").textContent = String(index + 1).padStart(2, "0");
     $(".stage-copy .eyebrow").textContent = "L" + (index + 1) + " / " + name;
     $(".stage-copy h3").textContent = title;
@@ -320,7 +329,9 @@
       rail.scrollTo({
         left: Math.max(
           0,
-          (strip.clientWidth * (index + 0.5)) / 5 - rail.clientWidth / 2,
+          (strip.clientWidth * (stageBounds[index] + stageBounds[index + 1])) /
+            200 -
+            rail.clientWidth / 2,
         ),
         behavior: reduced.matches ? "instant" : "smooth",
       });
@@ -331,6 +342,20 @@
     b.addEventListener("click", () => activateStage(Number(b.dataset.robot))),
   );
   if (activateStage) activateStage(0);
+  $$("[data-go-stage]").forEach((a) =>
+    a.addEventListener("click", (e) => {
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      stopStageTour();
+      const index = Number(a.dataset.goStage);
+      activateStage(index);
+      $("#stages").scrollIntoView({
+        behavior: reduced.matches ? "instant" : "smooth",
+        block: "start",
+      });
+      $("#stage-" + index).focus({ preventScroll: true });
+    }),
+  );
   $(".play-stages")?.addEventListener("click", () => {
     if (stageTimer) return stopStageTour();
     if (currentStage === 4) activateStage(0);
@@ -446,51 +471,240 @@
       b.addEventListener("click", () => changeUnit(b.dataset.unit)),
     );
     changeUnit("share");
-    const counts = new Map();
-    papers.forEach((p) => counts.set(p.year, (counts.get(p.year) || 0) + 1));
-    const years = [...counts.keys()].sort((a, b) => a - b),
-      max = Math.max(...counts.values());
-    for (let year = years[0]; year <= years.at(-1); year++) {
-      const count = counts.get(year) || 0,
-        a = node("a", "year-bar");
-      a.href = "explore.html?year=" + year;
-      a.style.setProperty("--share", count / max);
-      a.setAttribute(
-        "aria-label",
-        year + ": " + count + " papers. Browse papers.",
+    const years = papers.map((p) => p.year),
+      firstYear = Math.min(...years),
+      lastYear = Math.max(...years);
+    const scopeKeys = coverage.map((r) => r.scope);
+    const stageColors = ["#87c9dc", "#bba4eb", "#efc678", "#e9a5b7", "#a5cfb1"];
+    function renderTimeline(mode) {
+      $$("[data-timeline]").forEach((b) =>
+        b.setAttribute("aria-pressed", String(b.dataset.timeline === mode)),
       );
-      a.append(
-        node("span", "year-value", count),
-        node("span", "bar"),
-        node(
-          "span",
-          "year-label",
-          year % 2 === 0 || year === years.at(-1) ? year : "",
-        ),
-      );
-      $("#timeline-chart").append(a);
+      const groups =
+        mode === "scope"
+          ? scopeKeys.map((key, i) => ({
+              key,
+              label: "M" + (i + 1) + " · " + names[i],
+              color: colors[i],
+            }))
+          : mode === "stage"
+            ? Object.entries(stageNames).map(([key, label], i) => ({
+                key,
+                label: key + " · " + label,
+                color: stageColors[i],
+              }))
+            : [{ key: "total", label: "All papers", color: "#c6a9e2" }];
+      const rows = [];
+      for (let year = firstYear; year <= lastYear; year++) {
+        const matches = papers.filter((p) => p.year === year);
+        const values = groups.map(
+          (g) =>
+            matches.filter((p) =>
+              mode === "scope"
+                ? p.catalogueScope === g.key
+                : mode === "stage"
+                  ? p.stages.includes(g.key)
+                  : true,
+            ).length,
+        );
+        rows.push({
+          year,
+          values,
+          total: values.reduce((a, b) => a + b, 0),
+          paperCount: matches.length,
+        });
+      }
+      const max = Math.max(...rows.map((r) => r.total));
+      const chart = $("#timeline-chart"),
+        legend = $("#timeline-legend");
+      chart.replaceChildren();
+      legend.replaceChildren();
+      chart.dataset.mode = mode;
+      groups.forEach((g) => {
+        const label = node("span", "");
+        const swatch = node("i", "");
+        swatch.style.setProperty("--segment", g.color);
+        label.append(swatch, document.createTextNode(g.label));
+        legend.append(label);
+      });
+      $("#timeline-measure").textContent =
+        mode === "stage" ? "Stage assignments" : "Papers";
+      $("#timeline-maximum").textContent = "Tallest bar · " + max;
+      $("#timeline-note").textContent =
+        mode === "stage"
+          ? "A paper contributes to every stage it addresses. The three testbed papers without a stage are omitted in this view."
+          : "Each paper is counted once, using its publication year" +
+            (mode === "scope" ? " and manufacturing scope." : ".");
+      $("#timeline-readout").textContent =
+        "Select " +
+        (mode === "total" ? "a bar" : "a colored segment") +
+        " to browse the matching papers.";
+      rows.forEach((row) => {
+        const column = node("div", "year-bar" + (row.total ? "" : " zero"));
+        column.dataset.year = row.year;
+        column.dataset.total = row.total;
+        column.style.setProperty("--share", row.total / max);
+        const stack = node("div", "bar-stack");
+        row.values.forEach((count, i) => {
+          if (!count) return;
+          const g = groups[i],
+            a = node("a", "year-segment");
+          a.href =
+            "explore.html?year=" +
+            row.year +
+            (mode === "scope"
+              ? "&scope=" + g.key
+              : mode === "stage"
+                ? "&stage=" + g.key
+                : "");
+          a.dataset.group = g.key;
+          a.dataset.count = count;
+          a.style.height = (count / row.total) * 100 + "%";
+          a.style.setProperty("--segment", g.color);
+          const label =
+            row.year +
+            " · " +
+            g.label +
+            " · " +
+            count +
+            " " +
+            (count === 1 ? "paper" : "papers");
+          a.setAttribute("aria-label", label + ". Browse papers.");
+          a.title = label;
+          ["mouseenter", "focus"].forEach((event) =>
+            a.addEventListener(event, () => {
+              $("#timeline-readout").textContent =
+                label +
+                (mode === "stage"
+                  ? " · " + row.paperCount + " papers in this year"
+                  : "");
+            }),
+          );
+          stack.append(a);
+        });
+        column.append(
+          node("span", "year-value", row.total),
+          stack,
+          node(
+            "span",
+            "year-label",
+            row.year % 2 === 0 || row.year === lastYear ? row.year : "",
+          ),
+        );
+        chart.append(column);
+      });
+      if (!reduced.matches && window.Motion)
+        Motion.animate(
+          $$(".bar-stack"),
+          { scaleY: [0.2, 1], opacity: [0.45, 1] },
+          {
+            duration: 0.6,
+            delay: Motion.stagger(0.008),
+            ease: [0.22, 1, 0.36, 1],
+          },
+        );
     }
+    $$("[data-timeline]").forEach((b) =>
+      b.addEventListener("click", () => renderTimeline(b.dataset.timeline)),
+    );
+    renderTimeline("total");
     wireTabs("[data-chart]", (i) => {
       $("#scope-chart").hidden = i !== 0;
       $("#year-chart").hidden = i !== 1;
       $(".chart-unit").hidden = i !== 0;
+      $(".coverage-bottom p").hidden = i !== 0;
+      $(".coverage-bottom a").href = i
+        ? "assets/timeline.csv"
+        : "assets/coverage.csv";
       reveal($(i ? "#year-chart" : "#scope-chart"), { y: 10 });
     });
   }
-  if (catalogue)
+  if (catalogue && $(".map-peek")) {
+    const taskIcons = [
+      "wafer",
+      "local",
+      "lithography",
+      "quality",
+      "root_cause",
+      "probe",
+      "monitoring_clear",
+      "vm_clear",
+      "recipes_clear",
+      "feedback_clear",
+      "diagnosis",
+      "prognosis",
+      "qualification",
+      "cycle_time",
+      "schedule",
+      "transport",
+      "bottleneck",
+      "utility",
+      "capacity",
+    ];
+    const peek = $(".map-peek"),
+      map = $(".original-map");
     $$(".figure-hotspot").forEach((a) => {
-      const t = catalogue.tasks.find((t) => t.id === a.dataset.task);
+      const index = catalogue.tasks.findIndex((t) => t.id === a.dataset.task),
+        t = catalogue.tasks[index];
+      const left = parseFloat(a.style.left),
+        top = parseFloat(a.style.top),
+        width = parseFloat(a.style.width),
+        height = parseFloat(a.style.height);
+      const art = document.createElement("div");
+      art.className = "hotspot-art";
+      art.setAttribute("aria-hidden", "true");
+      art.style.backgroundSize = 10000 / width + "% " + 10000 / height + "%";
+      art.style.backgroundPosition =
+        (left / (100 - width)) * 100 +
+        "% " +
+        (top / (100 - height)) * 100 +
+        "%";
+      a.prepend(art);
+      const show = () => {
+        $("#map-selection").textContent = t.id + " · " + t.title;
+        $("img", peek).src = "assets/icons/" + taskIcons[index] + ".png";
+        $("small", peek).textContent = t.id + " / " + t.scope.toUpperCase();
+        $("b", peek).textContent = t.title;
+        $("p", peek).textContent = t.question;
+        const r = a.getBoundingClientRect(),
+          m = map.getBoundingClientRect();
+        const x = Math.max(
+          8,
+          Math.min(
+            r.left - m.left + r.width / 2 - peek.offsetWidth / 2,
+            m.width - peek.offsetWidth - 8,
+          ),
+        );
+        peek.style.left = x + "px";
+        peek.style.top = r.bottom - m.top + 18 + "px";
+        peek.classList.add("visible");
+      };
+      const hide = () => {
+        peek.classList.remove("visible");
+        $("#map-selection").textContent = "Explore a task or an AI stage";
+      };
+      a.addEventListener("mouseenter", show);
+      a.addEventListener("focus", show);
+      a.addEventListener("mouseleave", hide);
+      a.addEventListener("blur", hide);
+    });
+    $$(".pipe-hotspot").forEach((a) => {
       ["mouseenter", "focus"].forEach((evt) =>
-        a.addEventListener(
-          evt,
-          () => ($("#map-selection").textContent = t.id + " · " + t.title),
-        ),
+        a.addEventListener(evt, () => {
+          $("#map-selection").textContent =
+            "L" +
+            (Number(a.dataset.goStage) + 1) +
+            " · " +
+            stages[Number(a.dataset.goStage)][0];
+        }),
       );
-      a.addEventListener(
-        "mouseleave",
-        () => ($("#map-selection").textContent = "Choose a manufacturing task"),
+      ["mouseleave", "blur"].forEach((evt) =>
+        a.addEventListener(evt, () => {
+          $("#map-selection").textContent = "Explore a task or an AI stage";
+        }),
       );
     });
+  }
   // Small spring-like magnetic feedback stays outside the figure coordinate system.
   if (matchMedia("(pointer:fine)").matches) {
     $$(".button, .round-stamp").forEach((el) => {

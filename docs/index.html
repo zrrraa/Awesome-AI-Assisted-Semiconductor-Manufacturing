@@ -38,7 +38,7 @@
         ></a
       >
       <nav aria-label="Main navigation">
-        <a href="index.html#tasks">Tasks</a
+        <a href="index.html#overview">Overview</a
         ><a href="index.html#manufacturing">Manufacturing</a
         ><a href="index.html#stages">AI stages</a
         ><a href="explore.html">Papers</a>
@@ -72,16 +72,13 @@
             Awesome AI-Assisted<br /><em>Semiconductor</em
             ><br />Manufacturing<span class="title-dot">.</span>
           </h1>
-          <div class="hero-index">
-            <a href="#tasks"><span>01—02</span> Manufacturing <b>↓</b></a
-            ><a href="#stages"
-              ><span>03—04</span> Artificial intelligence <b>↓</b></a
-            >
-          </div>
         </div>
         <div class="hero-side">
           <div class="round-stamp" aria-hidden="true">
-            <span>OBSERVE · DECIDE</span><b>✳</b><span>ACT · LEARN</span>
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <text x="50" y="26" text-anchor="middle">OBSERVE · DECIDE</text>
+              <text x="50" y="79" text-anchor="middle">ACT · LEARN</text></svg
+            ><b>✳</b>
           </div>
           <h2>From <em>Perception</em><br />to <em>Autonomy.</em></h2>
           <p>
@@ -96,17 +93,18 @@
           </div>
         </div>
       </section>
-      <section class="section research-map" id="tasks">
-        <span id="atlas" class="anchor-alias"></span>
+      <section class="section research-map" id="overview">
+        <span id="tasks" class="anchor-alias"></span
+        ><span id="atlas" class="anchor-alias"></span>
         <div class="section-heading">
           <div>
-            <p class="eyebrow">01 / Manufacturing tasks</p>
+            <p class="eyebrow">01 / Overview</p>
             <h2>Many tasks.<br /><em>One connected factory.</em></h2>
           </div>
           <div class="section-aside">
             <p>
-              Products, processes, equipment, production and facilities. Select
-              a task in the figure to explore the papers.
+              Five manufacturing scopes meet five AI stages. Explore a task, or
+              follow the pipeline from Perception to Autonomy.
             </p>
             <button class="text-link" data-open-diagram="overview">
               View full figure ⤢
@@ -356,53 +354,86 @@
                   aria-label="F2: Capacity planning. Browse papers"
                   ><span>F2 ↗</span></a
                 >
+                <a
+                  class="pipe-hotspot"
+                  href="#stages"
+                  data-go-stage="0"
+                  style="
+                    left: 0.6667%;
+                    top: 72.973%;
+                    width: 19.9444%;
+                    height: 6.2312%;
+                  "
+                  aria-label="L1 Perception: explore this AI stage"
+                  ><span>L1 · Perception ↘</span></a
+                ><a
+                  class="pipe-hotspot"
+                  href="#stages"
+                  data-go-stage="1"
+                  style="
+                    left: 21.7222%;
+                    top: 72.973%;
+                    width: 18.1667%;
+                    height: 6.2312%;
+                  "
+                  aria-label="L2 Prediction: explore this AI stage"
+                  ><span>L2 · Prediction ↘</span></a
+                ><a
+                  class="pipe-hotspot"
+                  href="#stages"
+                  data-go-stage="2"
+                  style="
+                    left: 41%;
+                    top: 72.973%;
+                    width: 17.4444%;
+                    height: 6.2312%;
+                  "
+                  aria-label="L3 Reasoning: explore this AI stage"
+                  ><span>L3 · Reasoning ↘</span></a
+                ><a
+                  class="pipe-hotspot"
+                  href="#stages"
+                  data-go-stage="3"
+                  style="
+                    left: 59.5556%;
+                    top: 72.973%;
+                    width: 18.8333%;
+                    height: 6.2312%;
+                  "
+                  aria-label="L4 Planning: explore this AI stage"
+                  ><span>L4 · Planning ↘</span></a
+                ><a
+                  class="pipe-hotspot"
+                  href="#stages"
+                  data-go-stage="4"
+                  style="
+                    left: 79.5%;
+                    top: 72.973%;
+                    width: 19.9444%;
+                    height: 6.2312%;
+                  "
+                  aria-label="L5 Autonomy: explore this AI stage"
+                  ><span>L5 · Autonomy ↘</span></a
+                >
+                <div class="map-peek" aria-hidden="true">
+                  <img alt="" />
+                  <div>
+                    <small></small><b></b>
+                    <p></p>
+                  </div>
+                  <span>↗</span>
+                </div>
               </div>
             </div>
           </div>
           <div class="map-status">
             <span
               ><i></i>
-              <span id="map-selection">Choose a manufacturing task</span></span
-            ><a href="explore.html">Open paper library ↗</a>
+              <span id="map-selection"
+                >Explore a task or an AI stage</span
+              ></span
+            >
           </div>
-        </div>
-        <div class="scope-ribbon" aria-label="Browse by manufacturing scope">
-          <a class="artifacts" href="explore.html?scope=artifacts"
-            ><img
-              src="assets/icons/artifact_wide.png"
-              alt=""
-              width="64"
-              height="58"
-            /><span>Artifacts</span><b aria-hidden="true">↗</b></a
-          ><a class="processes" href="explore.html?scope=processes"
-            ><img
-              src="assets/icons/process.png"
-              alt=""
-              width="64"
-              height="58"
-            /><span>Processes</span><b aria-hidden="true">↗</b></a
-          ><a class="equipment" href="explore.html?scope=equipment"
-            ><img
-              src="assets/icons/equipment.png"
-              alt=""
-              width="64"
-              height="58"
-            /><span>Equipment</span><b aria-hidden="true">↗</b></a
-          ><a class="production" href="explore.html?scope=production"
-            ><img
-              src="assets/icons/production.png"
-              alt=""
-              width="64"
-              height="58"
-            /><span>Production</span><b aria-hidden="true">↗</b></a
-          ><a class="fabs" href="explore.html?scope=fabs"
-            ><img
-              src="assets/icons/fab_vertical.png"
-              alt=""
-              width="64"
-              height="58"
-            /><span>Fabs</span><b aria-hidden="true">↗</b></a
-          >
         </div>
       </section>
       <section class="team" aria-label="About the survey">
@@ -444,9 +475,23 @@
         <p class="corresponding">* Corresponding authors.</p>
       </section>
       <aside class="news" id="news">
-        <b>🔥 News</b><time datetime="2026-10-10">10 OCT 2026</time>
-        <p>Explore the research by manufacturing task and AI stage.</p>
-        <a href="explore.html" aria-label="Explore the paper library">↗</a>
+        <b>🔥 News</b>
+        <div class="news-records">
+          <p>
+            <time datetime="2026-10-10">10 OCT 2026</time
+            ><span
+              >Our project page is online, with visual task navigation and a
+              growing paper collection.</span
+            >
+          </p>
+          <p>
+            <time datetime="2026-10-08">08 OCT 2026</time
+            ><span
+              >The survey companion and task-based reading lists are available
+              on GitHub.</span
+            >
+          </p>
+        </div>
       </aside>
       <section class="section manufacturing" id="manufacturing">
         <div class="section-heading">
@@ -679,7 +724,10 @@
             </button>
           </div>
           <div class="robot-scroll">
-            <div class="robot-strip" style="--active-part: 0">
+            <div
+              class="robot-strip"
+              style="--stage-left: 0%; --stage-width: 20.1%"
+            >
               <span class="robot-spotlight" aria-hidden="true"></span
               ><img
                 src="assets/web/stages.webp"
@@ -689,35 +737,35 @@
                 alt="The survey’s continuous illustration of Perception, Prediction, Reasoning, Planning and Autonomy."
               /><button
                 class="robot-hotspot"
-                style="--part: 0"
+                style="left: 0%; width: 20.1%"
                 data-robot="0"
                 aria-label="Explore Perception"
               >
                 <span class="sr-only">Perception</span></button
               ><button
                 class="robot-hotspot"
-                style="--part: 1"
+                style="left: 20.1%; width: 20.5%"
                 data-robot="1"
                 aria-label="Explore Prediction"
               >
                 <span class="sr-only">Prediction</span></button
               ><button
                 class="robot-hotspot"
-                style="--part: 2"
+                style="left: 40.6%; width: 15.8%"
                 data-robot="2"
                 aria-label="Explore Reasoning"
               >
                 <span class="sr-only">Reasoning</span></button
               ><button
                 class="robot-hotspot"
-                style="--part: 3"
+                style="left: 56.4%; width: 20.1%"
                 data-robot="3"
                 aria-label="Explore Planning"
               >
                 <span class="sr-only">Planning</span></button
               ><button
                 class="robot-hotspot"
-                style="--part: 4"
+                style="left: 76.5%; width: 23.5%"
                 data-robot="4"
                 aria-label="Explore Autonomy"
               >
@@ -774,7 +822,6 @@
               Explore how the literature is distributed across manufacturing
               scopes, AI stages and years.
             </p>
-            <a class="text-link" href="explore.html">Explore every paper ↗</a>
           </div>
         </div>
         <div class="chart-toolbar">
@@ -827,10 +874,32 @@
           aria-labelledby="year-chart-tab"
           hidden
         >
+          <div class="timeline-controls">
+            <span>Group each year by</span>
+            <div
+              class="timeline-modes"
+              aria-label="Break down publication years"
+            >
+              <button data-timeline="total" aria-pressed="true">
+                All papers</button
+              ><button data-timeline="scope" aria-pressed="false">
+                M1–M5 · Manufacturing</button
+              ><button data-timeline="stage" aria-pressed="false">
+                L1–L5 · AI stages
+              </button>
+            </div>
+          </div>
+          <div class="timeline-legend" id="timeline-legend"></div>
+          <div class="timeline-axis">
+            <span id="timeline-measure">Papers</span
+            ><span id="timeline-maximum"></span>
+          </div>
           <div class="timeline-chart" id="timeline-chart"></div>
-          <p class="timeline-note">
-            Publication year · Each paper is counted once. Select a year to
-            explore its papers.
+          <p class="timeline-readout" id="timeline-readout" role="status">
+            Select a bar to browse the papers from that year.
+          </p>
+          <p class="timeline-note" id="timeline-note">
+            Each paper is counted once.
           </p>
         </div>
         <div class="coverage-bottom">
@@ -871,25 +940,26 @@
         <div class="vision-principles">
           <div>
             <span>01</span>
-            <h3>Predict consequences.</h3>
+            <h3>World models</h3>
             <p>
-              Connect wafer quality, equipment availability and production
-              queues.
+              Predict how an action changes wafer quality, equipment state and
+              production flow, so alternatives can be compared before execution.
             </p>
           </div>
           <div>
             <span>02</span>
-            <h3>Coordinate actions.</h3>
+            <h3>Agents</h3>
             <p>
-              Bring process changes, maintenance and scheduling into a common
-              plan.
+              Use these predictions to plan and coordinate process changes,
+              maintenance and scheduling, working with engineers across tasks.
             </p>
           </div>
           <div>
             <span>03</span>
-            <h3>Learn from experience.</h3>
+            <h3>Physical AI &amp; feedback</h3>
             <p>
-              Use measured outcomes to improve models, agents and the next
+              Connect plans to factory execution. Measured outcomes improve
+              world models, agent workflows and the choice of the next
               experiment.
             </p>
           </div>

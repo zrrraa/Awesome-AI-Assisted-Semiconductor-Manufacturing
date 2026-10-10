@@ -102,15 +102,73 @@
     a.rel = "noopener";
     return a;
   }
+  function resourceIcon(label) {
+    const name = label.split(" · ")[0];
+    if (name === "Hugging Face") {
+      const n = el("span", "resource-icon", "🤗");
+      n.setAttribute("aria-hidden", "true");
+      return n;
+    }
+    const paths = {
+      Paper: "M6 3h8l4 4v14H6z M14 3v5h4 M9 12h6 M9 16h6",
+      arXiv: "m5 4 14 16 M8 4l11 12 M5 20l5-6 M14 10l5-6",
+      GitHub:
+        "M9 19c-4.3 1.3-4.3-2.2-6-2.6 M15 22v-3.4c0-1 .1-1.5-.5-2.1 3-.3 6.1-1.5 6.1-6.8a5.3 5.3 0 0 0-1.4-3.7 4.8 4.8 0 0 0-.1-3.6s-1.1-.4-3.7 1.4a12.5 12.5 0 0 0-6.8 0C6 2 4.9 2.4 4.9 2.4A4.8 4.8 0 0 0 4.8 6a5.3 5.3 0 0 0-1.4 3.7c0 5.3 3.1 6.5 6.1 6.8-.5.5-.6 1.1-.5 2.1V22",
+      GitLab: "m12 21-9-7 2-11 4 8h6l4-8 2 11z M3 14l6-3 3 10 3-10 6 3",
+      "Project page":
+        "M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0 M3 12h18 M12 3c-5 6-5 12 0 18 5-6 5-12 0-18",
+      Dataset:
+        "M4 6c0-4 16-4 16 0s-16 4-16 0v12c0 4 16 4 16 0V6 M4 12c0 4 16 4 16 0",
+    };
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("class", "resource-icon");
+    const path = document.createElementNS(svg.namespaceURI, "path");
+    path.setAttribute("d", paths[name] || paths.Paper);
+    svg.append(path);
+    return svg;
+  }
   function paperCard(p) {
     const card = el("article", "paper-card");
     card.dataset.paper = p.id;
     card.dataset.task = p.task;
-    card.append(el("div", "paper-year", p.year));
     const body = el("div", "paper-body"),
       h = el("h2");
     h.textContent = p.title;
-    body.append(h, el("p", "paper-meta", p.authors + " · " + p.venue));
+    const venue = el("span", "venue-chip", p.venueBadge);
+    venue.title = p.venue ? p.venue + " · " + p.year : String(p.year);
+    h.append(document.createTextNode(" "), venue);
+    const authors = el("div", "paper-meta"),
+      authorText = el("span");
+    const names = p.authorList || [p.authors];
+    authorText.id = "authors-" + p.id;
+    authorText.textContent =
+      names.length > 8
+        ? names.slice(0, 5).join(", ") + ", …"
+        : names.join(", ");
+    authors.append(authorText);
+    if (names.length > 8) {
+      const toggle = el(
+        "button",
+        "authors-toggle",
+        "Show all " + names.length + " authors",
+      );
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-controls", authorText.id);
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") !== "true";
+        toggle.setAttribute("aria-expanded", String(expanded));
+        authorText.textContent = expanded
+          ? names.join(", ")
+          : names.slice(0, 5).join(", ") + ", …";
+        toggle.textContent = expanded
+          ? "Show fewer"
+          : "Show all " + names.length + " authors";
+      });
+      authors.append(toggle);
+    }
+    body.append(h, authors);
     const bottom = el("div", "paper-bottom"),
       tag = el(
         "a",
@@ -119,14 +177,42 @@
       );
     tag.href = "explore.html?task=" + p.task;
     tag.dataset.selectTask = p.task;
-    bottom.append(external(p.url, "Paper ↗", "paper-resource"));
-    for (const resource of p.resources)
-      bottom.append(
-        external(resource.url, resource.label + " ↗", "paper-resource"),
+    const arxiv = p.url.match(
+      /(?:arxiv\.(?:org\/(?:abs|pdf)\/)|arxiv[.:/])(\d{4}\.\d{4,5})/i,
+    );
+    const resources = [
+      {
+        url: arxiv ? "https://arxiv.org/abs/" + arxiv[1] : p.url,
+        label: arxiv ? "arXiv" : "Paper",
+      },
+      ...p.resources,
+    ];
+    const seen = new Set();
+    for (const resource of resources) {
+      const key = resource.url.replace(/\/$/, "").toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const link = external(resource.url, "", "paper-resource");
+      link.append(
+        resourceIcon(resource.label),
+        document.createTextNode(resource.label),
       );
+      link.title = resource.label + " — " + new URL(resource.url).hostname;
+      bottom.append(link);
+    }
     const tags = el("div", "paper-tags");
-    tags.append(tag);
-    if (p.preprint) tags.append(el("span", "support-chip", "Preprint"));
+    const scope = el(
+      "a",
+      "scope-chip " + p.catalogueScope,
+      "M" +
+        (scopes.indexOf(p.catalogueScope) + 1) +
+        " · " +
+        p.catalogueScope[0].toUpperCase() +
+        p.catalogueScope.slice(1),
+    );
+    scope.href = "explore.html?scope=" + p.catalogueScope;
+    scope.dataset.selectScope = p.catalogueScope;
+    tags.append(scope, tag);
     for (const stage of p.stages) {
       const chip = el("a", "stage-chip", stage + " · " + stages[stage]);
       chip.href = "explore.html?stage=" + stage;
@@ -292,6 +378,13 @@
       return;
     e.preventDefault();
     setState({ stage: a.dataset.selectStage, year: "" });
+  });
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-select-scope]");
+    if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button)
+      return;
+    e.preventDefault();
+    setState({ scope: a.dataset.selectScope, task: "", year: "" });
   });
   $(".library-controls").addEventListener("submit", (e) => e.preventDefault());
   search.addEventListener("input", () => {

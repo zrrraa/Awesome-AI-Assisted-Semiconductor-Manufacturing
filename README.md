@@ -16,7 +16,6 @@
 
 <p align="center">
   <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/">🌐 <b>Project page</b></a> &nbsp; · &nbsp;
-  <a href="#news">🔥 <b>News</b></a> &nbsp; · &nbsp;
   <a href="#citation">📝 <b>Citation</b></a> &nbsp; · &nbsp;
   <a href="#papers">📚 <b>Papers</b></a> &nbsp; · &nbsp;
   <a href="docs/getting-started.md">🧭 <b>Reading guide</b></a>
@@ -26,8 +25,8 @@
 
 ## 🔥 News
 
-- **2026-10-10** — The [interactive research guide and paper library](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/) are live: explore manufacturing tasks, follow the wafer-to-chip process, and browse research directly on the project page.
-- **2026-10-08** — Task-based reading lists and the survey companion are online.
+- **2026-10-10** — Our project page is online, with visual task navigation and a growing paper collection.
+- **2026-10-08** — The survey companion and task-based reading lists are available on GitHub.
 
 <a id="citation"></a>
 
@@ -57,23 +56,23 @@ The survey follows AI’s growing role in manufacturing: recognizing observation
 
 [◉ **Perception**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1) · [◇ **Prediction**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2) · [✳ **Reasoning**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L3) · [⤴ **Planning**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4) · [↻ **Autonomy**](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L5)
 
-[Explore manufacturing scope × AI stage →](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/#coverage)
+[Explore scope × stage and research over time →](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/#coverage)
 
 <a id="papers"></a>
 <a id="browse-by-manufacturing-task"></a>
 
 ## 🧭 Explore by manufacturing task
 
-Choose a manufacturing question and follow its research. Each task links to a reading list in this repository.
+Choose a manufacturing question and follow its research. Each entry includes the venue, authors, available paper and resource links, and its manufacturing scope, task and AI stages.
 
 <table>
 <tr>
-<td valign="top" width="33%"><img src="docs/assets/icons/artifact_wide.png" height="66" alt=""><h3><a href="papers/artifacts.md">Artifacts</a></h3><p><sub>Products, patterns &amp; quality</sub></p><p><a href="papers/artifacts.md#a1"><b>A1</b> · Wafer spatial-pattern analysis</a><br><br><a href="papers/artifacts.md#a2"><b>A2</b> · Local defect detection and localization</a><br><br><a href="papers/artifacts.md#a3"><b>A3</b> · Computational lithography</a><br><br><a href="papers/artifacts.md#a4"><b>A4</b> · Product quality and yield inference</a><br><br><a href="papers/artifacts.md#a5"><b>A5</b> · Yield-loss diagnosis and root-cause analysis</a><br><br><a href="papers/artifacts.md#a6"><b>A6</b> · Adaptive testing and inspection</a></p></td>
-<td valign="top" width="33%"><img src="docs/assets/icons/process.png" height="66" alt=""><h3><a href="papers/processes.md">Processes</a></h3><p><sub>Measurements, recipes &amp; control</sub></p><p><a href="papers/processes.md#p1"><b>P1</b> · Process monitoring and endpoint detection</a><br><br><a href="papers/processes.md#p2"><b>P2</b> · Virtual metrology</a><br><br><a href="papers/processes.md#p3"><b>P3</b> · Process development and recipe optimization</a><br><br><a href="papers/processes.md#p4"><b>P4</b> · Run-to-run and feedback control</a></p></td>
-<td valign="top" width="33%"><img src="docs/assets/icons/equipment.png" height="66" alt=""><h3><a href="papers/equipment.md">Equipment</a></h3><p><sub>Health, maintenance &amp; readiness</sub></p><p><a href="papers/equipment.md#e1"><b>E1</b> · Fault detection and diagnosis</a><br><br><a href="papers/equipment.md#e2"><b>E2</b> · Prognostics and maintenance</a><br><br><a href="papers/equipment.md#e3"><b>E3</b> · Calibration, matching and qualification</a></p></td>
+<td valign="top" width="33%"><img src="docs/assets/icons/artifact_wide.png" height="66" alt=""><h3><a href="papers/artifacts.md">M1 · Artifacts</a></h3><p><sub>Products, patterns &amp; quality</sub></p><p><a href="papers/artifacts.md#a1"><b>A1</b> · Wafer spatial-pattern analysis</a><br><br><a href="papers/artifacts.md#a2"><b>A2</b> · Local defect detection and localization</a><br><br><a href="papers/artifacts.md#a3"><b>A3</b> · Computational lithography</a><br><br><a href="papers/artifacts.md#a4"><b>A4</b> · Product quality and yield inference</a><br><br><a href="papers/artifacts.md#a5"><b>A5</b> · Yield-loss diagnosis and root-cause analysis</a><br><br><a href="papers/artifacts.md#a6"><b>A6</b> · Adaptive testing and inspection</a></p></td>
+<td valign="top" width="33%"><img src="docs/assets/icons/process.png" height="66" alt=""><h3><a href="papers/processes.md">M2 · Processes</a></h3><p><sub>Measurements, recipes &amp; control</sub></p><p><a href="papers/processes.md#p1"><b>P1</b> · Process monitoring and endpoint detection</a><br><br><a href="papers/processes.md#p2"><b>P2</b> · Virtual metrology</a><br><br><a href="papers/processes.md#p3"><b>P3</b> · Process development and recipe optimization</a><br><br><a href="papers/processes.md#p4"><b>P4</b> · Run-to-run and feedback control</a></p></td>
+<td valign="top" width="33%"><img src="docs/assets/icons/equipment.png" height="66" alt=""><h3><a href="papers/equipment.md">M3 · Equipment</a></h3><p><sub>Health, maintenance &amp; readiness</sub></p><p><a href="papers/equipment.md#e1"><b>E1</b> · Fault detection and diagnosis</a><br><br><a href="papers/equipment.md#e2"><b>E2</b> · Prognostics and maintenance</a><br><br><a href="papers/equipment.md#e3"><b>E3</b> · Calibration, matching and qualification</a></p></td>
 </tr><tr>
-<td valign="top" width="33%"><img src="docs/assets/icons/production.png" height="66" alt=""><h3><a href="papers/production.md">Production</a></h3><p><sub>Lots, schedules &amp; material flow</sub></p><p><a href="papers/production.md#r1"><b>R1</b> · Cycle-time and delivery prediction</a><br><br><a href="papers/production.md#r2"><b>R2</b> · Scheduling and dispatching</a><br><br><a href="papers/production.md#r3"><b>R3</b> · Material handling</a><br><br><a href="papers/production.md#r4"><b>R4</b> · Bottleneck and production-state analysis</a></p></td>
-<td valign="top" width="33%"><img src="docs/assets/icons/fab_vertical.png" height="66" alt=""><h3><a href="papers/fabs.md">Fabs</a></h3><p><sub>Utilities, resources &amp; capacity</sub></p><p><a href="papers/fabs.md#f1"><b>F1</b> · Utility and resource operation</a><br><br><a href="papers/fabs.md#f2"><b>F2</b> · Capacity planning</a></p></td>
+<td valign="top" width="33%"><img src="docs/assets/icons/production.png" height="66" alt=""><h3><a href="papers/production.md">M4 · Production</a></h3><p><sub>Lots, schedules &amp; material flow</sub></p><p><a href="papers/production.md#r1"><b>R1</b> · Cycle-time and delivery prediction</a><br><br><a href="papers/production.md#r2"><b>R2</b> · Scheduling and dispatching</a><br><br><a href="papers/production.md#r3"><b>R3</b> · Material handling</a><br><br><a href="papers/production.md#r4"><b>R4</b> · Bottleneck and production-state analysis</a></p></td>
+<td valign="top" width="33%"><img src="docs/assets/icons/fab_vertical.png" height="66" alt=""><h3><a href="papers/fabs.md">M5 · Fabs</a></h3><p><sub>Utilities, resources &amp; capacity</sub></p><p><a href="papers/fabs.md#f1"><b>F1</b> · Utility and resource operation</a><br><br><a href="papers/fabs.md#f2"><b>F2</b> · Capacity planning</a></p></td>
 <td valign="top"><img src="docs/assets/icons/wafer.png" height="66" alt=""><h3>Choose a reading path</h3><p>New to the field?<br>Start with the <a href="docs/getting-started.md">reading guide</a>.</p><p>Search by title, author or year in the <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html">interactive paper library ↗</a>.</p></td></tr>
 </table>
 
@@ -95,6 +94,10 @@ Our survey connects **five manufacturing scopes** and **nineteen tasks** with fi
 </tr>
 </table>
 
-These connections motivate an **AI-native autonomous virtual fab**: models, agents and physical systems supporting factory decisions and improving through operating experience.
+These connections motivate an **AI-native autonomous virtual fab**:
+
+- **World models** predict how actions affect wafer quality, equipment state and production flow.
+- **Agents** use those predictions to plan and coordinate manufacturing actions with engineers.
+- **Physical AI and feedback** connect plans to execution, using measured outcomes to improve models, workflows and subsequent experiments.
 
 [🤝 Contribute a paper](CONTRIBUTING.md)
