@@ -124,28 +124,61 @@ document.querySelector('#copy-citation').addEventListener('click', async () => {
   }
 });
 
-// Public star count only. The visitor performs the actual Star action on GitHub.
-async function loadStars() {
-  const cacheKey = 'semiconductor-survey-stars';
-  const show = count => {
-    if (!Number.isInteger(count) || count <= 0) return;
-    document.querySelectorAll('.star-count').forEach(node => {
-      node.textContent = new Intl.NumberFormat('en', { notation: 'compact' }).format(count);
-      node.setAttribute('aria-label', `${count} GitHub stars`); node.hidden = false;
-    });
-  };
-  try {
-    const cached = JSON.parse(sessionStorage.getItem(cacheKey) || 'null');
-    if (cached && Date.now() - cached.time < 3600000) { show(cached.count); return; }
-  } catch { /* The button works when browser storage is unavailable. */ }
+// Read the real GitHub total, including zero. A click never changes the count locally.
+const starCountNodes = [...document.querySelectorAll('.star-count')];
+const starCacheKey = 'semiconductor-survey-stars';
+let lastStarCount = null;
+let lastStarRefresh = 0;
+let starRequestPending = false;
+let returningFromGitHub = false;
+function showStars(count, cached = false) {
+  if (!Number.isInteger(count) || count < 0) return;
+  lastStarCount = count;
+  starCountNodes.forEach(node => {
+    node.textContent = new Intl.NumberFormat('en').format(count);
+    node.setAttribute('aria-label', `${count} GitHub stars`);
+    node.title = cached ? 'Last known GitHub star count' : `${count} stars on GitHub`;
+    node.hidden = false;
+  });
+}
+starCountNodes.forEach(node => {
+  node.textContent = '…';
+  node.setAttribute('aria-label', 'Loading GitHub star count');
+  node.hidden = false;
+});
+try {
+  const cached = JSON.parse(sessionStorage.getItem(starCacheKey) || 'null');
+  if (cached) showStars(cached.count, true);
+} catch { /* Browser storage is optional. */ }
+async function loadStars(force = false) {
+  if (starRequestPending || (!force && Date.now() - lastStarRefresh < 60000)) return;
+  starRequestPending = true;
+  returningFromGitHub = false;
+  lastStarRefresh = Date.now();
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 6000);
   try {
-    const response = await fetch('https://api.github.com/repos/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing', { signal: controller.signal });
-    if (!response.ok) return;
-    const data = await response.json(); show(data.stargazers_count);
-    try { sessionStorage.setItem(cacheKey, JSON.stringify({ count: data.stargazers_count, time: Date.now() })); } catch { /* Optional cache. */ }
-  } catch { /* Keep the GitHub link when the count is unavailable. */ }
-  finally { clearTimeout(timeout); }
+    const response = await fetch('https://api.github.com/repos/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing', { signal: controller.signal, cache: 'no-store' });
+    if (!response.ok) throw new Error('Star count unavailable');
+    const data = await response.json();
+    if (!Number.isInteger(data.stargazers_count) || data.stargazers_count < 0) throw new Error('Invalid star count');
+    showStars(data.stargazers_count);
+    try { sessionStorage.setItem(starCacheKey, JSON.stringify({ count: data.stargazers_count, time: Date.now() })); } catch { /* Optional cache. */ }
+  } catch {
+    if (lastStarCount !== null) showStars(lastStarCount, true);
+    else starCountNodes.forEach(node => {
+      node.textContent = '—';
+      node.setAttribute('aria-label', 'GitHub star count unavailable');
+      node.title = 'GitHub star count is temporarily unavailable';
+    });
+  } finally { clearTimeout(timeout); starRequestPending = false; }
 }
-loadStars();
+document.querySelectorAll('.star-link').forEach(link => {
+  link.addEventListener('click', () => { returningFromGitHub = true; });
+});
+function refreshStarsOnReturn() {
+  if (document.visibilityState === 'visible') loadStars(returningFromGitHub);
+}
+window.addEventListener('focus', refreshStarsOnReturn);
+document.addEventListener('visibilitychange', refreshStarsOnReturn);
+loadStars(true);
