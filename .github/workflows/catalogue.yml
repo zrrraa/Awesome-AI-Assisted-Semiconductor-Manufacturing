@@ -18,3 +18,4 @@ jobs:
         with:
           python-version: '3.13'
       - run: python .github/scripts/check_catalogue.py
+      - run: python scripts/build_catalogue.py --check

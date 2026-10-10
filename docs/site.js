@@ -1,184 +1,325 @@
-'use strict';
-
-// The figures and reading lists remain usable without JavaScript.
-const repo = 'https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing';
-const filters = [...document.querySelectorAll('.scope-filter')];
-const rows = [...document.querySelectorAll('.task-row')];
-const groups = [...document.querySelectorAll('.task-group')];
-const search = document.querySelector('#task-search');
-let scope = 'all';
-function filterTasks(syncUrl = true) {
-  const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  let visible = 0;
-  rows.forEach(row => {
-    row.hidden = !((scope === 'all' || row.dataset.scope === scope)
-      && terms.every(term => row.textContent.toLowerCase().includes(term)));
-    if (!row.hidden) visible++;
-  });
-  groups.forEach(group => { group.hidden = ![...group.querySelectorAll('.task-row')].some(row => !row.hidden); });
-  filters.forEach(button => {
-    const active = button.dataset.scope === scope;
-    button.classList.toggle('active', active);
-    button.setAttribute('aria-pressed', String(active));
-  });
-  document.querySelector('#empty-state').hidden = visible !== 0;
-  const label = scope === 'all' ? 'all manufacturing tasks' : scope;
-  document.querySelector('#filter-status').textContent = terms.length
-    ? `${visible} matching ${visible === 1 ? 'task' : 'tasks'} in ${label}` : `Showing ${label}`;
-  if (syncUrl) {
-    const url = new URL(location.href);
-    scope === 'all' ? url.searchParams.delete('scope') : url.searchParams.set('scope', scope);
-    search.value.trim() ? url.searchParams.set('q', search.value.trim()) : url.searchParams.delete('q');
-    history.replaceState(null, '', url);
+/* Interaction and motion shared by the atlas and the reading library. */
+(() => {
+  "use strict";
+  const $ = (s, root = document) => root.querySelector(s);
+  const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  let toastTimer;
+  function toast(message) {
+    const el = $(".toast");
+    if (!el) return;
+    el.textContent = message;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 2800);
   }
-}
-function restoreFilters() {
-  const params = new URLSearchParams(location.search);
-  const candidate = params.get('scope');
-  scope = filters.some(button => button.dataset.scope === candidate) ? candidate : 'all';
-  search.value = params.get('q') || '';
-  filterTasks(false);
-}
-filters.forEach(button => button.addEventListener('click', () => { scope = button.dataset.scope; filterTasks(); }));
-search.addEventListener('input', () => filterTasks());
-document.querySelector('#reset-filters').addEventListener('click', () => {
-  scope = 'all'; search.value = ''; filterTasks(); search.focus();
-});
-window.addEventListener('popstate', restoreFilters);
-restoreFilters();
-
-// Percentage-based hit regions follow Fig. 1 at every displayed size.
-const mapStatus = document.querySelector('#map-status');
-const mapDefault = mapStatus.textContent;
-let hoveredTask = null;
-function describeMapTask() {
-  const focused = document.activeElement;
-  const link = focused?.matches('.hotspot:focus-visible') ? focused : hoveredTask;
-  mapStatus.textContent = link ? `${link.dataset.task} · ${link.dataset.title}` : mapDefault;
-}
-function bindMap(container) {
-  container.querySelectorAll('.hotspot').forEach(link => {
-    link.addEventListener('pointerenter', () => { hoveredTask = link; describeMapTask(); });
-    link.addEventListener('focus', describeMapTask);
-    link.addEventListener('pointerleave', () => { if (hoveredTask === link) hoveredTask = null; describeMapTask(); });
-    link.addEventListener('blur', describeMapTask);
-  });
-}
-bindMap(document.querySelector('#main-map'));
-const mapDialog = document.querySelector('#map-dialog');
-const enlarge = document.querySelector('#enlarge-map');
-enlarge.addEventListener('click', event => {
-  if (typeof mapDialog.showModal !== 'function') return;
-  event.preventDefault();
-  const expanded = document.querySelector('#expanded-map');
-  if (!expanded.firstElementChild) {
-    const map = document.querySelector('#main-map').cloneNode(true);
-    map.removeAttribute('id'); expanded.append(map); bindMap(expanded);
+  const running = new WeakMap();
+  function reveal(el, options = {}) {
+    if (!el || reduced.matches || !window.Motion) return;
+    running.get(el)?.stop();
+    const animation = Motion.animate(
+      el,
+      { opacity: [0.35, 1], y: [options.y ?? 12, 0] },
+      { duration: 0.5, ease: [0.22, 1, 0.36, 1], ...options },
+    );
+    running.set(el, animation);
   }
-  mapDialog.showModal(); document.querySelector('#close-map').focus();
-});
-document.querySelector('#close-map').addEventListener('click', () => mapDialog.close());
-mapDialog.addEventListener('click', event => { if (event.target === mapDialog) mapDialog.close(); });
-mapDialog.addEventListener('close', () => { hoveredTask = null; enlarge.focus(); describeMapTask(); });
-
-const stages = {
-  perception: ['What is happening?', 'Recognize patterns in images and signals, such as defects on a wafer or changes in a sensor trace.', 'Explore wafer spatial-pattern analysis', 'artifacts.md#a1'],
-  prediction: ['What is still unknown?', 'Estimate an outcome before it can be measured, such as product quality or the time a lot will finish.', 'Explore virtual metrology', 'processes.md#p2'],
-  reasoning: ['Why is it happening?', 'Connect observations with manufacturing knowledge to investigate possible causes and decide what evidence is needed.', 'Explore yield-loss and root-cause diagnosis', 'artifacts.md#a5'],
-  planning: ['What should happen next?', 'Choose process settings, experiments or schedules by considering what different actions could achieve.', 'Explore scheduling and dispatching', 'production.md#r2'],
-  autonomy: ['How do we act and adapt?', 'Connect observation, decision and execution, then use feedback to adjust as operating conditions change.', 'Explore run-to-run and feedback control', 'processes.md#p4']
-};
-const tabs = [...document.querySelectorAll('[data-stage]')];
-function activateStage(tab) {
-  tabs.forEach(item => { item.setAttribute('aria-selected', String(item === tab)); item.tabIndex = item === tab ? 0 : -1; });
-  const [question, description, label, path] = stages[tab.dataset.stage];
-  document.querySelector('#stage-question').textContent = question;
-  document.querySelector('#stage-description').textContent = description;
-  const example = document.querySelector('#stage-example');
-  example.firstChild.textContent = `${label} `;
-  example.href = `${repo}/blob/master/papers/${path}`;
-  document.querySelector('#stage-panel').setAttribute('aria-labelledby', tab.id);
-}
-tabs.forEach((tab, index) => {
-  tab.addEventListener('click', () => activateStage(tab));
-  tab.addEventListener('keydown', event => {
-    let next;
-    if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-    if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
-    if (event.key === 'Home') next = 0;
-    if (event.key === 'End') next = tabs.length - 1;
-    if (next === undefined) return;
-    event.preventDefault(); tabs[next].focus(); activateStage(tabs[next]);
-  });
-});
-
-document.querySelector('#copy-citation').addEventListener('click', async () => {
-  const status = document.querySelector('#copy-status');
-  try {
-    await navigator.clipboard.writeText(document.querySelector('#bibtex').textContent);
-    status.textContent = 'BibTeX copied.';
-  } catch {
-    const range = document.createRange(); range.selectNodeContents(document.querySelector('#bibtex'));
-    const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
-    status.textContent = 'BibTeX selected. Press Ctrl+C (or Command+C) to copy.';
-  }
-});
-
-// Read the real GitHub total, including zero. A click never changes the count locally.
-const starCountNodes = [...document.querySelectorAll('.star-count')];
-const starCacheKey = 'semiconductor-survey-stars';
-let lastStarCount = null;
-let lastStarRefresh = 0;
-let starRequestPending = false;
-let returningFromGitHub = false;
-function showStars(count, cached = false) {
-  if (!Number.isInteger(count) || count < 0) return;
-  lastStarCount = count;
-  starCountNodes.forEach(node => {
-    node.textContent = new Intl.NumberFormat('en').format(count);
-    node.setAttribute('aria-label', `${count} GitHub stars`);
-    node.title = cached ? 'Last known GitHub star count' : `${count} stars on GitHub`;
-    node.hidden = false;
-  });
-}
-starCountNodes.forEach(node => {
-  node.textContent = '…';
-  node.setAttribute('aria-label', 'Loading GitHub star count');
-  node.hidden = false;
-});
-try {
-  const cached = JSON.parse(sessionStorage.getItem(starCacheKey) || 'null');
-  if (cached) showStars(cached.count, true);
-} catch { /* Browser storage is optional. */ }
-async function loadStars(force = false) {
-  if (starRequestPending || (!force && Date.now() - lastStarRefresh < 60000)) return;
-  starRequestPending = true;
-  returningFromGitHub = false;
-  lastStarRefresh = Date.now();
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 6000);
-  try {
-    const response = await fetch('https://api.github.com/repos/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing', { signal: controller.signal, cache: 'no-store' });
-    if (!response.ok) throw new Error('Star count unavailable');
-    const data = await response.json();
-    if (!Number.isInteger(data.stargazers_count) || data.stargazers_count < 0) throw new Error('Invalid star count');
-    showStars(data.stargazers_count);
-    try { sessionStorage.setItem(starCacheKey, JSON.stringify({ count: data.stargazers_count, time: Date.now() })); } catch { /* Optional cache. */ }
-  } catch {
-    if (lastStarCount !== null) showStars(lastStarCount, true);
-    else starCountNodes.forEach(node => {
-      node.textContent = '—';
-      node.setAttribute('aria-label', 'GitHub star count unavailable');
-      node.title = 'GitHub star count is temporarily unavailable';
+  window.AtlasUI = { reveal, toast };
+  if (window.Motion && !reduced.matches) {
+    Motion.inView(
+      ".section-heading, .journey, .stage-detail, .vision, .cite-card",
+      (el) => {
+        reveal(el, { y: 22, duration: 0.7 });
+      },
+    );
+    Motion.inView(".insight-grid", (el) => {
+      $$(".insight-card", el).forEach((card, i) =>
+        reveal(card, { delay: i * 0.08, y: 18 }),
+      );
     });
-  } finally { clearTimeout(timeout); starRequestPending = false; }
-}
-document.querySelectorAll('.star-link').forEach(link => {
-  link.addEventListener('click', () => { returningFromGitHub = true; });
-});
-function refreshStarsOnReturn() {
-  if (document.visibilityState === 'visible') loadStars(returningFromGitHub);
-}
-window.addEventListener('focus', refreshStarsOnReturn);
-document.addEventListener('visibilitychange', refreshStarsOnReturn);
-loadStars(true);
+    reveal($(".hero-heading"), { duration: 0.8, y: 16 });
+    reveal($(".hero-side"), { duration: 0.8, delay: 0.1, y: 14 });
+  }
+  // Decorative movement pauses out of view and respects the visitor's motion preference.
+  const diagrams = $$(".atlas-path, .loop-line"),
+    visible = new Set();
+  function updateDiagrams() {
+    diagrams.forEach((svg) => {
+      if (reduced.matches || document.hidden || !visible.has(svg))
+        svg.pauseAnimations?.();
+      else svg.unpauseAnimations?.();
+    });
+  }
+  const diagramObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e) =>
+      e.isIntersecting ? visible.add(e.target) : visible.delete(e.target),
+    );
+    updateDiagrams();
+  });
+  diagrams.forEach((svg) => diagramObserver.observe(svg));
+  reduced.addEventListener("change", updateDiagrams);
+  document.addEventListener("visibilitychange", updateDiagrams);
+  function wireTabs(selector, change) {
+    const tabs = $$(selector);
+    if (!tabs.length) return;
+    function activate(index, focus = false) {
+      tabs.forEach((t, i) => {
+        t.setAttribute("aria-selected", String(i === index));
+        t.tabIndex = i === index ? 0 : -1;
+      });
+      const tab = tabs[index];
+      if (focus) tab.focus({ preventScroll: true });
+      const rail = tab.parentElement;
+      if (rail.scrollWidth > rail.clientWidth)
+        rail.scrollTo({
+          left:
+            tab.offsetLeft -
+            rail.offsetLeft -
+            rail.clientWidth / 2 +
+            tab.clientWidth / 2,
+          behavior: reduced.matches ? "instant" : "smooth",
+        });
+      change(index, tab);
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => activate(index));
+      tab.addEventListener("keydown", (e) => {
+        let next;
+        if (e.key === "ArrowRight") next = (index + 1) % tabs.length;
+        if (e.key === "ArrowLeft")
+          next = (index - 1 + tabs.length) % tabs.length;
+        if (e.key === "Home") next = 0;
+        if (e.key === "End") next = tabs.length - 1;
+        if (next !== undefined) {
+          e.preventDefault();
+          activate(next, true);
+        }
+      });
+    });
+    return activate;
+  }
+  const steps = [
+    [
+      "Build the layers",
+      "Deposit a thin film",
+      "A thin layer of material is added to the wafer. Its thickness and uniformity influence the structures built in later steps.",
+      "P2",
+      "Virtual metrology",
+      "P4",
+      "Process control",
+    ],
+    [
+      "Prepare the surface",
+      "Coat with photoresist",
+      "A light-sensitive film is spread over the wafer and baked. Its thickness and condition affect how the pattern will be transferred.",
+      "P3",
+      "Recipe optimization",
+      "P1",
+      "Process monitoring",
+    ],
+    [
+      "Transfer the pattern",
+      "Align and expose",
+      "Light transfers a mask pattern to the photoresist. Mask design and exposure settings help determine the printed shape.",
+      "A3",
+      "Computational lithography",
+      "A2",
+      "Defect detection",
+    ],
+    [
+      "Reveal the pattern",
+      "Bake and develop",
+      "After exposure and a further bake, development removes selected regions of resist to reveal the pattern.",
+      "P3",
+      "Recipe optimization",
+      "P2",
+      "Virtual metrology",
+    ],
+    [
+      "Shape the material",
+      "Etch, strip and clean",
+      "Etching removes exposed material. The remaining resist and residues are then removed, leaving the patterned structure.",
+      "P1",
+      "Endpoint detection",
+      "P4",
+      "Process control",
+    ],
+    [
+      "Connect the structures",
+      "Fill and polish",
+      "Metal fills the patterned features. Chemical mechanical polishing removes excess material and makes the surface flat for later layers.",
+      "P2",
+      "Virtual metrology",
+      "P3",
+      "Recipe optimization",
+    ],
+    [
+      "Check the wafer",
+      "Test before separation",
+      "Electrical probes test individual dies on the wafer. The resulting measurements and failure patterns help assess quality and diagnose yield loss.",
+      "A1",
+      "Wafer patterns",
+      "A6",
+      "Adaptive testing",
+    ],
+    [
+      "Separate the chips",
+      "Thin, mount and dice",
+      "The wafer is thinned as needed, mounted for handling and cut into individual dies. Inspection helps identify damage and defects.",
+      "A2",
+      "Defect detection",
+      "A4",
+      "Quality inference",
+    ],
+    [
+      "Protect and connect",
+      "Assemble the package",
+      "Dies are attached, electrically connected and protected in a package. Assembly conditions influence the quality of the finished device.",
+      "A4",
+      "Quality inference",
+      "A5",
+      "Yield-loss diagnosis",
+    ],
+    [
+      "Verify the product",
+      "Test the finished device",
+      "Final testing checks whether the packaged device meets its requirements. Test results also provide feedback for manufacturing decisions.",
+      "A6",
+      "Adaptive testing",
+      "A5",
+      "Yield-loss diagnosis",
+    ],
+  ];
+  let currentStep = 0;
+  const activateStep = wireTabs("[data-step]", (index, tab) => {
+    currentStep = index;
+    const [label, title, body, t1, l1, t2, l2] = steps[index];
+    const pane = $("#step-detail");
+    pane.setAttribute("aria-labelledby", tab.id);
+    $(".step-number").textContent = String(index + 1).padStart(2, "0");
+    $(".step-copy .eyebrow").textContent = label;
+    $(".step-copy h3").textContent = title;
+    $(".step-copy>p:last-child").textContent = body;
+    $$(".step-tasks>a").forEach((a, i) => {
+      a.href = "explore.html?task=" + (i ? t2 : t1);
+      a.textContent = (i ? t2 : t1) + " · " + (i ? l2 : l1) + " ↗";
+    });
+    reveal($(".step-copy"), { y: 8 });
+    reveal($(".step-tasks"), { y: 6, delay: 0.04 });
+    const panorama = $(".journey-window");
+    if (panorama.scrollWidth > panorama.clientWidth)
+      panorama.scrollTo({
+        left: ((panorama.scrollWidth - panorama.clientWidth) * index) / 9,
+        behavior: reduced.matches ? "instant" : "smooth",
+      });
+  });
+  $(".next-step")?.addEventListener("click", () =>
+    activateStep((currentStep + 1) % steps.length),
+  );
+  const stages = [
+    [
+      "Perception",
+      "What is happening?",
+      "Recognize patterns, defects and operating states in images or sensor data.",
+      "Locate a defect in an inspection image, or recognize a spatial failure pattern on a wafer.",
+      "Observe → Recognize",
+      "A2",
+      "Explore defect detection",
+    ],
+    [
+      "Prediction",
+      "What is likely to happen?",
+      "Estimate an unmeasured property or a future outcome from the available observations.",
+      "Use equipment sensor signals to estimate a wafer measurement before physical metrology becomes available.",
+      "Observe → Estimate",
+      "P2",
+      "Explore virtual metrology",
+    ],
+    [
+      "Reasoning",
+      "Why did it happen?",
+      "Connect observations with process knowledge to investigate causes and explain results.",
+      "Combine wafer patterns, process histories and physical knowledge to distinguish possible causes of yield loss.",
+      "Evidence → Explanation",
+      "A5",
+      "Explore yield-loss diagnosis",
+    ],
+    [
+      "Planning",
+      "What should happen next?",
+      "Choose actions that account for objectives, constraints and their expected consequences.",
+      "Decide which lots each tool should process, while accounting for shared resources and delivery targets.",
+      "Consequences → Decisions",
+      "R2",
+      "Explore scheduling",
+    ],
+    [
+      "Autonomy",
+      "How can action improve with experience?",
+      "Connect observations and decisions to execution, then use the resulting feedback to improve subsequent actions.",
+      "A control system adjusts process settings and uses later measurements to update its next correction.",
+      "Decide → Act → Learn",
+      "P4",
+      "Explore feedback control",
+    ],
+  ];
+  wireTabs("[data-stage]", (index, tab) => {
+    const [name, title, body, example, label, task, link] = stages[index];
+    $("#stage-detail").setAttribute("aria-labelledby", tab.id);
+    // The five scenes share one continuous illustration, with unequal widths.
+    const slices = [
+      [0, 0.22],
+      [0.1833, 0.25],
+      [0.3861, 0.22],
+      [0.5639, 0.225],
+      [0.75, 0.25],
+    ];
+    $(".stage-visual").style.setProperty("--strip-start", slices[index][0]);
+    $(".stage-visual").style.setProperty("--strip-slice", slices[index][1]);
+    $(".stage-giant").textContent = String(index + 1).padStart(2, "0");
+    $(".stage-mini-label").textContent = label;
+    $(".stage-copy .eyebrow").textContent = "L" + (index + 1) + " / " + name;
+    $(".stage-copy h3").textContent = title;
+    $(".stage-copy>p:not(.eyebrow)").textContent = body;
+    $(".stage-example>p").textContent = example;
+    const a = $(".stage-copy>.text-link");
+    a.href = "explore.html?task=" + task;
+    a.textContent = link + " ↗";
+    reveal($(".stage-copy"), { y: 10, duration: 0.45 });
+  });
+  const dialog = $(".diagram-dialog");
+  $("[data-open-diagram]")?.addEventListener("click", () => {
+    dialog.showModal();
+    document.body.style.overflow = "hidden";
+    reveal(dialog, { y: 15, duration: 0.3 });
+  });
+  $(".close-dialog")?.addEventListener("click", () => dialog.close());
+  dialog?.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      const r = dialog.getBoundingClientRect();
+      if (
+        e.clientX < r.left ||
+        e.clientX > r.right ||
+        e.clientY < r.top ||
+        e.clientY > r.bottom
+      )
+        dialog.close();
+    }
+  });
+  dialog?.addEventListener("close", () => {
+    document.body.style.overflow = "";
+  });
+  $("[data-copy-citation]")?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText($("#bibtex").textContent);
+      toast("BibTeX copied.");
+    } catch {
+      $("#bibtex").closest("details").open = true;
+      const range = document.createRange();
+      range.selectNodeContents($("#bibtex"));
+      getSelection().removeAllRanges();
+      getSelection().addRange(range);
+      toast("BibTeX selected. Press Ctrl+C or ⌘C to copy.");
+    }
+  });
+})();

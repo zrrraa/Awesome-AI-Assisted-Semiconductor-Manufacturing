@@ -26,7 +26,7 @@
 
 ## 🔥 News
 
-- **2026-10-10** — A new [project page](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/) brings together the survey story, visual task navigation and our growing paper collection.
+- **2026-10-10** — The [interactive atlas and paper library](https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/) are live: explore manufacturing tasks, follow the wafer-to-chip process, and browse research directly on the project page.
 - **2026-10-08** — Task-based reading lists and the survey companion are online.
 
 <a id="citation"></a>
@@ -49,91 +49,42 @@ If you find the survey useful, please cite it:
 
 </details>
 
-## 💡 From manufacturing data to manufacturing decisions
-
-Making a chip means coordinating many steps: patterns must be printed, processes adjusted, tools kept healthy, and wafers moved through a busy factory. AI can help at every step—but a better prediction does not automatically lead to a better manufacturing outcome.
-
-Our survey follows the decisions behind these tasks. It connects **five manufacturing scopes** and **nineteen tasks** with five AI stages: **Perception → Prediction → Reasoning → Planning → Autonomy**. The central question is how observations become useful actions, and how feedback makes those actions better.
-
-<p align="center"><img src="docs/assets/wafer-to-chip.jpg" width="1000" alt="Fig. 2. From wafer to chip: semiconductor fabrication, repeated processing steps, testing and packaging."></p>
-
-**Three ideas run through the review:**
-
-- **Keep the context.** Where and when a measurement is made can matter as much as its value.
-- **Connect predictions to decisions.** Diagnose a cause, choose the next measurement, adjust a process or coordinate factory resources.
-- **Learn from what happens next.** Actions change the factory and the data that future models learn from.
-
-Together, these findings motivate an **AI-native autonomous virtual fab**: models, agents and physical systems working together to support factory decisions and improve through operating experience.
-
 <a id="papers"></a>
 <a id="browse-by-manufacturing-task"></a>
 
-## 📚 Explore by manufacturing task
+## 🧭 Explore by manufacturing task
 
-Start from a manufacturing question, then follow the papers. New to the field? See the [reading guide](docs/getting-started.md).
-
-<table>
-<tr><td colspan="2" width="900"><img src="docs/assets/icons/artifact_wide.png" width="90" align="right" alt=""><h3><a href="papers/artifacts.md">Artifacts</a></h3><b>What are we making?</b><br>Products, patterns and quality.</td></tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a1"><img src="docs/assets/icons/wafer.png" width="42" height="42" alt=""><br><b>A1 · Wafer spatial-pattern analysis</b></a><br><sub>What does the spatial pattern of failing dies reveal about a wafer?</sub></td>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a2"><img src="docs/assets/icons/local.png" width="42" height="42" alt=""><br><b>A2 · Local defect detection and localization</b></a><br><sub>Where is a defect, and what does it look like?</sub></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a3"><img src="docs/assets/icons/lithography.png" width="42" height="42" alt=""><br><b>A3 · Computational lithography</b></a><br><sub>Which mask pattern will print the intended structure on a wafer?</sub></td>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a4"><img src="docs/assets/icons/quality.png" width="42" height="42" alt=""><br><b>A4 · Product quality and yield inference</b></a><br><sub>Will a product meet its quality requirements?</sub></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a5"><img src="docs/assets/icons/root_cause.png" width="42" height="42" alt=""><br><b>A5 · Yield-loss diagnosis and root-cause analysis</b></a><br><sub>What caused a loss of yield, and where should engineers investigate?</sub></td>
-<td width="50%" valign="top"><a href="papers/artifacts.md#a6"><img src="docs/assets/icons/probe.png" width="42" height="42" alt=""><br><b>A6 · Adaptive testing and inspection</b></a><br><sub>Which dies or locations should be tested or inspected next?</sub></td>
-</tr>
-</table>
+Choose a manufacturing question and follow its research. Each task links to a reading list in this repository.
 
 <table>
-<tr><td colspan="2" width="900"><img src="docs/assets/icons/process.png" width="90" align="right" alt=""><h3><a href="papers/processes.md">Processes</a></h3><b>How do we make it?</b><br>Measurements, recipes and control.</td></tr>
 <tr>
-<td width="50%" valign="top"><a href="papers/processes.md#p1"><img src="docs/assets/icons/monitoring_clear.png" width="42" height="42" alt=""><br><b>P1 · Process monitoring and endpoint detection</b></a><br><sub>Is a process running normally, and when should it stop?</sub></td>
-<td width="50%" valign="top"><a href="papers/processes.md#p2"><img src="docs/assets/icons/vm_clear.png" width="42" height="42" alt=""><br><b>P2 · Virtual metrology</b></a><br><sub>Can sensor data estimate a measurement that is slow or expensive to obtain?</sub></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/processes.md#p3"><img src="docs/assets/icons/recipes_clear.png" width="42" height="42" alt=""><br><b>P3 · Process development and recipe optimization</b></a><br><sub>Which process settings or experiments should be tried next?</sub></td>
-<td width="50%" valign="top"><a href="papers/processes.md#p4"><img src="docs/assets/icons/feedback_clear.png" width="42" height="42" alt=""><br><b>P4 · Run-to-run and feedback control</b></a><br><sub>How should settings change after observing a process result?</sub></td>
-</tr>
-</table>
-
-<table>
-<tr><td colspan="2" width="900"><img src="docs/assets/icons/equipment.png" width="90" align="right" alt=""><h3><a href="papers/equipment.md">Equipment</a></h3><b>Can the tools do the job?</b><br>Tool health, maintenance and readiness.</td></tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/equipment.md#e1"><img src="docs/assets/icons/diagnosis.png" width="42" height="42" alt=""><br><b>E1 · Fault detection and diagnosis</b></a><br><sub>Is a tool faulty, and which fault explains its signals?</sub></td>
-<td width="50%" valign="top"><a href="papers/equipment.md#e2"><img src="docs/assets/icons/prognosis.png" width="42" height="42" alt=""><br><b>E2 · Prognostics and maintenance</b></a><br><sub>When is a tool likely to fail, and when should it be maintained?</sub></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/equipment.md#e3"><img src="docs/assets/icons/qualification.png" width="42" height="42" alt=""><br><b>E3 · Calibration, matching and qualification</b></a><br><sub>Is a tool or chamber ready for a specified manufacturing operation?</sub></td>
-<td></td>
-</tr>
-</table>
-
-<table>
-<tr><td colspan="2" width="900"><img src="docs/assets/icons/production.png" width="90" align="right" alt=""><h3><a href="papers/production.md">Production</a></h3><b>What should happen next?</b><br>Lots, schedules and material flow.</td></tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/production.md#r1"><img src="docs/assets/icons/cycle_time.png" width="42" height="42" alt=""><br><b>R1 · Cycle-time and delivery prediction</b></a><br><sub>When will a lot finish, and will it be delivered on time?</sub></td>
-<td width="50%" valign="top"><a href="papers/production.md#r2"><img src="docs/assets/icons/schedule.png" width="42" height="42" alt=""><br><b>R2 · Scheduling and dispatching</b></a><br><sub>Which job should each machine process next?</sub></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/production.md#r3"><img src="docs/assets/icons/transport.png" width="42" height="42" alt=""><br><b>R3 · Material handling</b></a><br><sub>How should wafers move between tools?</sub></td>
-<td width="50%" valign="top"><a href="papers/production.md#r4"><img src="docs/assets/icons/bottleneck.png" width="42" height="42" alt=""><br><b>R4 · Bottleneck and production-state analysis</b></a><br><sub>Where is production constrained, and what factory state explains the delay?</sub></td>
-</tr>
-</table>
-
-<table>
-<tr><td colspan="2" width="900"><img src="docs/assets/icons/fab_vertical.png" width="90" align="right" alt=""><h3><a href="papers/fabs.md">Fabs</a></h3><b>What keeps the factory running?</b><br>Utilities, resources and capacity.</td></tr>
-<tr>
-<td width="50%" valign="top"><a href="papers/fabs.md#f1"><img src="docs/assets/icons/utility.png" width="42" height="42" alt=""><br><b>F1 · Utility and resource operation</b></a><br><sub>How should cooling, power, air and water systems serve production efficiently?</sub></td>
-<td width="50%" valign="top"><a href="papers/fabs.md#f2"><img src="docs/assets/icons/capacity.png" width="42" height="42" alt=""><br><b>F2 · Capacity planning</b></a><br><sub>What equipment, qualifications or factory space should be added or reassigned?</sub></td>
-</tr>
+<td valign="top" width="33%"><img src="docs/assets/icons/artifact_wide.png" height="66" alt=""><h3><a href="papers/artifacts.md">Artifacts</a></h3><p><sub>Products, patterns &amp; quality</sub></p><p><a href="papers/artifacts.md#a1"><b>A1</b> · Wafer spatial-pattern analysis</a><br><br><a href="papers/artifacts.md#a2"><b>A2</b> · Local defect detection and localization</a><br><br><a href="papers/artifacts.md#a3"><b>A3</b> · Computational lithography</a><br><br><a href="papers/artifacts.md#a4"><b>A4</b> · Product quality and yield inference</a><br><br><a href="papers/artifacts.md#a5"><b>A5</b> · Yield-loss diagnosis and root-cause analysis</a><br><br><a href="papers/artifacts.md#a6"><b>A6</b> · Adaptive testing and inspection</a></p></td>
+<td valign="top" width="33%"><img src="docs/assets/icons/process.png" height="66" alt=""><h3><a href="papers/processes.md">Processes</a></h3><p><sub>Measurements, recipes &amp; control</sub></p><p><a href="papers/processes.md#p1"><b>P1</b> · Process monitoring and endpoint detection</a><br><br><a href="papers/processes.md#p2"><b>P2</b> · Virtual metrology</a><br><br><a href="papers/processes.md#p3"><b>P3</b> · Process development and recipe optimization</a><br><br><a href="papers/processes.md#p4"><b>P4</b> · Run-to-run and feedback control</a></p></td>
+<td valign="top" width="33%"><img src="docs/assets/icons/equipment.png" height="66" alt=""><h3><a href="papers/equipment.md">Equipment</a></h3><p><sub>Health, maintenance &amp; readiness</sub></p><p><a href="papers/equipment.md#e1"><b>E1</b> · Fault detection and diagnosis</a><br><br><a href="papers/equipment.md#e2"><b>E2</b> · Prognostics and maintenance</a><br><br><a href="papers/equipment.md#e3"><b>E3</b> · Calibration, matching and qualification</a></p></td>
+</tr><tr>
+<td valign="top" width="33%"><img src="docs/assets/icons/production.png" height="66" alt=""><h3><a href="papers/production.md">Production</a></h3><p><sub>Lots, schedules &amp; material flow</sub></p><p><a href="papers/production.md#r1"><b>R1</b> · Cycle-time and delivery prediction</a><br><br><a href="papers/production.md#r2"><b>R2</b> · Scheduling and dispatching</a><br><br><a href="papers/production.md#r3"><b>R3</b> · Material handling</a><br><br><a href="papers/production.md#r4"><b>R4</b> · Bottleneck and production-state analysis</a></p></td>
+<td valign="top" width="33%"><img src="docs/assets/icons/fab_vertical.png" height="66" alt=""><h3><a href="papers/fabs.md">Fabs</a></h3><p><sub>Utilities, resources &amp; capacity</sub></p><p><a href="papers/fabs.md#f1"><b>F1</b> · Utility and resource operation</a><br><br><a href="papers/fabs.md#f2"><b>F2</b> · Capacity planning</a></p></td>
+<td valign="top"><img src="docs/assets/icons/wafer.png" height="66" alt=""><h3>Choose a reading path</h3><p>New to the field?<br>Start with the <a href="docs/getting-started.md">reading guide</a>.</p><p>Search by title, author or year in the <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html">interactive paper library ↗</a>.</p></td></tr>
 </table>
 
 [📖 Full bibliography](references.bib) · [🧰 Datasets & code](RESOURCES.md)
 
-## 🤝 Contribute
+## 💡 From manufacturing data to manufacturing decisions
 
-Have a paper to add or a correction to suggest? [Open an issue](https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing/issues/new/choose) or follow the [contribution guide](CONTRIBUTING.md) to send a pull request. The collection will grow with the field.
+Making a chip means coordinating processes, tools and factory resources. AI helps interpret observations, estimate unmeasured properties and choose what to measure or change next.
+
+Our survey connects **five manufacturing scopes** and **nineteen tasks** with five stages: **Perception → Prediction → Reasoning → Planning → Autonomy**.
+
+<p align="center"><img src="docs/assets/wafer-to-chip.jpg" width="1000" alt="From a bare wafer through repeated fabrication, testing and packaging to finished chips."></p>
+
+<table>
+<tr>
+<td width="33%" valign="top"><b>🔎 Preserve the context</b><br>Spatial patterns and process histories reveal differences hidden by averages.</td>
+<td width="33%" valign="top"><b>🎯 Connect prediction to action</b><br>A useful model helps choose a measurement, correction or manufacturing decision.</td>
+<td width="33%" valign="top"><b>🔄 Learn from outcomes</b><br>Actions change the factory and the observations that guide later decisions.</td>
+</tr>
+</table>
+
+These connections motivate an **AI-native autonomous virtual fab**: models, agents and physical systems supporting factory decisions and improving through operating experience.
+
+[🤝 Contribute a paper](CONTRIBUTING.md)

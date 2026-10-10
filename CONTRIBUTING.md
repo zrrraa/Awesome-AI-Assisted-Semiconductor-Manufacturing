@@ -7,6 +7,7 @@ Know a useful paper, dataset or implementation? [Open an issue](https://github.c
 1. Add the paper to its main task in `papers/`, keeping the list newest first. Copy a neighboring entry’s format.
 2. Include the full title, year, authors and venue. Link to the DOI, publisher or author’s preprint, and label preprints clearly.
 3. Add its BibTeX entry to `references.bib`, using the same citation key as the paper’s anchor. For a dataset or implementation, update `RESOURCES.md` and link to the original project.
+4. Run `python scripts/build_catalogue.py` to update the project page's paper library from the reading lists, and include the generated `docs/assets/catalogue.js` in your commit.
 
 The five scopes and task links are on the [homepage](README.md#papers). Choose the task by the paper’s manufacturing objective or action.
 
@@ -23,4 +24,5 @@ Automated checks verify local links, unique entries and matching bibliography ke
 
 ```sh
 python .github/scripts/check_catalogue.py
+python scripts/build_catalogue.py --check
 ```

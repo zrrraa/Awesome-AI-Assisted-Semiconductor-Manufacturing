@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Paper library · AI-Assisted Semiconductor Manufacturing</title>
+    <meta
+      name="description"
+      content="Explore AI-assisted semiconductor manufacturing: an interactive task atlas, a guide from wafer to chip, and a curated research library."
+    />
+    <meta name="theme-color" content="#fbf8ef" />
+    <meta
+      property="og:title"
+      content="Awesome AI-Assisted Semiconductor Manufacturing"
+    />
+    <meta
+      property="og:image"
+      content="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/assets/overview.jpg"
+    />
+    <link rel="icon" type="image/png" href="assets/web/brand.png" />
+    <link rel="apple-touch-icon" href="assets/web/brand.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="assets/vendor/motion-14.1.0.js" defer></script>
+    <script src="site.js" defer></script>
+    <script src="assets/catalogue.js" defer></script>
+    <script src="explore.js" defer></script>
+  </head>
+  <body class="library-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="AI-assisted semiconductor manufacturing home"
+        ><img src="assets/web/brand.png" width="42" height="42" alt="" /><span
+          >AI × Manufacturing<span class="brand-sub"
+            >From Perception to Autonomy</span
+          ></span
+        ></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="index.html#atlas">Atlas</a
+        ><a href="index.html#manufacturing">Manufacturing</a
+        ><a href="index.html#stages">AI stages</a
+        ><a href="explore.html" aria-current="page">Papers</a>
+      </nav>
+      <a
+        class="star"
+        href="https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing"
+        target="_blank"
+        rel="noopener"
+        ><svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path
+            d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"
+          /></svg
+        ><span>Star on GitHub</span><span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main id="main" class="library">
+      <aside class="library-nav" aria-label="Task navigation">
+        <button
+          class="library-nav-toggle"
+          aria-expanded="false"
+          aria-controls="task-menu"
+        >
+          Browse manufacturing tasks <span>+</span>
+        </button>
+        <div id="task-menu">
+          <a class="library-home" href="explore.html" data-all-papers
+            >All papers <span>↗</span></a
+          >
+          <details class="scope-nav artifacts" open>
+            <summary>
+              <img
+                src="assets/icons/artifact_wide.png"
+                width="30"
+                height="30"
+                alt=""
+              />Artifacts<span>−</span>
+            </summary>
+            <div>
+              <a href="explore.html?task=A1" data-select-task="A1"
+                ><b>A1</b>Wafer spatial-pattern analysis</a
+              ><a href="explore.html?task=A2" data-select-task="A2"
+                ><b>A2</b>Local defect detection and localization</a
+              ><a href="explore.html?task=A3" data-select-task="A3"
+                ><b>A3</b>Computational lithography</a
+              ><a href="explore.html?task=A4" data-select-task="A4"
+                ><b>A4</b>Product quality and yield inference</a
+              ><a href="explore.html?task=A5" data-select-task="A5"
+                ><b>A5</b>Yield-loss diagnosis and root-cause analysis</a
+              ><a href="explore.html?task=A6" data-select-task="A6"
+                ><b>A6</b>Adaptive testing and inspection</a
+              >
+            </div>
+          </details>
+          <details class="scope-nav processes" open>
+            <summary>
+              <img
+                src="assets/icons/process.png"
+                width="30"
+                height="30"
+                alt=""
+              />Processes<span>−</span>
+            </summary>
+            <div>
+              <a href="explore.html?task=P1" data-select-task="P1"
+                ><b>P1</b>Process monitoring and endpoint detection</a
+              ><a href="explore.html?task=P2" data-select-task="P2"
+                ><b>P2</b>Virtual metrology</a
+              ><a href="explore.html?task=P3" data-select-task="P3"
+                ><b>P3</b>Process development and recipe optimization</a
+              ><a href="explore.html?task=P4" data-select-task="P4"
+                ><b>P4</b>Run-to-run and feedback control</a
+              >
+            </div>
+          </details>
+          <details class="scope-nav equipment" open>
+            <summary>
+              <img
+                src="assets/icons/equipment.png"
+                width="30"
+                height="30"
+                alt=""
+              />Equipment<span>−</span>
+            </summary>
+            <div>
+              <a href="explore.html?task=E1" data-select-task="E1"
+                ><b>E1</b>Fault detection and diagnosis</a
+              ><a href="explore.html?task=E2" data-select-task="E2"
+                ><b>E2</b>Prognostics and maintenance</a
+              ><a href="explore.html?task=E3" data-select-task="E3"
+                ><b>E3</b>Calibration, matching and qualification</a
+              >
+            </div>
+          </details>
+          <details class="scope-nav production" open>
+            <summary>
+              <img
+                src="assets/icons/production.png"
+                width="30"
+                height="30"
+                alt=""
+              />Production<span>−</span>
+            </summary>
+            <div>
+              <a href="explore.html?task=R1" data-select-task="R1"
+                ><b>R1</b>Cycle-time and delivery prediction</a
+              ><a href="explore.html?task=R2" data-select-task="R2"
+                ><b>R2</b>Scheduling and dispatching</a
+              ><a href="explore.html?task=R3" data-select-task="R3"
+                ><b>R3</b>Material handling</a
+              ><a href="explore.html?task=R4" data-select-task="R4"
+                ><b>R4</b>Bottleneck and production-state analysis</a
+              >
+            </div>
+          </details>
+          <details class="scope-nav fabs" open>
+            <summary>
+              <img
+                src="assets/icons/fab_vertical.png"
+                width="30"
+                height="30"
+                alt=""
+              />Fabs<span>−</span>
+            </summary>
+            <div>
+              <a href="explore.html?task=F1" data-select-task="F1"
+                ><b>F1</b>Utility and resource operation</a
+              ><a href="explore.html?task=F2" data-select-task="F2"
+                ><b>F2</b>Capacity planning</a
+              >
+            </div>
+          </details>
+        </div>
+      </aside>
+      <div class="library-body">
+        <div class="library-heading">
+          <div>
+            <p class="eyebrow">The research collection</p>
+            <h1 id="library-title">Explore the literature<span>.</span></h1>
+            <p id="library-question">
+              Search across manufacturing tasks, or start with a question from
+              the atlas.
+            </p>
+          </div>
+          <img
+            id="library-icon"
+            src="assets/web/brand.png"
+            width="130"
+            height="130"
+            alt=""
+          />
+        </div>
+        <form class="library-controls" role="search">
+          <label class="search-field"
+            ><span>Search papers</span>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10" cy="10" r="6.5" />
+                <path d="m15 15 5 5" /></svg
+              ><input
+                type="search"
+                id="paper-search"
+                placeholder="Title, author or venue…"
+                autocomplete="off"
+              /></div></label
+          ><label
+            ><span>Manufacturing scope</span
+            ><select id="scope-filter">
+              <option value="">All scopes</option>
+              <option value="artifacts">Artifacts</option>
+              <option value="processes">Processes</option>
+              <option value="equipment">Equipment</option>
+              <option value="production">Production</option>
+              <option value="fabs">Fabs</option>
+            </select></label
+          ><label
+            ><span>Year</span
+            ><select id="year-filter">
+              <option value="">All years</option>
+            </select></label
+          ><label
+            ><span>Sort</span
+            ><select id="sort-filter">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+            </select></label
+          >
+        </form>
+        <div class="result-bar">
+          <p id="result-count" role="status" aria-live="polite"></p>
+          <button class="text-link" id="reset-filters">Reset filters ↺</button>
+        </div>
+        <div id="paper-results"></div>
+        <div class="load-more">
+          <button class="button" id="load-more">Show more papers ↓</button>
+        </div>
+        <noscript
+          ><p>
+            This interactive library uses JavaScript. The
+            <a
+              href="https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing/tree/master/papers"
+              >complete reading lists are also available on GitHub</a
+            >.
+          </p></noscript
+        >
+      </div>
+    </main>
+    <footer class="footer">
+      <a class="brand" href="index.html"
+        ><img src="assets/web/brand.png" width="36" height="36" alt="" /><span
+          >AI × Manufacturing</span
+        ></a
+      >
+      <p>From observations to actions. From experience to better decisions.</p>
+      <div>
+        <a href="index.html#citation">Citation</a
+        ><a href="mailto:rzhong@zju.edu.cn">Contact</a
+        ><a
+          href="https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing"
+          target="_blank"
+          rel="noopener"
+          >GitHub ↗</a
+        >
+      </div>
+    </footer>
+    <div class="toast" role="status"></div>
+  </body>
+</html>
