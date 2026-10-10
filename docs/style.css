@@ -1325,6 +1325,14 @@ dialog::backdrop {
   flex-wrap: wrap;
   gap: 4px 16px;
 }
+.hotspots:has(.hotspot:focus-visible) .hotspot:hover:not(:focus-visible) {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.hotspots:has(.hotspot:focus-visible) .hotspot:hover:not(:focus-visible) .hotspot-tag {
+  opacity: 0;
+}
 .contribute-actions {
   flex-wrap: wrap;
 }

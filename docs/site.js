@@ -50,13 +50,18 @@ restoreFilters();
 // Percentage-based hit regions follow Fig. 1 at every displayed size.
 const mapStatus = document.querySelector('#map-status');
 const mapDefault = mapStatus.textContent;
+let hoveredTask = null;
+function describeMapTask() {
+  const focused = document.activeElement;
+  const link = focused?.matches('.hotspot:focus-visible') ? focused : hoveredTask;
+  mapStatus.textContent = link ? `${link.dataset.task} · ${link.dataset.title}` : mapDefault;
+}
 function bindMap(container) {
   container.querySelectorAll('.hotspot').forEach(link => {
-    const describe = () => { mapStatus.textContent = `${link.dataset.task} · ${link.dataset.title}`; };
-    link.addEventListener('pointerenter', describe);
-    link.addEventListener('focus', describe);
-    link.addEventListener('pointerleave', () => { mapStatus.textContent = mapDefault; });
-    link.addEventListener('blur', () => { mapStatus.textContent = mapDefault; });
+    link.addEventListener('pointerenter', () => { hoveredTask = link; describeMapTask(); });
+    link.addEventListener('focus', describeMapTask);
+    link.addEventListener('pointerleave', () => { if (hoveredTask === link) hoveredTask = null; describeMapTask(); });
+    link.addEventListener('blur', describeMapTask);
   });
 }
 bindMap(document.querySelector('#main-map'));
@@ -74,7 +79,7 @@ enlarge.addEventListener('click', event => {
 });
 document.querySelector('#close-map').addEventListener('click', () => mapDialog.close());
 mapDialog.addEventListener('click', event => { if (event.target === mapDialog) mapDialog.close(); });
-mapDialog.addEventListener('close', () => { mapStatus.textContent = mapDefault; enlarge.focus(); });
+mapDialog.addEventListener('close', () => { hoveredTask = null; enlarge.focus(); describeMapTask(); });
 
 const stages = {
   perception: ['What is happening?', 'Recognize patterns in images and signals, such as defects on a wafer or changes in a sensor trace.', 'Explore wafer spatial-pattern analysis', 'artifacts.md#a1'],
