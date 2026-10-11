@@ -14,12 +14,14 @@
 
 <p align="center"><img src="docs/assets/overview.jpg" width="1000" alt="Fig. 1. Five manufacturing scopes and nineteen tasks, connected with five AI stages from Perception to Autonomy."></p>
 
+<!-- reading navigation -->
 <p align="center">
-  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/">🌐 <b>Project page</b></a> &nbsp; · &nbsp;
-  <a href="#citation">📝 <b>Citation</b></a> &nbsp; · &nbsp;
-  <a href="#papers">📚 <b>Papers</b></a> &nbsp; · &nbsp;
-  <a href="docs/getting-started.md">🧭 <b>Reading guide</b></a>
+  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="docs/assets/badges/resource-project-page-37c598.svg" alt="Project page" height="24"></a>
+  <a href="#citation"><img src="docs/assets/badges/resource-citation-5ceaf3.svg" alt="Citation" height="24"></a>
+  <a href="#papers"><img src="docs/assets/badges/resource-papers-be68a0.svg" alt="Papers" height="24"></a>
+  <a href="docs/getting-started.md"><img src="docs/assets/badges/resource-reading-guide-4a7725.svg" alt="Reading guide" height="24"></a>
 </p>
+<!-- /reading navigation -->
 
 <a id="news"></a>
 
@@ -96,8 +98,9 @@ Our survey connects **five manufacturing scopes** and **nineteen tasks** with fi
 
 These connections motivate an **AI-native autonomous virtual fab**:
 
-- **World models** predict how actions affect wafer quality, equipment state and production flow.
-- **Agents** use those predictions to plan and coordinate manufacturing actions with engineers.
-- **Physical AI and feedback** connect plans to execution, using measured outcomes to improve models, workflows and subsequent experiments.
+- **Operating loop — compare actions and coordinate execution.** World models predict the consequences of recipe, equipment and scheduling changes. Agents coordinate plans; controllers and Physical AI carry them out. New measurements inform the next decision.
+- **Learning loop — improve models and decision procedures.** Operating feedback improves world models and agent workflows. Recurring errors guide more informative experiments, helping solve new development problems with fewer physical trials.
+
+**Recursive self-improvement (RSI)** extends the learning loop to the procedure that proposes and evaluates improvements.
 
 [🤝 Contribute a paper](CONTRIBUTING.md)

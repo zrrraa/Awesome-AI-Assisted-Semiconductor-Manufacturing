@@ -440,12 +440,14 @@ summary:focus-visible,
   bottom: 4px;
 }
 .figure-scroll {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: thin;
 }
 .original-map {
   position: relative;
   isolation: isolate;
+  overflow: clip;
   background: #fffefa;
 }
 .original-map > img {
@@ -3089,5 +3091,203 @@ span.resource-icon {
   .year-bar .bar-stack {
     transition: none !important;
     animation: none !important;
+  }
+}
+/* Shared image coordinates keep stage titles and artwork aligned at every width. */
+.stages > .section-heading {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.stages > .section-heading .section-aside {
+  max-width: 620px;
+  margin: 22px auto 0;
+}
+.stage-visual-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  padding-bottom: 4px;
+}
+.stage-visual {
+  min-width: 660px;
+}
+.stage-tabs {
+  display: grid;
+  grid-template-columns: 20.1fr 20.5fr 15.8fr 20.1fr 23.5fr;
+  overflow: visible;
+}
+.stage-tabs button {
+  min-width: 0;
+  text-align: center;
+  padding: 16px 4px 19px;
+}
+.stage-tabs button b {
+  display: none;
+}
+.robot-scroll {
+  overflow: visible;
+}
+.robot-strip {
+  min-width: 0;
+}
+.map-peek {
+  width: min(355px, calc(100% - 40px));
+}
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  pointer-events: none;
+  z-index: 9;
+  border-radius: inherit;
+}
+.pipe-hotspot {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+.pipe-hotspot span {
+  display: none;
+}
+.pipe-hotspot .hotspot-art {
+  inset: 0;
+  border-radius: 999px;
+  transition:
+    opacity 0.18s,
+    transform 0.45s cubic-bezier(0.2, 1.5, 0.35, 1),
+    box-shadow 0.3s;
+}
+.pipe-hotspot:is(:hover, :focus-visible) {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+.pipe-hotspot:is(:hover, :focus-visible) .hotspot-art {
+  opacity: 1;
+  transform: translateY(-3px) scale(1.045);
+  box-shadow:
+    0 0 0 2px #4388b6,
+    0 7px 0 #4388b62b,
+    0 10px 20px #286b9325;
+}
+.topbar nav {
+  gap: clamp(12px, 1.65vw, 25px);
+}
+.topbar nav a {
+  white-space: nowrap;
+}
+.vision-loops {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  margin-top: 42px;
+}
+.vision-loop {
+  border-top: 2px solid #b1a0cc;
+  padding: 24px 0 0;
+}
+.learning-loop {
+  border-color: #7da6a2;
+}
+.learning-loop > .eyebrow {
+  color: #466e6b;
+}
+.vision-loop h3 {
+  font-size: clamp(25px, 2.5vw, 33px);
+  margin: 15px 0 24px;
+}
+.vision-loop > p:not(.eyebrow) {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.85;
+}
+.vision-loop strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+.loop-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 10px;
+  padding: 0;
+  margin: 0 0 20px;
+  list-style: none;
+  font-size: 11px;
+  font-weight: 700;
+  color: #675487;
+}
+.loop-sequence li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.loop-sequence li:not(:last-child)::after {
+  content: "→";
+  color: #a191b8;
+  font-weight: 400;
+}
+.learning-loop .loop-sequence {
+  color: #466e6b;
+}
+.vision-loop .rsi-note {
+  border-left: 2px solid #a0bdb3;
+  padding-left: 15px;
+  margin-top: 18px;
+}
+@media (max-width: 1100px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+  .topbar nav {
+    order: 3;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 26px;
+    border-top: 1px solid var(--line);
+    padding-top: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .topbar nav {
+    gap: 0 20px;
+    font-size: 10px;
+  }
+  .stages > .section-heading h2 {
+    font-size: 32px;
+  }
+  .stage-tabs button {
+    font-size: 13px;
+  }
+  .vision-loops {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 32px;
+  }
+  .vision-loop > p:not(.eyebrow) {
+    font-size: 12px;
+  }
+  .vision-loop h3 {
+    font-size: 27px;
+  }
+  .map-peek {
+    padding: 12px;
+    gap: 10px;
+  }
+  .map-peek img {
+    width: 44px;
+    height: 53px;
+  }
+  .map-peek b {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pipe-hotspot .hotspot-art {
+    transition: none;
   }
 }

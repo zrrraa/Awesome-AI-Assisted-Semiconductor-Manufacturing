@@ -323,7 +323,7 @@
     $$(".robot-hotspot").forEach((b, i) =>
       b.setAttribute("aria-pressed", String(i === index)),
     );
-    const rail = $(".robot-scroll"),
+    const rail = $(".stage-visual-scroll"),
       strip = $(".robot-strip");
     if (rail.scrollWidth > rail.clientWidth)
       rail.scrollTo({
@@ -642,10 +642,8 @@
       "capacity",
     ];
     const peek = $(".map-peek"),
-      map = $(".original-map");
-    $$(".figure-hotspot").forEach((a) => {
-      const index = catalogue.tasks.findIndex((t) => t.id === a.dataset.task),
-        t = catalogue.tasks[index];
+      map = $(".map-wrap");
+    const addFigureCrop = (a) => {
       const left = parseFloat(a.style.left),
         top = parseFloat(a.style.top),
         width = parseFloat(a.style.width),
@@ -660,6 +658,11 @@
         (top / (100 - height)) * 100 +
         "%";
       a.prepend(art);
+    };
+    $$(".figure-hotspot").forEach((a) => {
+      const index = catalogue.tasks.findIndex((t) => t.id === a.dataset.task),
+        t = catalogue.tasks[index];
+      addFigureCrop(a);
       const show = () => {
         $("#map-selection").textContent = t.id + " · " + t.title;
         $("img", peek).src = "assets/icons/" + taskIcons[index] + ".png";
@@ -669,14 +672,19 @@
         const r = a.getBoundingClientRect(),
           m = map.getBoundingClientRect();
         const x = Math.max(
-          8,
+          20,
           Math.min(
             r.left - m.left + r.width / 2 - peek.offsetWidth / 2,
-            m.width - peek.offsetWidth - 8,
+            m.width - peek.offsetWidth - 20,
           ),
         );
+        const below = r.bottom - m.top + 18;
+        const y =
+          below + peek.offsetHeight < m.height - 20
+            ? below
+            : Math.max(20, r.top - m.top - peek.offsetHeight - 18);
         peek.style.left = x + "px";
-        peek.style.top = r.bottom - m.top + 18 + "px";
+        peek.style.top = y + "px";
         peek.classList.add("visible");
       };
       const hide = () => {
@@ -688,7 +696,13 @@
       a.addEventListener("mouseleave", hide);
       a.addEventListener("blur", hide);
     });
+    $(".figure-scroll").addEventListener(
+      "scroll",
+      () => peek.classList.remove("visible"),
+      { passive: true },
+    );
     $$(".pipe-hotspot").forEach((a) => {
+      addFigureCrop(a);
       ["mouseenter", "focus"].forEach((evt) =>
         a.addEventListener(evt, () => {
           $("#map-selection").textContent =
