@@ -21,11 +21,6 @@ Papers are listed newest first within each task.
 
 > Is a process running normally, and when should it stop?
 
-- <a id="kim2025cecca"></a>**Adaptive learning strategies for addressing chamber variations in real-time endpoint detection of semiconductor plasma etching** <img src="https://img.shields.io/badge/JIM26-65558d?style=flat-square" alt="JIM26" title="Journal of Intelligent Manufacturing"><br>
-  <sub>Chae Sun Kim, Hae Rang Roh, Yongseok Lee, Yongsin Park, Chanmin Lee, Jong Min Lee</sub><br>
-  <a href="https://doi.org/10.1007/s10845-025-02715-0"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p1"><img src="https://img.shields.io/badge/Task-P1-74623f?style=flat-square" alt="P1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
-
 - <a id="li202676457"></a>**Constrained Dynamic Time Warping and Polyline Distance for Anomaly Detection in Semiconductor Manufacturing** <img src="https://img.shields.io/badge/Applied%20Sciences26-65558d?style=flat-square" alt="Applied Sciences26" title="Applied Sciences"><br>
   <sub>Gangjiang Li, Yihong Hang, Zaizhou Yang, Zhice Yang</sub><br>
   <a href="https://doi.org/10.3390/app16125779"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -35,6 +30,11 @@ Papers are listed newest first within each task.
   <sub>Junho Hwang, Sunuwe Kim, Sangwook Park</sub><br>
   <a href="https://doi.org/10.1109/jiot.2026.3653288"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p1"><img src="https://img.shields.io/badge/Task-P1-74623f?style=flat-square" alt="P1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
+
+- <a id="kim2025cecca"></a>**Adaptive learning strategies for addressing chamber variations in real-time endpoint detection of semiconductor plasma etching** <img src="https://img.shields.io/badge/JIM26-65558d?style=flat-square" alt="JIM26" title="Journal of Intelligent Manufacturing"><br>
+  <sub>Chae Sun Kim, Hae Rang Roh, Yongseok Lee, Yongsin Park, Chanmin Lee, Jong Min Lee</sub><br>
+  <a href="https://doi.org/10.1007/s10845-025-02715-0"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p1"><img src="https://img.shields.io/badge/Task-P1-74623f?style=flat-square" alt="P1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
 
 - <a id="yang20249b221"></a>**A Hierarchical Ensemble Causal Structure Learning Approach for Wafer Manufacturing** <img src="https://img.shields.io/badge/JIM24-65558d?style=flat-square" alt="JIM24" title="Journal of Intelligent Manufacturing"><br>
   <sub>Yu Yang, Sthitie Bom, Xiaotong Shen</sub><br>
@@ -270,6 +270,11 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/tsm.2025.3582194"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p2"><img src="https://img.shields.io/badge/Task-P2-74623f?style=flat-square" alt="P2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
 
+- <a id="yang2025ikddit"></a>**Photolithography Overlay Map Generation with Implicit Knowledge Distillation Diffusion Transformer** <img src="https://img.shields.io/badge/ICCV25-65558d?style=flat-square" alt="ICCV25" title="Proceedings of the IEEE/CVF International Conference on Computer Vision"><br>
+  <sub>Yuan-Fu Yang, Hsiu-Hui Hsiao</sub><br>
+  <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_Photolithography_Overlay_Map_Generation_with_Implicit_Knowledge_Distillation_Diffusion_Transformer_ICCV_2025_paper.html"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p2"><img src="https://img.shields.io/badge/Task-P2-74623f?style=flat-square" alt="P2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
+
 - <a id="ou2024da0be"></a>**Industrial data-driven machine learning soft sensing for optimal operation of etching tools** <img src="https://img.shields.io/badge/Digital%20Chemical%20Engineering24-65558d?style=flat-square" alt="Digital Chemical Engineering24" title="Digital Chemical Engineering"><br>
   <sub>Feiyang Ou, Henrik Wang, Chao Zhang, Matthew Tom, Sthitie Bom, James F. Davis, Panagiotis D. Christofides</sub><br>
   <a href="https://doi.org/10.1016/j.dche.2024.100195"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -427,6 +432,11 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.5923/j.control.20120203.02"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p2"><img src="https://img.shields.io/badge/Task-P2-74623f?style=flat-square" alt="P2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
 
+- <a id="zhu2012hmote"></a>**Hierarchical Modeling with Tensor Inputs** <img src="https://img.shields.io/badge/AAAI12-65558d?style=flat-square" alt="AAAI12" title="Proceedings of the AAAI Conference on Artificial Intelligence"><br>
+  <sub>Yada Zhu, Jingrui He, Rick Lawrence</sub><br>
+  <a href="https://ojs.aaai.org/index.php/AAAI/article/view/8283"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p2"><img src="https://img.shields.io/badge/Task-P2-74623f?style=flat-square" alt="P2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
+
 - <a id="zhenyu201028502"></a>**Process Performance Prediction for Chemical Mechanical Planarization (CMP) by Integration of Nonlinear Bayesian Analysis and Statistical Modeling** <img src="https://img.shields.io/badge/IEEE%20TSM10-65558d?style=flat-square" alt="IEEE TSM10" title="IEEE Transactions on Semiconductor Manufacturing"><br>
   <sub>Zhenyu Kong, Asil Oztekin, Omer Faruk Beyca, Upendra Phatak, Satish Bukkapatnam, Ranga Komanduri</sub><br>
   <a href="https://doi.org/10.1109/tsm.2010.2046110"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -468,11 +478,6 @@ Papers are listed newest first within each task.
 
   <a href="https://doi.org/10.1016/j.mssp.2026.110640"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a> <a href="https://github.com/JimmyxGuo/Etch-RL"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a><br>
   <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p3"><img src="https://img.shields.io/badge/Task-P3-74623f?style=flat-square" alt="P3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L5"><img src="https://img.shields.io/badge/L5-Autonomy-507b5e?style=flat-square" alt="L5 Autonomy"></a>
-
-- <a id="zeng2026pgnn"></a>**Physics-guided neural network with robust Bayesian optimization for quality prediction and process parameter tuning in single-crystal silicon wafers** <img src="https://img.shields.io/badge/MSSP26-65558d?style=flat-square" alt="MSSP26" title="Materials Science in Semiconductor Processing"><br>
-  <sub>Chunyan Zeng, Xinqin Gao, Xueqi Yang, Jiarong Qiu, Xinxing Tong</sub><br>
-  <a href="https://doi.org/10.1016/j.mssp.2026.111064"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p3"><img src="https://img.shields.io/badge/Task-P3-74623f?style=flat-square" alt="P3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
 
 - <a id="myung2026832ec"></a>**Simulation-guided AI-driven digital twin for plasma etching in semiconductor fabrication** <img src="https://img.shields.io/badge/Device26-65558d?style=flat-square" alt="Device26" title="Device"><br>
   <sub>Sanghoon Myung, Kyeyeop Kim, Chanyoung Lee, Jinwoo Kim, Yunji Choi</sub>
@@ -678,6 +683,11 @@ Papers are listed newest first within each task.
 - <a id="khan2008adaptivevm"></a>**Virtual metrology and feedback control for semiconductor manufacturing processes using recursive partial least squares** <img src="https://img.shields.io/badge/JPC08-65558d?style=flat-square" alt="JPC08" title="Journal of Process Control"><br>
   <sub>Aftab A. Khan, J.R. Moyne, D.M. Tilbury</sub><br>
   <a href="https://doi.org/10.1016/j.jprocont.2008.04.014"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p4"><img src="https://img.shields.io/badge/Task-P4-74623f?style=flat-square" alt="P4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L5"><img src="https://img.shields.io/badge/L5-Autonomy-507b5e?style=flat-square" alt="L5 Autonomy"></a>
+
+- <a id="khan2007d8b08"></a>**An Approach for Factory-Wide Control Utilizing Virtual Metrology** <img src="https://img.shields.io/badge/IEEE%20TSM07-65558d?style=flat-square" alt="IEEE TSM07" title="IEEE Transactions on Semiconductor Manufacturing"><br>
+  <sub>Aftab A. Khan, James R. Moyne, Dawn M. Tilbury</sub><br>
+  <a href="https://doi.org/10.1109/tsm.2007.907609"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat-square" alt="M2 Processes"> <a href="#p4"><img src="https://img.shields.io/badge/Task-P4-74623f?style=flat-square" alt="P4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L5"><img src="https://img.shields.io/badge/L5-Autonomy-507b5e?style=flat-square" alt="L5 Autonomy"></a>
 
 - <a id="card1998845e8"></a>**Run-to-Run Process Control of a Plasma Etch Process with Neural Network Modelling** <img src="https://img.shields.io/badge/QREI98-65558d?style=flat-square" alt="QREI98" title="Quality and Reliability Engineering International"><br>

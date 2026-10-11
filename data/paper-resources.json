@@ -197,14 +197,6 @@
         "page": 1
       }
     ],
-    "mohammad2025tinyvit": [
-      {
-        "label": "arXiv",
-        "url": "https://arxiv.org/abs/2504.02494",
-        "source": "https://doi.org/10.48550/arXiv.2504.02494",
-        "page": 1
-      }
-    ],
     "shao2023lithoactive": [
       {
         "label": "arXiv",
@@ -723,6 +715,19 @@
         "url": "https://arxiv.org/abs/2303.07062",
         "source": "https://arxiv.org/abs/2303.07062",
         "verification": "Title and author identity matched to the publication record."
+      }
+    ],
+    "kwon2023irlinr": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/sehyunkwon/IRL-INR",
+        "source": "https://proceedings.mlr.press/v202/kwon23a.html",
+        "page": 1
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2304.13995",
+        "source": "https://github.com/sehyunkwon/IRL-INR"
       }
     ]
   },

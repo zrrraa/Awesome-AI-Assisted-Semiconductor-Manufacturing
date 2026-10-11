@@ -48,11 +48,6 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/ACCESS.2025.3621299"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a1"><img src="https://img.shields.io/badge/Task-A1-74623f?style=flat-square" alt="A1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
 
-- <a id="mohammad2025tinyvit"></a>**Semiconductor Wafer Map Defect Classification with Tiny Vision Transformers** <img src="https://img.shields.io/badge/2025-65558d?style=flat-square" alt="2025" title="2025"><br>
-  <sub>Faisal Mohammad, Duksan Ryu</sub><br>
-  <a href="https://arxiv.org/abs/2504.02494"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat-square&amp;logo=arxiv&amp;logoColor=white" alt="arXiv"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a1"><img src="https://img.shields.io/badge/Task-A1-74623f?style=flat-square" alt="A1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
-
 - <a id="tsai2025g2lgan"></a>**Wafer map defect classification using deep learning framework with data augmentation on imbalance datasets** <img src="https://img.shields.io/badge/EURASIP%20JIVP25-65558d?style=flat-square" alt="EURASIP JIVP25" title="EURASIP Journal on Image and Video Processing"><br>
   <sub>Tsung-Han Tsai, Chieng-Yang Wang</sub><br>
   <a href="https://doi.org/10.1186/s13640-025-00666-3"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -111,6 +106,11 @@ Papers are listed newest first within each task.
 - <a id="sang2023f1df5"></a>**Wafer Map Defect Recognition and Accurate Localization Based on Defect Completion Algorithm** <img src="https://img.shields.io/badge/CIS23-65558d?style=flat-square" alt="CIS23" title="2023 IEEE International Conference on Cybernetics and Intelligent Systems (CIS) and IEEE Conference on Robotics, Automation and Mechatronics (RAM)"><br>
   <sub>Tong Sang, Dai Sun, Wei Zhao, Ruohui Chen, Zeng Zeng</sub><br>
   <a href="https://doi.org/10.1109/cis-ram55796.2023.10370761"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a1"><img src="https://img.shields.io/badge/Task-A1-74623f?style=flat-square" alt="A1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
+
+- <a id="kwon2023irlinr"></a>**Rotation and Translation Invariant Representation Learning with Implicit Neural Representations** <img src="https://img.shields.io/badge/ICML23-65558d?style=flat-square" alt="ICML23" title="Proceedings of the 40th International Conference on Machine Learning"><br>
+  <sub>Sehyun Kwon, Joo Young Choi, Ernest K. Ryu</sub><br>
+  <a href="https://proceedings.mlr.press/v202/kwon23a.html"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a> <a href="https://github.com/sehyunkwon/IRL-INR"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a> <a href="https://arxiv.org/abs/2304.13995"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat-square&amp;logo=arxiv&amp;logoColor=white" alt="arXiv"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a1"><img src="https://img.shields.io/badge/Task-A1-74623f?style=flat-square" alt="A1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
 
 - <a id="ebayyeh2022wafercaps"></a>**An Improved Capsule Network (WaferCaps) for Wafer Bin Map Classification Based on DCGAN Data Upsampling** <img src="https://img.shields.io/badge/IEEE%20TSM22-65558d?style=flat-square" alt="IEEE TSM22" title="IEEE Transactions on Semiconductor Manufacturing"><br>
@@ -500,11 +500,6 @@ Papers are listed newest first within each task.
 
 > Which mask pattern will print the intended structure on a wafer?
 
-- <a id="rashid2026e2920"></a>**Adaptive Reinforcement Learning for Lithography Optimization: A Scalable AI-Driven Solution for Next-Generation Semiconductor Manufacturing** <img src="https://img.shields.io/badge/Sci.%20Rep.26-65558d?style=flat-square" alt="Sci. Rep.26" title="Scientific Reports"><br>
-  <sub>Umar Rashid, Fahad Shafique, Hamza Atif, Waleed Waheed, Rizwan Khan, Muhammad Akmal</sub><br>
-  <a href="https://doi.org/10.1038/s41598-026-43555-z"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
-
 - <a id="chen2026bismo"></a>**Efficient Bilevel Source Mask Optimization** <img src="https://img.shields.io/badge/IEEE%20TCAD26-65558d?style=flat-square" alt="IEEE TCAD26" title="IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"><br>
   <sub>Guojin Chen, Peng Xu, Hongquan He, Hao Geng, Bei Yu</sub><br>
   <a href="https://doi.org/10.1109/tcad.2025.3650385"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a> <a href="https://github.com/dekura/BiSMO"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a> <a href="https://arxiv.org/abs/2405.09548"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat-square&amp;logo=arxiv&amp;logoColor=white" alt="arXiv"></a><br>
@@ -546,11 +541,11 @@ Papers are listed newest first within each task.
   <sub>Yao Lai, Xuyuan Xiong, Zeyue Xue, Guojin Chen, Jing Wang</sub>
   <details><summary>Show all 10 authors</summary>
 
-  <sub>Yao Lai, Xuyuan Xiong, Zeyue Xue, Guojin Chen, Jing Wang, Xihui Liu, Rui Zhang, Robert Mullins, Bei Yu, Ping Luo</sub>
+  <sub>Yao Lai, Xuyuan Xiong, Zeyue Xue, Guojin Chen, Jing Wang, Xihui Liu, Rui Zhang, Robert D. Mullins, Bei Yu, Ping Luo</sub>
 
   </details>
 
-  <a href="https://arxiv.org/abs/2606.00228"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat-square&amp;logo=arxiv&amp;logoColor=white" alt="arXiv"></a> <a href="https://github.com/laiyao1/LithoGRPO"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a><br>
+  <a href="https://proceedings.mlr.press/v306/lai26f.html"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a> <a href="https://arxiv.org/abs/2606.00228"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat-square&amp;logo=arxiv&amp;logoColor=white" alt="arXiv"></a> <a href="https://github.com/laiyao1/LithoGRPO"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
 
 - <a id="he2026lithomamba"></a>**LithoMamba: High-fidelity lithography simulation with State Space Models** <img src="https://img.shields.io/badge/DATE26-65558d?style=flat-square" alt="DATE26" title="2026 Design, Automation &amp; Test in Europe Conference (DATE)"><br>
@@ -577,6 +572,11 @@ Papers are listed newest first within each task.
   <sub>Haoyu Yang, Haoxing Ren</sub><br>
   <a href="https://arxiv.org/abs/2602.19027"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat-square&amp;logo=arxiv&amp;logoColor=white" alt="arXiv"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
+
+- <a id="son2026optico"></a>**Optical Diffraction-based Convolution for Semiconductor Lithography** <img src="https://img.shields.io/badge/CVPR26-65558d?style=flat-square" alt="CVPR26" title="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition"><br>
+  <sub>Young-Han Son, Dong-Hee Shin, Deok-Joong Lee, Hyun Jung Lee, Tae-Eui Kam</sub><br>
+  <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Son_Optical_Diffraction-based_Convolution_for_Semiconductor_Lithography_CVPR_2026_paper.html"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
 
 - <a id="chen2025d393f"></a>**Intelligent OPC Engineer Assistant for Semiconductor Manufacturing** <img src="https://img.shields.io/badge/AAAI25-65558d?style=flat-square" alt="AAAI25" title="Proceedings of the AAAI Conference on Artificial Intelligence"><br>
   <sub>Guojin Chen, Haoyu Yang, Bei Yu, Haoxing Ren</sub><br>
@@ -648,6 +648,11 @@ Papers are listed newest first within each task.
 - <a id="zheng2025lithopatternbase"></a>**Streamlining Computational Lithography With Efficient Pattern Database** <img src="https://img.shields.io/badge/IEEE%20TCAD25-65558d?style=flat-square" alt="IEEE TCAD25" title="IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"><br>
   <sub>Su Zheng, Wenqian Zhao, Shuyuan Sun, Fan Yang, Bei Yu, Martin D. F. Wong</sub><br>
   <a href="https://doi.org/10.1109/tcad.2025.3562158"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a> <a href="https://github.com/shelljane/litho-pattbase"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a><br>
+  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
+
+- <a id="wu2025tokman"></a>**TokMan: Tokenize Manhattan Mask Optimization for Inverse Lithography** <img src="https://img.shields.io/badge/NeurIPS25-65558d?style=flat-square" alt="NeurIPS25" title="Advances in Neural Information Processing Systems"><br>
+  <sub>Yiwen Wu, Yuyang Chen, Ye Xia, Yao Zhao, Jingya Wang, Xuming He, Hao Geng, Jingyi Yu</sub><br>
+  <a href="https://proceedings.nips.cc/paper_files/paper/2025/hash/4e127d4fb92a3145ecb60f6aa0b16eef-Abstract-Conference.html"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
 
 - <a id="liang2024camo"></a>**CAMO: Correlation-Aware Mask Optimization with Modulated Reinforcement Learning** <img src="https://img.shields.io/badge/DAC24-65558d?style=flat-square" alt="DAC24" title="Proceedings of the 61st ACM/IEEE Design Automation Conference"><br>
@@ -777,11 +782,6 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/iccad51958.2021.9643590"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
 
-- <a id="cai2021neurfill"></a>**NeurFill: Migrating Full-Chip CMP Simulators to Neural Networks for Model-Based Dummy Filling Synthesis** <img src="https://img.shields.io/badge/DAC21-65558d?style=flat-square" alt="DAC21" title="2021 58th ACM/IEEE Design Automation Conference (DAC)"><br>
-  <sub>Junzhe Cai, Changhao Yan, Yuzhe Ma, Bei Yu, Dian Zhou, Xuan Zeng</sub><br>
-  <a href="https://doi.org/10.1109/DAC18074.2021.9586325"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
-
 - <a id="li2020layoutdecomposition"></a>**Adaptive Layout Decomposition with Graph Embedding Neural Networks** <img src="https://img.shields.io/badge/DAC20-65558d?style=flat-square" alt="DAC20" title="2020 57th ACM/IEEE Design Automation Conference (DAC)"><br>
   <sub>Wei Li, Jialu Xia, Yuzhe Ma, Jialu Li, Yibo Lin, Bei Yu</sub><br>
   <a href="https://doi.org/10.1109/dac18072.2020.9218706"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -872,11 +872,6 @@ Papers are listed newest first within each task.
   <sub>Xiaoqing Xu, Yibo Lin, Meng Li, Tetsuaki Matsunawa, Shigeki Nojima, Chikaaki Kodama, Toshiya Kotani, David Z. Pan</sub><br>
   <a href="https://doi.org/10.1109/tcad.2017.2748029"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
-
-- <a id="shim2017resist3d"></a>**Machine learning-based 3D resist model** <img src="https://img.shields.io/badge/Optical%20Microlithography%20XXX17-65558d?style=flat-square" alt="Optical Microlithography XXX17" title="Optical Microlithography XXX"><br>
-  <sub>Seongbo Shim, Suhyeong Choi, Youngsoo Shin</sub><br>
-  <a href="https://doi.org/10.1117/12.2257904"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
 
 - <a id="zhang2016onlinehotspot"></a>**Enabling online learning in lithography hotspot detection with information-theoretic feature optimization** <img src="https://img.shields.io/badge/ICCAD16-65558d?style=flat-square" alt="ICCAD16" title="Proceedings of the 35th International Conference on Computer-Aided Design"><br>
   <sub>Hang Zhang, Bei Yu, Evangeline F. Y. Young</sub><br>
@@ -1017,6 +1012,16 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/tsm.2018.2870253"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a4"><img src="https://img.shields.io/badge/Task-A4-74623f?style=flat-square" alt="A4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
 
+- <a id="tan2015evolutionaryfam"></a>**Evolutionary Fuzzy ARTMAP Neural Networks for Classification of Semiconductor Defects** <img src="https://img.shields.io/badge/IEEE%20TNNLS15-65558d?style=flat-square" alt="IEEE TNNLS15" title="IEEE Transactions on Neural Networks and Learning Systems"><br>
+  <sub>Shing Chiang Tan, Junzo Watada, Zuwairie Ibrahim, Marzuki Khalid</sub><br>
+  <a href="https://doi.org/10.1109/TNNLS.2014.2329097"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a4"><img src="https://img.shields.io/badge/Task-A4-74623f?style=flat-square" alt="A4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
+
+- <a id="weiss2013earlyquality"></a>**Improving Quality Control by Early Prediction of Manufacturing Outcomes** <img src="https://img.shields.io/badge/KDD13-65558d?style=flat-square" alt="KDD13" title="Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining"><br>
+  <sub>Sholom M. Weiss, Amit Dhurandhar, Robert J. Baseman</sub><br>
+  <a href="https://doi.org/10.1145/2487575.2488192"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a4"><img src="https://img.shields.io/badge/Task-A4-74623f?style=flat-square" alt="A4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
+
 - <a id="zhang2011virtualprobe"></a>**Virtual Probe: A Statistical Framework for Low-Cost Silicon Characterization of Nanoscale Integrated Circuits** <img src="https://img.shields.io/badge/IEEE%20TCAD11-65558d?style=flat-square" alt="IEEE TCAD11" title="IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"><br>
   <sub>Wangyang Zhang, Xin Li, Frank Liu, Emrah Acar, Rob A. Rutenbar, Ronald D. Blanton</sub><br>
   <a href="https://doi.org/10.1109/TCAD.2011.2164536"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -1048,11 +1053,6 @@ Papers are listed newest first within each task.
   <sub>Jerome Mitard, Husnu Murat Kocak, Romain Ritzenthaler, Pierre Eyben, Nouredine Rassoul, Eren Canga, Attilio Belmonte</sub><br>
   <a href="https://doi.org/10.1109/icmts69943.2026.11471719"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a5"><img src="https://img.shields.io/badge/Task-A5-74623f?style=flat-square" alt="A5"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L3"><img src="https://img.shields.io/badge/L3-Reasoning-926b2f?style=flat-square" alt="L3 Reasoning"></a>
-
-- <a id="yin20263df6e"></a>**Multi-Modal Fusion for Yield Optimization: Integrating Wafer Maps, Metrology, and Process Logs with Graph Models** <img src="https://img.shields.io/badge/TETAI26-65558d?style=flat-square" alt="TETAI26" title="ICCK Transactions on Emerging Topics in Artificial Intelligence"><br>
-  <sub>Min Yin, Ledee-FI Frank</sub><br>
-  <a href="https://doi.org/10.62762/tetai.2025.259226"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a5"><img src="https://img.shields.io/badge/Task-A5-74623f?style=flat-square" alt="A5"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L3"><img src="https://img.shields.io/badge/L3-Reasoning-926b2f?style=flat-square" alt="L3 Reasoning"></a>
 
 - <a id="choi202635868"></a>**Systematic Defect Risk Assessment Based on Silicon Digital Twins** <img src="https://img.shields.io/badge/SPIE%20MIPC26-65558d?style=flat-square" alt="SPIE MIPC26" title="Metrology, Inspection, and Process Control XL"><br>
   <sub>Sunghoon Choi, Byeongseong Ahn, Woobok Lee, Cheolwoo Bae, Min Seok Kim</sub>
@@ -1298,4 +1298,9 @@ Papers are listed newest first within each task.
 - <a id="gun2015bdbee"></a>**Package Yield Enhancement Using Machine Learning in Semiconductor Manufacturing** <img src="https://img.shields.io/badge/IAEAC15-65558d?style=flat-square" alt="IAEAC15" title="2015 IEEE Advanced Information Technology, Electronic and Automation Control Conference (IAEAC)"><br>
   <sub>Hyoung Gun Kim, Young Shin Han, Jee-Hyong Lee</sub><br>
   <a href="https://doi.org/10.1109/iaeac.2015.7428567"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a6"><img src="https://img.shields.io/badge/Task-A6-74623f?style=flat-square" alt="A6"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
+
+- <a id="fountain2000ictest"></a>**Mining IC Test Data to Optimize VLSI Testing** <img src="https://img.shields.io/badge/KDD00-65558d?style=flat-square" alt="KDD00" title="Proceedings of the Sixth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining"><br>
+  <sub>Tony Fountain, Thomas Dietterich, Bill Sudyka</sub><br>
+  <a href="https://doi.org/10.1145/347090.347099"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a6"><img src="https://img.shields.io/badge/Task-A6-74623f?style=flat-square" alt="A6"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>

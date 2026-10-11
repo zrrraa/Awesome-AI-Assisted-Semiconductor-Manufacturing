@@ -102,7 +102,12 @@ def venue_badge(venue,year):
     # A proceedings volume can appear after the conference itself (e.g. ECCV 2024).
     edition = re.search(r'\b((?:19|20)\d{2})\b',venue)
     badge_year = edition[1] if edition else str(year)
-    aliases=[('Asia and South Pacific Design Automation','ASP-DAC'),
+    aliases=[('Conference on Computer Vision and Pattern Recognition','CVPR'),
+             ('International Conference on Computer Vision','ICCV'),
+             ('International Joint Conference on Artificial Intelligence','IJCAI'),
+             ('SIGKDD International Conference','KDD'),
+             ('IEEE Transactions on Neural Networks and Learning Systems','IEEE TNNLS'),
+             ('Asia and South Pacific Design Automation','ASP-DAC'),
              ('International Conference on Machine Learning','ICML'),
              ('Neural Information Processing Systems','NeurIPS'),
              ('Winter Simulation Conference','WSC'),('Design Automation Conference','DAC'),

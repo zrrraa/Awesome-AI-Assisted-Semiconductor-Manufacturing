@@ -21,11 +21,6 @@ Papers are listed newest first within each task.
 
 > When will a lot finish, and will it be delivered on time?
 
-- <a id="kuo2026ff460"></a>**Explainable Artificial Intelligence Framework for Cycle Time Prediction and an Empirical Study for Smart Semiconductor Manufacturing** <img src="https://img.shields.io/badge/2026-65558d?style=flat-square" alt="2026" title="2026"><br>
-  <sub>Hsuan-An Kuo, Chen-Fu Chien, You-Ming Chen</sub><br>
-  <a href="https://doi.org/10.2139/ssrn.6556811"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M4-Production-347d94?style=flat-square" alt="M4 Production"> <a href="#r1"><img src="https://img.shields.io/badge/Task-R1-74623f?style=flat-square" alt="R1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
-
 - <a id="lee2021fd093"></a>**A Hybrid Approach Combining Fuzzy c-Means-Based Genetic Algorithm and Machine Learning for Predicting Job Cycle Times for Semiconductor Manufacturing** <img src="https://img.shields.io/badge/Applied%20Sciences21-65558d?style=flat-square" alt="Applied Sciences21" title="Applied Sciences"><br>
   <sub>Gyu M. Lee, Xuehong Gao</sub><br>
   <a href="https://doi.org/10.3390/app11167428"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -208,6 +203,11 @@ Papers are listed newest first within each task.
   <sub>Zhicong Zhang, Li Zheng, Forest Hou, Na Li</sub><br>
   <a href="https://doi.org/10.1016/j.ejor.2011.05.052"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M4-Production-347d94?style=flat-square" alt="M4 Production"> <a href="#r2"><img src="https://img.shields.io/badge/Task-R2-74623f?style=flat-square" alt="R2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
+
+- <a id="gautam2007cabs"></a>**Coordination to Avoid Starvation of Bottleneck Agents in a Large Network System** <img src="https://img.shields.io/badge/IJCAI07-65558d?style=flat-square" alt="IJCAI07" title="Proceedings of the 20th International Joint Conference on Artificial Intelligence"><br>
+  <sub>Rajesh Gautam, Kazuo Miyashita</sub><br>
+  <a href="https://www.ijcai.org/Proceedings/07/Papers/207.pdf"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M4-Production-347d94?style=flat-square" alt="M4 Production"> <a href="#r2"><img src="https://img.shields.io/badge/Task-R2-74623f?style=flat-square" alt="R2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L5"><img src="https://img.shields.io/badge/L5-Autonomy-507b5e?style=flat-square" alt="L5 Autonomy"></a>
 
 - <a id="jain20033768a"></a>**Modelling and Analysis of Wafer Fabrication Scheduling via Generalized Stochastic Petri Net and Simulated Annealing** <img src="https://img.shields.io/badge/IJPR03-65558d?style=flat-square" alt="IJPR03" title="International Journal of Production Research"><br>
   <sub>V Jain, R Swarnkar, M. K Tiwari</sub><br>

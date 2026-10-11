@@ -231,12 +231,6 @@
       ],
       "scope": "artifacts"
     },
-    "mohammad2025tinyvit": {
-      "stages": [
-        "L1"
-      ],
-      "scope": "artifacts"
-    },
     "nagamura2025capsnet": {
       "stages": [
         "L1"
@@ -651,13 +645,6 @@
       ],
       "scope": "artifacts"
     },
-    "cai2021neurfill": {
-      "stages": [
-        "L2",
-        "L4"
-      ],
-      "scope": "artifacts"
-    },
     "chen2021develset": {
       "stages": [
         "L4"
@@ -900,12 +887,6 @@
       "scope": "artifacts"
     },
     "ma2026vectorcorrection": {
-      "stages": [
-        "L4"
-      ],
-      "scope": "artifacts"
-    },
-    "rashid2026e2920": {
       "stages": [
         "L4"
       ],
@@ -1269,13 +1250,6 @@
     "mitard202681444": {
       "stages": [
         "L1",
-        "L3"
-      ],
-      "scope": "artifacts"
-    },
-    "yin20263df6e": {
-      "stages": [
-        "L2",
         "L3"
       ],
       "scope": "artifacts"
@@ -1981,13 +1955,6 @@
       ],
       "scope": "processes"
     },
-    "zeng2026pgnn": {
-      "stages": [
-        "L2",
-        "L4"
-      ],
-      "scope": "processes"
-    },
     "card1998845e8": {
       "stages": [
         "L2",
@@ -2496,12 +2463,6 @@
       ],
       "scope": "production"
     },
-    "kuo2026ff460": {
-      "stages": [
-        "L2"
-      ],
-      "scope": "production"
-    },
     "jain20033768a": {
       "stages": [
         "L4"
@@ -2876,22 +2837,9 @@
       ],
       "scope": "fabs"
     },
-    "li2025096d4": {
-      "stages": [
-        "L2"
-      ],
-      "scope": "fabs"
-    },
     "ni202536ea7": {
       "stages": [
         "L2"
-      ],
-      "scope": "fabs"
-    },
-    "ni2025c0070": {
-      "stages": [
-        "L3",
-        "L4"
       ],
       "scope": "fabs"
     },
@@ -2968,7 +2916,7 @@
         "L4",
         "L5"
       ],
-      "scope": "fabs"
+      "scope": "processes"
     },
     "wu2007capacitytrading": {
       "stages": [
@@ -3032,17 +2980,69 @@
       ],
       "scope": "fabs"
     },
-    "shim2017resist3d": {
-      "stages": [
-        "L2"
-      ],
-      "scope": "artifacts"
-    },
     "kwon2023resistcnn": {
       "stages": [
         "L2"
       ],
       "scope": "artifacts"
+    },
+    "fountain2000ictest": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "gautam2007cabs": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "kwon2023irlinr": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "son2026optico": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "tan2015evolutionaryfam": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "weiss2013earlyquality": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "wu2025tokman": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2025ikddit": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "zhu2012hmote": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
     }
   }
 }
