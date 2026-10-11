@@ -16,10 +16,10 @@
 
 <!-- reading navigation -->
 <p align="center">
-  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="docs/assets/badges/resource-project-page-37c598.svg" alt="Project page" height="24"></a>
-  <a href="#citation"><img src="docs/assets/badges/resource-citation-5ceaf3.svg" alt="Citation" height="24"></a>
-  <a href="#papers"><img src="docs/assets/badges/resource-papers-be68a0.svg" alt="Papers" height="24"></a>
-  <a href="docs/getting-started.md"><img src="docs/assets/badges/resource-reading-guide-4a7725.svg" alt="Reading guide" height="24"></a>
+  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="https://img.shields.io/badge/%F0%9F%8C%90-Project%20page-526DAB?style=flat-square" alt="Project page"></a>
+  <a href="#citation"><img src="https://img.shields.io/badge/%E2%9D%9D-Citation-7956AE?style=flat-square" alt="Citation"></a>
+  <a href="#papers"><img src="https://img.shields.io/badge/%F0%9F%93%84-Papers-526DAB?style=flat-square" alt="Papers"></a>
+  <a href="docs/getting-started.md"><img src="https://img.shields.io/badge/%E2%96%A4-Reading%20guide-36875B?style=flat-square" alt="Reading guide"></a>
 </p>
 <!-- /reading navigation -->
 

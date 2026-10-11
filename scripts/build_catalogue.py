@@ -125,12 +125,11 @@ def build():
         outputs[path]=updated.rstrip()+'\n'
     readme_path = ROOT/'README.md'
     readme = readme_path.read_text(encoding='utf-8')
-    nav = '<!-- reading navigation -->\n<p align="center">\n  '+'\n  '.join(badges.link(label,href,icon=icon,prefix='docs/assets/badges/') for label,href,icon in [
+    nav = '<!-- reading navigation -->\n<p align="center">\n  '+'\n  '.join(badges.link(label,href,icon=icon) for label,href,icon in [
         ('Project page','https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/','Project page'),
         ('Citation','#citation','Citation'),('Papers','#papers','Paper'),('Reading guide','docs/getting-started.md','Reading guide')])+'\n</p>\n<!-- /reading navigation -->'
     if '<!-- reading navigation -->' in readme:
         outputs[readme_path] = re.sub(r'<!-- reading navigation -->.*?<!-- /reading navigation -->',lambda _:nav,readme,flags=re.S)
-    outputs.update(badges.outputs)
     return outputs, len(papers)
 
 
