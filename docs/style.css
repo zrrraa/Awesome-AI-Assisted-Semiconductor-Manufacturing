@@ -440,9 +440,7 @@ summary:focus-visible,
   bottom: 4px;
 }
 .figure-scroll {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: thin;
+  overflow: visible;
 }
 .original-map {
   position: relative;
@@ -641,13 +639,12 @@ summary:focus-visible,
   border-top: 1px solid var(--line);
 }
 .journey-window {
-  overflow: auto;
-  scrollbar-width: thin;
+  overflow: visible;
   padding-top: 24px;
 }
 .panorama {
   position: relative;
-  min-width: 900px;
+  min-width: 0;
 }
 .panorama > img {
   display: block;
@@ -856,13 +853,12 @@ summary:focus-visible,
   transform: scaleX(1);
 }
 .robot-scroll {
-  overflow: auto;
-  scrollbar-width: thin;
+  overflow: visible;
   padding: 24px 0 12px;
 }
 .robot-strip {
   position: relative;
-  min-width: 660px;
+  min-width: 0;
   isolation: isolate;
   background: var(--bg);
   padding: 19px 0;
@@ -1051,13 +1047,12 @@ summary:focus-visible,
   color: #322640;
 }
 .matrix-scroll {
-  overflow-x: auto;
-  scrollbar-width: thin;
+  overflow: visible;
 }
 .coverage-matrix {
   display: grid;
-  grid-template-columns: 145px repeat(5, minmax(90px, 1fr));
-  min-width: 655px;
+  grid-template-columns: minmax(100px, 145px) repeat(5, minmax(0, 1fr));
+  min-width: 0;
 }
 .matrix-heading {
   font-size: 11px;
@@ -1113,8 +1108,8 @@ summary:focus-visible,
 .matrix-cell:before {
   content: "";
   position: absolute;
-  width: var(--size);
-  height: var(--size);
+  width: max(5px, calc(var(--bubble-max, 72px) * var(--fraction)));
+  height: max(5px, calc(var(--bubble-max, 72px) * var(--fraction)));
   border-radius: 50%;
   background: var(--bubble, #cfb4f1);
   opacity: 0.83;
@@ -1208,8 +1203,7 @@ summary:focus-visible,
   gap: 4px;
   align-items: stretch;
   padding-top: 25px;
-  overflow-x: auto;
-  scrollbar-width: thin;
+  overflow: visible;
 }
 .year-bar {
   flex: 1;
@@ -1451,7 +1445,8 @@ summary:focus-visible,
 }
 .diagram-dialog {
   width: min(96vw, 1400px);
-  max-height: 92vh;
+  max-height: none;
+  overflow: visible;
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -1483,15 +1478,19 @@ summary:focus-visible,
   height: 40px;
 }
 .diagram-scroll {
-  overflow: auto;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
   padding: 15px;
-  max-height: calc(92vh - 70px);
 }
 .diagram-scroll img {
   display: block;
   width: 100%;
-  min-width: 850px;
+  min-width: 0;
+  max-width: 100%;
+  max-height: calc(92dvh - 120px);
   height: auto;
+  object-fit: contain;
 }
 /* The reading room: task and stage are independent, combinable filters. */
 .library {
@@ -1505,13 +1504,10 @@ summary:focus-visible,
   min-height: 75vh;
 }
 .library-nav {
-  position: sticky;
-  top: 20px;
-  max-height: calc(100vh - 40px);
-  overflow-y: auto;
-  scrollbar-width: thin;
+  position: static;
+  max-height: none;
+  overflow: visible;
   padding-right: 9px;
-  overscroll-behavior: contain;
 }
 .library-nav-toggle {
   display: none;
@@ -2027,11 +2023,12 @@ summary:focus-visible,
     flex-basis: 70%;
   }
   .journey-tabs {
-    display: flex;
-    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    overflow: visible;
   }
   .journey-tabs button {
-    min-width: 82px;
+    min-width: 0;
     flex: 1;
   }
   .step-detail {
@@ -2308,7 +2305,7 @@ summary:focus-visible,
     padding: 6px 13px;
   }
   .original-map {
-    min-width: 650px;
+    min-width: 0;
   }
   .map-status {
     font-size: 9px;
@@ -2360,7 +2357,7 @@ summary:focus-visible,
     margin-left: auto;
   }
   .panorama {
-    min-width: 950px;
+    min-width: 0;
   }
   .journey-window {
     padding-top: 15px;
@@ -2402,7 +2399,7 @@ summary:focus-visible,
     gap: 25px;
   }
   .stage-tabs {
-    overflow: auto;
+    overflow: visible;
     display: flex;
   }
   .stage-tabs button {
@@ -2431,7 +2428,7 @@ summary:focus-visible,
     margin-top: 5px;
   }
   .robot-strip {
-    min-width: 650px;
+    min-width: 0;
   }
   .robot-scroll {
     padding-top: 18px;
@@ -2474,8 +2471,8 @@ summary:focus-visible,
     margin-top: 12px;
   }
   .coverage-matrix {
-    grid-template-columns: 113px repeat(5, 91px);
-    min-width: 568px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    min-width: 0;
   }
   .matrix-row {
     font-size: 10px;
@@ -3112,13 +3109,11 @@ span.resource-icon {
   margin: 22px auto 0;
 }
 .stage-visual-scroll {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: thin;
+  overflow: visible;
   padding-bottom: 4px;
 }
 .stage-visual {
-  min-width: 660px;
+  min-width: 0;
 }
 .stage-tabs {
   display: grid;
@@ -3298,4 +3293,51 @@ span.resource-icon {
   .pipe-hotspot .hotspot-art {
     transition: none;
   }
+}
+
+/* Content fits its section; the document owns scrolling. */
+.chart-toolbar, .chart-readout { flex-wrap: wrap; }
+.timeline-chart {
+  display: grid;
+  grid-template-columns: repeat(var(--year-count, 1), minmax(0, 1fr));
+  gap: clamp(1px, .3vw, 4px);
+  height: auto;
+  padding: 34px 8px 38px;
+  overflow: visible;
+}
+.year-bar { min-width: 0; height: var(--chart-plot); padding: 0; }
+.year-bar .year-value { bottom: calc(var(--share) * var(--chart-plot) + 6px); }
+.year-bar .year-label { bottom: -24px; }
+.year-segment { flex: var(--segment-share) 1 0; }
+.map-peek-icons svg { width: 61px; height: 69px; mix-blend-mode: multiply; }
+.map-peek-icons [hidden] { display: none; }
+
+@media (max-width: 800px) {
+  .journey-tabs button { padding: 14px 4px; font-size: 10px; }
+  .stage-tabs button { font-size: clamp(8px, 2.2vw, 13px); padding: 13px 1px; }
+  .stage-tabs small { font-size: 8px; }
+}
+@media (max-width: 640px) {
+  .coverage-matrix {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    --bubble-max: clamp(34px, 12vw, 64px);
+  }
+  .matrix-corner { grid-column: 1 / -1; padding: 0 0 18px; }
+  .matrix-heading { min-width: 0; font-size: clamp(8px, 2.2vw, 11px); padding-bottom: 14px; }
+  .matrix-row { grid-column: 1 / -1; min-height: 64px; font-size: 12px; }
+  .matrix-row small { display: inline; margin-left: 8px; font-size: 10px; }
+  .matrix-cell { min-height: 104px; border-top: 0; padding-bottom: 4px; }
+  .matrix-cell::after { content: attr(data-stage); position: absolute; top: 4px; font-size: 9px; color: #bfb8ce; }
+  .matrix-cell > span, .matrix-cell.small-value > span { color: #eee5f9; transform: translateY(38px); font-size: 10px; }
+  .chart-readout { gap: 8px; padding-bottom: 16px; }
+  .timeline-chart { display: flex; flex-direction: column; gap: 8px; padding: 20px 0; background: none; }
+  .year-bar { display: grid; grid-template-columns: 35px minmax(0, 1fr) 28px; align-items: center; gap: 10px; height: 22px; flex: none; }
+  .year-bar .year-label { position: static; grid-column: 1; grid-row: 1; transform: none; font-size: 9px; }
+  .year-bar .bar-stack { grid-column: 2; grid-row: 1; flex-direction: row; height: 18px; width: calc(var(--share) * 100%); border-radius: 0 3px 3px 0; transform-origin: left; }
+  .year-bar .year-value { position: static; grid-column: 3; grid-row: 1; opacity: 1; text-align: right; font-size: 9px; }
+  .year-segment { height: 100%; border-top: 0; border-right: 1px solid #3a2c4a44; }
+  .year-bar:hover .bar-stack { transform: none; }
+  .dialog-toolbar { padding: 10px 14px; gap: 10px; }
+  .dialog-toolbar h2 { font-size: 12px; }
+  .close-dialog { flex-shrink: 0; }
 }

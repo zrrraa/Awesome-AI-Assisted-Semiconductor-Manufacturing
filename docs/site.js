@@ -421,7 +421,7 @@
         const value = Number(a.dataset[unit]),
           fraction = unit === "share" ? value / 100 : value / maxCount;
         const size = 72 * Math.sqrt(fraction);
-        a.style.setProperty("--size", Math.max(5, size) + "px");
+        a.style.setProperty("--fraction", Math.sqrt(fraction));
         a.classList.toggle("small-value", size < 31);
         a.firstChild.textContent =
           unit === "share" ? Math.round(value) + "%" : value;
@@ -483,6 +483,7 @@
       chart.replaceChildren();
       legend.replaceChildren();
       chart.dataset.mode = mode;
+      chart.style.setProperty("--year-count", rows.length);
       groups.forEach((g) => {
         const label = node("span", "");
         const swatch = node("i", "");
@@ -492,7 +493,7 @@
       });
       $("#timeline-measure").textContent =
         mode === "stage" ? "Stage assignments" : "Papers";
-      $("#timeline-maximum").textContent = "Tallest bar · " + max;
+      $("#timeline-maximum").textContent = "Highest count · " + max;
       $("#timeline-note").textContent =
         mode === "stage"
           ? "A paper contributes to every stage it addresses. The three testbed papers without a stage are omitted in this view."
@@ -522,7 +523,7 @@
                 : "");
           a.dataset.group = g.key;
           a.dataset.count = count;
-          a.style.height = (count / row.total) * 100 + "%";
+          a.style.setProperty("--segment-share", count / row.total);
           a.style.setProperty("--segment", g.color);
           const label =
             row.year +
@@ -551,7 +552,7 @@
           node(
             "span",
             "year-label",
-            row.year % 2 === 0 || row.year === lastYear ? row.year : "",
+            row.year,
           ),
         );
         chart.append(column);
@@ -559,7 +560,7 @@
       if (!reduced.matches && window.Motion)
         Motion.animate(
           $$(".bar-stack"),
-          { scaleY: [0.2, 1], opacity: [0.45, 1] },
+          { [matchMedia("(max-width: 640px)").matches ? "scaleX" : "scaleY"]: [0.2, 1], opacity: [0.45, 1] },
           {
             duration: 0.6,
             delay: Motion.stagger(0.008),
@@ -620,7 +621,67 @@
       icon.decode().catch(() => {});
       return icon;
     });
+    const stagePortraits = [
+      [75, 0, 290, 230], [455, 5, 255, 220], [920, 0, 225, 200],
+      [1190, 10, 270, 220], [1570, 5, 280, 230],
+    ].map((box) => {
+      const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      icon.setAttribute("viewBox", box.join(" "));
+      icon.setAttribute("aria-hidden", "true");
+      icon.setAttribute("hidden", "");
+      const picture = document.createElementNS("http://www.w3.org/2000/svg", "image");
+      picture.setAttribute("href", "assets/web/stages.webp");
+      picture.setAttribute("width", "2048");
+      picture.setAttribute("height", "296");
+      icon.append(picture);
+      iconSlot.append(icon);
+      return icon;
+    });
+    const stageImage = new Image();
+    stageImage.src = "assets/web/stages.webp";
+    stageImage.decode().catch(() => {});
     $("img", peek).replaceWith(iconSlot);
+    const allPeekIcons = [...peekIcons, ...stagePortraits];
+    const showPeek = (anchor, id, label, title, description, icon) => {
+      allPeekIcons.forEach((node) => node.toggleAttribute("hidden", node !== icon));
+      peek.dataset.task = id;
+      $("#map-selection").textContent = id + " · " + title;
+      $("small", peek).textContent = label;
+      $("b", peek).textContent = title;
+      $("p", peek).textContent = description;
+      const r = anchor.getBoundingClientRect(), m = map.getBoundingClientRect();
+      peek.style.left = Math.max(20, Math.min(
+        r.left - m.left + r.width / 2 - peek.offsetWidth / 2,
+        m.width - peek.offsetWidth - 20,
+      )) + "px";
+      const below = r.bottom - m.top + 18;
+      peek.style.top = (below + peek.offsetHeight < m.height - 20
+        ? below : Math.max(20, r.top - m.top - peek.offsetHeight - 18)) + "px";
+      peek.classList.add("visible");
+    };
+    const hidePeek = () => {
+      peek.classList.remove("visible");
+      $("#map-selection").textContent = "Explore a task or an AI stage";
+    };
+    const peekHandlers = new Map();
+    const bindPeek = (anchor, show) => {
+      peekHandlers.set(anchor, show);
+      anchor.addEventListener("mouseenter", show);
+      anchor.addEventListener("focus", show);
+      anchor.addEventListener("mouseleave", () => {
+        const focused = peekHandlers.get(document.activeElement);
+        if (focused) focused();
+        else hidePeek();
+      });
+      anchor.addEventListener("blur", () => {
+        if (!anchor.matches(":hover")) hidePeek();
+      });
+    };
+    window.addEventListener("resize", () => {
+      const focused = peekHandlers.get(document.activeElement);
+      if (focused) focused();
+      else hidePeek();
+    });
     const addFigureCrop = (a) => {
       const left = parseFloat(a.style.left),
         top = parseFloat(a.style.top),
@@ -641,61 +702,14 @@
       const index = catalogue.tasks.findIndex((t) => t.id === a.dataset.task),
         t = catalogue.tasks[index];
       addFigureCrop(a);
-      const show = () => {
-        $("#map-selection").textContent = t.id + " · " + t.title;
-        peekIcons.forEach((icon, i) => (icon.hidden = i !== index));
-        peek.dataset.task = t.id;
-        $("small", peek).textContent = t.id + " / " + t.scope.toUpperCase();
-        $("b", peek).textContent = t.title;
-        $("p", peek).textContent = t.question;
-        const r = a.getBoundingClientRect(),
-          m = map.getBoundingClientRect();
-        const x = Math.max(
-          20,
-          Math.min(
-            r.left - m.left + r.width / 2 - peek.offsetWidth / 2,
-            m.width - peek.offsetWidth - 20,
-          ),
-        );
-        const below = r.bottom - m.top + 18;
-        const y =
-          below + peek.offsetHeight < m.height - 20
-            ? below
-            : Math.max(20, r.top - m.top - peek.offsetHeight - 18);
-        peek.style.left = x + "px";
-        peek.style.top = y + "px";
-        peek.classList.add("visible");
-      };
-      const hide = () => {
-        peek.classList.remove("visible");
-        $("#map-selection").textContent = "Explore a task or an AI stage";
-      };
-      a.addEventListener("mouseenter", show);
-      a.addEventListener("focus", show);
-      a.addEventListener("mouseleave", hide);
-      a.addEventListener("blur", hide);
+      bindPeek(a, () => showPeek(a, t.id, t.id + " / " + t.scope.toUpperCase(),
+        t.title, t.question, peekIcons[index]));
     });
-    $(".figure-scroll").addEventListener(
-      "scroll",
-      () => peek.classList.remove("visible"),
-      { passive: true },
-    );
     $$(".pipe-hotspot").forEach((a) => {
       addFigureCrop(a);
-      ["mouseenter", "focus"].forEach((evt) =>
-        a.addEventListener(evt, () => {
-          $("#map-selection").textContent =
-            "L" +
-            (Number(a.dataset.goStage) + 1) +
-            " · " +
-            stages[Number(a.dataset.goStage)][0];
-        }),
-      );
-      ["mouseleave", "blur"].forEach((evt) =>
-        a.addEventListener(evt, () => {
-          $("#map-selection").textContent = "Explore a task or an AI stage";
-        }),
-      );
+      const index = Number(a.dataset.goStage), id = "L" + (index + 1);
+      bindPeek(a, () => showPeek(a, id, id + " / AI STAGE", stages[index][0],
+        stages[index][2], stagePortraits[index]));
     });
   }
   // Small spring-like magnetic feedback stays outside the figure coordinate system.
