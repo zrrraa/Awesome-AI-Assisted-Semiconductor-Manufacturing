@@ -867,14 +867,29 @@ summary:focus-visible,
   background: var(--bg);
   padding: 19px 0;
 }
-.robot-strip > img {
-  display: block;
-  width: 100%;
-  height: auto;
-  mix-blend-mode: multiply;
+.stage-illustration {
   position: relative;
   z-index: 1;
   pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.stage-illustration > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.stage-motion {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage-motion {
+    display: none;
+  }
 }
 .robot-spotlight {
   position: absolute;
@@ -956,27 +971,6 @@ summary:focus-visible,
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-}
-.play-stages {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--purple);
-  white-space: nowrap;
-  margin-top: 16px;
-  padding: 7px 12px;
-  border: 1px solid #c9b7dc;
-  border-radius: 22px;
-  transition: background 0.3s;
-}
-.play-stages:hover,
-.play-stages[aria-pressed="true"] {
-  background: #eee5f6;
-}
-.play-stages span {
-  font-size: 9px;
 }
 /* A dark research observatory: circles show real, multi-label coverage. */
 .coverage {
@@ -2908,11 +2902,25 @@ span.resource-icon {
   color: #6d5b70;
   margin: 7px 0 0;
 }
-.map-peek > span {
+.map-peek > span:last-child {
   position: absolute;
   right: 9px;
   top: 7px;
   font-size: 19px;
+}
+.map-peek-icons {
+  position: relative;
+  display: block;
+  width: 61px;
+  height: 69px;
+  flex: 0 0 61px;
+}
+.map-peek-icons img {
+  position: absolute;
+  inset: 0;
+}
+.map-peek-icons img[hidden] {
+  display: none;
 }
 .timeline-controls {
   display: flex;

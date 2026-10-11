@@ -286,22 +286,9 @@
       "Explore feedback control",
     ],
   ];
-  let currentStage = 0,
-    stageTimer;
   // Boundaries follow complete illustrated scenes in the continuous source image.
   const stageBounds = [0, 20.1, 40.6, 56.4, 76.5, 100];
-  const stopStageTour = () => {
-    clearInterval(stageTimer);
-    stageTimer = undefined;
-    const button = $(".play-stages");
-    if (button) {
-      button.setAttribute("aria-pressed", "false");
-      button.innerHTML =
-        '<span aria-hidden="true">▶</span> Play the progression';
-    }
-  };
   const activateStage = wireTabs("[data-stage]", (index, tab) => {
-    currentStage = index;
     const [name, title, body, example] = stages[index];
     $("#stage-detail").setAttribute("aria-labelledby", tab.id);
     $(".robot-strip").style.setProperty(
@@ -346,7 +333,6 @@
     a.addEventListener("click", (e) => {
       if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
-      stopStageTour();
       const index = Number(a.dataset.goStage);
       activateStage(index);
       $("#stages").scrollIntoView({
@@ -356,29 +342,6 @@
       $("#stage-" + index).focus({ preventScroll: true });
     }),
   );
-  $(".play-stages")?.addEventListener("click", () => {
-    if (stageTimer) return stopStageTour();
-    if (currentStage === 4) activateStage(0);
-    const button = $(".play-stages");
-    button.setAttribute("aria-pressed", "true");
-    button.innerHTML = '<span aria-hidden="true">Ⅱ</span> Pause progression';
-    stageTimer = setInterval(
-      () =>
-        currentStage === 4 ? stopStageTour() : activateStage(currentStage + 1),
-      5500,
-    );
-  });
-  $$("[data-stage],[data-robot]").forEach((button) => {
-    button.addEventListener("pointerdown", stopStageTour);
-    button.addEventListener("keydown", stopStageTour);
-  });
-  if ($("#stages"))
-    new IntersectionObserver((entries) => {
-      if (!entries[0].isIntersecting) stopStageTour();
-    }).observe($("#stages"));
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) stopStageTour();
-  });
   const catalogue = window.MANUFACTURING_CATALOGUE;
   if ($(".coverage-matrix") && catalogue) {
     const { papers, stages: stageNames, coverage } = catalogue;
@@ -643,6 +606,21 @@
     ];
     const peek = $(".map-peek"),
       map = $(".map-wrap");
+    // Decode each icon in advance. Switching existing nodes never paints the
+    // previous task's bitmap while a new src is still loading.
+    const iconSlot = document.createElement("span");
+    iconSlot.className = "map-peek-icons";
+    const peekIcons = taskIcons.map((name) => {
+      const icon = new Image(61, 69);
+      icon.alt = "";
+      icon.hidden = true;
+      icon.decoding = "async";
+      icon.src = "assets/icons/" + name + ".png";
+      iconSlot.append(icon);
+      icon.decode().catch(() => {});
+      return icon;
+    });
+    $("img", peek).replaceWith(iconSlot);
     const addFigureCrop = (a) => {
       const left = parseFloat(a.style.left),
         top = parseFloat(a.style.top),
@@ -665,7 +643,8 @@
       addFigureCrop(a);
       const show = () => {
         $("#map-selection").textContent = t.id + " · " + t.title;
-        $("img", peek).src = "assets/icons/" + taskIcons[index] + ".png";
+        peekIcons.forEach((icon, i) => (icon.hidden = i !== index));
+        peek.dataset.task = t.id;
         $("small", peek).textContent = t.id + " / " + t.scope.toUpperCase();
         $("b", peek).textContent = t.title;
         $("p", peek).textContent = t.question;

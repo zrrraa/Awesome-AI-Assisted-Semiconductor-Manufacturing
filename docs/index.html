@@ -23,6 +23,7 @@
     <script src="assets/vendor/motion-14.1.0.js" defer></script>
     <script src="assets/catalogue.js" defer></script>
     <script src="site.js" defer></script>
+    <script src="stage-motion.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -733,14 +734,17 @@
                   class="robot-strip"
                   style="--stage-left: 0%; --stage-width: 20.1%"
                 >
-                  <span class="robot-spotlight" aria-hidden="true"></span
-                  ><img
-                    src="assets/web/stages.webp"
-                    width="3600"
-                    height="520"
-                    loading="lazy"
-                    alt="The survey’s continuous illustration of Perception, Prediction, Reasoning, Planning and Autonomy."
-                  /><button
+                  <span class="robot-spotlight" aria-hidden="true"></span>
+                  <div class="stage-illustration">
+                    <img
+                      src="assets/web/stages.webp"
+                      width="3600"
+                      height="520"
+                      loading="lazy"
+                      alt="The survey’s continuous illustration of Perception, Prediction, Reasoning, Planning and Autonomy."
+                    />
+                  </div>
+                  <button
                     class="robot-hotspot"
                     style="left: 0%; width: 20.1%"
                     data-robot="0"
@@ -813,9 +817,6 @@
             A paper can span several stages. Select a stage to explore its role
             and find the related research.
           </p>
-          <button class="play-stages" aria-pressed="false">
-            <span aria-hidden="true">▶</span> Play the progression
-          </button>
         </div>
       </section>
       <section class="section coverage" id="coverage">
