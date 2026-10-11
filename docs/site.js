@@ -362,12 +362,14 @@
       return n;
     };
     matrix.append(node("div", "matrix-corner", "MANUFACTURING / AI"));
+    const stageKey = node("div", "matrix-stage-key");
     Object.entries(stageNames).forEach(([k, name]) => {
       const h = node("a", "matrix-heading");
       h.href = "explore.html?stage=" + k;
       h.append(node("small", "", k), document.createTextNode(name));
-      matrix.append(h);
+      stageKey.append(h);
     });
+    matrix.append(stageKey);
     coverage.forEach((row, i) => {
       const label = node("a", "matrix-row");
       label.href = "explore.html?scope=" + row.scope;
