@@ -128,12 +128,6 @@
       ],
       "scope": "artifacts"
     },
-    "nafi2022swin": {
-      "stages": [
-        "L1"
-      ],
-      "scope": "artifacts"
-    },
     "nag2022waferseg": {
       "stages": [
         "L1"
@@ -377,12 +371,6 @@
       "scope": "artifacts"
     },
     "dey2024semgeneration": {
-      "stages": [
-        "L1"
-      ],
-      "scope": "artifacts"
-    },
-    "jin2024selectivenet": {
       "stages": [
         "L1"
       ],
@@ -948,12 +936,6 @@
       ],
       "scope": "artifacts"
     },
-    "kim202095dd9": {
-      "stages": [
-        "L2"
-      ],
-      "scope": "artifacts"
-    },
     "jiang202163d26": {
       "stages": [
         "L2"
@@ -1023,12 +1005,6 @@
       "scope": "artifacts"
     },
     "dey2025069aa": {
-      "stages": [
-        "L2"
-      ],
-      "scope": "artifacts"
-    },
-    "kim20252e296": {
       "stages": [
         "L2"
       ],
@@ -2231,14 +2207,6 @@
       ],
       "scope": "equipment"
     },
-    "yin2025aaaed": {
-      "stages": [
-        "L1",
-        "L3",
-        "L4"
-      ],
-      "scope": "equipment"
-    },
     "bejani20261f69d": {
       "stages": [
         "L1"
@@ -2389,13 +2357,6 @@
     "wright2025f54b8": {
       "stages": [
         "L2"
-      ],
-      "scope": "equipment"
-    },
-    "yin2025277ec": {
-      "stages": [
-        "L2",
-        "L4"
       ],
       "scope": "equipment"
     },

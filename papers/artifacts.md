@@ -123,11 +123,6 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/access.2022.3204278"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a1"><img src="https://img.shields.io/badge/Task-A1-74623f?style=flat-square" alt="A1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
 
-- <a id="nafi2022swin"></a>**High Accuracy Swin Transformers for Imagebased Wafer Map Defect Detection** <img src="https://img.shields.io/badge/IJEM22-65558d?style=flat-square" alt="IJEM22" title="International Journal of Engineering and Manufacturing"><br>
-  <sub>Thahmidul Islam Nafi, Erfanul Haque, Faisal Farhan, Asif Rahman</sub><br>
-  <a href="https://doi.org/10.5815/ijem.2022.05.02"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a1"><img src="https://img.shields.io/badge/Task-A1-74623f?style=flat-square" alt="A1"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
-
 - <a id="wei2022msftrans"></a>**Mixed-Type Wafer Defect Recognition With Multi-Scale Information Fusion Transformer** <img src="https://img.shields.io/badge/IEEE%20TSM22-65558d?style=flat-square" alt="IEEE TSM22" title="IEEE Transactions on Semiconductor Manufacturing"><br>
   <sub>Yuxiang Wei, Huan Wang</sub><br>
   <a href="https://doi.org/10.1109/TSM.2022.3156583"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -311,7 +306,7 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/EPTC67330.2025.11392584"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a2"><img src="https://img.shields.io/badge/Task-A2-74623f?style=flat-square" alt="A2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
 
-- <a id="park2025semdenoise"></a>**Deep learning denoising enables rapid SEM imaging under charging conditions for FE SEM, CD SEM, and review SEM** <img src="https://img.shields.io/badge/Sci.%20Rep.25-65558d?style=flat-square" alt="Sci. Rep.25" title="Scientific Reports"><br>
+- <a id="park2025semdenoise"></a>**Deep learning denoising enables rapid SEM imaging under charging conditions for FE SEM, CD SEM, and review SEM** <img src="https://img.shields.io/badge/Sci.%20Rep.26-65558d?style=flat-square" alt="Sci. Rep.26" title="Scientific Reports"><br>
   <sub>Hyungjoo Park, Beom-Seok Oh, Kuk Jin Jang</sub><br>
   <a href="https://doi.org/10.1038/s41598-025-33273-3"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a2"><img src="https://img.shields.io/badge/Task-A2-74623f?style=flat-square" alt="A2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
@@ -354,11 +349,6 @@ Papers are listed newest first within each task.
 - <a id="hasic2025carinthia"></a>**Towards Explaining SEM Defect Image Classification** <img src="https://img.shields.io/badge/ECAI25-65558d?style=flat-square" alt="ECAI25" title="ECAI 2025"><br>
   <sub>Vahidin Hasić, Corinna Kofler, Senka Krivić</sub><br>
   <a href="https://doi.org/10.3233/faia251487"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a2"><img src="https://img.shields.io/badge/Task-A2-74623f?style=flat-square" alt="A2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
-
-- <a id="jin2024selectivenet"></a>**A SelectiveNet-Based Method for Defect Classification in Semiconductor Manufacturing** <img src="https://img.shields.io/badge/CSTIC24-65558d?style=flat-square" alt="CSTIC24" title="Conference of Science and Technology for Integrated Circuits (CSTIC)"><br>
-  <sub>Qian Jin, Yibo Qiao, Yining Chen, Cheng Zhuo, Qi Sun</sub><br>
-  <a href="https://doi.org/10.1109/CSTIC61820.2024.10531871"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a2"><img src="https://img.shields.io/badge/Task-A2-74623f?style=flat-square" alt="A2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
 
 - <a id="dey2024semgeneration"></a>**Addressing Class Imbalance and Data Limitations in Advanced Node Semiconductor Defect Inspection: A Generative Approach for SEM Images** <img src="https://img.shields.io/badge/2024%20International%20Symposium%20ELMAR24-65558d?style=flat-square" alt="2024 International Symposium ELMAR24" title="2024 International Symposium ELMAR"><br>
@@ -914,11 +904,6 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1016/j.cie.2025.111246"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a4"><img src="https://img.shields.io/badge/Task-A4-74623f?style=flat-square" alt="A4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat-square" alt="L4 Planning"></a>
 
-- <a id="kim20252e296"></a>**Range-Aware Deep Learning Framework for Multi-Parameter Electrical Test Prediction in Semiconductor Manufacturing** <img src="https://img.shields.io/badge/CASE25-65558d?style=flat-square" alt="CASE25" title="2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)"><br>
-  <sub>Jihyun Kim, Sunhyeok Hwang, Jinyong Jeong, Jaehoon Jeong, Kyu-Baik Chang, Hanlim Choi, Suyeon Shon, Seoung Bum Kim</sub><br>
-  <a href="https://doi.org/10.1109/case58245.2025.11164069"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a4"><img src="https://img.shields.io/badge/Task-A4-74623f?style=flat-square" alt="A4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
-
 - <a id="kottur2025289c0"></a>**Towards Zero Defects: Machine Learning-Driven Solder Bump Reliability in Semiconductor Packaging** <img src="https://img.shields.io/badge/SPIE%20MIPC25-65558d?style=flat-square" alt="SPIE MIPC25" title="Metrology, Inspection, and Process Control XXXIX"><br>
   <sub>Himanandhan Reddy Kottur, Liton Kumar Biswas, Nitin Varshney, Shajib Ghosh, Navid Asadizanjani</sub><br>
   <a href="https://doi.org/10.1117/12.3060363"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -1000,11 +985,6 @@ Papers are listed newest first within each task.
 - <a id="fan2020ffc2d"></a>**Defective wafer detection using a denoising autoencoder for semiconductor manufacturing processes** <img src="https://img.shields.io/badge/AEI20-65558d?style=flat-square" alt="AEI20" title="Advanced Engineering Informatics"><br>
   <sub>Shu-Kai S. Fan, Chia-Yu Hsu, Chih-Hung Jen, Kuan-Lung Chen, Li-Ting Juan</sub><br>
   <a href="https://doi.org/10.1016/j.aei.2020.101166"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a4"><img src="https://img.shields.io/badge/Task-A4-74623f?style=flat-square" alt="A4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
-
-- <a id="kim202095dd9"></a>**Wafer Edge Yield Prediction Using a Combined Long Short-Term Memory and Feed-Forward Neural Network Model for Semiconductor Manufacturing** <img src="https://img.shields.io/badge/IEEE%20Access20-65558d?style=flat-square" alt="IEEE Access20" title="IEEE Access"><br>
-  <sub>Dasol Kim, Mintae Kim, Wooju Kim</sub><br>
-  <a href="https://doi.org/10.1109/access.2020.3040426"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a4"><img src="https://img.shields.io/badge/Task-A4-74623f?style=flat-square" alt="A4"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
 
 - <a id="kim201950127"></a>**A Productivity-Oriented Wafer Map Optimization Using Yield Model Based on Machine Learning** <img src="https://img.shields.io/badge/IEEE%20TSM19-65558d?style=flat-square" alt="IEEE TSM19" title="IEEE Transactions on Semiconductor Manufacturing"><br>
