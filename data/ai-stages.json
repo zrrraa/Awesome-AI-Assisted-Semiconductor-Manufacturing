@@ -1660,7 +1660,8 @@
     },
     "jang201748e2f": {
       "stages": [
-        "L1"
+        "L1",
+        "L2"
       ],
       "scope": "processes"
     },
