@@ -254,11 +254,6 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/tcad.2025.3625105"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a> <a href="https://arxiv.org/abs/2510.19463"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat-square&amp;logo=arxiv&amp;logoColor=white" alt="arXiv"></a> <a href="https://github.com/YoursEver/ReCAME-Net"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a2"><img src="https://img.shields.io/badge/Task-A2-74623f?style=flat-square" alt="A2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat-square" alt="L1 Perception"></a>
 
-- <a id="cai20269b965"></a>**Implicit Wafer Plane Inspection of Masks Using a Lithography-Aware End-to-End Neural Network** <img src="https://img.shields.io/badge/IEEE%20Photonics%20Technology%20Letters26-65558d?style=flat-square" alt="IEEE Photonics Technology Letters26" title="IEEE Photonics Technology Letters"><br>
-  <sub>Yingqi Cai, Yibin Tian, Dajiang Lu, Xingyu Ma, Zhi Zeng, Zongze Wu</sub><br>
-  <a href="https://doi.org/10.1109/lpt.2025.3636474"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
-  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a2"><img src="https://img.shields.io/badge/Task-A2-74623f?style=flat-square" alt="A2"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
-
 - <a id="zhao2026snapsem"></a>**Open-world scanning electron microscope nano-defect category discovery via self-normal prototypes** <img src="https://img.shields.io/badge/JKSUCIS26-65558d?style=flat-square" alt="JKSUCIS26" title="Journal of King Saud University Computer and Information Sciences"><br>
   <sub>Botong Zhao, Fang Yu, Xubin Wang, Shujing Lyu, Yue Lu</sub><br>
   <a href="https://doi.org/10.1007/s44443-026-00893-2"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
@@ -489,6 +484,11 @@ Papers are listed newest first within each task.
 ## A3 · Computational lithography
 
 > Which mask pattern will print the intended structure on a wafer?
+
+- <a id="cai20269b965"></a>**Implicit Wafer Plane Inspection of Masks Using a Lithography-Aware End-to-End Neural Network** <img src="https://img.shields.io/badge/IEEE%20Photonics%20Technology%20Letters26-65558d?style=flat-square" alt="IEEE Photonics Technology Letters26" title="IEEE Photonics Technology Letters"><br>
+  <sub>Yingqi Cai, Yibin Tian, Dajiang Lu, Xingyu Ma, Zhi Zeng, Zongze Wu</sub><br>
+  <a href="https://doi.org/10.1109/lpt.2025.3636474"><img src="https://img.shields.io/badge/%F0%9F%93%84-Paper-526DAB?style=flat-square" alt="Paper"></a><br>
+  <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat-square" alt="M1 Artifacts"> <a href="#a3"><img src="https://img.shields.io/badge/Task-A3-74623f?style=flat-square" alt="A3"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat-square" alt="L2 Prediction"></a>
 
 - <a id="chen2026bismo"></a>**Efficient Bilevel Source Mask Optimization** <img src="https://img.shields.io/badge/IEEE%20TCAD26-65558d?style=flat-square" alt="IEEE TCAD26" title="IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"><br>
   <sub>Guojin Chen, Peng Xu, Hongquan He, Hao Geng, Bei Yu</sub><br>
