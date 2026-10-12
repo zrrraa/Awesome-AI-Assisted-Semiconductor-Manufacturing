@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="style.css?v=4a12f3a5" />
     <script src="assets/vendor/motion-14.1.0.js" defer></script>
     <script src="assets/catalogue.js" defer></script>
-    <script src="site.js?v=eae67c10" defer></script>
+    <script src="site.js?v=6133a1be" defer></script>
     <script src="stage-motion.js" defer></script>
   </head>
   <body>
@@ -359,59 +359,59 @@
                 >
                 <a
                   class="pipe-hotspot"
-                  href="#stages"
-                  data-go-stage="0"
+                  href="explore.html?stage=L1"
+                  data-stage-index="0"
                   style="left: 4.23%; top: 73.18%; width: 14.42%; height: 6.34%"
-                  aria-label="L1 Perception: explore this AI stage"
-                  ><span>L1 · Perception ↘</span></a
+                  aria-label="L1 Perception: browse papers"
+                  ><span>L1 · Perception ↗</span></a
                 ><a
                   class="pipe-hotspot"
-                  href="#stages"
-                  data-go-stage="1"
+                  href="explore.html?stage=L2"
+                  data-stage-index="1"
                   style="
                     left: 23.46%;
                     top: 73.18%;
                     width: 14.81%;
                     height: 6.34%;
                   "
-                  aria-label="L2 Prediction: explore this AI stage"
-                  ><span>L2 · Prediction ↘</span></a
+                  aria-label="L2 Prediction: browse papers"
+                  ><span>L2 · Prediction ↗</span></a
                 ><a
                   class="pipe-hotspot"
-                  href="#stages"
-                  data-go-stage="2"
+                  href="explore.html?stage=L3"
+                  data-stage-index="2"
                   style="
                     left: 42.62%;
                     top: 73.18%;
                     width: 14.85%;
                     height: 6.34%;
                   "
-                  aria-label="L3 Reasoning: explore this AI stage"
-                  ><span>L3 · Reasoning ↘</span></a
+                  aria-label="L3 Reasoning: browse papers"
+                  ><span>L3 · Reasoning ↗</span></a
                 ><a
                   class="pipe-hotspot"
-                  href="#stages"
-                  data-go-stage="3"
+                  href="explore.html?stage=L4"
+                  data-stage-index="3"
                   style="
                     left: 61.77%;
                     top: 73.18%;
                     width: 14.85%;
                     height: 6.34%;
                   "
-                  aria-label="L4 Planning: explore this AI stage"
-                  ><span>L4 · Planning ↘</span></a
+                  aria-label="L4 Planning: browse papers"
+                  ><span>L4 · Planning ↗</span></a
                 ><a
                   class="pipe-hotspot"
-                  href="#stages"
-                  data-go-stage="4"
+                  href="explore.html?stage=L5"
+                  data-stage-index="4"
                   style="
                     left: 81.27%;
                     top: 73.18%;
                     width: 14.77%;
                     height: 6.34%;
                   "
-                  aria-label="L5 Autonomy: explore this AI stage"
-                  ><span>L5 · Autonomy ↘</span></a
+                  aria-label="L5 Autonomy: browse papers"
+                  ><span>L5 · Autonomy ↗</span></a
                 >
               </div>
             </div>
@@ -926,9 +926,8 @@
           </div>
           <div class="section-aside">
             <p>
-              A change to a recipe, maintenance plan or schedule can affect
-              several tasks. World models and agents connect these decisions
-              through an operating loop and a learning loop.
+              World models and agents coordinate manufacturing decisions and
+              learn from their outcomes.
             </p>
           </div>
         </div>
@@ -943,12 +942,11 @@
               <li>Observe</li>
             </ol>
             <p>
-              <strong>World models</strong> predict the consequences of recipe,
-              equipment and scheduling changes. <strong>Agents</strong> compare
-              options and coordinate plans across tasks. Controllers and
-              transport systems execute the actions; new measurements inform
-              the next decision. <strong>Physical AI</strong> extends this loop
-              to adaptive robotic inspection and maintenance.
+              <strong>World models</strong> predict action consequences.
+              <strong>Agents</strong> coordinate decisions across tasks;
+              controllers and transport systems execute them. New measurements
+              guide the next decision. <strong>Physical AI</strong> supports
+              adaptive robotic inspection and maintenance.
             </p>
           </article>
           <article class="vision-loop learning-loop">
@@ -965,14 +963,12 @@
             <p>
               Operating feedback improves
               <strong>world models and agent workflows</strong>. Recurring
-              errors guide changes to experiments, models and diagnostic steps.
-              Accumulated experience helps tackle new development problems with
-              fewer physical trials.
+              errors guide more informative experiments and better diagnostic
+              steps.
             </p>
             <p class="rsi-note">
-              <strong>Recursive self-improvement (RSI)</strong> extends this
-              learning to the procedure that proposes and evaluates
-              improvements.
+              <strong>Recursive self-improvement (RSI)</strong> also refines how
+              the system proposes and evaluates improvements.
             </p>
           </article>
         </div>

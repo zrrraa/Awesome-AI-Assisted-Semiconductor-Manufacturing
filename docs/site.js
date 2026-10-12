@@ -329,19 +329,6 @@
     b.addEventListener("click", () => activateStage(Number(b.dataset.robot))),
   );
   if (activateStage) activateStage(0);
-  $$("[data-go-stage]").forEach((a) =>
-    a.addEventListener("click", (e) => {
-      if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
-      e.preventDefault();
-      const index = Number(a.dataset.goStage);
-      activateStage(index);
-      $("#stages").scrollIntoView({
-        behavior: reduced.matches ? "instant" : "smooth",
-        block: "start",
-      });
-      $("#stage-" + index).focus({ preventScroll: true });
-    }),
-  );
   const catalogue = window.MANUFACTURING_CATALOGUE;
   if ($(".coverage-matrix") && catalogue) {
     const { papers, stages: stageNames, coverage } = catalogue;
@@ -709,7 +696,7 @@
     });
     $$(".pipe-hotspot").forEach((a) => {
       addFigureCrop(a);
-      const index = Number(a.dataset.goStage), id = "L" + (index + 1);
+      const index = Number(a.dataset.stageIndex), id = "L" + (index + 1);
       bindPeek(a, () => showPeek(a, id, id + " / AI STAGE", stages[index][0],
         stages[index][2], stagePortraits[index]));
     });
