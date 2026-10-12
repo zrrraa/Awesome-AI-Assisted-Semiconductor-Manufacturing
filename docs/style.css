@@ -875,6 +875,11 @@ summary:focus-visible,
   height: 100%;
   overflow: hidden;
   pointer-events: none;
+  object-fit: fill;
+  opacity: 0;
+}
+.stage-motion.is-ready {
+  opacity: 1;
 }
 @media (prefers-reduced-motion: reduce) {
   .stage-motion {

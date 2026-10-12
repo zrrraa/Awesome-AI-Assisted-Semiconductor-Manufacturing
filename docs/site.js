@@ -25,12 +25,10 @@
     running.set(el, animation);
   }
   window.SurveyUI = { reveal, toast };
-  // Prepare the large figure before an entrance animation asks the browser to
-  // composite it. On a slow first load, let it appear in place without a late jump.
-  let overviewDecoded = false;
-  $(".original-map > img")?.decode().then(() => {
-    overviewDecoded = true;
-  }).catch(() => {});
+  // Decode the figure before playing its original tilted entrance. Animate one
+  // composited transform rather than rotating a partly decoded bitmap.
+  const overview = $(".map-wrap");
+  const overviewReady = $(".original-map > img")?.decode().catch(() => {});
   if (window.Motion && !reduced.matches) {
     Motion.inView(
       ".section-heading, .journey, .stage-detail, .vision-loop, .cite-card",
@@ -38,14 +36,25 @@
         reveal(el, { y: 22, duration: 0.7 });
       },
     );
-    Motion.inView(".map-wrap", (el) => {
-      if (!overviewDecoded || reduced.matches) return;
-      Motion.animate(
-        el,
-        { transform: ["translateY(16px)", "translateY(0)"] },
-        { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-      );
-    });
+    if (overview) {
+      overview.style.opacity = "0";
+      overview.style.willChange = "transform, opacity";
+      Motion.inView(overview, () => {
+        Promise.resolve(overviewReady).then(() => {
+          if (reduced.matches) {
+            overview.style.opacity = "";
+            overview.style.willChange = "";
+            return;
+          }
+          const entrance = overview.animate([
+            { opacity: 0.2, transform: "translateY(48px) rotate(-1.8deg)" },
+            { opacity: 1, transform: "translateY(0) rotate(0deg)" },
+          ], { duration: 1100, easing: "cubic-bezier(0.22, 1, 0.36, 1)" });
+          overview.style.opacity = "";
+          entrance.onfinish = () => { overview.style.willChange = ""; };
+        });
+      });
+    }
     Motion.inView(".coverage", (el) => {
       reveal(el, { y: 35, duration: 0.85 });
       Motion.animate(
