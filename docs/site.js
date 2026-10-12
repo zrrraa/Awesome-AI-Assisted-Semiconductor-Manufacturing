@@ -25,6 +25,12 @@
     running.set(el, animation);
   }
   window.SurveyUI = { reveal, toast };
+  // Prepare the large figure before an entrance animation asks the browser to
+  // composite it. On a slow first load, let it appear in place without a late jump.
+  let overviewDecoded = false;
+  $(".original-map > img")?.decode().then(() => {
+    overviewDecoded = true;
+  }).catch(() => {});
   if (window.Motion && !reduced.matches) {
     Motion.inView(
       ".section-heading, .journey, .stage-detail, .vision-loop, .cite-card",
@@ -33,10 +39,11 @@
       },
     );
     Motion.inView(".map-wrap", (el) => {
+      if (!overviewDecoded || reduced.matches) return;
       Motion.animate(
         el,
-        { opacity: [0.2, 1], y: [48, 0], rotate: [-1.8, 0] },
-        { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+        { transform: ["translateY(16px)", "translateY(0)"] },
+        { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
       );
     });
     Motion.inView(".coverage", (el) => {

@@ -411,15 +411,6 @@ summary:focus-visible,
   padding: 29px 22px 0;
   box-shadow: 9px 10px 0 #e7dfcf;
 }
-.map-wrap:before {
-  content: "";
-  position: absolute;
-  inset: 10px -11px -12px 9px;
-  border: 1px solid #c6b8d9;
-  border-radius: 26px;
-  z-index: -1;
-  transform: rotate(-0.55deg);
-}
 .map-sticker {
   position: absolute;
   top: -22px;
