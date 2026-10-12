@@ -82,24 +82,24 @@ Choose a manufacturing question and follow its research. Each entry includes the
 
 ## 💡 From manufacturing data to manufacturing decisions
 
-Making a chip means coordinating processes, tools and factory resources. AI helps interpret observations, estimate unmeasured properties and choose what to measure or change next.
+Making a chip involves interconnected processes and costly experiments. Measurements often arrive after the operation that produced them. AI helps interpret observations, estimate unmeasured properties and choose what to measure or change next.
 
-Our survey connects **five manufacturing scopes** and **nineteen tasks** with five stages: **Perception → Prediction → Reasoning → Planning → Autonomy**.
+Our survey examines **nineteen tasks** across **Artifacts**, **Processes**, **Equipment**, **Production** and **Fabs**, following five AI stages: *Perception → Prediction → Reasoning → Planning → Autonomy*. Each task is defined by what needs to be understood or changed.
 
 <p align="center"><img src="docs/assets/wafer-to-chip.jpg" width="1000" alt="From a bare wafer through repeated fabrication, testing and packaging to finished chips."></p>
 
 <table>
 <tr>
-<td width="33%" valign="top"><b>🔎 Preserve the context</b><br>Spatial patterns and process histories reveal differences hidden by averages.</td>
-<td width="33%" valign="top"><b>🎯 Connect prediction to action</b><br>A useful model helps choose a measurement, correction or manufacturing decision.</td>
-<td width="33%" valign="top"><b>🔄 Learn from outcomes</b><br>Actions change the factory and the observations that guide later decisions.</td>
+<td width="33%" valign="top"><b>🔎 Use information and experience</b><br>Preserving relevant detail and reusing physical knowledge help models choose useful actions.</td>
+<td width="33%" valign="top"><b>🎯 Follow the effects of a decision</b><br>A change to one task can affect later operations and other tasks sharing equipment and resources.</td>
+<td width="33%" valign="top"><b>🔄 Learn from manufacturing outcomes</b><br>Feedback guides subsequent decisions and improves the models and procedures behind them.</td>
 </tr>
 </table>
 
-These connections motivate an **AI-native autonomous virtual fab**:
+The central question is how task-level progress improves quality, delivery and resource use across a connected factory. Scarce useful data, changing conditions, fragmented observations and costly experiments remain common obstacles. Together, these findings motivate an **AI-native autonomous virtual fab**:
 
-- **Operating loop — compare actions and coordinate execution.** World models predict the consequences of recipe, equipment and scheduling changes. Agents coordinate plans; controllers and Physical AI carry them out. New measurements inform the next decision.
-- **Learning loop — improve models and decision procedures.** Operating feedback improves world models and agent workflows. Recurring errors guide more informative experiments, helping solve new development problems with fewer physical trials.
+- **Operating loop — compare actions and coordinate execution.** World models predict the consequences of recipe, equipment and scheduling changes. Agents coordinate plans across tasks; controllers and transport systems execute the actions. New measurements inform the next decision. Physical AI extends the loop to adaptive robotic inspection and maintenance.
+- **Learning loop — improve models and decision procedures.** Operating feedback improves world models and agent workflows. Recurring errors guide changes to experiments, models and diagnostic steps. Accumulated experience helps tackle new development problems with fewer physical trials.
 
 **Recursive self-improvement (RSI)** extends the learning loop to the procedure that proposes and evaluates improvements.
 

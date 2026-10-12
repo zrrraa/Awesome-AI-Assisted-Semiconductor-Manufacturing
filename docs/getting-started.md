@@ -27,9 +27,9 @@ The survey follows five stages of AI's growing role in manufacturing:
 |---|---|---|
 | Perception | Extract useful information from observations | Locate defects in an inspection image |
 | Prediction | Estimate an unknown or future result | Estimate film thickness or a lot’s completion time |
-| Reasoning | Explain observations and relate possible causes | Trace a yield loss to process or equipment conditions |
+| Reasoning | Compare explanations and choose evidence to distinguish them | Investigate which process or equipment condition caused a yield loss |
 | Planning | Choose actions and their sequence | Select experiments, process settings or dispatching decisions |
-| Autonomy | Connect decisions to execution and learn from feedback | Coordinate actions and update decisions as manufacturing results arrive |
+| Autonomy | Execute decisions, observe their effects and adjust using feedback | Coordinate actions and update decisions as manufacturing results arrive |
 
 A workflow can span several stages or connect nonadjacent ones. For example, a virtual-metrology model predicts film thickness; a controller uses that prediction to adjust the next run. The practical question is how these stages work together to improve a manufacturing outcome.
 
@@ -53,7 +53,7 @@ A workflow can span several stages or connect nonadjacent ones. For example, a v
 | Dispatching | Selecting the next eligible job for a machine |
 | Cycle time | The elapsed time a lot spends completing its manufacturing route |
 | AMHS | Automated material handling system: equipment that moves material between locations |
-| Run-to-run control | Updating process settings using the results of earlier runs |
+| Run-to-run control | Adjusting settings for subsequent runs using feedback from earlier runs |
 
 ## Read a result in context
 

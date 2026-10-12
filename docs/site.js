@@ -27,7 +27,7 @@
   window.SurveyUI = { reveal, toast };
   if (window.Motion && !reduced.matches) {
     Motion.inView(
-      ".section-heading, .journey, .stage-detail, .vision-sheet, .cite-card",
+      ".section-heading, .journey, .stage-detail, .vision-loop, .cite-card",
       (el) => {
         reveal(el, { y: 22, duration: 0.7 });
       },
@@ -251,7 +251,7 @@
     ],
     [
       "Prediction",
-      "What is likely to happen?",
+      "What can we estimate?",
       "Estimate an unmeasured property or a future outcome from the available observations.",
       "Use equipment sensor signals to estimate a wafer measurement before physical metrology becomes available.",
       "Observe → Estimate",
@@ -260,8 +260,8 @@
     ],
     [
       "Reasoning",
-      "Why did it happen?",
-      "Connect observations with process knowledge to investigate causes and explain results.",
+      "Which explanation fits the evidence?",
+      "Use observations and knowledge to compare explanations and choose evidence that can distinguish them.",
       "Combine wafer patterns, process histories and physical knowledge to distinguish possible causes of yield loss.",
       "Evidence → Explanation",
       "A5",
@@ -279,7 +279,7 @@
     [
       "Autonomy",
       "How can action improve with experience?",
-      "Connect observations and decisions to execution, then use the resulting feedback to improve subsequent actions.",
+      "Execute decisions, observe their effects and adjust subsequent actions within the system’s operating scope.",
       "A control system adjusts process settings and uses later measurements to update its next correction.",
       "Decide → Act → Learn",
       "P4",
@@ -732,16 +732,6 @@
   const dialog = $(".diagram-dialog");
   $$("[data-open-diagram]").forEach((button) =>
     button.addEventListener("click", () => {
-      const vision = button.dataset.openDiagram === "vision";
-      $(".diagram-scroll img").src = vision
-        ? "assets/web/virtual-fab.webp"
-        : "assets/overview.jpg";
-      $(".diagram-scroll img").alt = vision
-        ? "AI-native autonomous virtual fab diagram"
-        : "Manufacturing tasks and AI stages diagram";
-      $("#diagram-title").textContent = vision
-        ? "AI-native autonomous virtual fab"
-        : "Manufacturing tasks & AI stages";
       dialog.showModal();
       document.body.style.overflow = "hidden";
       reveal(dialog, { y: 15, duration: 0.3 });

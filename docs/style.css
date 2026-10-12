@@ -1263,35 +1263,6 @@ summary:focus-visible,
 .fab-vision {
   padding-top: 100px;
 }
-.vision-sheet {
-  position: relative;
-  background: #fffefa;
-  padding: 30px 14px 14px;
-  border: 1px solid #cec1d7;
-  border-radius: 12px;
-  box-shadow: -7px 8px 0 #e2daca;
-  transform: rotate(-0.5deg);
-}
-.vision-sheet > img {
-  display: block;
-  mix-blend-mode: multiply;
-  width: 100%;
-  height: auto;
-}
-.vision-tag {
-  position: absolute;
-  top: -17px;
-  left: 28px;
-  background: #f1dda1;
-  border: 1px solid #c2a662;
-  padding: 6px 15px;
-  font-size: var(--type-small);
-  transform: rotate(-3deg);
-  font-weight: 700;
-}
-.vision-tag b {
-  margin-left: 15px;
-}
 .vision-principles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2501,16 +2472,6 @@ summary:focus-visible,
   .timeline-note {
     font-size: var(--type-caption);
   }
-  .vision-sheet {
-    padding: 23px 7px 7px;
-    border-radius: 8px;
-    box-shadow: -4px 5px 0 #e2daca;
-  }
-  .vision-tag {
-    left: 18px;
-    font-size: var(--type-caption);
-    top: -12px;
-  }
   .vision-principles {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -2638,7 +2599,6 @@ summary:focus-visible,
     scroll-behavior: auto !important;
   }
   .interlude,
-  .vision-sheet,
   .cite-card {
     transform: none;
   }
