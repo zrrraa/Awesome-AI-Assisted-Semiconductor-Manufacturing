@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 type: dataset
-message: "For the companion survey citation, see the Citation section in README.md. Please also cite the original papers and resources you use."
+message: "Please cite the companion survey using the preferred citation below. Please also cite the original papers and resources you use."
 title: "Awesome AI-Assisted Semiconductor Manufacturing"
 url: "https://github.com/zrrraa/Awesome-AI-Assisted-Semiconductor-Manufacturing"
 date-released: 2026-10-08
@@ -25,6 +25,32 @@ authors:
     given-names: Hanming
   - family-names: Zhuo
     given-names: Cheng
+preferred-citation:
+  type: unpublished
+  title: "From Perception to Autonomy: A Survey on AI-Assisted Semiconductor Manufacturing"
+  year: 2026
+  notes: "Manuscript"
+  authors:
+    - family-names: Zhong
+      given-names: Rui
+    - family-names: Huang
+      given-names: Zhikun
+    - family-names: Zhang
+      given-names: Xue
+    - family-names: Jin
+      given-names: Qian
+    - family-names: Li
+      given-names: Yu
+    - family-names: Sun
+      given-names: Qi
+    - family-names: Gao
+      given-names: Dawei
+    - family-names: Song
+      given-names: Yi
+    - family-names: Wu
+      given-names: Hanming
+    - family-names: Zhuo
+      given-names: Cheng
 keywords:
   - semiconductor manufacturing
   - artificial intelligence

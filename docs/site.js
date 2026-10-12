@@ -565,7 +565,7 @@
       $("#scope-chart").hidden = i !== 0;
       $("#year-chart").hidden = i !== 1;
       $(".chart-unit").hidden = i !== 0;
-      $(".coverage-bottom p").hidden = i !== 0;
+      $(".coverage-stage-note").hidden = i !== 0;
       $(".coverage-bottom a").href = i
         ? "assets/timeline.csv"
         : "assets/coverage.csv";

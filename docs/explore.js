@@ -70,7 +70,8 @@
   }
   function setState(next, replace = false) {
     clearTimeout(searchTimer);
-    state = { ...state, ...next };
+    // Keep pending search input when a filter changes before the debounce ends.
+    state = { ...state, q: search.value, ...next };
     limit = 24;
     const q = new URLSearchParams();
     if (state.task) q.set("task", state.task);
