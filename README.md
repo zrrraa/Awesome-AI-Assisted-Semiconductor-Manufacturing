@@ -27,17 +27,14 @@
 
 ## 🔥 News
 
-- **2026-10-10** — Our project page is online, with visual task navigation and a growing paper collection.
-- **2026-10-08** — The survey companion and task-based reading lists are available on GitHub.
+- **2026-10-10** — Our project page is live! Explore the collection by manufacturing task and AI stage.
+- **2026-10-08** — We released the paper collection for our survey.
 
 <a id="citation"></a>
 
 ## 📝 Citation
 
 If you find the survey useful, please cite it:
-
-<details>
-<summary><b>Copy BibTeX</b></summary>
 
 ```bibtex
 @unpublished{zhong2026perception,
@@ -47,8 +44,6 @@ If you find the survey useful, please cite it:
   note = {Manuscript}
 }
 ```
-
-</details>
 
 ## ✳ From Perception to Autonomy
 
