@@ -19,11 +19,18 @@
     />
     <link rel="icon" type="image/png" href="assets/web/brand.png" />
     <link rel="apple-touch-icon" href="assets/web/brand.png" />
-    <link rel="preload" as="image" href="assets/overview-13f65796.jpg" fetchpriority="high" />
-    <link rel="stylesheet" href="style.css?v=7d3422cd" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/web/overview-13f65796-1600.webp"
+      imagesrcset="assets/web/overview-13f65796-1600.webp 1600w, assets/web/overview-13f65796-3200.webp 3200w"
+      imagesizes="(max-width: 560px) calc(100vw - 54px), (max-width: 800px) calc(100vw - 86px), (max-width: 1100px) calc(100vw - 110px), (max-width: 1320px) calc(100vw - 142px), 1178px"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="style.css?v=581e17b8" />
     <script src="assets/vendor/motion-14.1.0.js" defer></script>
     <script src="assets/catalogue.js" defer></script>
-    <script src="site.js?v=5d1185a3" defer></script>
+    <script src="site.js?v=efbd25c7" defer></script>
     <script src="stage-motion.js?v=4a83347a" defer></script>
   </head>
   <body>
@@ -122,7 +129,9 @@
           <div class="figure-scroll">
             <div class="original-map">
               <img
-                src="assets/overview-13f65796.jpg"
+                src="assets/web/overview-13f65796-1600.webp"
+                srcset="assets/web/overview-13f65796-1600.webp 1600w, assets/web/overview-13f65796-3200.webp 3200w"
+                sizes="(max-width: 560px) calc(100vw - 54px), (max-width: 800px) calc(100vw - 86px), (max-width: 1100px) calc(100vw - 110px), (max-width: 1320px) calc(100vw - 142px), 1178px"
                 width="3200"
                 height="2368"
                 fetchpriority="high"
@@ -512,10 +521,14 @@
           <div class="journey-window">
             <div class="panorama">
               <img
-                src="assets/wafer-to-chip.jpg"
-                width="3600"
-                height="1260"
-                loading="lazy"
+                src="assets/web/wafer-to-chip-1400.webp"
+                srcset="assets/web/wafer-to-chip-1400.webp 1400w, assets/web/wafer-to-chip-2800.webp 2800w"
+                sizes="(max-width: 560px) calc(100vw - 40px), (max-width: 1100px) calc(100vw - 64px), (max-width: 1320px) calc(100vw - 96px), 1224px"
+                width="2800"
+                height="980"
+                loading="eager"
+                fetchpriority="low"
+                decoding="async"
                 alt="Illustrated semiconductor production line, showing material transformations from a bare wafer through fabrication, wafer testing, dicing, packaging and final testing."
               />
             </div>
@@ -1052,7 +1065,7 @@
         <img
           loading="lazy"
           decoding="async"
-          src="assets/overview-13f65796.jpg"
+          data-src="assets/web/overview-13f65796-3200.webp"
           width="3200"
           height="2368"
           alt="Complete survey framework: five scopes, nineteen tasks and five AI stages from Perception to Autonomy."

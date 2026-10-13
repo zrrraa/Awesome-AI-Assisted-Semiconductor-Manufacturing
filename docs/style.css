@@ -639,6 +639,9 @@ summary:focus-visible,
 .panorama {
   position: relative;
   min-width: 0;
+  /* A fixed backdrop keeps multiply unchanged when an ancestor is animated. */
+  isolation: isolate;
+  background: var(--bg);
 }
 .panorama > img {
   display: block;
@@ -2730,7 +2733,7 @@ span.resource-icon {
   position: absolute;
   inset: -1px;
   border-radius: 5px;
-  background-image: url("assets/overview-13f65796.jpg");
+  background-image: var(--overview-image, none);
   opacity: 0;
   pointer-events: none;
   transform: scale(0.98);

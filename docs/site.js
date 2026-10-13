@@ -28,10 +28,19 @@
   // Decode the figure before playing its original tilted entrance. Animate one
   // composited transform rather than rotating a partly decoded bitmap.
   const overview = $(".map-wrap");
-  const overviewReady = $(".original-map > img")?.decode().catch(() => {});
+  const overviewImage = $(".original-map > img");
+  const overviewReady = overviewImage?.decode().catch(() => {});
+  if (overviewImage) {
+    // Reuse the browser-selected bitmap for every hotspot, including after resize.
+    const syncHotspotImage = () => overviewImage.parentElement.style.setProperty(
+      "--overview-image", `url("${overviewImage.currentSrc || overviewImage.src}")`,
+    );
+    overviewImage.addEventListener("load", syncHotspotImage);
+    if (overviewImage.complete) syncHotspotImage();
+  }
   if (window.Motion && !reduced.matches) {
     Motion.inView(
-      ".section-heading, .journey, .stage-detail, .vision-loop, .cite-card",
+      ".section-heading, .stage-detail, .vision-loop, .cite-card",
       (el) => {
         reveal(el, { y: 22, duration: 0.7 });
       },
@@ -52,6 +61,19 @@
           ], { duration: 1100, easing: "cubic-bezier(0.22, 1, 0.36, 1)" });
           overview.style.opacity = "";
           entrance.onfinish = () => { overview.style.willChange = ""; };
+        });
+      });
+    }
+    const journey = $(".journey");
+    if (journey) {
+      Motion.inView(journey, () => {
+        $(".panorama > img", journey).decode().catch(() => {}).then(() => {
+          if (reduced.matches) return;
+          // Keep the illustration opaque: only its position changes on entry.
+          journey.animate([
+            { transform: "translateY(22px)" },
+            { transform: "translateY(0)" },
+          ], { duration: 700, easing: "cubic-bezier(0.22, 1, 0.36, 1)" });
         });
       });
     }
@@ -735,6 +757,8 @@
   const dialog = $(".diagram-dialog");
   $$("[data-open-diagram]").forEach((button) =>
     button.addEventListener("click", () => {
+      const image = $(".diagram-scroll img", dialog);
+      if (!image.getAttribute("src")) image.src = image.dataset.src;
       dialog.showModal();
       document.body.style.overflow = "hidden";
       reveal(dialog, { y: 15, duration: 0.3 });
