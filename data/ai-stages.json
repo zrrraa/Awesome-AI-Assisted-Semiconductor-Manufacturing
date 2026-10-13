@@ -1230,13 +1230,6 @@
       ],
       "scope": "artifacts"
     },
-    "gun2015bdbee": {
-      "stages": [
-        "L2",
-        "L4"
-      ],
-      "scope": "artifacts"
-    },
     "zhao20188521a": {
       "stages": [
         "L2",

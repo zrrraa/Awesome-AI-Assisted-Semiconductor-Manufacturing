@@ -1,9 +1,9 @@
 scope,stage,papers,scope_total,share_percent
-artifacts,Perception,105,220,47.7273
-artifacts,Prediction,82,220,37.2727
-artifacts,Reasoning,22,220,10.0000
-artifacts,Planning,67,220,30.4545
-artifacts,Autonomy,0,220,0.0000
+artifacts,Perception,105,219,47.9452
+artifacts,Prediction,81,219,36.9863
+artifacts,Reasoning,22,219,10.0457
+artifacts,Planning,66,219,30.1370
+artifacts,Autonomy,0,219,0.0000
 processes,Perception,39,118,33.0508
 processes,Prediction,78,118,66.1017
 processes,Reasoning,7,118,5.9322
