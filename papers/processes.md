@@ -117,6 +117,12 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/tsm.2022.3164904"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
   <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat&amp;labelColor=575361" alt="M2 Processes" height="20" align="absmiddle"> <a href="#p1"><img src="https://img.shields.io/badge/Task-P1-706779?style=flat&amp;labelColor=575361" alt="P1" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat&amp;labelColor=575361" alt="L1 Perception" height="20" align="absmiddle"></a>
 
+- <a id="kim202045b7b"></a>***Performance Evaluation of CNN-Based End-Point Detection Using In-Situ Plasma Etching Data*** <img src="https://img.shields.io/badge/Electronics-2021-74658C?style=flat&amp;labelColor=575361" alt="Electronics21" height="20" align="absmiddle" title="Electronics"><br>
+  <sub>Bobae Kim, Sungbin Im, Geonwook Yoo</sub>
+
+  <a href="https://doi.org/10.3390/electronics10010049"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
+  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat&amp;labelColor=575361" alt="M2 Processes" height="20" align="absmiddle"> <a href="#p1"><img src="https://img.shields.io/badge/Task-P1-706779?style=flat&amp;labelColor=575361" alt="P1" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat&amp;labelColor=575361" alt="L1 Perception" height="20" align="absmiddle"></a>
+
 - <a id="tchatchoua2021c146e"></a>***A Comparative Evaluation of Deep Learning Anomaly Detection Techniques on Semiconductor Multivariate Time Series Data*** <img src="https://img.shields.io/badge/CASE-2021-74658C?style=flat&amp;labelColor=575361" alt="CASE21" height="20" align="absmiddle" title="2021 IEEE 17th International Conference on Automation Science and Engineering (CASE)"><br>
   <sub>Philip Tchatchoua, Guillaume Graton, Mustapha Ouladsine, Michel Juge</sub>
 
@@ -151,12 +157,6 @@ Papers are listed newest first within each task.
   <sub>Wang Yong, Chen Xu, Wei Zhengying</sub>
 
   <a href="https://doi.org/10.1109/cstic49141.2020.9282417"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
-  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat&amp;labelColor=575361" alt="M2 Processes" height="20" align="absmiddle"> <a href="#p1"><img src="https://img.shields.io/badge/Task-P1-706779?style=flat&amp;labelColor=575361" alt="P1" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat&amp;labelColor=575361" alt="L1 Perception" height="20" align="absmiddle"></a>
-
-- <a id="kim202045b7b"></a>***Performance Evaluation of CNN-Based End-Point Detection Using In-Situ Plasma Etching Data*** <img src="https://img.shields.io/badge/Electronics-2020-74658C?style=flat&amp;labelColor=575361" alt="Electronics20" height="20" align="absmiddle" title="Electronics"><br>
-  <sub>Bobae Kim, Sungbin Im, Geonwook Yoo</sub>
-
-  <a href="https://doi.org/10.3390/electronics10010049"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
   <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat&amp;labelColor=575361" alt="M2 Processes" height="20" align="absmiddle"> <a href="#p1"><img src="https://img.shields.io/badge/Task-P1-706779?style=flat&amp;labelColor=575361" alt="P1" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat&amp;labelColor=575361" alt="L1 Perception" height="20" align="absmiddle"></a>
 
 - <a id="jang201950f5c"></a>***Denoised Residual Trace Analysis for Monitoring Semiconductor Process Faults*** <img src="https://img.shields.io/badge/IEEE%20TSM-2019-74658C?style=flat&amp;labelColor=575361" alt="IEEE TSM19" height="20" align="absmiddle" title="IEEE Transactions on Semiconductor Manufacturing"><br>
@@ -291,6 +291,12 @@ Papers are listed newest first within each task.
 
 > Can sensor data estimate a measurement that is slow or expensive to obtain?
 
+- <a id="breidung20257f82a"></a>***Process Data-Driven Machine Learning for Non-Uniformity Prediction and Virtual Metrology in Chemical Mechanical Planarization*** <img src="https://img.shields.io/badge/JIM-2026-74658C?style=flat&amp;labelColor=575361" alt="JIM26" height="20" align="absmiddle" title="Journal of Intelligent Manufacturing"><br>
+  <sub>Morten Breidung, Tom Rothe, Andre Lauff, Peter Thieme, Jan Langer, Manuel Gunther, Harald Kuhn</sub>
+
+  <a href="https://doi.org/10.1007/s10845-025-02753-8"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
+  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat&amp;labelColor=575361" alt="M2 Processes" height="20" align="absmiddle"> <a href="#p2"><img src="https://img.shields.io/badge/Task-P2-706779?style=flat&amp;labelColor=575361" alt="P2" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat&amp;labelColor=575361" alt="L2 Prediction" height="20" align="absmiddle"></a>
+
 - <a id="chien2025conformalnil"></a>***Deep-CNN-Based Layout-to-SEM Image Reconstruction with Conformal Uncertainty Calibration for Nanoimprint Lithography in Semiconductor Manufacturing*** <img src="https://img.shields.io/badge/Electronics-2025-74658C?style=flat&amp;labelColor=575361" alt="Electronics25" height="20" align="absmiddle" title="Electronics"><br>
   <sub>Jean Chien, Eric Lee</sub>
 
@@ -301,12 +307,6 @@ Papers are listed newest first within each task.
   <sub>Hong-Wei Xu, Shu-Xuan Zhao, Li-Lan Liu, Wei Qin, You-Long Lv, Jie Zhang, Qi-Hua Zhang</sub>
 
   <a href="https://doi.org/10.1080/00207543.2025.2506094"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
-  <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat&amp;labelColor=575361" alt="M2 Processes" height="20" align="absmiddle"> <a href="#p2"><img src="https://img.shields.io/badge/Task-P2-706779?style=flat&amp;labelColor=575361" alt="P2" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat&amp;labelColor=575361" alt="L2 Prediction" height="20" align="absmiddle"></a>
-
-- <a id="breidung20257f82a"></a>***Process Data-Driven Machine Learning for Non-Uniformity Prediction and Virtual Metrology in Chemical Mechanical Planarization*** <img src="https://img.shields.io/badge/JIM-2025-74658C?style=flat&amp;labelColor=575361" alt="JIM25" height="20" align="absmiddle" title="Journal of Intelligent Manufacturing"><br>
-  <sub>Morten Breidung, Tom Rothe, Andre Lauff, Peter Thieme, Jan Langer, Manuel Gunther, Harald Kuhn</sub>
-
-  <a href="https://doi.org/10.1007/s10845-025-02753-8"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
   <img src="https://img.shields.io/badge/M2-Processes-527545?style=flat&amp;labelColor=575361" alt="M2 Processes" height="20" align="absmiddle"> <a href="#p2"><img src="https://img.shields.io/badge/Task-P2-706779?style=flat&amp;labelColor=575361" alt="P2" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat&amp;labelColor=575361" alt="L2 Prediction" height="20" align="absmiddle"></a>
 
 - <a id="lau2025c3fd5"></a>***Process-Aware Digital Twins by Deep Learning for DUV Photolithography and Plasma Etch*** <img src="https://img.shields.io/badge/IEEE%20TSM-2025-74658C?style=flat&amp;labelColor=575361" alt="IEEE TSM25" height="20" align="absmiddle" title="IEEE Transactions on Semiconductor Manufacturing"><br>
