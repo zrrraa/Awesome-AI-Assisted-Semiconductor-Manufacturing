@@ -47,7 +47,7 @@ If you find the survey useful, please cite it:
 
 ## ✳ From Perception to Autonomy
 
-The survey follows AI’s growing role in manufacturing: recognizing observations, predicting outcomes, explaining causes, choosing actions and improving through feedback. A paper can address several stages; the labels follow the survey’s reviewed literature coding.
+The survey follows AI’s growing role in manufacturing: recognizing patterns, estimating unmeasured or future outcomes, comparing explanations, choosing actions, and executing and adjusting them through feedback. A paper can address several stages; the labels follow the survey’s reviewed literature coding.
 
 <p align="center"><img src="docs/assets/web/stages.webp" width="1000" alt="Five AI stages from Perception to Autonomy"></p>
 
@@ -79,7 +79,7 @@ Choose a manufacturing question and follow its research. Each entry includes the
 
 Making a chip involves interconnected processes and costly experiments. Measurements often arrive after the operation that produced them. AI helps interpret observations, estimate unmeasured properties and choose what to measure or change next.
 
-Our survey examines **nineteen tasks** across **Artifacts**, **Processes**, **Equipment**, **Production** and **Fabs**, following five AI stages: *Perception → Prediction → Reasoning → Planning → Autonomy*. Each task is defined by what needs to be understood or changed.
+For each task, we examine what information is needed, how AI supports decisions and how those decisions affect manufacturing outcomes.
 
 <p align="center"><img src="docs/assets/wafer-to-chip.jpg" width="1000" alt="From a bare wafer through repeated fabrication, testing and packaging to finished chips."></p>
 

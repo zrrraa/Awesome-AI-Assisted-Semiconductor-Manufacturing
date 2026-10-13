@@ -567,7 +567,7 @@ Papers are listed newest first within each task.
 
 ## A3 · Computational lithography
 
-> Which mask pattern will print the intended structure on a wafer?
+> How can models predict printing errors and guide mask and illumination design?
 
 - <a id="cai20269b965"></a>***Implicit Wafer Plane Inspection of Masks Using a Lithography-Aware End-to-End Neural Network*** <img src="https://img.shields.io/badge/IEEE%20Photonics%20Technology%20Letters-2026-74658C?style=flat&amp;labelColor=575361" alt="IEEE Photonics Technology Letters26" height="20" align="absmiddle" title="IEEE Photonics Technology Letters"><br>
   <sub>Yingqi Cai, Yibin Tian, Dajiang Lu, Xingyu Ma, Zhi Zeng, Zongze Wu</sub>
@@ -1395,7 +1395,7 @@ Papers are listed newest first within each task.
 
 ## A6 · Adaptive testing and inspection
 
-> Which dies or locations should be tested or inspected next?
+> What should be measured next, and what do the results imply for retesting or product screening?
 
 - <a id="shaik2026fbca2"></a>***A Reinforcement Learning Framework for Good Die in Bad Neighborhood Analysis*** <img src="https://img.shields.io/badge/DATE-2026-74658C?style=flat&amp;labelColor=575361" alt="DATE26" height="20" align="absmiddle" title="2026 Design, Automation &amp; Test in Europe Conference (DATE)"><br>
   <sub>Mohammad Ershad Shaik, Abhishek Mishra, Nagarajan Kandasamy, Nur A. Touba</sub>
