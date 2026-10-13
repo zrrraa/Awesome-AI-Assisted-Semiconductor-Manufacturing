@@ -735,6 +735,12 @@ summary:focus-visible,
   padding: 5px 0;
   color: var(--purple);
 }
+.step-tasks .related-more {
+  width: 100%;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1;
+}
 .journey-note {
   display: flex;
   align-items: center;
