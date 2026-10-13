@@ -18,7 +18,9 @@ class Badges:
         leading = ''
         options = {'style': 'flat', 'labelColor': '575361'}
         if kind == 'venue' and year is not None:
-            leading = label[:-2] if label != str(year) and label.endswith(str(year)[-2:]) else ''
+            # Keep a conference edition when it differs from the publication year.
+            if label != str(year):
+                leading = label[:-2] if label.endswith(str(year)[-2:]) else label
             message = str(year)
             color = '74658C'
         elif kind in ('scope', 'stage') and ' ' in label:
