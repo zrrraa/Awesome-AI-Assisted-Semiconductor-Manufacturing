@@ -12,7 +12,7 @@ The labels in [`data/ai-stages.json`](../data/ai-stages.json) follow the reviewe
 
 Code what a study investigates, using its methods and evaluation. Do not infer stages from a model name or automatically add every earlier stage when assigning L5. The three research testbeds in the original collection are labelled **Research testbed**, with an empty stage list.
 
-The coverage chart uses each paper’s **catalogue scope**, while the task lists group papers by their primary manufacturing objective. Those fields are kept separately: maintenance study `geurtsen2022maintenance` belongs to task E2 and catalogue scope Production; `hong2025capacity` belongs to task R4 and catalogue scope Fab. This preserves the survey’s reviewed scope statistics without changing the task lists.
+The coverage chart uses each paper’s **catalogue scope**, while the task lists group papers by their primary manufacturing objective. Those fields are kept separately: maintenance study `geurtsen2022maintenance` belongs to task E2 and catalogue scope Production; `hong2025capacity` belongs to task R4 and catalogue scope Fabs. This preserves the survey’s reviewed scope statistics without changing the task lists.
 
 The build script checks bibliography coverage and generates each entry’s stage labels from the reviewed coding. The charts and downloadable CSV files use the same records as the paper library.
 
