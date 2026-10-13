@@ -12,8 +12,7 @@
 <p align="center"><sub><span><sup>1</sup> College of Integrated Circuits, Zhejiang University</span> &nbsp; <span><sup>2</sup> Zhejiang ICsprout Semiconductor Co., Ltd.</span><br>* Corresponding authors.</sub></p>
 
 <p align="center">
-  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="https://img.shields.io/badge/PROJECT_PAGE-EXPLORE_THE_SURVEY_%E2%86%97-6B4FA0?style=for-the-badge&amp;labelColor=393044" height="28" alt="Visit the interactive Project page"></a><br>
-  <sub>Interactive figures · Research trends · Searchable paper collection</sub>
+  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="https://img.shields.io/badge/PROJECT_PAGE-EXPLORE_THE_SURVEY_%E2%86%97-6B4FA0?style=for-the-badge&amp;labelColor=393044" height="28" alt="Visit the interactive Project page"></a>
 </p>
 
 <p align="center"><img src="docs/assets/overview-13f65796.jpg" width="1000" alt="Fig. 1. Five manufacturing scopes and nineteen tasks, connected with five AI stages from Perception to Autonomy."></p>

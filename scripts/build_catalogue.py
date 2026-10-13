@@ -48,7 +48,7 @@ def build():
             elif line.startswith('> ') and task and not task['question']:
                 task['question'] = plain(line[2:])
             elif line.startswith('- <a id='):
-                match = re.fullmatch(r'- <a id="([^"]+)"></a>\*\*(.*?)\*\*(?: <code[^>]*>.*?</code>| <img[^>]*>)?(?:<br>)?', line)
+                match = re.fullmatch(r'- <a id="([^"]+)"></a>(?P<emphasis>\*{2,3})(?P<title>.*?)(?P=emphasis)(?: <code[^>]*>.*?</code>| <img[^>]*>)?(?:<br>)?', line)
                 if not match or not task:
                     raise ValueError(f'Unrecognized paper entry: {scope}:{i+1}')
                 record = bib[match[1]]
@@ -63,7 +63,7 @@ def build():
                 venue = venue_overrides.get(match[1], {}).get('name') or bibtext(record.get('journal', record.get('booktitle', '')))
                 year = int(record['year'])
                 resources = extra.get(match[1], [])
-                papers.append({'id': match[1], 'title': plain(match[2]), 'url': url,
+                papers.append({'id': match[1], 'title': plain(match['title']), 'url': url,
                                'year': year, 'authors': ', '.join(authors), 'authorList': authors,
                                'venue': venue, 'venueBadge': venue_badge(venue,year), 'task': task['id'], 'scope': scope,
                                'stages': code['stages'], 'catalogueScope': code['scope'],
@@ -103,13 +103,13 @@ def build():
     scope_colors = ['69528e','527545','af6535','347d94','5963a0']
     stage_colors = ['387288','705697','926b2f','965d72','507b5e']
     def markdown_entry(p):
-        title='- <a id="'+p['id']+'"></a>**'+html.escape(p['title'],quote=False)+'** '+badges.image(p['venueBadge'],kind='venue',year=p['year'],title=p['venue'] or str(p['year']))+'<br>\n'
+        title='- <a id="'+p['id']+'"></a>***'+html.escape(p['title'],quote=False)+'*** '+badges.image(p['venueBadge'],kind='venue',year=p['year'],title=p['venue'] or str(p['year']))+'<br>\n'
         names=p['authorList']
         if len(names)>8:
             author_line='  <sub>'+html.escape(', '.join(names[:5]))+', …</sub>\n\n  <details><summary>Show all '+str(len(names))+' authors</summary>\n\n  <sub>'+html.escape(p['authors'])+'</sub>\n\n  </details>\n\n'
         else: author_line='  <sub>'+html.escape(p['authors'])+'</sub>\n\n'
         links=paper_links(p)
-        link_line='  '+' &nbsp; '.join(badges.link(r['label'],r['url'],icon=r['label'].split(' · ')[0]) for r in links)+'\n\n'
+        link_line='  '+' &nbsp; '.join(badges.link(r['label'],r['url'],icon=r['label'].split(' · ')[0]) for r in links)+'<br>\n'
         scope_index = SCOPES.index(p['catalogueScope'])
         category=[badges.image('M'+str(scope_index+1)+' '+p['catalogueScope'].capitalize(),kind='scope',color=scope_colors[scope_index]),
                   badges.link(p['task'],'#'+p['task'].lower(),kind='task',color='706779')]

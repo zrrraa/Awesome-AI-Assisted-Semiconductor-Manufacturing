@@ -15,7 +15,7 @@ The five scopes and task links are on the [homepage](README.md#papers). Choose t
 ## Entry format
 
 ```markdown
-- <a id="surname2026keyword"></a>**Full paper title**<br>
+- <a id="surname2026keyword"></a>***Full paper title***<br>
 ```
 
 The build command fills the remaining lines from the bibliography and reviewed metadata. It preserves the title and task placement. Long author lists use an expandable section.

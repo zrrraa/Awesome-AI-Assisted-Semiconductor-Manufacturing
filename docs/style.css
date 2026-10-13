@@ -145,6 +145,7 @@ summary:focus-visible,
 }
 .topbar nav {
   display: flex;
+  align-items: center;
   gap: 27px;
   font-size: var(--type-body);
   font-weight: 600;
@@ -168,6 +169,26 @@ summary:focus-visible,
 .topbar nav a:hover:after,
 .topbar nav a[aria-current]:after {
   transform: scaleX(1);
+}
+.topbar nav .nav-papers {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px;
+  border: 1px solid var(--purple);
+  border-radius: 999px;
+  background: var(--purple);
+  color: var(--paper);
+  box-shadow: 0 3px 0 #ded2b8;
+  font-weight: 800;
+}
+.topbar nav .nav-papers:after {
+  display: none;
+}
+.topbar nav .nav-papers:hover,
+.topbar nav .nav-papers[aria-current="page"] {
+  background: #4b3b85;
+  border-color: #4b3b85;
 }
 .star {
   display: flex;
