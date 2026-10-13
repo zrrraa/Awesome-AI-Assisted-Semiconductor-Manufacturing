@@ -523,8 +523,8 @@
       $("#timeline-maximum").textContent = "Highest count · " + max;
       $("#timeline-note").textContent =
         mode === "stage"
-          ? "A paper contributes to every stage it addresses. The three testbed papers without a stage are omitted in this view."
-          : "Each paper is counted once, using its publication year" +
+          ? "Years follow the cited publication versions. A paper contributes to every stage it addresses; the three testbed papers without a stage are omitted."
+          : "Each paper is counted once, using the year of its cited publication version" +
             (mode === "scope" ? " and manufacturing scope." : ".");
       $("#timeline-readout").textContent =
         "Select " +

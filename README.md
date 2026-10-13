@@ -60,7 +60,7 @@ The survey follows AI’s growing role in manufacturing: recognizing patterns, e
 
 ## 🧭 Explore by manufacturing task
 
-Choose a manufacturing question and follow its research. Each entry includes the venue, authors, available paper and resource links, and its manufacturing scope, task and AI stages.
+Choose a manufacturing question and follow its research. Each entry includes the venue, authors, available paper and resource links, and its manufacturing scope, task and AI stages. Years in the collection refer to the cited publication versions; the survey's historical timeline uses first public release years.
 
 <table>
 <tr>
