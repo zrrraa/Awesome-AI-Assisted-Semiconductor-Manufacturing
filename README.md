@@ -3,25 +3,26 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
-  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="https://img.shields.io/badge/Project-Explore_the_survey-526DAB?style=flat-square" alt="Project page"></a>
-  <a href="#citation"><img src="https://img.shields.io/badge/Cite-BibTeX-7956AE?style=flat-square" alt="Citation"></a>
-  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-36875B?style=flat-square" alt="Pull requests welcome"></a>
+  <a href="#citation"><img src="https://img.shields.io/badge/Cite-BibTeX-74658C?style=flat&amp;labelColor=575361" alt="Citation"></a>
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-527545?style=flat&amp;labelColor=575361" alt="Pull requests welcome"></a>
 </p>
 
 <p align="center"><span><a href="mailto:rzhong@zju.edu.cn">Rui Zhong</a><sup>1</sup></span> · <span><a href="mailto:3230106225@zju.edu.cn">Zhikun Huang</a><sup>1</sup></span> · <span><a href="mailto:xuezhangxz@zju.edu.cn">Xue Zhang</a><sup>1</sup></span> · <span><a href="mailto:jinqian2022@zju.edu.cn">Qian Jin</a><sup>1</sup></span> · <span><a href="mailto:li.yu@zju.edu.cn">Yu Li</a><sup>1</sup></span><br>
 <span><a href="mailto:qisunchn@zju.edu.cn">Qi Sun</a><sup>1</sup></span> · <span><a href="mailto:dawei_gao@zju.edu.cn">Dawei Gao</a><sup>2,1</sup></span> · <span><a href="mailto:yi.song@zju.edu.cn">Yi Song</a><sup>1</sup></span> · <span><a href="mailto:hanmingwu@zju.edu.cn">Hanming Wu</a><sup>1,*</sup></span> · <span><a href="mailto:czhuo@zju.edu.cn">Cheng Zhuo</a><sup>1,*</sup></span></p>
 <p align="center"><sub><span><sup>1</sup> College of Integrated Circuits, Zhejiang University</span> &nbsp; <span><sup>2</sup> Zhejiang ICsprout Semiconductor Co., Ltd.</span><br>* Corresponding authors.</sub></p>
 
+<p align="center">
+  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="https://img.shields.io/badge/PROJECT_PAGE-EXPLORE_THE_SURVEY_%E2%86%97-6B4FA0?style=for-the-badge&amp;labelColor=393044" height="28" alt="Visit the interactive Project page"></a><br>
+  <sub>Interactive figures · Research trends · Searchable paper collection</sub>
+</p>
+
 <p align="center"><img src="docs/assets/overview-13f65796.jpg" width="1000" alt="Fig. 1. Five manufacturing scopes and nineteen tasks, connected with five AI stages from Perception to Autonomy."></p>
 
-<!-- reading navigation -->
 <p align="center">
-  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="https://img.shields.io/badge/%F0%9F%8C%90-Project%20page-526DAB?style=flat-square" alt="Project page"></a>
-  <a href="#citation"><img src="https://img.shields.io/badge/%E2%9D%9D-Citation-7956AE?style=flat-square" alt="Citation"></a>
-  <a href="#papers"><img src="https://img.shields.io/badge/%F0%9F%93%84-Papers-526DAB?style=flat-square" alt="Papers"></a>
-  <a href="docs/getting-started.md"><img src="https://img.shields.io/badge/%E2%96%A4-Reading%20guide-36875B?style=flat-square" alt="Reading guide"></a>
+  <a href="#papers"><b>Browse by task</b></a> &nbsp; · &nbsp;
+  <a href="docs/getting-started.md">Reading guide</a> &nbsp; · &nbsp;
+  <a href="RESOURCES.md">Datasets &amp; code</a>
 </p>
-<!-- /reading navigation -->
 
 <a id="news"></a>
 

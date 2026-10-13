@@ -1,10 +1,10 @@
-"""Shields.io flat-square badges for the GitHub reading lists."""
+"""Consistent Shields.io badges for the GitHub reading lists."""
 import html
 from urllib.parse import quote, urlencode
 
 LOGOS = {'arXiv': 'arxiv', 'GitHub': 'github', 'GitLab': 'gitlab', 'Hugging Face': 'huggingface'}
 COLORS = {'Paper': '526DAB', 'arXiv': 'B31B1B', 'GitHub': '181717', 'GitLab': 'FC6D26', 'Hugging Face': 'E8AD27', 'Dataset': '36875B', 'Project page': '526DAB', 'Citation': '7956AE', 'Reading guide': '36875B'}
-GLYPHS = {'Paper': '📄', 'Project page': '🌐', 'Dataset': '▦', 'Citation': '❝', 'Reading guide': '▤'}
+GLYPHS = {'Paper': '↗', 'Project page': '↗', 'Dataset': '▦'}
 
 
 def badge_text(value):
@@ -13,11 +13,15 @@ def badge_text(value):
 
 
 class Badges:
-    def image(self, label, kind='resource', color='65558d', icon=None, title=None):
+    def image(self, label, kind='resource', color='65558d', icon=None, title=None, year=None):
         message = label
         leading = ''
-        options = {'style': 'flat-square'}
-        if kind in ('scope', 'stage') and ' ' in label:
+        options = {'style': 'flat', 'labelColor': '575361'}
+        if kind == 'venue' and year is not None:
+            leading = label[:-2] if label != str(year) and label.endswith(str(year)[-2:]) else ''
+            message = str(year)
+            color = '74658C'
+        elif kind in ('scope', 'stage') and ' ' in label:
             leading, message = label.split(' ', 1)
         elif kind == 'task':
             leading = 'Task'
@@ -30,7 +34,7 @@ class Badges:
         parts = [badge_text(leading), badge_text(message), color] if leading else [badge_text(message), color]
         url = 'https://img.shields.io/badge/'+'-'.join(parts)+'?'+urlencode(options)
         tooltip = ' title="'+html.escape(title,quote=True)+'"' if title else ''
-        return '<img src="'+html.escape(url,quote=True)+'" alt="'+html.escape(label,quote=True)+'"'+tooltip+'>'
+        return '<img src="'+html.escape(url,quote=True)+'" alt="'+html.escape(label,quote=True)+'" height="20" align="absmiddle"'+tooltip+'>'
 
     def link(self, label, href, **kwargs):
         return '<a href="'+html.escape(href,quote=True)+'">'+self.image(label, **kwargs)+'</a>'

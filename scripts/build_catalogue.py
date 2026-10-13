@@ -48,7 +48,7 @@ def build():
             elif line.startswith('> ') and task and not task['question']:
                 task['question'] = plain(line[2:])
             elif line.startswith('- <a id='):
-                match = re.fullmatch(r'- <a id="([^"]+)"></a>\*\*(.*?)\*\*(?: <code[^>]*>.*?</code>| <img[^>]*>)?<br>', line)
+                match = re.fullmatch(r'- <a id="([^"]+)"></a>\*\*(.*?)\*\*(?: <code[^>]*>.*?</code>| <img[^>]*>)?(?:<br>)?', line)
                 if not match or not task:
                     raise ValueError(f'Unrecognized paper entry: {scope}:{i+1}')
                 record = bib[match[1]]
@@ -103,16 +103,16 @@ def build():
     scope_colors = ['69528e','527545','af6535','347d94','5963a0']
     stage_colors = ['387288','705697','926b2f','965d72','507b5e']
     def markdown_entry(p):
-        title='- <a id="'+p['id']+'"></a>**'+html.escape(p['title'],quote=False)+'** '+badges.image(p['venueBadge'],kind='venue',title=p['venue'] or str(p['year']))+'<br>\n'
+        title='- <a id="'+p['id']+'"></a>**'+html.escape(p['title'],quote=False)+'** '+badges.image(p['venueBadge'],kind='venue',year=p['year'],title=p['venue'] or str(p['year']))+'<br>\n'
         names=p['authorList']
         if len(names)>8:
-            author_line='  <sub>'+html.escape(', '.join(names[:5]))+'</sub>\n  <details><summary>Show all '+str(len(names))+' authors</summary>\n\n  <sub>'+html.escape(p['authors'])+'</sub>\n\n  </details>\n\n'
-        else: author_line='  <sub>'+html.escape(p['authors'])+'</sub><br>\n'
+            author_line='  <sub>'+html.escape(', '.join(names[:5]))+', …</sub>\n\n  <details><summary>Show all '+str(len(names))+' authors</summary>\n\n  <sub>'+html.escape(p['authors'])+'</sub>\n\n  </details>\n\n'
+        else: author_line='  <sub>'+html.escape(p['authors'])+'</sub>\n\n'
         links=paper_links(p)
-        link_line='  '+' '.join(badges.link(r['label'],r['url'],icon=r['label'].split(' · ')[0]) for r in links)+'<br>\n'
+        link_line='  '+' &nbsp; '.join(badges.link(r['label'],r['url'],icon=r['label'].split(' · ')[0]) for r in links)+'\n\n'
         scope_index = SCOPES.index(p['catalogueScope'])
         category=[badges.image('M'+str(scope_index+1)+' '+p['catalogueScope'].capitalize(),kind='scope',color=scope_colors[scope_index]),
-                  badges.link(p['task'],'#'+p['task'].lower(),kind='task',color='74623f')]
+                  badges.link(p['task'],'#'+p['task'].lower(),kind='task',color='706779')]
         category += [badges.link(s+' '+stages[s],'https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage='+s,kind='stage',color=stage_colors[int(s[1])-1]) for s in p['stages']] or [badges.image(p['role'],kind='stage')]
         return title+author_line+link_line+'  '+' '.join(category)+'\n'
     by_id={p['id']:p for p in papers}
@@ -123,13 +123,6 @@ def build():
         updated=re.sub(pattern,lambda m:markdown_entry(by_id[m[1]])+'\n',original,flags=re.M|re.S)
         updated=re.sub(r'\n{3,}','\n\n',updated)
         outputs[path]=updated.rstrip()+'\n'
-    readme_path = ROOT/'README.md'
-    readme = readme_path.read_text(encoding='utf-8')
-    nav = '<!-- reading navigation -->\n<p align="center">\n  '+'\n  '.join(badges.link(label,href,icon=icon) for label,href,icon in [
-        ('Project page','https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/','Project page'),
-        ('Citation','#citation','Citation'),('Papers','#papers','Paper'),('Reading guide','docs/getting-started.md','Reading guide')])+'\n</p>\n<!-- /reading navigation -->'
-    if '<!-- reading navigation -->' in readme:
-        outputs[readme_path] = re.sub(r'<!-- reading navigation -->.*?<!-- /reading navigation -->',lambda _:nav,readme,flags=re.S)
     return outputs, len(papers)
 
 

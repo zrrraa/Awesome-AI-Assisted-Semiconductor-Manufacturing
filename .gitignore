@@ -4,8 +4,11 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .env
+.env.*
 *.pdf
 *.zip
 *.docx
 tmp/
 .local/
+.playwright-cli/
+output/playwright/
