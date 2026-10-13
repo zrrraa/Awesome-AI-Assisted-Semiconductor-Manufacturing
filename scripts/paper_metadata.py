@@ -96,12 +96,16 @@ VENUES={
 }
 
 
-def venue_badge(venue,year):
+def venue_badge_parts(venue,year,*,conference=False,conference_year=None):
+    """Return a venue name and display year, separate from its publication year."""
     venue=text(venue)
-    if venue.lower() in ('arxiv','preprint',''): return str(year)
-    # A proceedings volume can appear after the conference itself (e.g. ECCV 2024).
-    edition = re.search(r'\b((?:19|20)\d{2})\b',venue)
-    badge_year = edition[1] if edition else str(year)
+    badge_year=int(year)
+    if conference_year is not None:
+        badge_year=int(conference_year)
+    elif conference:
+        edition=re.search(r'\b((?:19|20)\d{2})\b',venue)
+        if edition: badge_year=int(edition[1])
+    if venue.lower() in ('arxiv','preprint',''): return '',badge_year
     aliases=[('Conference on Computer Vision and Pattern Recognition','CVPR'),
              ('International Conference on Computer Vision','ICCV'),
              ('International Joint Conference on Artificial Intelligence','IJCAI'),
@@ -116,15 +120,19 @@ def venue_badge(venue,year):
              ('Computer Vision – ECCV','ECCV-W'),('Annual Conference of the PHM Society','PHM'),
              ('PHM Society Asia-Pacific','PHMAP'),('Metrology, Inspection, and Process Control','SPIE MIPC'),
              ('DTCO and Computational Patterning','SPIE DTCO'),('Photomask Technology','SPIE Photomask'),
-             ('Design-Process-Technology Co-optimization','SPIE DTCO')]
+             ('Design-Process-Technology Co-optimization','SPIE DTCO'),
+             ('e-Manufacturing and Design Collaboration','eMDC'),
+             ('Symposium on VLSI Technology and Circuits','VLSI'),
+             ('International Symposium ELMAR','ELMAR'),
+             ('ECML PKDD Workshops','ECML PKDD-W')]
     name=VENUES.get(venue)
     if not name:
         name=next((alias for substring,alias in aliases if substring.lower() in venue.lower()),None)
     if not name:
         match=re.search(r'\(([A-Z][A-Za-z0-9-]{1,9})(?: \d{4})?\)',venue)
         name=match[1] if match else venue
-    name=re.sub(r'\s+20\d\d\b','',name)
-    return name+badge_year[-2:]
+    name=re.sub(r'\s+',' ',re.sub(r'\s*\b(?:19|20)\d{2}\b','',name)).strip()
+    return name,badge_year
 
 
 def enrichment():

@@ -732,6 +732,26 @@
     ]
   },
   "venues": {
+    "andelfinger202675e11": {
+      "name": "Asia Simulation Conference (AsiaSim)",
+      "conference_year": 2025,
+      "source": "https://link.springer.com/book/10.1007/978-981-95-4472-1"
+    },
+    "chen20187a527": {
+      "name": "Advances in Production Management Systems (APMS)",
+      "conference_year": 2018,
+      "source": "https://link.springer.com/book/10.1007/978-3-319-99707-0"
+    },
+    "dey2025069aa": {
+      "name": "ECML PKDD Workshops",
+      "conference_year": 2023,
+      "source": "https://link.springer.com/book/10.1007/978-3-031-74640-6"
+    },
+    "kim2024a6c40": {
+      "name": "Flexible Automation and Intelligent Manufacturing (FAIM)",
+      "conference_year": 2024,
+      "source": "https://link.springer.com/book/10.1007/978-3-031-74482-2"
+    },
     "lai2026lithogrpo": {
       "name": "International Conference on Machine Learning",
       "source": "https://github.com/laiyao1/LithoGRPO"

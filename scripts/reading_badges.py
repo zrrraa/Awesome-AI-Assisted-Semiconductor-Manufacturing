@@ -13,14 +13,15 @@ def badge_text(value):
 
 
 class Badges:
-    def image(self, label, kind='resource', color='65558d', icon=None, title=None, year=None):
+    def image(self, label, kind='resource', color='65558d', icon=None, title=None, year=None, venue_name=None):
         message = label
         leading = ''
         options = {'style': 'flat', 'labelColor': '575361'}
         if kind == 'venue' and year is not None:
-            # Keep a conference edition when it differs from the publication year.
-            if label != str(year):
-                leading = label[:-2] if label.endswith(str(year)[-2:]) else label
+            # Name and display year are resolved from the same venue metadata.
+            if venue_name is None:
+                raise ValueError('Venue badges require a separate venue name')
+            leading = venue_name
             message = str(year)
             color = '74658C'
         elif kind in ('scope', 'stage') and ' ' in label:

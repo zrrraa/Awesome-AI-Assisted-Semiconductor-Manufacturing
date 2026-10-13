@@ -109,7 +109,7 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.23919/emdc/issm48219.2019.9052110"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
   <img src="https://img.shields.io/badge/M5-Fabs-5963a0?style=flat&amp;labelColor=575361" alt="M5 Fabs" height="20" align="absmiddle"> <a href="#f1"><img src="https://img.shields.io/badge/Task-F1-706779?style=flat&amp;labelColor=575361" alt="F1" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L2"><img src="https://img.shields.io/badge/L2-Prediction-705697?style=flat&amp;labelColor=575361" alt="L2 Prediction" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L4"><img src="https://img.shields.io/badge/L4-Planning-965d72?style=flat&amp;labelColor=575361" alt="L4 Planning" height="20" align="absmiddle"></a>
 
-- <a id="chien201821d47"></a>***AI and Big Data Analytics for Wafer Fab Energy Saving and Chiller Optimization to Empower Intelligent Manufacturing*** <img src="https://img.shields.io/badge/2018%20e--Manufacturing%20and%20Design%20Collaboration%20Symposium-2018-74658C?style=flat&amp;labelColor=575361" alt="2018 e-Manufacturing and Design Collaboration Symposium18" height="20" align="absmiddle" title="2018 e-Manufacturing and Design Collaboration Symposium"><br>
+- <a id="chien201821d47"></a>***AI and Big Data Analytics for Wafer Fab Energy Saving and Chiller Optimization to Empower Intelligent Manufacturing*** <img src="https://img.shields.io/badge/eMDC-2018-74658C?style=flat&amp;labelColor=575361" alt="eMDC18" height="20" align="absmiddle" title="2018 e-Manufacturing and Design Collaboration Symposium"><br>
   <sub>Chen-Fu Chien, Ying-Jen Chen, Ya-Tung Han, Meng-Ke Hsieh, Chi-Ming Lee, Taylor Shih, Mao-Yung Wu, Wen-Wei Yang</sub>
 
   <a href="https://ieeexplore.ieee.org/document/8514238"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
@@ -121,7 +121,7 @@ Papers are listed newest first within each task.
 
 > What equipment, qualifications or factory space should be added or reassigned?
 
-- <a id="andelfinger202675e11"></a>***Learning to Optimize Capacity Planning in Semiconductor Manufacturing*** <img src="https://img.shields.io/badge/Methods%20and%20Applications%20for%20Modeling%20and%20Simulation%20of%20Complex%20Systems-2026-74658C?style=flat&amp;labelColor=575361" alt="Methods and Applications for Modeling and Simulation of Complex Systems26" height="20" align="absmiddle" title="Methods and Applications for Modeling and Simulation of Complex Systems"><br>
+- <a id="andelfinger202675e11"></a>***Learning to Optimize Capacity Planning in Semiconductor Manufacturing*** <img src="https://img.shields.io/badge/AsiaSim-2025-74658C?style=flat&amp;labelColor=575361" alt="AsiaSim25" height="20" align="absmiddle" title="Asia Simulation Conference (AsiaSim)"><br>
   <sub>Philipp Andelfinger, Jieyi Bi, Qiuyu Zhu, Jianan Zhou, Bo Zhang, …</sub>
 
   <details><summary>Show all 10 authors</summary>

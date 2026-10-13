@@ -11,7 +11,7 @@ import re
 import csv
 import io
 from urllib.parse import quote
-from paper_metadata import bibliography, author_names, venue_badge, enrichment, text as bibtext
+from paper_metadata import bibliography, author_names, venue_badge_parts, enrichment, text as bibtext
 from reading_badges import Badges
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +37,7 @@ def build():
     stages = coding['stages']
     tasks = []
     papers = []
+    venue_badges = {}
     for scope in SCOPES:
         lines = (ROOT / 'papers' / f'{scope}.md').read_text(encoding='utf-8').splitlines()
         task = None
@@ -60,12 +61,18 @@ def build():
                 assert all(s in stages for s in code['stages'])
                 assert code['stages'] or code.get('role') == 'Research testbed'
                 authors = author_names(record['author'])
-                venue = venue_overrides.get(match[1], {}).get('name') or bibtext(record.get('journal', record.get('booktitle', '')))
+                venue_override = venue_overrides.get(match[1], {})
+                venue = venue_override.get('name') or bibtext(record.get('journal', record.get('booktitle', '')))
                 year = int(record['year'])
+                venue_name, badge_year = venue_badge_parts(venue, year,
+                    conference=record['type'].lower() in ('inproceedings', 'proceedings'),
+                    conference_year=venue_override.get('conference_year'))
+                venue_badges[match[1]] = (venue_name, badge_year)
+                venue_badge = venue_name+str(badge_year)[-2:] if venue_name else str(badge_year)
                 resources = extra.get(match[1], [])
                 papers.append({'id': match[1], 'title': plain(match['title']), 'url': url,
                                'year': year, 'authors': ', '.join(authors), 'authorList': authors,
-                               'venue': venue, 'venueBadge': venue_badge(venue,year), 'task': task['id'], 'scope': scope,
+                               'venue': venue, 'venueBadge': venue_badge, 'task': task['id'], 'scope': scope,
                                'stages': code['stages'], 'catalogueScope': code['scope'],
                                'role': code.get('role', ''),
                                'resources': [{'label':r['label'],'url':r['url']} for r in resources]})
@@ -76,6 +83,10 @@ def build():
     assert {p['id'] for p in papers} == bibkeys, 'Reading list and BibTeX coverage differ'
     assert set(coding['papers']) == bibkeys, 'AI-stage coding and BibTeX coverage differ'
     assert set(extra) <= bibkeys and set(venue_overrides) <= bibkeys, 'Unknown paper in resource metadata'
+    for key, override in venue_overrides.items():
+        assert override['name'] and override['source'].startswith('https://'), f'Invalid venue source: {key}'
+        if 'conference_year' in override:
+            assert type(override['conference_year']) is int and 1900 <= override['conference_year'] <= 2099, f'Invalid conference year: {key}'
     for key, resources in extra.items():
         assert len({r['url'].rstrip('/').lower() for r in resources}) == len(resources), f'Duplicate resource: {key}'
         assert all(r['url'].startswith('https://') and r['source'].startswith('https://') and r['label'] for r in resources), f'Invalid resource or source: {key}'
@@ -103,7 +114,8 @@ def build():
     scope_colors = ['69528e','527545','af6535','347d94','5963a0']
     stage_colors = ['387288','705697','926b2f','965d72','507b5e']
     def markdown_entry(p):
-        title='- <a id="'+p['id']+'"></a>***'+html.escape(p['title'],quote=False)+'*** '+badges.image(p['venueBadge'],kind='venue',year=p['year'],title=p['venue'] or str(p['year']))+'<br>\n'
+        venue_name, badge_year = venue_badges[p['id']]
+        title='- <a id="'+p['id']+'"></a>***'+html.escape(p['title'],quote=False)+'*** '+badges.image(p['venueBadge'],kind='venue',year=badge_year,title=p['venue'] or str(p['year']),venue_name=venue_name)+'<br>\n'
         names=p['authorList']
         if len(names)>8:
             author_line='  <sub>'+html.escape(', '.join(names[:5]))+', …</sub>\n\n  <details><summary>Show all '+str(len(names))+' authors</summary>\n\n  <sub>'+html.escape(p['authors'])+'</sub>\n\n  </details>\n\n'
