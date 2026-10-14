@@ -1,14 +1,12 @@
 <h1 align="center">Awesome AI-Assisted Semiconductor Manufacturing</h1>
-<p align="center">A growing collection of research on AI-assisted semiconductor manufacturing.</p>
 <p align="center"><b>From Perception to Autonomy: A Survey on AI-Assisted Semiconductor Manufacturing</b></p>
+<p align="center">⭐ <em>Find this collection useful? Give it a star to help others discover it.</em></p>
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge-flat2.svg" alt="Awesome"></a>
   <a href="#citation"><img src="https://img.shields.io/badge/Cite-BibTeX-74658C?style=flat&amp;labelColor=575361" alt="Citation"></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-527545?style=flat&amp;labelColor=575361" alt="Pull requests welcome"></a>
 </p>
-
-<p align="center">⭐ Find this collection useful? Give it a star to help others discover it.</p>
 
 <p align="center"><span><a href="mailto:rzhong@zju.edu.cn">Rui Zhong</a><sup>1</sup></span> · <span><a href="mailto:3230106225@zju.edu.cn">Zhikun Huang</a><sup>1</sup></span> · <span><a href="mailto:xuezhangxz@zju.edu.cn">Xue Zhang</a><sup>1</sup></span> · <span><a href="mailto:jinqian2022@zju.edu.cn">Qian Jin</a><sup>1</sup></span> · <span><a href="mailto:li.yu@zju.edu.cn">Yu Li</a><sup>1</sup></span><br>
 <span><a href="mailto:qisunchn@zju.edu.cn">Qi Sun</a><sup>1</sup></span> · <span><a href="mailto:dawei_gao@zju.edu.cn">Dawei Gao</a><sup>2,1</sup></span> · <span><a href="mailto:yi.song@zju.edu.cn">Yi Song</a><sup>1</sup></span> · <span><a href="mailto:hanmingwu@zju.edu.cn">Hanming Wu</a><sup>1,*</sup></span> · <span><a href="mailto:czhuo@zju.edu.cn">Cheng Zhuo</a><sup>1,*</sup></span></p>
@@ -103,6 +101,8 @@ The central question is how task-level progress improves quality, delivery and r
 
 **Recursive self-improvement (RSI)** extends the learning loop to the procedure that proposes and evaluates improvements.
 
-[🤝 Contribute a paper](CONTRIBUTING.md)
-
 🚀 We’re building [**Fab-XR**](https://fabxr.cn/), an AI-native XR fab.
+
+## 🤝 Contribute
+
+[Contribute a paper](CONTRIBUTING.md)
