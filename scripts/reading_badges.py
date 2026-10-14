@@ -4,7 +4,7 @@ from urllib.parse import quote, urlencode
 
 LOGOS = {'arXiv': 'arxiv', 'GitHub': 'github', 'GitLab': 'gitlab', 'Hugging Face': 'huggingface'}
 COLORS = {'Paper': '526DAB', 'arXiv': 'B31B1B', 'GitHub': '181717', 'GitLab': 'FC6D26', 'Hugging Face': 'E8AD27', 'Dataset': '36875B', 'Project page': '526DAB', 'Citation': '7956AE', 'Reading guide': '36875B'}
-GLYPHS = {'Paper': '↗', 'Project page': '↗', 'Dataset': '▦', 'Journal version': '↗', 'Conference version': '↗'}
+GLYPHS = {'Paper': '↗', 'PDF': '↗', 'Project page': '↗', 'Dataset': '▦', 'Journal version': '↗', 'Conference version': '↗'}
 
 
 def badge_text(value):

@@ -824,6 +824,14 @@
         "url": "https://www.informs-sim.org/wsc19papers/232.pdf",
         "source": "https://www.informs-sim.org/wsc19papers/232.pdf"
       }
+    ],
+    "li2009virtualprobe": [
+      {
+        "label": "PDF",
+        "url": "https://users.ece.cmu.edu/~xinli/papers/2009_ICCAD_vp.pdf",
+        "source": "https://users.ece.cmu.edu/~xinli/papers/2009_ICCAD_vp.pdf",
+        "page": 1
+      }
     ]
   },
   "venues": {
@@ -865,11 +873,6 @@
       "name": "SPIE",
       "conference_year": 2021,
       "source": "https://doi.org/10.1117/12.2583599"
-    },
-    "tchatchoua2022resnet": {
-      "name": "ICCAD (Control)",
-      "conference_year": 2022,
-      "source": "https://doi.org/10.1109/iccad55197.2022.9853997"
     }
   }
 }

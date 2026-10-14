@@ -116,6 +116,7 @@ def venue_badge_parts(venue,year,*,conference=False,conference_year=None):
              ('Neural Information Processing Systems','NeurIPS'),
              ('Winter Simulation Conference','WSC'),('Design Automation Conference','DAC'),
              ('Conference on Computer-Aided Design','ICCAD'),('Conference on Computer Aided Design','ICCAD'),
+             ('Conference on Control, Automation and Diagnosis','ICCAD (Control)'),
              ('AAAI Conference','AAAI'),('Advanced Semiconductor Manufacturing Conference','ASMC'),
              ('Computer Vision – ECCV','ECCV-W'),('Annual Conference of the PHM Society','PHM'),
              ('PHM Society Asia-Pacific','PHMAP'),('Metrology, Inspection, and Process Control','SPIE MIPC'),
@@ -124,6 +125,10 @@ def venue_badge_parts(venue,year,*,conference=False,conference_year=None):
              ('e-Manufacturing and Design Collaboration','eMDC'),
              ('Symposium on VLSI Technology and Circuits','VLSI'),
              ('International Symposium ELMAR','ELMAR'),
+             ('International MultiConference of Engineers and Computer Scientists','IMECS'),
+             ('Photomask Japan','Photomask Japan'),
+             ('International Conference on Extreme Ultraviolet Lithography','SPIE EUV'),
+             ('International Symposium for Testing and Failure Analysis','ISTFA'),
              ('ECML PKDD Workshops','ECML PKDD-W')]
     name=VENUES.get(venue)
     if not name:

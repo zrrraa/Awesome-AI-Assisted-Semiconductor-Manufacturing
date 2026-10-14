@@ -3101,6 +3101,12 @@
       "stages": [],
       "scope": "production",
       "role": "Research testbed"
+    },
+    "li2009virtualprobe": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
     }
   }
 }

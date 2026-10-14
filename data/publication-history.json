@@ -207,5 +207,16 @@
       "relationship": "conference_predecessor",
       "key": "chien201821d47"
     }
+  ],
+  "zhang2011virtualprobe": [
+    {
+      "venue": "ICCAD",
+      "year": 2009,
+      "title": "Virtual Probe: A Statistically Optimal Framework for Minimum-Cost Silicon Characterization of Nanoscale Integrated Circuits",
+      "url": "https://doi.org/10.1145/1687399.1687481",
+      "source": "https://doi.org/10.1109/TCAD.2011.2164536",
+      "relationship": "conference_predecessor",
+      "key": "li2009virtualprobe"
+    }
   ]
 }
