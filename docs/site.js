@@ -370,7 +370,12 @@
   const catalogue = window.MANUFACTURING_CATALOGUE;
   if ($(".coverage-matrix") && catalogue) {
     const { stages: stageNames, coverage } = catalogue;
-    const papers = catalogue.papers.filter((p) => p.surveyIncluded);
+    const updated = $("#collection-updated");
+    updated.dateTime = catalogue.updated;
+    updated.textContent = new Intl.DateTimeFormat("en-GB", {
+      day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+    }).format(new Date(catalogue.updated + "T00:00:00Z"));
+    const papers = catalogue.papers.filter((p) => p.isStudyRepresentative);
     const names = ["Artifacts", "Processes", "Equipment", "Production", "Fabs"];
     const icons = [
       "artifact_wide",
@@ -405,7 +410,7 @@
       icon.width = 35;
       icon.height = 39;
       const text = node("span", "", names[i]);
-      text.append(node("small", "", row.total + " papers"));
+      text.append(node("small", "", row.total + " studies"));
       label.append(icon, text);
       matrix.append(label);
       Object.entries(row.counts).forEach(([stage, count]) => {
@@ -425,7 +430,7 @@
           count +
           " of " +
           row.total +
-          " papers (" +
+          " studies (" +
           ((count / row.total) * 100).toFixed(1) +
           "%).";
         a.setAttribute("aria-label", description + " Browse papers.");
@@ -456,7 +461,7 @@
       });
       $(".size-key").lastChild.textContent =
         " Circle area = " +
-        (unit === "share" ? "share of scope" : "paper count");
+        (unit === "share" ? "share of scope" : "study count");
     }
     $$("[data-unit]").forEach((b) =>
       b.addEventListener("click", () => changeUnit(b.dataset.unit)),
@@ -484,7 +489,7 @@
                 label: key + " · " + label,
                 color: stageColors[i],
               }))
-            : [{ key: "total", label: "All papers", color: "#c6a9e2" }];
+            : [{ key: "total", label: "Studies", color: "#c6a9e2" }];
       const rows = [];
       for (let year = firstYear; year <= lastYear; year++) {
         const matches = papers.filter((p) => p.year === year);
@@ -520,12 +525,12 @@
         legend.append(label);
       });
       $("#timeline-measure").textContent =
-        mode === "stage" ? "Stage assignments" : "Papers";
+        mode === "stage" ? "Stage assignments" : "Studies";
       $("#timeline-maximum").textContent = "Highest count · " + max;
       $("#timeline-note").textContent =
         mode === "stage"
-          ? "Conference and journal versions of the same study count once, using the survey’s cited version and publication year. A study can address several stages; three testbeds have no stage assignment."
-          : "Conference and journal versions of the same study count once, using the survey’s cited version and publication year.";
+          ? "Studies are grouped by their representative publication’s year. A study contributes to each relevant stage; testbeds without stage labels are excluded from this view."
+          : "Studies are grouped by their representative publication’s year.";
       $("#timeline-readout").textContent =
         "Select " +
         (mode === "total" ? "a bar" : "a colored segment") +
@@ -559,7 +564,7 @@
             " · " +
             count +
             " " +
-            (count === 1 ? "paper" : "papers");
+            (count === 1 ? "study" : "studies");
           a.setAttribute("aria-label", label + ". Browse papers.");
           a.title = label;
           ["mouseenter", "focus"].forEach((event) =>
@@ -567,7 +572,7 @@
               $("#timeline-readout").textContent =
                 label +
                 (mode === "stage"
-                  ? " · " + row.paperCount + " papers in this year"
+                  ? " · " + row.paperCount + " studies in this year"
                   : "");
             }),
           );

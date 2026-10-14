@@ -21,7 +21,7 @@ For a practical starting point, try MixedWM38 for wafer patterns, MIIC for image
 
 ## From Perception to Autonomy
 
-The survey follows five stages of AI's growing role in manufacturing:
+Five stages trace AI’s growing role in manufacturing:
 
 | Stage | What it adds | Manufacturing example |
 |---|---|---|

@@ -27,10 +27,10 @@
       imagesizes="(max-width: 560px) calc(100vw - 54px), (max-width: 800px) calc(100vw - 86px), (max-width: 1100px) calc(100vw - 110px), (max-width: 1320px) calc(100vw - 142px), 1178px"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="style.css?v=versions-20261014" />
+    <link rel="stylesheet" href="style.css?v=collection-20261014" />
     <script src="assets/vendor/motion-14.1.0.js" defer></script>
-    <script src="assets/catalogue.js?v=versions-20261014" defer></script>
-    <script src="site.js?v=versions-20261014" defer></script>
+    <script src="assets/catalogue.js?v=collection-20261014" defer></script>
+    <script src="site.js?v=collection-20261014" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -75,8 +75,7 @@
       <section class="hero">
         <div class="hero-heading">
           <p class="eyebrow">
-            <span class="tiny-orbit" aria-hidden="true">✳</span> A survey & an
-            open research collection
+            <span class="tiny-orbit" aria-hidden="true">✳</span> A growing research collection
           </p>
           <h1>
             Awesome AI-Assisted<br /><em>Semiconductor</em
@@ -874,7 +873,7 @@
           </div>
           <div class="chart-unit" aria-label="Coverage measure">
             <button aria-pressed="true" data-unit="share">Share of scope</button
-            ><button aria-pressed="false" data-unit="count">Paper count</button>
+            ><button aria-pressed="false" data-unit="count">Study count</button>
           </div>
         </div>
         <div id="scope-chart" role="tabpanel" aria-labelledby="scope-chart-tab">
@@ -903,7 +902,7 @@
               aria-label="Break down publication years"
             >
               <button data-timeline="total" aria-pressed="true">
-                All papers</button
+                Studies</button
               ><button data-timeline="scope" aria-pressed="false">
                 M1–M5 · Manufacturing</button
               ><button data-timeline="stage" aria-pressed="false">
@@ -913,7 +912,7 @@
           </div>
           <div class="timeline-legend" id="timeline-legend"></div>
           <div class="timeline-axis">
-            <span id="timeline-measure">Papers</span
+            <span id="timeline-measure">Studies</span
             ><span id="timeline-maximum"></span>
           </div>
           <div class="timeline-chart" id="timeline-chart"></div>
@@ -921,14 +920,15 @@
             Select a bar to browse the papers from that year.
           </p>
           <p class="timeline-note" id="timeline-note">
-            Conference and journal versions of the same study count once, using the survey’s cited version and publication year.
+            Studies are grouped by their representative publication’s year.
           </p>
         </div>
         <div class="coverage-bottom">
           <p>
-            <span class="coverage-stage-note">Merged versions count once. Papers may span multiple AI stages.
-            Three research testbeds have no stage assignment.</span>
-            Literature collected through 11 October 2026.
+            Related versions of the same study count once.
+            <span class="coverage-stage-note">Studies may span multiple AI stages;
+            testbeds without stage labels contribute only to scope totals.</span>
+            Collection updated: <time id="collection-updated"></time>.
           </p>
           <a href="assets/coverage.csv" download>Download data ↓</a>
         </div>

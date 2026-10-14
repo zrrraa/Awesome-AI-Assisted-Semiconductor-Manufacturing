@@ -1,4 +1,5 @@
 <h1 align="center">Awesome AI-Assisted Semiconductor Manufacturing</h1>
+<p align="center">A growing collection of research on AI-assisted semiconductor manufacturing, organized by manufacturing task and AI stage.</p>
 <p align="center"><b>From Perception to Autonomy: A Survey on AI-Assisted Semiconductor Manufacturing</b></p>
 
 <p align="center">
@@ -12,7 +13,7 @@
 <p align="center"><sub><span><sup>1</sup> College of Integrated Circuits, Zhejiang University</span> &nbsp; <span><sup>2</sup> Zhejiang ICsprout Semiconductor Co., Ltd.</span><br>* Corresponding authors.</sub></p>
 
 <p align="center">
-  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="https://img.shields.io/badge/PROJECT_PAGE-EXPLORE_THE_SURVEY_%E2%86%97-6B4FA0?style=for-the-badge&amp;labelColor=393044" height="28" alt="Visit the interactive Project page"></a>
+  <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/"><img src="https://img.shields.io/badge/PROJECT_PAGE-EXPLORE_THE_COLLECTION_%E2%86%97-6B4FA0?style=for-the-badge&amp;labelColor=393044" height="28" alt="Visit the interactive Project page"></a>
 </p>
 
 <p align="center"><img src="docs/assets/overview-13f65796.jpg" width="1000" alt="Fig. 1. Five manufacturing scopes and nineteen tasks, connected with five AI stages from Perception to Autonomy."></p>
@@ -34,7 +35,7 @@
 
 ## 📝 Citation
 
-If you find the survey useful, please cite it:
+If you find this collection or our survey useful, please cite:
 
 ```bibtex
 @unpublished{zhong2026perception,
@@ -47,7 +48,7 @@ If you find the survey useful, please cite it:
 
 ## ✳ From Perception to Autonomy
 
-The survey follows AI’s growing role in manufacturing: recognizing patterns, estimating unmeasured or future outcomes, comparing explanations, choosing actions, and executing and adjusting them through feedback. A paper can address several stages; the labels follow the survey’s reviewed literature coding.
+Five AI stages describe AI’s growing role in manufacturing: recognizing patterns, estimating outcomes, comparing explanations, choosing actions, and executing and adjusting them through feedback. A paper can address several stages.
 
 <p align="center"><img src="docs/assets/web/stages.webp" width="1000" alt="Five AI stages from Perception to Autonomy"></p>
 
@@ -60,7 +61,7 @@ The survey follows AI’s growing role in manufacturing: recognizing patterns, e
 
 ## 🧭 Explore by manufacturing task
 
-Choose a manufacturing question and follow its research. Each entry includes the venue, authors, available paper and resource links, and its manufacturing scope, task and AI stages. Linked conference and journal versions have separate entries. **Research trends count merged versions once**, using the survey's cited version and publication year; the survey's historical timeline uses first public release dates.
+Choose a manufacturing question and follow its research. Each entry includes the venue, authors, paper and resource links, and its manufacturing scope, task and AI stages. Related conference and journal versions have separate, linked entries; research trends count each study once.
 
 <table>
 <tr>

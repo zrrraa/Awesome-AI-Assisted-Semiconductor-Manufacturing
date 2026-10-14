@@ -1,5 +1,5 @@
 {
-  "description": "AI-stage assignments for reading entries, including linked publication versions. Charts use the survey representatives in survey-selection.json; task placement is maintained in papers/*.md.",
+  "description": "AI-stage assignments for reading entries, including linked publication versions. Charts use the study representatives in research-groups.json; task placement is maintained in papers/*.md.",
   "stages": {
     "L1": "Perception",
     "L2": "Prediction",

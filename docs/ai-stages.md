@@ -1,6 +1,6 @@
 # AI stages in the reading collection
 
-The labels in [`data/ai-stages.json`](../data/ai-stages.json) follow the reviewed, per-paper coding used for the survey’s manufacturing-scope × AI-stage coverage figure. A paper can have several labels; each is counted once per paper.
+Each paper’s AI-stage labels describe the roles investigated in its methods and evaluation. A paper can have several labels, recorded in [`data/ai-stages.json`](../data/ai-stages.json).
 
 | Stage | What the paper studies |
 | --- | --- |
@@ -12,8 +12,8 @@ The labels in [`data/ai-stages.json`](../data/ai-stages.json) follow the reviewe
 
 Code what a study investigates, using its methods and evaluation. Do not infer stages from a model name or automatically add every earlier stage when assigning L5. Research testbeds are labelled **Research testbed**, with an empty stage list.
 
-The coverage chart uses each paper’s **catalogue scope**, while the task lists group papers by their primary manufacturing objective. Those fields are kept separately: maintenance study `geurtsen2022maintenance` belongs to task E2 and catalogue scope Production; `hong2025capacity` belongs to task R4 and catalogue scope Fabs. This preserves the survey’s reviewed scope statistics without changing the task lists.
+The **task** identifies the manufacturing objective or action. The **manufacturing scope** identifies the objects and scale studied: products and structures, processes, equipment, production or fab facilities. They need not coincide: a maintenance decision concerns equipment, but a study may examine its effects across production. Assign both from the research question and evaluation.
 
-The build script checks bibliography coverage and generates each entry’s stage labels from the reviewed coding. The library includes linked conference and journal versions. Charts and downloadable CSV files count merged versions once, using the survey's cited representative; each version keeps its own labels in the library.
+The library lists related conference and journal versions separately, each with its own labels. Charts and downloadable CSV files count one representative per study, defined in [`data/research-groups.json`](../data/research-groups.json). The [contribution guide](../CONTRIBUTING.md#conference-and-journal-versions) explains how to link versions and choose a representative.
 
-The timeline has three views. **All papers** counts each study once by its representative's publication year. **M1–M5** splits that count by catalogue scope. **L1–L5** counts stage assignments: a study contributes once to every stage its representative addresses, so the stack can exceed the number of studies in that year. The three testbeds without stage labels do not contribute to the stage view.
+The yearly chart has three views. **Studies** counts each study once by its representative’s publication year. **M1–M5** splits that count by manufacturing scope. **L1–L5** counts stage assignments: a study contributes to every stage its representative addresses, so the stack can exceed the number of studies in that year. Testbeds without stage labels contribute to scope totals but not stage counts. The scope × stage chart uses the same records.

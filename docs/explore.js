@@ -242,7 +242,7 @@
   function filteredBase() {
     return papers.filter(
       (p) =>
-        (!state.view || p.surveyIncluded) &&
+        (!state.view || p.isStudyRepresentative) &&
         (!state.paper || p.id === state.paper) &&
         (!state.task || p.task === state.task) &&
         (!state.scope || p.catalogueScope === state.scope) &&
@@ -293,7 +293,7 @@
       ["scope", state.scope, state.scope],
       ["stage", state.stage, stages[state.stage] || "Research testbeds"],
       ["year", state.year, state.year],
-      ["view", state.view, "Research trends · one version per study"],
+      ["view", state.view, "One version per study"],
       ["paper", state.paper, "Selected publication"],
     ]) {
       if (!value) continue;
@@ -351,7 +351,9 @@
     $("#result-count").textContent = filtered.length
       ? filtered.length +
         " " +
-        (filtered.length === 1 ? "paper" : "papers") +
+        (state.view
+          ? (filtered.length === 1 ? "study" : "studies")
+          : (filtered.length === 1 ? "paper" : "papers")) +
         " · showing " +
         Math.min(limit, filtered.length) +
         (task ? " in " + task.id : "")
