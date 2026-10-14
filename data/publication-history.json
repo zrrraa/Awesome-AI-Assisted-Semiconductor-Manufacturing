@@ -229,5 +229,93 @@
       "relationship": "conference_predecessor",
       "key": "jin2024semclip"
     }
+  ],
+  "kim201950127": [
+    {
+      "venue": "ASMC",
+      "year": 2017,
+      "title": "A market-oriented wafer map optimization methodology using differential evolution to maximize wafer productivity",
+      "url": "https://doi.org/10.1109/asmc.2017.7969268",
+      "source": "https://doi.org/10.1109/TSM.2018.2870253",
+      "relationship": "conference_predecessor",
+      "key": "kim2017waferoptimization"
+    }
+  ],
+  "alawieh2021gansraf": [
+    {
+      "venue": "DAC",
+      "year": 2019,
+      "title": "GAN-SRAF: Sub-Resolution Assist Feature Generation Using Conditional Generative Adversarial Networks",
+      "url": "https://doi.org/10.1145/3316781.3317832",
+      "source": "https://doi.org/10.1109/TCAD.2020.2995338",
+      "relationship": "conference_predecessor",
+      "key": "alawieh2019gansraf"
+    }
+  ],
+  "cheng2012automaticvm": [
+    {
+      "venue": "CASE",
+      "year": 2008,
+      "title": "Automatic virtual metrology system design and implementation",
+      "url": "https://doi.org/10.1109/coase.2008.4626524",
+      "source": "https://doi.org/10.1109/TASE.2011.2169405",
+      "relationship": "conference_predecessor",
+      "key": "huang2008automaticvm"
+    }
+  ],
+  "kao2013reliablevm": [
+    {
+      "venue": "CASE",
+      "year": 2011,
+      "title": "Preliminary study of run-to-run control utilizing virtual metrology with reliance index",
+      "url": "https://doi.org/10.1109/case.2011.6042446",
+      "source": "https://doi.org/10.1109/TSM.2012.2228243",
+      "relationship": "conference_predecessor",
+      "key": "kao2011vmcontrol"
+    }
+  ],
+  "susto2015multistepvm": [
+    {
+      "venue": "CASE",
+      "year": 2012,
+      "title": "Multistep virtual metrology approaches for semiconductor manufacturing processes",
+      "url": "https://doi.org/10.1109/coase.2012.6386484",
+      "source": "https://doi.org/10.1016/j.cor.2014.05.008",
+      "relationship": "conference_predecessor",
+      "key": "pampuri2012multistepvm"
+    }
+  ],
+  "maggipinto2018visionvm": [
+    {
+      "venue": "RTSI",
+      "year": 2017,
+      "title": "Deep learning for virtual metrology: Modeling with optical emission spectroscopy data",
+      "url": "https://doi.org/10.1109/rtsi.2017.8065905",
+      "source": "https://doi.org/10.1109/TSM.2018.2849206",
+      "relationship": "conference_predecessor",
+      "key": "terzi2017deepvm"
+    }
+  ],
+  "hong2022oht": [
+    {
+      "venue": "ASMC",
+      "year": 2020,
+      "title": "Q-learning-based route-guidance and vehicle assignment for OHT systems in semiconductor fabs",
+      "url": "https://doi.org/10.1109/asmc49169.2020.9185357",
+      "source": "https://doi.org/10.1109/tsm.2022.3168702",
+      "relationship": "conference_predecessor",
+      "key": "hwang2020oht"
+    }
+  ],
+  "yan2021e7690": [
+    {
+      "venue": "IWAPS",
+      "year": 2020,
+      "title": "Machine Learning Virtual SEM Metrology",
+      "url": "https://doi.org/10.1109/iwaps51164.2020.9286804",
+      "source": "https://doi.org/10.1117/1.jmm.20.4.041204",
+      "relationship": "conference_predecessor",
+      "key": "yan2020virtualsem"
+    }
   ]
 }

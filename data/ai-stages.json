@@ -3107,6 +3107,57 @@
         "L2"
       ],
       "scope": "artifacts"
+    },
+    "kim2017waferoptimization": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "alawieh2019gansraf": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "huang2008automaticvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "kao2011vmcontrol": {
+      "stages": [
+        "L2",
+        "L4",
+        "L5"
+      ],
+      "scope": "processes"
+    },
+    "pampuri2012multistepvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "terzi2017deepvm": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "hwang2020oht": {
+      "stages": [
+        "L4",
+        "L5"
+      ],
+      "scope": "production"
+    },
+    "yan2020virtualsem": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
     }
   }
 }

@@ -489,6 +489,14 @@
     "tchatchoua2022resnet": "tchatchoua20230dea5",
     "susto2011epitaxy": "susto2012calibration",
     "hassoun2019smt": "kopp2020smt",
-    "li2009virtualprobe": "zhang2011virtualprobe"
+    "li2009virtualprobe": "zhang2011virtualprobe",
+    "kim2017waferoptimization": "kim201950127",
+    "alawieh2019gansraf": "alawieh2021gansraf",
+    "huang2008automaticvm": "cheng2012automaticvm",
+    "kao2011vmcontrol": "kao2013reliablevm",
+    "pampuri2012multistepvm": "susto2015multistepvm",
+    "terzi2017deepvm": "maggipinto2018visionvm",
+    "hwang2020oht": "hong2022oht",
+    "yan2020virtualsem": "yan2021e7690"
   }
 }

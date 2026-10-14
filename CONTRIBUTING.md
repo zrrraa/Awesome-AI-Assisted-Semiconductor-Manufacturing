@@ -23,6 +23,8 @@ The build command fills the remaining lines from the bibliography and reviewed m
 
 ## Conference and journal versions
 
+Review a predecessor's full text for its method, evidence and manufacturing relevance before adding it. A journal's extension statement establishes a relationship; each collected version still needs its own quality assessment and stage labels.
+
 Keep collected conference and journal publications as separate entries with their own metadata. In `data/publication-history.json`, record the conference entry’s `key` and the source establishing the relationship under the journal key. The builder generates links in both directions, whether the papers are counted together or separately.
 
 Decide statistical grouping separately by reading the papers’ research questions, methods and evidence. Papers with distinct contributions stay in `data/research-groups.json` → `researchKeys`, even when one explicitly extends the other. For versions counted as one study, choose a representative, normally the fuller journal paper, and map only the other key to it in `countedWith`. That entry receives a **Trends: Counted with …** marker linking to the representative. A relationship link alone never changes the count.
