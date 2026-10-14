@@ -218,5 +218,16 @@
       "relationship": "conference_predecessor",
       "key": "li2009virtualprobe"
     }
+  ],
+  "jin2026semclip2": [
+    {
+      "venue": "ICCAD",
+      "year": 2024,
+      "title": "SEM-CLIP: Precise Few-Shot Learning for Nanoscale Defect Detection in Scanning Electron Microscope Image",
+      "url": "https://doi.org/10.1145/3676536.3676752",
+      "source": "https://doi.org/10.1109/TCAD.2026.3663889",
+      "relationship": "conference_predecessor",
+      "key": "jin2024semclip"
+    }
   ]
 }

@@ -211,9 +211,17 @@
     for (const r of p.relatedPublications || []) {
       const link = el("a", "paper-resource paper-version");
       link.href = "explore.html?paper=" + encodeURIComponent(r.id);
-      link.append(resourceIcon("Version"), document.createTextNode(r.kind + " version · " + r.venueBadge));
+      link.append(resourceIcon("Version"), document.createTextNode("Related " + r.kind.toLowerCase() + " · " + r.venueBadge));
       link.title = r.title;
       bottom.append(link);
+    }
+    if (p.countedWith) {
+      const representative = byPaper.get(p.countedWith);
+      const marker = el("a", "paper-resource paper-counting");
+      marker.href = "explore.html?paper=" + encodeURIComponent(representative.id);
+      marker.textContent = "Trends · Counted with " + representative.venueBadge;
+      marker.title = "Research trends count this study under " + representative.title;
+      bottom.append(marker);
     }
     const tags = el("div", "paper-tags");
     const scope = el(

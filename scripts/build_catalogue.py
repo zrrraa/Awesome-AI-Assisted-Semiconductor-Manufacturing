@@ -39,7 +39,7 @@ def build():
     updated = date.fromisoformat(selection['updated']).isoformat()
     history = json.loads((ROOT/'data/publication-history.json').read_text(encoding='utf-8'))
     research_keys = set(selection['researchKeys'])
-    related_versions = selection['relatedVersions']
+    counted_with = selection['countedWith']
     assert len(research_keys) == len(selection['researchKeys']), 'Duplicate study representative'
     stages = coding['stages']
     tasks = []
@@ -83,7 +83,8 @@ def build():
                                'stages': code['stages'], 'catalogueScope': code['scope'],
                                'role': code.get('role', ''),
                                'isStudyRepresentative': match[1] in research_keys,
-                               'studyId': related_versions.get(match[1], match[1]),
+                               'studyId': counted_with.get(match[1], match[1]),
+                               'countedWith': counted_with.get(match[1]),
                                'publicationHistory': history.get(match[1], []),
                                'resources': [{'label':r['label'],'url':r['url']} for r in resources]})
     assert len(tasks) == 19 and len({t['id'] for t in tasks}) == 19
@@ -92,9 +93,9 @@ def build():
     bibkeys = set(re.findall(r'^@\w+\{([^,\s]+),', (ROOT/'references.bib').read_text(encoding='utf-8'), re.M))
     assert {p['id'] for p in papers} == bibkeys, 'Reading list and BibTeX coverage differ'
     assert set(coding['papers']) == bibkeys, 'AI-stage coding and BibTeX coverage differ'
-    assert research_keys | set(related_versions) == bibkeys, 'Unassigned public publication or missing study representative'
-    assert not research_keys & set(related_versions), 'A related version cannot be counted a second time'
-    assert all(v in research_keys and k != v for k,v in related_versions.items()), 'Invalid version representative'
+    assert research_keys | set(counted_with) == bibkeys, 'Unassigned publication or missing study representative'
+    assert not research_keys & set(counted_with), 'A grouped publication cannot also be counted independently'
+    assert all(v in research_keys and k != v for k,v in counted_with.items()), 'Invalid counting representative'
     assert {p['studyId'] for p in papers} == research_keys, 'Each study must have exactly one representative'
     assert set(history) <= bibkeys, 'Unknown journal in publication history'
     for key, predecessors in history.items():
@@ -104,11 +105,9 @@ def build():
             assert r['venue'] and r['title'] and r['url'].startswith('https://') and r['source'].startswith('https://'), key
             assert r['relationship'] == 'conference_predecessor' and r['year'] <= int(bib[key]['year']), key
             assert r.get('key') in bibkeys, 'Each linked publication needs its own entry'
-            assert related_versions.get(r['key']) == key, 'History link and version representative disagree'
             assert bib[r['key']]['type'].lower() == 'inproceedings', 'Expected a conference publication'
             assert int(bib[r['key']]['year']) == r['year'], 'Version year differs from bibliography'
             assert bibtext(bib[r['key']]['title']).casefold() == r['title'].casefold(), 'History title differs from conference entry'
-    assert {r['key'] for rows in history.values() for r in rows} == set(related_versions), 'Missing version relationship evidence'
     assert set(extra) <= bibkeys and set(venue_overrides) <= bibkeys, 'Unknown paper in resource metadata'
     for key, override in venue_overrides.items():
         assert override['name'] and override['source'].startswith('https://'), f'Invalid venue source: {key}'
@@ -120,7 +119,10 @@ def build():
     by_id = {p['id']: p for p in papers}
     for p in papers:
         p['relatedPublications'] = []
-    for conference, journal in related_versions.items():
+    # Publication relationships describe provenance; they do not select chart records.
+    relations = [(r['key'], journal) for journal, rows in history.items() for r in rows]
+    assert len(relations) == len(set(relations)), 'Duplicate publication relationship'
+    for conference, journal in relations:
         for source, target, kind in [(conference, journal, 'Journal'), (journal, conference, 'Conference')]:
             p, other = by_id[source], by_id[target]
             p['relatedPublications'].append({'id': target, 'kind': kind, 'title': other['title'],
@@ -161,8 +163,13 @@ def build():
         links=paper_links(p)
         resource_badges = [badges.link(r['label'],r['url'],icon=r['label'].split(' · ')[0]) for r in links]
         resource_badges += [badges.link(r['venueBadge'], r['scope']+'.md#'+r['id'], kind='version',
-                                       relation=r['kind'], title=r['kind']+' version: '+r['title'])
+                                       relation=r['kind'], title='Related '+r['kind'].lower()+': '+r['title'])
                             for r in p['relatedPublications']]
+        if p['countedWith']:
+            representative = by_id[p['countedWith']]
+            resource_badges.append(badges.link('Counted with '+representative['venueBadge'],
+                representative['scope']+'.md#'+representative['id'], kind='counting',
+                title='Research trends count this study under '+representative['title']))
         link_line='  '+' &nbsp; '.join(resource_badges)+'<br>\n'
         scope_index = SCOPES.index(p['catalogueScope'])
         category=[badges.image('M'+str(scope_index+1)+' '+p['catalogueScope'].capitalize(),kind='scope',color=scope_colors[scope_index]),

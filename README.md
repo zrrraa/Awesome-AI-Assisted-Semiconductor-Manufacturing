@@ -61,7 +61,7 @@ Five AI stages describe AI’s growing role in manufacturing: recognizing patter
 
 ## 🧭 Explore by manufacturing task
 
-Choose a manufacturing question and follow its research. Each entry includes the venue, authors, paper and resource links, and its manufacturing scope, task and AI stages. Related conference and journal versions have separate, linked entries; research trends count each study once.
+Choose a manufacturing question and follow its research. Each entry includes the venue, authors, paper and resource links, and its manufacturing scope, task and AI stages. Conference and journal papers link to related publications. A separate **Trends: Counted with …** badge identifies entries grouped into one study for statistics.
 
 <table>
 <tr>

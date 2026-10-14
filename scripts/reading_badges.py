@@ -29,8 +29,12 @@ class Badges:
         elif kind == 'task':
             leading = 'Task'
         elif kind == 'version':
-            leading = relation + ' version'
+            leading = 'Related ' + relation.lower()
             color = '6C7F86'
+            label = leading + ': ' + label
+        elif kind == 'counting':
+            leading = 'Trends'
+            color = '83734E'
             label = leading + ': ' + label
         elif kind == 'resource':
             color = COLORS.get(icon, color)

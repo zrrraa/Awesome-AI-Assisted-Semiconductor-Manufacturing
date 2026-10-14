@@ -1791,6 +1791,12 @@ summary:focus-visible,
   color: #263f46;
   border-color: currentColor;
 }
+.paper-counting {
+  color: #675c3f;
+  background: #f5f0e3;
+  border-style: dashed;
+  border-color: #c6b995;
+}
 .stage-chip:hover {
   background: #e1d3f2;
 }

@@ -1,5 +1,5 @@
 {
-  "description": "Research trends count one representative per study in researchKeys. Conference and journal versions have separate reading entries; relatedVersions maps additional versions to their representative. Register new independent studies in researchKeys and update the date when collection data change.",
+  "description": "Research trends count the records in researchKeys. countedWith explicitly maps publications grouped into the same study to their counting representative. Publication relationships are maintained independently in publication-history.json and do not change counts.",
   "updated": "2026-10-14",
   "researchKeys": [
     "adamson20232c945",
@@ -469,7 +469,7 @@
     "zhu2024l2oilt",
     "zhu2026innilt"
   ],
-  "relatedVersions": {
+  "countedWith": {
     "jiang2024fabgpt": "jiang2026fabgpt",
     "chien201821d47": "chien2021ee213",
     "lin2006vms": "hung20077cdb8",

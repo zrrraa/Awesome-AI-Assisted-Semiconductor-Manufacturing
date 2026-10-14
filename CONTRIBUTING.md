@@ -23,9 +23,11 @@ The build command fills the remaining lines from the bibliography and reviewed m
 
 ## Conference and journal versions
 
-Keep collected conference and journal versions as separate entries with their own metadata. When they report the same study, choose one representative for statistics, normally the fuller journal version, and put only that key in `data/research-groups.json` → `researchKeys`. Map the conference key to it in `relatedVersions`. In `data/publication-history.json`, record the conference entry’s `key` and the source establishing the relationship under the journal key. The builder generates links in both directions. Base this decision on the papers’ contributions and evidence, not title or author similarity alone.
+Keep collected conference and journal publications as separate entries with their own metadata. In `data/publication-history.json`, record the conference entry’s `key` and the source establishing the relationship under the journal key. The builder generates links in both directions, whether the papers are counted together or separately.
 
-Research trends count each study once, using its representative’s publication year, scope and stage labels. New independent studies add to the count; another version of the same study does not. When replacing a representative, remove its old key from `researchKeys` and map it to the new key in `relatedVersions`; the total stays the same, though its year or classifications may change. Papers with distinct research contributions remain separate studies. The heatmap, yearly charts and CSV downloads use the same records, and chart links open the corresponding papers.
+Decide statistical grouping separately by reading the papers’ research questions, methods and evidence. Papers with distinct contributions stay in `data/research-groups.json` → `researchKeys`, even when one explicitly extends the other. For versions counted as one study, choose a representative, normally the fuller journal paper, and map only the other key to it in `countedWith`. That entry receives a **Trends: Counted with …** marker linking to the representative. A relationship link alone never changes the count.
+
+Research trends, the heatmap and CSV downloads use the representatives’ publication years, scopes and stage labels. When replacing a representative, move its old key from `researchKeys` to `countedWith` and point it to the new key; the total stays the same, though its year or classifications may change. Chart links open the records used for the count.
 
 Resource links are optional. Link to the paper’s own releases; dependencies and baseline implementations belong in the resource guide. Keep reported results with the dataset and evaluation conditions needed to interpret them.
 
@@ -34,4 +36,5 @@ Automated checks verify local links, unique entries and matching bibliography ke
 ```sh
 python .github/scripts/check_catalogue.py
 python scripts/build_catalogue.py --check
+python scripts/test_publication_counting.py
 ```
