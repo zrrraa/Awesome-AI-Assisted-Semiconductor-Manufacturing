@@ -729,6 +729,20 @@
         "url": "https://arxiv.org/abs/2304.13995",
         "source": "https://github.com/sehyunkwon/IRL-INR"
       }
+    ],
+    "wu2025tokman": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.52202/085713-1807",
+        "source": "https://doi.org/10.52202/085713-1807"
+      }
+    ],
+    "yang2025ikddit": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/ICCV51701.2025.01418",
+        "source": "https://doi.org/10.1109/ICCV51701.2025.01418"
+      }
     ]
   },
   "venues": {
