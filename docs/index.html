@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="style.css?v=relations-20261014" />
     <script src="assets/vendor/motion-14.1.0.js" defer></script>
     <script src="assets/catalogue.js?v=stages-20261015" defer></script>
-    <script src="site.js?v=collection-20261014" defer></script>
+    <script src="site.js?v=readouts-20261015" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -881,8 +881,8 @@
             <div class="coverage-matrix" id="coverage-matrix"></div>
           </div>
           <div class="chart-readout">
-            <p id="coverage-readout" role="status">
-              Select a circle to read the papers at that intersection.
+            <p id="coverage-readout" role="status" data-prompt="Explore a manufacturing scope and an AI stage">
+              Explore a manufacturing scope and an AI stage
             </p>
             <span class="size-key"
               ><i></i><i></i><i></i> Circle area = share of scope</span
@@ -916,8 +916,8 @@
             ><span id="timeline-maximum"></span>
           </div>
           <div class="timeline-chart" id="timeline-chart"></div>
-          <p class="timeline-readout" id="timeline-readout" role="status">
-            Select a bar to browse the papers from that year.
+          <p class="timeline-readout" id="timeline-readout" role="status" data-prompt="Explore a bar to see the research over time.">
+            Explore a bar to see the research over time.
           </p>
           <p class="timeline-note" id="timeline-note">
             Studies are grouped by their representative publication’s year.

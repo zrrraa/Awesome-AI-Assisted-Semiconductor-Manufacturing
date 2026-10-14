@@ -386,6 +386,27 @@
     ];
     const colors = ["#cbb0eb", "#c5d599", "#efbd8c", "#9ccfd8", "#a7bce7"];
     const matrix = $("#coverage-matrix");
+    function chartReadout(chart, output) {
+      const refresh = () => {
+        const selected = chart.querySelector("[data-readout]:hover") ||
+          (chart.contains(document.activeElement) ? document.activeElement : null);
+        output.textContent = selected?.dataset.readout || output.dataset.prompt;
+      };
+      return {
+        bind(item, description) {
+          item.dataset.readout = description;
+          ["mouseenter", "mouseleave", "focus", "blur"].forEach((event) =>
+            item.addEventListener(event, refresh),
+          );
+        },
+        reset(prompt) {
+          if (prompt) output.dataset.prompt = prompt;
+          output.textContent = output.dataset.prompt;
+        },
+      };
+    }
+    const scopeReadout = chartReadout(matrix, $("#coverage-readout"));
+    const yearReadout = chartReadout($("#timeline-chart"), $("#timeline-readout"));
     const node = (tag, cls, txt) => {
       const n = document.createElement(tag);
       n.className = cls;
@@ -434,12 +455,7 @@
           ((count / row.total) * 100).toFixed(1) +
           "%).";
         a.setAttribute("aria-label", description + " Browse papers.");
-        ["mouseenter", "focus"].forEach((evt) =>
-          a.addEventListener(
-            evt,
-            () => ($("#coverage-readout").textContent = description),
-          ),
-        );
+        scopeReadout.bind(a, description);
         matrix.append(a);
       });
     });
@@ -531,10 +547,11 @@
         mode === "stage"
           ? "Studies are grouped by their representative publication’s year. A study contributes to each relevant stage; testbeds without stage labels are excluded from this view."
           : "Studies are grouped by their representative publication’s year.";
-      $("#timeline-readout").textContent =
-        "Select " +
+      yearReadout.reset(
+        "Explore " +
         (mode === "total" ? "a bar" : "a colored segment") +
-        " to browse the matching papers.";
+        " to see the research over time.",
+      );
       rows.forEach((row) => {
         const column = node("div", "year-bar" + (row.total ? "" : " zero"));
         column.dataset.year = row.year;
@@ -567,14 +584,9 @@
             (count === 1 ? "study" : "studies");
           a.setAttribute("aria-label", label + ". Browse papers.");
           a.title = label;
-          ["mouseenter", "focus"].forEach((event) =>
-            a.addEventListener(event, () => {
-              $("#timeline-readout").textContent =
-                label +
-                (mode === "stage"
-                  ? " · " + row.paperCount + " studies in this year"
-                  : "");
-            }),
+          yearReadout.bind(
+            a,
+            label + (mode === "stage" ? " · " + row.paperCount + " studies in this year" : ""),
           );
           stack.append(a);
         });
@@ -605,6 +617,8 @@
     );
     renderTimeline("total");
     wireTabs("[data-chart]", (i) => {
+      scopeReadout.reset();
+      yearReadout.reset();
       $("#scope-chart").hidden = i !== 0;
       $("#year-chart").hidden = i !== 1;
       $(".chart-unit").hidden = i !== 0;
