@@ -183,7 +183,7 @@ year,dimension,category,studies
 2013,scope,fabs,0
 2013,stage,L1,3
 2013,stage,L2,4
-2013,stage,L3,0
+2013,stage,L3,1
 2013,stage,L4,5
 2013,stage,L5,3
 2014,total,all,7
@@ -269,10 +269,10 @@ year,dimension,category,studies
 2021,scope,equipment,3
 2021,scope,production,4
 2021,scope,fabs,2
-2021,stage,L1,17
+2021,stage,L1,19
 2021,stage,L2,21
 2021,stage,L3,1
-2021,stage,L4,11
+2021,stage,L4,10
 2021,stage,L5,3
 2022,total,all,53
 2022,scope,artifacts,25
@@ -295,7 +295,7 @@ year,dimension,category,studies
 2023,stage,L2,9
 2023,stage,L3,2
 2023,stage,L4,10
-2023,stage,L5,1
+2023,stage,L5,2
 2024,total,all,38
 2024,scope,artifacts,19
 2024,scope,processes,9
@@ -326,6 +326,6 @@ year,dimension,category,studies
 2026,scope,fabs,10
 2026,stage,L1,26
 2026,stage,L2,25
-2026,stage,L3,8
+2026,stage,L3,9
 2026,stage,L4,31
 2026,stage,L5,9

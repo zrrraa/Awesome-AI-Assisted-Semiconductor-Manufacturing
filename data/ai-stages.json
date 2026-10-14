@@ -1026,7 +1026,8 @@
     },
     "bae2026ccdc8": {
       "stages": [
-        "L2"
+        "L2",
+        "L3"
       ],
       "scope": "artifacts"
     },
@@ -1713,8 +1714,8 @@
     },
     "yan2021e7690": {
       "stages": [
-        "L2",
-        "L4"
+        "L1",
+        "L2"
       ],
       "scope": "processes"
     },
@@ -1973,6 +1974,7 @@
     "tanaka2013280a0": {
       "stages": [
         "L2",
+        "L3",
         "L4"
       ],
       "scope": "processes"
@@ -2502,7 +2504,8 @@
     },
     "adamson20232c945": {
       "stages": [
-        "L4"
+        "L4",
+        "L5"
       ],
       "scope": "production"
     },
@@ -2751,6 +2754,7 @@
     },
     "chien2021ee213": {
       "stages": [
+        "L1",
         "L2",
         "L4"
       ],
@@ -2994,6 +2998,7 @@
     },
     "chien201821d47": {
       "stages": [
+        "L1",
         "L2",
         "L4"
       ],

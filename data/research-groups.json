@@ -1,6 +1,6 @@
 {
   "description": "Research trends count the records in researchKeys. countedWith explicitly maps publications grouped into the same study to their counting representative. Publication relationships are maintained independently in publication-history.json and do not change counts.",
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "researchKeys": [
     "adamson20232c945",
     "alamin2024415c4",
