@@ -1737,17 +1737,6 @@ summary:focus-visible,
   letter-spacing: -0.015em;
   overflow-wrap: anywhere;
 }
-.venue-predecessor {
-  color: #4c646c;
-  background: #edf2f1;
-  border-color: #bfcdca;
-  text-decoration: none;
-}
-.venue-predecessor:hover, .venue-predecessor:focus-visible {
-  color: #263f46;
-  border-color: currentColor;
-  text-decoration: underline;
-}
 .paper-meta {
   font-size: var(--type-small);
   color: var(--muted);
@@ -1792,6 +1781,15 @@ summary:focus-visible,
 }
 .paper-resource:hover {
   background: #ece1bc;
+}
+.paper-version {
+  color: #4c646c;
+  background: #edf2f1;
+  border-color: #bfcdca;
+}
+.paper-version:hover, .paper-version:focus-visible {
+  color: #263f46;
+  border-color: currentColor;
 }
 .stage-chip:hover {
   background: #e1d3f2;

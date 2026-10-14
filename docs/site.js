@@ -369,7 +369,8 @@
   if (activateStage) activateStage(0);
   const catalogue = window.MANUFACTURING_CATALOGUE;
   if ($(".coverage-matrix") && catalogue) {
-    const { papers, stages: stageNames, coverage } = catalogue;
+    const { stages: stageNames, coverage } = catalogue;
+    const papers = catalogue.papers.filter((p) => p.surveyIncluded);
     const names = ["Artifacts", "Processes", "Equipment", "Production", "Fabs"];
     const icons = [
       "artifact_wide",
@@ -390,14 +391,14 @@
     const stageKey = node("div", "matrix-stage-key");
     Object.entries(stageNames).forEach(([k, name]) => {
       const h = node("a", "matrix-heading");
-      h.href = "explore.html?stage=" + k;
+      h.href = "explore.html?view=studies&stage=" + k;
       h.append(node("small", "", k), document.createTextNode(name));
       stageKey.append(h);
     });
     matrix.append(stageKey);
     coverage.forEach((row, i) => {
       const label = node("a", "matrix-row");
-      label.href = "explore.html?scope=" + row.scope;
+      label.href = "explore.html?view=studies&scope=" + row.scope;
       const icon = node("img", "");
       icon.src = "assets/icons/" + icons[i] + ".png";
       icon.alt = "";
@@ -409,7 +410,7 @@
       matrix.append(label);
       Object.entries(row.counts).forEach(([stage, count]) => {
         const a = node("a", "matrix-cell");
-        a.href = "explore.html?scope=" + row.scope + "&stage=" + stage;
+        a.href = "explore.html?view=studies&scope=" + row.scope + "&stage=" + stage;
         a.dataset.count = count;
         a.dataset.share = (count / row.total) * 100;
         a.dataset.scope = row.scope;
@@ -523,9 +524,8 @@
       $("#timeline-maximum").textContent = "Highest count · " + max;
       $("#timeline-note").textContent =
         mode === "stage"
-          ? "The survey and collection share the same research papers, grouped by publication year. A paper can address several stages; three testbed papers have no stage assignment."
-          : "The survey and collection share the same research papers, counted once by publication year" +
-            (mode === "scope" ? " and manufacturing scope." : ".");
+          ? "Conference and journal versions of the same study count once, using the survey’s cited version and publication year. A study can address several stages; three testbeds have no stage assignment."
+          : "Conference and journal versions of the same study count once, using the survey’s cited version and publication year.";
       $("#timeline-readout").textContent =
         "Select " +
         (mode === "total" ? "a bar" : "a colored segment") +
@@ -541,7 +541,7 @@
           const g = groups[i],
             a = node("a", "year-segment");
           a.href =
-            "explore.html?year=" +
+            "explore.html?view=studies&year=" +
             row.year +
             (mode === "scope"
               ? "&scope=" + g.key

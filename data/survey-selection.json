@@ -1,5 +1,5 @@
 {
-  "description": "The public research entries exactly match the survey research corpus. Conference predecessors may appear as linked badges on journal entries, without an extra entry or statistical count. Background references are not manufacturing research entries.",
+  "description": "Conference and journal versions may have separate reading entries. Research trends count one representative per merged study, matching the survey research corpus; relatedVersions maps additional entries to that representative. Background references are excluded.",
   "updated": "2026-10-14",
   "researchKeys": [
     "adamson20232c945",
@@ -471,6 +471,23 @@
   ],
   "relatedVersions": {
     "jiang2024fabgpt": "jiang2026fabgpt",
-    "chien201821d47": "chien2021ee213"
+    "chien201821d47": "chien2021ee213",
+    "lin2006vms": "hung20077cdb8",
+    "alawieh2016waferclustering": "alawieh2018waferpatterns",
+    "lee2023waferclassification": "lee2025ensemblewafer",
+    "xu2016sraflearning": "xu2018sraflearning",
+    "choi2016mlopc": "choi2019nncopc",
+    "yang2017hotspot": "yang2019hotspot",
+    "yang2018ganopc": "yang2020ganopc",
+    "jiang2019binarizedhotspot": "jiang2021binarizedhotspot",
+    "geng2020metrichotspot": "geng2022metrichotspot",
+    "zhong2020decompositionmask": "zhong2022decompositionmask",
+    "kwon2021resistkernels": "kwon2023resistcnn",
+    "chen2024bismo": "chen2026bismo",
+    "zhang2024circleilt": "zhang2026circlemwco",
+    "chen2021causallayout": "chen202341da3",
+    "tchatchoua2022resnet": "tchatchoua20230dea5",
+    "susto2011epitaxy": "susto2012calibration",
+    "hassoun2019smt": "kopp2020smt"
   }
 }

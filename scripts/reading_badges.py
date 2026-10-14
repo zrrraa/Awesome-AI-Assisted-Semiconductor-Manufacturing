@@ -13,7 +13,7 @@ def badge_text(value):
 
 
 class Badges:
-    def image(self, label, kind='resource', color='65558d', icon=None, title=None, year=None, venue_name=None):
+    def image(self, label, kind='resource', color='65558d', icon=None, title=None, year=None, venue_name=None, relation=None):
         message = label
         leading = ''
         options = {'style': 'flat', 'labelColor': '575361'}
@@ -28,9 +28,10 @@ class Badges:
             leading, message = label.split(' ', 1)
         elif kind == 'task':
             leading = 'Task'
-        elif kind == 'predecessor':
-            leading = 'Earlier'
+        elif kind == 'version':
+            leading = relation + ' version'
             color = '6C7F86'
+            label = leading + ': ' + label
         elif kind == 'resource':
             color = COLORS.get(icon, color)
             if icon in LOGOS:

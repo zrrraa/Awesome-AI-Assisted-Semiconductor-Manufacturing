@@ -3,6 +3,7 @@
   "use strict";
   const { tasks, papers, stages } = window.MANUFACTURING_CATALOGUE;
   const byTask = new Map(tasks.map((t) => [t.id, t]));
+  const byPaper = new Map(papers.map((p) => [p.id, p]));
   const scopes = ["artifacts", "processes", "equipment", "production", "fabs"];
   const scopeIcons = [
     "artifact_wide",
@@ -66,12 +67,14 @@
       q: q.get("q") || "",
       year: /^\d{4}$/.test(q.get("year") || "") ? q.get("year") : "",
       sort: q.get("sort") === "oldest" ? "oldest" : "newest",
+      view: q.get("view") === "studies" ? "studies" : "",
+      paper: byPaper.has(q.get("paper")) ? q.get("paper") : "",
     };
   }
   function setState(next, replace = false) {
     clearTimeout(searchTimer);
     // Keep pending search input when a filter changes before the debounce ends.
-    state = { ...state, q: search.value, ...next };
+    state = { ...state, q: search.value, paper: "", ...next };
     limit = 24;
     const q = new URLSearchParams();
     if (state.task) q.set("task", state.task);
@@ -80,6 +83,8 @@
     if (state.q) q.set("q", state.q);
     if (state.year) q.set("year", state.year);
     if (state.sort !== "newest") q.set("sort", state.sort);
+    if (state.view) q.set("view", state.view);
+    if (state.paper) q.set("paper", state.paper);
     history[replace ? "replaceState" : "pushState"](
       null,
       "",
@@ -120,6 +125,8 @@
         "M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0 M3 12h18 M12 3c-5 6-5 12 0 18 5-6 5-12 0-18",
       Dataset:
         "M4 6c0-4 16-4 16 0s-16 4-16 0v12c0 4 16 4 16 0V6 M4 12c0 4 16 4 16 0",
+      Version:
+        "m10 13 4-4 M8 15l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0 M16 9l1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0",
     };
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("viewBox", "0 0 24 24");
@@ -140,14 +147,6 @@
     const venue = el("span", "venue-chip", p.venueBadge);
     venue.title = p.venue ? p.venue + " · " + p.year : String(p.year);
     h.append(document.createTextNode(" "), venue);
-    for (const r of p.publicationHistory || []) {
-      const earlier = el("a", "venue-chip venue-predecessor", "Earlier: " + r.venue + " " + r.year);
-      earlier.href = r.url;
-      earlier.target = "_blank";
-      earlier.rel = "noopener noreferrer";
-      earlier.title = "Earlier conference version: " + r.title;
-      h.append(document.createTextNode(" "), earlier);
-    }
     const authors = el("div", "paper-meta"),
       authorText = el("span");
     const names = p.authorList || [p.authors];
@@ -209,6 +208,13 @@
       link.title = resource.label + " — " + new URL(resource.url).hostname;
       bottom.append(link);
     }
+    for (const r of p.relatedPublications || []) {
+      const link = el("a", "paper-resource paper-version");
+      link.href = "explore.html?paper=" + encodeURIComponent(r.id);
+      link.append(resourceIcon("Version"), document.createTextNode(r.kind + " version · " + r.venueBadge));
+      link.title = r.title;
+      bottom.append(link);
+    }
     const tags = el("div", "paper-tags");
     const scope = el(
       "a",
@@ -236,6 +242,8 @@
   function filteredBase() {
     return papers.filter(
       (p) =>
+        (!state.view || p.surveyIncluded) &&
+        (!state.paper || p.id === state.paper) &&
         (!state.task || p.task === state.task) &&
         (!state.scope || p.catalogueScope === state.scope) &&
         (!state.stage ||
@@ -285,6 +293,8 @@
       ["scope", state.scope, state.scope],
       ["stage", state.stage, stages[state.stage] || "Research testbeds"],
       ["year", state.year, state.year],
+      ["view", state.view, "Research trends · one version per study"],
+      ["paper", state.paper, "Selected publication"],
     ]) {
       if (!value) continue;
       const b = el("button", "", label + " ×");
@@ -357,7 +367,7 @@
     setState({
       task: a.dataset.selectTask || "",
       scope: "",
-      ...(a.hasAttribute("data-all-papers") ? { stage: "" } : {}),
+      ...(a.hasAttribute("data-all-papers") ? { stage: "", view: "" } : {}),
       q: "",
       year: "",
       sort: "newest",
@@ -417,6 +427,7 @@
       q: "",
       year: "",
       sort: "newest",
+      view: "",
     });
     search.focus();
   });

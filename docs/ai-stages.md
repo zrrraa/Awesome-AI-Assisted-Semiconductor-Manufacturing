@@ -10,10 +10,10 @@ The labels in [`data/ai-stages.json`](../data/ai-stages.json) follow the reviewe
 | L4 · Planning | Choosing manufacturing actions, designs, settings, measurements or resource plans. Model hyperparameter tuning alone is not a manufacturing plan. |
 | L5 · Autonomy | Studying a recurring action–response–decision loop in a simulated or operating environment. |
 
-Code what a study investigates, using its methods and evaluation. Do not infer stages from a model name or automatically add every earlier stage when assigning L5. The three research testbeds in the original collection are labelled **Research testbed**, with an empty stage list.
+Code what a study investigates, using its methods and evaluation. Do not infer stages from a model name or automatically add every earlier stage when assigning L5. Research testbeds are labelled **Research testbed**, with an empty stage list.
 
 The coverage chart uses each paper’s **catalogue scope**, while the task lists group papers by their primary manufacturing objective. Those fields are kept separately: maintenance study `geurtsen2022maintenance` belongs to task E2 and catalogue scope Production; `hong2025capacity` belongs to task R4 and catalogue scope Fabs. This preserves the survey’s reviewed scope statistics without changing the task lists.
 
-The build script checks bibliography coverage and generates each entry’s stage labels from the reviewed coding. The charts and downloadable CSV files use the same records as the paper library.
+The build script checks bibliography coverage and generates each entry’s stage labels from the reviewed coding. The library includes linked conference and journal versions. Charts and downloadable CSV files count merged versions once, using the survey's cited representative; each version keeps its own labels in the library.
 
-The timeline has three views. **All papers** counts each paper once by publication year. **M1–M5** splits that count by catalogue scope. **L1–L5** counts stage assignments: a paper contributes once to every stage it addresses, so the stack can exceed the number of papers in that year. The three testbeds without stage labels do not contribute to the stage view.
+The timeline has three views. **All papers** counts each study once by its representative's publication year. **M1–M5** splits that count by catalogue scope. **L1–L5** counts stage assignments: a study contributes once to every stage its representative addresses, so the stack can exceed the number of studies in that year. The three testbeds without stage labels do not contribute to the stage view.

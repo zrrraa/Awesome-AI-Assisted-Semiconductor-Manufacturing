@@ -1,5 +1,5 @@
 {
-  "description": "Reviewed multi-label AI-stage assignments used by the survey manufacturing-scope coverage figure. Scope follows the survey catalogue; task assignment is maintained in papers/*.md.",
+  "description": "AI-stage assignments for reading entries, including linked publication versions. Charts use the survey representatives in survey-selection.json; task placement is maintained in papers/*.md.",
   "stages": {
     "L1": "Perception",
     "L2": "Prediction",
@@ -2984,6 +2984,123 @@
         "L2"
       ],
       "scope": "processes"
+    },
+    "jiang2024fabgpt": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "chien201821d47": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "fabs"
+    },
+    "lin2006vms": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "processes"
+    },
+    "alawieh2016waferclustering": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "lee2023waferclassification": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "artifacts"
+    },
+    "xu2016sraflearning": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "choi2016mlopc": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2017hotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "yang2018ganopc": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "jiang2019binarizedhotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "geng2020metrichotspot": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "zhong2020decompositionmask": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "kwon2021resistkernels": {
+      "stages": [
+        "L2"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2024bismo": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "zhang2024circleilt": {
+      "stages": [
+        "L4"
+      ],
+      "scope": "artifacts"
+    },
+    "chen2021causallayout": {
+      "stages": [
+        "L1",
+        "L3"
+      ],
+      "scope": "artifacts"
+    },
+    "tchatchoua2022resnet": {
+      "stages": [
+        "L1"
+      ],
+      "scope": "equipment"
+    },
+    "susto2011epitaxy": {
+      "stages": [
+        "L2",
+        "L4"
+      ],
+      "scope": "equipment"
+    },
+    "hassoun2019smt": {
+      "stages": [],
+      "scope": "production",
+      "role": "Research testbed"
     }
   }
 }

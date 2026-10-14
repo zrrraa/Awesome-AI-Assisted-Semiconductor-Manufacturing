@@ -37,6 +37,7 @@ def build():
     selection = json.loads((ROOT/'data/survey-selection.json').read_text(encoding='utf-8'))
     history = json.loads((ROOT/'data/publication-history.json').read_text(encoding='utf-8'))
     survey_keys = set(selection['researchKeys'])
+    related_versions = selection['relatedVersions']
     assert len(survey_keys) == len(selection['researchKeys']), 'Duplicate survey selection'
     stages = coding['stages']
     tasks = []
@@ -80,6 +81,7 @@ def build():
                                'stages': code['stages'], 'catalogueScope': code['scope'],
                                'role': code.get('role', ''),
                                'surveyIncluded': match[1] in survey_keys,
+                               'studyId': related_versions.get(match[1], match[1]),
                                'publicationHistory': history.get(match[1], []),
                                'resources': [{'label':r['label'],'url':r['url']} for r in resources]})
     assert len(tasks) == 19 and len({t['id'] for t in tasks}) == 19
@@ -88,8 +90,10 @@ def build():
     bibkeys = set(re.findall(r'^@\w+\{([^,\s]+),', (ROOT/'references.bib').read_text(encoding='utf-8'), re.M))
     assert {p['id'] for p in papers} == bibkeys, 'Reading list and BibTeX coverage differ'
     assert set(coding['papers']) == bibkeys, 'AI-stage coding and BibTeX coverage differ'
-    assert survey_keys == bibkeys, 'Survey and public research populations differ'
-    assert all(k not in bibkeys and v in survey_keys for k,v in selection['relatedVersions'].items()), 'Invalid version selection'
+    assert survey_keys | set(related_versions) == bibkeys, 'Unassigned public publication or missing survey study'
+    assert not survey_keys & set(related_versions), 'A related version cannot be counted a second time'
+    assert all(v in survey_keys and k != v for k,v in related_versions.items()), 'Invalid version representative'
+    assert {p['studyId'] for p in papers} == survey_keys, 'Public research groups must match the survey'
     assert set(history) <= bibkeys, 'Unknown journal in publication history'
     for key, predecessors in history.items():
         assert bib[key]['type'].lower() == 'article' and predecessors, key
@@ -97,6 +101,12 @@ def build():
         for r in predecessors:
             assert r['venue'] and r['title'] and r['url'].startswith('https://') and r['source'].startswith('https://'), key
             assert r['relationship'] == 'conference_predecessor' and r['year'] <= int(bib[key]['year']), key
+            assert r.get('key') in bibkeys, 'Each linked publication needs its own entry'
+            assert related_versions.get(r['key']) == key, 'History link and version representative disagree'
+            assert bib[r['key']]['type'].lower() == 'inproceedings', 'Expected a conference publication'
+            assert int(bib[r['key']]['year']) == r['year'], 'Version year differs from bibliography'
+            assert bibtext(bib[r['key']]['title']).casefold() == r['title'].casefold(), 'History title differs from conference entry'
+    assert {r['key'] for rows in history.values() for r in rows} == set(related_versions), 'Missing version relationship evidence'
     assert set(extra) <= bibkeys and set(venue_overrides) <= bibkeys, 'Unknown paper in resource metadata'
     for key, override in venue_overrides.items():
         assert override['name'] and override['source'].startswith('https://'), f'Invalid venue source: {key}'
@@ -105,8 +115,19 @@ def build():
     for key, resources in extra.items():
         assert len({r['url'].rstrip('/').lower() for r in resources}) == len(resources), f'Duplicate resource: {key}'
         assert all(r['url'].startswith('https://') and r['source'].startswith('https://') and r['label'] for r in resources), f'Invalid resource or source: {key}'
-    coverage = [{'scope': scope, 'total': sum(p['catalogueScope']==scope for p in papers),
-                 'counts': {s:sum(p['catalogueScope']==scope and s in p['stages'] for p in papers) for s in stages}}
+    by_id = {p['id']: p for p in papers}
+    for p in papers:
+        p['relatedPublications'] = []
+    for conference, journal in related_versions.items():
+        for source, target, kind in [(conference, journal, 'Journal'), (journal, conference, 'Conference')]:
+            p, other = by_id[source], by_id[target]
+            p['relatedPublications'].append({'id': target, 'kind': kind, 'title': other['title'],
+                                            'year': other['year'], 'venueBadge': other['venueBadge'],
+                                            'scope': other['scope']})
+    counted_papers = [p for p in papers if p['surveyIncluded']]
+    assert len(counted_papers) == len(survey_keys)
+    coverage = [{'scope': scope, 'total': sum(p['catalogueScope']==scope for p in counted_papers),
+                 'counts': {s:sum(p['catalogueScope']==scope and s in p['stages'] for p in counted_papers) for s in stages}}
                 for scope in SCOPES]
     content = '// Generated by scripts/build_catalogue.py from papers/*.md, references.bib and data/*.json.\nwindow.MANUFACTURING_CATALOGUE = '+json.dumps({'tasks':tasks,'papers':papers,'stages':stages,'coverage':coverage,'statisticsPopulation':'survey research corpus','surveyResearchCount':len(survey_keys)}, ensure_ascii=False,separators=(',',':'))+';\n'
     buffer = io.StringIO(newline='')
@@ -119,8 +140,8 @@ def build():
     timeline=io.StringIO(newline='')
     writer=csv.writer(timeline,lineterminator='\n')
     writer.writerow(['year','dimension','category','papers'])
-    for year in range(min(p['year'] for p in papers),max(p['year'] for p in papers)+1):
-        subset=[p for p in papers if p['year']==year]
+    for year in range(min(p['year'] for p in counted_papers),max(p['year'] for p in counted_papers)+1):
+        subset=[p for p in counted_papers if p['year']==year]
         writer.writerow([year,'total','all',len(subset)])
         for scope in SCOPES: writer.writerow([year,'scope',scope,sum(p['catalogueScope']==scope for p in subset)])
         for stage in stages: writer.writerow([year,'stage',stage,sum(stage in p['stages'] for p in subset)])
@@ -130,14 +151,17 @@ def build():
     stage_colors = ['387288','705697','926b2f','965d72','507b5e']
     def markdown_entry(p):
         venue_name, badge_year = venue_badges[p['id']]
-        earlier=''.join(' '+badges.link(r['venue']+' '+str(r['year']),r['url'],kind='predecessor',title='Earlier conference version: '+r['title']) for r in p['publicationHistory'])
-        title='- <a id="'+p['id']+'"></a>***'+html.escape(p['title'],quote=False)+'*** '+badges.image(p['venueBadge'],kind='venue',year=badge_year,title=p['venue'] or str(p['year']),venue_name=venue_name)+earlier+'<br>\n'
+        title='- <a id="'+p['id']+'"></a>***'+html.escape(p['title'],quote=False)+'*** '+badges.image(p['venueBadge'],kind='venue',year=badge_year,title=p['venue'] or str(p['year']),venue_name=venue_name)+'<br>\n'
         names=p['authorList']
         if len(names)>8:
             author_line='  <sub>'+html.escape(', '.join(names[:5]))+', …</sub>\n\n  <details><summary>Show all '+str(len(names))+' authors</summary>\n\n  <sub>'+html.escape(p['authors'])+'</sub>\n\n  </details>\n\n'
         else: author_line='  <sub>'+html.escape(p['authors'])+'</sub>\n\n'
         links=paper_links(p)
-        link_line='  '+' &nbsp; '.join(badges.link(r['label'],r['url'],icon=r['label'].split(' · ')[0]) for r in links)+'<br>\n'
+        resource_badges = [badges.link(r['label'],r['url'],icon=r['label'].split(' · ')[0]) for r in links]
+        resource_badges += [badges.link(r['venueBadge'], r['scope']+'.md#'+r['id'], kind='version',
+                                       relation=r['kind'], title=r['kind']+' version: '+r['title'])
+                            for r in p['relatedPublications']]
+        link_line='  '+' &nbsp; '.join(resource_badges)+'<br>\n'
         scope_index = SCOPES.index(p['catalogueScope'])
         category=[badges.image('M'+str(scope_index+1)+' '+p['catalogueScope'].capitalize(),kind='scope',color=scope_colors[scope_index]),
                   badges.link(p['task'],'#'+p['task'].lower(),kind='task',color='706779')]

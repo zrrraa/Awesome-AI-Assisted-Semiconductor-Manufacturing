@@ -430,12 +430,6 @@
         "url": "https://github.com/dekura/BiSMO",
         "source": "https://doi.org/10.1109/tcad.2025.3650385",
         "page": 1
-      },
-      {
-        "label": "arXiv",
-        "url": "https://arxiv.org/abs/2405.09548",
-        "source": "https://arxiv.org/abs/2405.09548",
-        "verification": "Title and author identity matched to the publication record."
       }
     ],
     "li2026nonmanhattanhotspot": [
@@ -653,14 +647,6 @@
         "verification": "Title and author identity matched to the publication record."
       }
     ],
-    "jiang2026fabgpt": [
-      {
-        "label": "arXiv",
-        "url": "https://arxiv.org/abs/2407.10810",
-        "source": "https://arxiv.org/abs/2407.10810",
-        "verification": "Title and author identity matched to the publication record."
-      }
-    ],
     "li2024rlcontrol": [
       {
         "label": "arXiv",
@@ -735,6 +721,109 @@
         "url": "https://doi.org/10.1109/ICCV51701.2025.01418",
         "source": "https://doi.org/10.1109/ICCV51701.2025.01418"
       }
+    ],
+    "jiang2024fabgpt": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2407.10810",
+        "source": "https://doi.org/10.1145/3676536.3676750",
+        "page": 1
+      }
+    ],
+    "alawieh2016waferclustering": [
+      {
+        "label": "Full text",
+        "url": "https://users.ece.cmu.edu/~xinli/papers/2016_ISCAS_wafer.pdf",
+        "source": "https://users.ece.cmu.edu/~xinli/papers/2016_ISCAS_wafer.pdf"
+      }
+    ],
+    "xu2016sraflearning": [
+      {
+        "label": "Full text",
+        "url": "https://www.cerc.utexas.edu/utda/publications/C191.pdf",
+        "source": "https://www.cerc.utexas.edu/utda/publications/C191.pdf"
+      }
+    ],
+    "yang2017hotspot": [
+      {
+        "label": "Full text",
+        "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C60-DAC2017-CNN-HSD.pdf",
+        "source": "https://www.cse.cuhk.edu.hk/~byu/papers/C60-DAC2017-CNN-HSD.pdf"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/phdyang007/dlhsd",
+        "source": "https://github.com/phdyang007/dlhsd",
+        "verification": "Author repository identifies the conference paper and its journal extension."
+      }
+    ],
+    "yang2018ganopc": [
+      {
+        "label": "Full text",
+        "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C73-DAC2018-GAN-OPC.pdf",
+        "source": "https://www.cse.cuhk.edu.hk/~byu/papers/C73-DAC2018-GAN-OPC.pdf"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/phdyang007/GAN-OPC",
+        "source": "https://github.com/phdyang007/GAN-OPC",
+        "verification": "Author repository identifies the conference paper and its journal extension."
+      }
+    ],
+    "jiang2019binarizedhotspot": [
+      {
+        "label": "Full text",
+        "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C82-DAC2019-BNN-HSD.pdf",
+        "source": "https://www.cse.cuhk.edu.hk/~byu/papers/C82-DAC2019-BNN-HSD.pdf"
+      }
+    ],
+    "geng2020metrichotspot": [
+      {
+        "label": "Full text",
+        "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C106-ICCAD2020-Metric-HSD.pdf",
+        "source": "https://www.cse.cuhk.edu.hk/~byu/papers/C106-ICCAD2020-Metric-HSD.pdf"
+      }
+    ],
+    "zhong2020decompositionmask": [
+      {
+        "label": "Full text",
+        "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C97-DAC2020-MPL-OPC.pdf",
+        "source": "https://www.cse.cuhk.edu.hk/~byu/papers/C97-DAC2020-MPL-OPC.pdf"
+      }
+    ],
+    "chen2024bismo": [
+      {
+        "label": "Full text",
+        "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C227-DAC2024-BiSMO.pdf",
+        "source": "https://www.cse.cuhk.edu.hk/~byu/papers/C227-DAC2024-BiSMO.pdf"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2405.09548",
+        "source": "https://arxiv.org/abs/2405.09548",
+        "verification": "arXiv record explicitly identifies the conference publication."
+      }
+    ],
+    "zhang2024circleilt": [
+      {
+        "label": "Full text",
+        "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C226-DAC2024-CircleOPC.pdf",
+        "source": "https://www.cse.cuhk.edu.hk/~byu/papers/C226-DAC2024-CircleOPC.pdf"
+      }
+    ],
+    "chen2021causallayout": [
+      {
+        "label": "Full text",
+        "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C127-ICCAD2021-Causal-Root.pdf",
+        "source": "https://www.cse.cuhk.edu.hk/~byu/papers/C127-ICCAD2021-Causal-Root.pdf"
+      }
+    ],
+    "hassoun2019smt": [
+      {
+        "label": "Full text",
+        "url": "https://www.informs-sim.org/wsc19papers/232.pdf",
+        "source": "https://www.informs-sim.org/wsc19papers/232.pdf"
+      }
     ]
   },
   "venues": {
@@ -761,6 +850,26 @@
     "lai2026lithogrpo": {
       "name": "International Conference on Machine Learning",
       "source": "https://github.com/laiyao1/LithoGRPO"
+    },
+    "lee2023waferclassification": {
+      "name": "APSIPA ASC",
+      "conference_year": 2023,
+      "source": "https://doi.org/10.1109/apsipaasc58517.2023.10317264"
+    },
+    "choi2016mlopc": {
+      "name": "SPIE",
+      "conference_year": 2016,
+      "source": "https://doi.org/10.1117/12.2219073"
+    },
+    "kwon2021resistkernels": {
+      "name": "SPIE",
+      "conference_year": 2021,
+      "source": "https://doi.org/10.1117/12.2583599"
+    },
+    "tchatchoua2022resnet": {
+      "name": "ICCAD (Control)",
+      "conference_year": 2022,
+      "source": "https://doi.org/10.1109/iccad55197.2022.9853997"
     }
   }
 }
