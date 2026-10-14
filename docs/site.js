@@ -523,9 +523,9 @@
       $("#timeline-maximum").textContent = "Highest count · " + max;
       $("#timeline-note").textContent =
         mode === "stage"
-          ? "This collection includes related publication versions, dated by publication year. Each contributes to every stage it addresses; three testbed papers have no stage assignment."
-          : "Each listed publication version is counted once by publication year" +
-            (mode === "scope" ? " and manufacturing scope. Related versions are included." : ". Related versions are included.");
+          ? "The survey and collection share the same research papers, grouped by publication year. A paper can address several stages; three testbed papers have no stage assignment."
+          : "The survey and collection share the same research papers, counted once by publication year" +
+            (mode === "scope" ? " and manufacturing scope." : ".");
       $("#timeline-readout").textContent =
         "Select " +
         (mode === "total" ? "a bar" : "a colored segment") +

@@ -47,7 +47,7 @@
   const searchText = new Map(
     papers.map((p) => [
       p.id,
-      normalize(p.title + " " + p.authors + " " + p.venue),
+      normalize(p.title + " " + p.authors + " " + p.venue + " " + (p.publicationHistory || []).map(r => r.venue + " " + r.year).join(" ")),
     ]),
   );
   let state,
@@ -140,6 +140,14 @@
     const venue = el("span", "venue-chip", p.venueBadge);
     venue.title = p.venue ? p.venue + " · " + p.year : String(p.year);
     h.append(document.createTextNode(" "), venue);
+    for (const r of p.publicationHistory || []) {
+      const earlier = el("a", "venue-chip venue-predecessor", "Earlier: " + r.venue + " " + r.year);
+      earlier.href = r.url;
+      earlier.target = "_blank";
+      earlier.rel = "noopener noreferrer";
+      earlier.title = "Earlier conference version: " + r.title;
+      h.append(document.createTextNode(" "), earlier);
+    }
     const authors = el("div", "paper-meta"),
       authorText = el("span");
     const names = p.authorList || [p.authors];

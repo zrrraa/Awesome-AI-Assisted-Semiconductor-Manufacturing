@@ -1,0 +1,192 @@
+{
+  "alawieh2018waferpatterns": [
+    {
+      "venue": "ISCAS",
+      "year": 2016,
+      "title": "Identifying systematic spatial failure patterns through wafer clustering",
+      "url": "https://users.ece.cmu.edu/~xinli/papers/2016_ISCAS_wafer.pdf",
+      "source": "https://doi.org/10.1109/tcad.2017.2729469",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "lee2025ensemblewafer": [
+    {
+      "venue": "APSIPA ASC",
+      "year": 2023,
+      "title": "Application of Wafer Defect Pattern Classification Model in the Semiconductor Industry",
+      "url": "https://doi.org/10.1109/apsipaasc58517.2023.10317264",
+      "source": "https://doi.org/10.1109/ACCESS.2025.3604405",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "xu2018sraflearning": [
+    {
+      "venue": "ISPD",
+      "year": 2016,
+      "title": "A Machine Learning Based Framework for Sub-Resolution Assist Feature Generation",
+      "url": "https://doi.org/10.1145/2872334.2872357",
+      "source": "https://doi.org/10.1109/tcad.2017.2748029",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "choi2019nncopc": [
+    {
+      "venue": "SPIE",
+      "year": 2016,
+      "title": "Machine learning (ML)-guided OPC using basis functions of polar Fourier transform",
+      "url": "https://doi.org/10.1117/12.2219073",
+      "source": "https://doi.org/10.1109/tcad.2018.2824255",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "yang2019hotspot": [
+    {
+      "venue": "DAC",
+      "year": 2017,
+      "title": "Layout Hotspot Detection with Feature Tensor Generation and Deep Biased Learning",
+      "url": "https://doi.org/10.1145/3061639.3062270",
+      "source": "https://doi.org/10.1109/TCAD.2018.2837078",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "yang2020ganopc": [
+    {
+      "venue": "DAC",
+      "year": 2018,
+      "title": "GAN-OPC: Mask Optimization with Lithography-guided Generative Adversarial Nets",
+      "url": "https://doi.org/10.1109/dac.2018.8465816",
+      "source": "https://doi.org/10.1109/tcad.2019.2939329",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "jiang2021binarizedhotspot": [
+    {
+      "venue": "DAC",
+      "year": 2019,
+      "title": "Efficient Layout Hotspot Detection via Binarized Residual Neural Network",
+      "url": "https://doi.org/10.1145/3316781.3317811",
+      "source": "https://doi.org/10.1109/tcad.2020.3015918",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "geng2022metrichotspot": [
+    {
+      "venue": "ICCAD",
+      "year": 2020,
+      "title": "Hotspot Detection via Attention-based Deep Layout Metric Learning",
+      "url": "https://www.cse.cuhk.edu.hk/~byu/papers/C106-ICCAD2020-Metric-HSD.pdf",
+      "source": "https://doi.org/10.1109/tcad.2021.3112637",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "zhong2022decompositionmask": [
+    {
+      "venue": "DAC",
+      "year": 2020,
+      "title": "Deep Learning-Driven Simultaneous Layout Decomposition and Mask Optimization",
+      "url": "https://doi.org/10.1109/DAC18072.2020.9218530",
+      "source": "https://doi.org/10.1109/tcad.2021.3061494",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "kwon2023resistcnn": [
+    {
+      "venue": "SPIE",
+      "year": 2021,
+      "title": "Optimization of accurate resist kernels through convolutional neural network",
+      "url": "https://doi.org/10.1117/12.2583599",
+      "source": "https://doi.org/10.1109/TSM.2023.3267670",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "chen2026bismo": [
+    {
+      "venue": "DAC",
+      "year": 2024,
+      "title": "Efficient Bilevel Source Mask Optimization",
+      "url": "https://doi.org/10.1145/3649329.3656252",
+      "source": "https://doi.org/10.1109/tcad.2025.3650385",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "zhang2026circlemwco": [
+    {
+      "venue": "DAC",
+      "year": 2024,
+      "title": "Fracturing-aware Curvilinear ILT via Circular E-beam Mask Writer",
+      "url": "https://doi.org/10.1145/3649329.3655926",
+      "source": "https://doi.org/10.1109/tcad.2026.3719169",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "chen202341da3": [
+    {
+      "venue": "ICCAD",
+      "year": 2021,
+      "title": "A Unified Framework for Layout Pattern Analysis with Deep Causal Estimation",
+      "url": "https://doi.org/10.1109/ICCAD51958.2021.9643458",
+      "source": "https://doi.org/10.1109/tcad.2022.3192363",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "tchatchoua20230dea5": [
+    {
+      "venue": "ICCAD (Control)",
+      "year": 2022,
+      "title": "1D ResNet for Fault Detection and Classification on Sensor Data in Semiconductor Manufacturing",
+      "url": "https://doi.org/10.1109/iccad55197.2022.9853997",
+      "source": "https://doi.org/10.3390/s23229099",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "susto2012calibration": [
+    {
+      "venue": "CASE",
+      "year": 2011,
+      "title": "A Predictive Maintenance System for Silicon Epitaxial Deposition",
+      "url": "https://doi.org/10.1109/case.2011.6042421",
+      "source": "https://doi.org/10.1109/TSM.2012.2209131",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "kopp2020smt": [
+    {
+      "venue": "WSC",
+      "year": 2019,
+      "title": "A New High-Volume/Low-Mix Simulation Testbed for Semiconductor Manufacturing",
+      "url": "https://doi.org/10.1109/wsc40007.2019.9004654",
+      "source": "https://doi.org/10.1109/TSM.2020.3001933",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "hung20077cdb8": [
+    {
+      "venue": "ICRA",
+      "year": 2006,
+      "title": "A virtual metrology scheme for predicting CVD thickness in semiconductor manufacturing",
+      "url": "https://doi.org/10.1109/robot.2006.1641849",
+      "source": "https://doi.org/10.1109/tmech.2007.897275",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "jiang2026fabgpt": [
+    {
+      "venue": "ICCAD",
+      "year": 2024,
+      "title": "FabGPT: An Efficient Large Multimodal Model for Complex Wafer Defect Knowledge Queries",
+      "url": "https://doi.org/10.1145/3676536.3676750",
+      "source": "https://doi.org/10.1109/tcad.2026.3664304",
+      "relationship": "conference_predecessor"
+    }
+  ],
+  "chien2021ee213": [
+    {
+      "venue": "eMDC",
+      "year": 2018,
+      "title": "AI and Big Data Analytics for Wafer Fab Energy Saving and Chiller Optimization to Empower Intelligent Manufacturing",
+      "url": "https://ieeexplore.ieee.org/document/8514238",
+      "source": "https://doi.org/10.1016/j.resconrec.2020.105247",
+      "relationship": "conference_predecessor"
+    }
+  ]
+}

@@ -60,7 +60,7 @@ The survey follows AI’s growing role in manufacturing: recognizing patterns, e
 
 ## 🧭 Explore by manufacturing task
 
-Choose a manufacturing question and follow its research. Each entry includes the venue, authors, available paper and resource links, and its manufacturing scope, task and AI stages. The collection also includes related versions and papers beyond the survey bibliography. Years in the collection refer to the listed publication versions; the survey's historical timeline uses first public release years.
+Choose a manufacturing question and follow its research. Each entry includes the venue, authors, available paper and resource links, and its manufacturing scope, task and AI stages. The collection matches the survey's research papers. An **Earlier** badge links a journal paper to its conference predecessor without adding another entry. Years follow the cited publication versions; the survey's historical timeline uses first public release dates.
 
 <table>
 <tr>

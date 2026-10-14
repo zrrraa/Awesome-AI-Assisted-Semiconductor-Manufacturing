@@ -1,5 +1,5 @@
 {
-  "description": "Research publications selected for the survey analysis. The public reading collection is maintained independently and may include related versions and additional research. Shared records use consistent metadata and stage definitions.",
+  "description": "The public research entries exactly match the survey research corpus. Conference predecessors may appear as linked badges on journal entries, without an extra entry or statistical count. Background references are not manufacturing research entries.",
   "updated": "2026-10-14",
   "researchKeys": [
     "adamson20232c945",
@@ -64,7 +64,6 @@
     "chien2013f3d27",
     "chien2014e02f6",
     "chien2014retrospectivedoe",
-    "chien201821d47",
     "chien2021ee213",
     "chien20221d9f3",
     "chien2022fb17f",
@@ -471,6 +470,7 @@
     "zhu2026innilt"
   ],
   "relatedVersions": {
-    "jiang2024fabgpt": "jiang2026fabgpt"
+    "jiang2024fabgpt": "jiang2026fabgpt",
+    "chien201821d47": "chien2021ee213"
   }
 }

@@ -1141,13 +1141,6 @@
       ],
       "scope": "artifacts"
     },
-    "jiang2024fabgpt": {
-      "stages": [
-        "L1",
-        "L3"
-      ],
-      "scope": "artifacts"
-    },
     "dobrovsky2025c34c6": {
       "stages": [
         "L3",
@@ -2741,13 +2734,6 @@
         "L3"
       ],
       "scope": "production"
-    },
-    "chien201821d47": {
-      "stages": [
-        "L2",
-        "L4"
-      ],
-      "scope": "fabs"
     },
     "tsai2019a2c0c": {
       "stages": [

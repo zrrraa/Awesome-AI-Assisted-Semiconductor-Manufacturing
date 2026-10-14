@@ -28,6 +28,9 @@ class Badges:
             leading, message = label.split(' ', 1)
         elif kind == 'task':
             leading = 'Task'
+        elif kind == 'predecessor':
+            leading = 'Earlier'
+            color = '6C7F86'
         elif kind == 'resource':
             color = COLORS.get(icon, color)
             if icon in LOGOS:

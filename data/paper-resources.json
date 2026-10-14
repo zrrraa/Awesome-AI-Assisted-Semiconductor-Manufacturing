@@ -121,20 +121,6 @@
         "page": 1
       }
     ],
-    "jiang2024fabgpt": [
-      {
-        "label": "arXiv",
-        "url": "https://arxiv.org/abs/2407.10810",
-        "source": "https://doi.org/10.1145/3676536.3676750",
-        "page": 1
-      },
-      {
-        "label": "Journal version",
-        "url": "https://doi.org/10.1109/TCAD.2026.3664304",
-        "source": "https://doi.org/10.1109/TCAD.2026.3664304",
-        "page": 1
-      }
-    ],
     "jiang2026lithodreamer": [
       {
         "label": "arXiv",
@@ -673,12 +659,6 @@
         "url": "https://arxiv.org/abs/2407.10810",
         "source": "https://arxiv.org/abs/2407.10810",
         "verification": "Title and author identity matched to the publication record."
-      },
-      {
-        "label": "Conference version",
-        "url": "https://doi.org/10.1145/3676536.3676750",
-        "source": "https://doi.org/10.1109/TCAD.2026.3664304",
-        "page": 1
       }
     ],
     "li2024rlcontrol": [
