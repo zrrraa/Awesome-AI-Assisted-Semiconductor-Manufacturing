@@ -575,13 +575,13 @@ Papers are listed newest first within each task.
   <a href="https://doi.org/10.1109/tsm.2019.2902657"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat&amp;labelColor=575361" alt="M1 Artifacts" height="20" align="absmiddle"> <a href="#a2"><img src="https://img.shields.io/badge/Task-A2-706779?style=flat&amp;labelColor=575361" alt="A2" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat&amp;labelColor=575361" alt="L1 Perception" height="20" align="absmiddle"></a>
 
-<a id="a3"></a>
-
 - <a id="imoto2018transfer"></a>***A CNN-based Transfer Learning Method for Defect Classification in Semiconductor Manufacturing*** <img src="https://img.shields.io/badge/ISSM-2018-74658C?style=flat&amp;labelColor=575361" alt="ISSM18" height="20" align="absmiddle" title="2018 International Symposium on Semiconductor Manufacturing (ISSM)"><br>
   <sub>Kazunori Imoto, Tomohiro Nakai, Tsukasa Ike, Kosuke Haruki, Yoshiyuki Sato</sub>
 
   <a href="https://doi.org/10.1109/ISSM.2018.8651174"><img src="https://img.shields.io/badge/%E2%86%97-Paper-526DAB?style=flat&amp;labelColor=575361" alt="Paper" height="20" align="absmiddle"></a> &nbsp; <a href="artifacts.md#imoto2019transfer"><img src="https://img.shields.io/badge/Related%20journal-IEEE%20TSM19-6C7F86?style=flat&amp;labelColor=575361" alt="Related journal: IEEE TSM19" height="20" align="absmiddle" title="Related journal: A CNN-Based Transfer Learning Method for Defect Classification in Semiconductor Manufacturing"></a> &nbsp; <a href="artifacts.md#imoto2019transfer"><img src="https://img.shields.io/badge/Trends-Counted%20with%20IEEE%20TSM19-83734E?style=flat&amp;labelColor=575361" alt="Trends: Counted with IEEE TSM19" height="20" align="absmiddle" title="Research trends count this study under A CNN-Based Transfer Learning Method for Defect Classification in Semiconductor Manufacturing"></a><br>
   <img src="https://img.shields.io/badge/M1-Artifacts-69528e?style=flat&amp;labelColor=575361" alt="M1 Artifacts" height="20" align="absmiddle"> <a href="#a2"><img src="https://img.shields.io/badge/Task-A2-706779?style=flat&amp;labelColor=575361" alt="A2" height="20" align="absmiddle"></a> <a href="https://zrrraa.github.io/Awesome-AI-Assisted-Semiconductor-Manufacturing/explore.html?stage=L1"><img src="https://img.shields.io/badge/L1-Perception-387288?style=flat&amp;labelColor=575361" alt="L1 Perception" height="20" align="absmiddle"></a>
+
+<a id="a3"></a>
 
 ## A3 · Computational lithography
 
