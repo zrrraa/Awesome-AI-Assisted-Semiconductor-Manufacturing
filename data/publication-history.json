@@ -317,5 +317,38 @@
       "relationship": "conference_predecessor",
       "key": "yan2020virtualsem"
     }
+  ],
+  "imoto2019transfer": [
+    {
+      "venue": "ISSM",
+      "year": 2018,
+      "title": "A CNN-based Transfer Learning Method for Defect Classification in Semiconductor Manufacturing",
+      "url": "https://doi.org/10.1109/ISSM.2018.8651174",
+      "source": "https://doi.org/10.1109/tsm.2019.2941752",
+      "relationship": "conference_predecessor",
+      "key": "imoto2018transfer"
+    }
+  ],
+  "liu2020adaptivetest": [
+    {
+      "venue": "ITC",
+      "year": 2018,
+      "title": "Fine-Grained Adaptive Testing Based on Quality Prediction",
+      "url": "https://doi.org/10.1109/TEST.2018.8624891",
+      "source": "https://doi.org/10.1145/3385261",
+      "relationship": "conference_predecessor",
+      "key": "liu2018adaptivetest"
+    }
+  ],
+  "yu2021cmpoptimization": [
+    {
+      "venue": "ISSM",
+      "year": 2020,
+      "title": "CMP Process Optimization Engineering by Machine Learning",
+      "url": "https://doi.org/10.1109/ISSM51728.2020.9377524",
+      "source": "https://doi.org/10.1109/TSM.2021.3072361",
+      "relationship": "conference_predecessor",
+      "key": "yu2020cmpoptimization"
+    }
   ]
 }

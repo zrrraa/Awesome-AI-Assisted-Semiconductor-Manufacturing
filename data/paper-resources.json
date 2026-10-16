@@ -839,6 +839,34 @@
         "url": "https://yibolin.com/publications/papers/DFM_DAC2019_Alawieh.pdf",
         "source": "https://yibolin.com/publications/"
       }
+    ],
+    "senoner20223145a": [
+      {
+        "label": "SSRN",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3937232",
+        "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3937232"
+      }
+    ],
+    "kuo20230c628": [
+      {
+        "label": "SSRN",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4138982",
+        "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4138982"
+      }
+    ],
+    "kuo2025a4102": [
+      {
+        "label": "SSRN",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4970463",
+        "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4970463"
+      }
+    ],
+    "shao2021lithonet": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2002.04967",
+        "source": "https://arxiv.org/abs/2002.04967"
+      }
     ]
   },
   "venues": {

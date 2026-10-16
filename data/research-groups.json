@@ -1,6 +1,6 @@
 {
   "description": "Research trends count the records in researchKeys. countedWith explicitly maps publications grouped into the same study to their counting representative. Publication relationships are maintained independently in publication-history.json and do not change counts.",
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "researchKeys": [
     "adamson20232c945",
     "alamin2024415c4",
@@ -497,6 +497,9 @@
     "pampuri2012multistepvm": "susto2015multistepvm",
     "terzi2017deepvm": "maggipinto2018visionvm",
     "hwang2020oht": "hong2022oht",
-    "yan2020virtualsem": "yan2021e7690"
+    "yan2020virtualsem": "yan2021e7690",
+    "imoto2018transfer": "imoto2019transfer",
+    "liu2018adaptivetest": "liu2020adaptivetest",
+    "yu2020cmpoptimization": "yu2021cmpoptimization"
   }
 }
