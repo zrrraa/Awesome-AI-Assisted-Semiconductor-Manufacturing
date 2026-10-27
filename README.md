@@ -26,7 +26,7 @@
 
 ## 💡 About
 
-How can AI move from recognizing a defect to coordinating a factory? Semiconductor manufacturing connects processes, equipment and production decisions, so progress in one task matters through its effects on the others. Our survey and growing paper collection trace this path **from Perception to Autonomy**, helping readers understand where AI is useful, what each task requires and how decisions shape manufacturing outcomes.
+How can AI move from recognizing a defect to coordinating a factory? Semiconductor manufacturing connects processes, equipment and production decisions, so progress in one task matters through its effects on the others. Our survey focuses on wafer fabrication and its associated production operations. Together with the growing paper collection, it traces this path **from Perception to Autonomy**, helping readers understand where AI is useful, what each task requires and how decisions shape manufacturing outcomes.
 
 <a id="news"></a>
 
@@ -82,7 +82,7 @@ Choose a manufacturing question and follow its research. Each entry includes the
 
 ## 💡 From manufacturing data to manufacturing decisions
 
-From wafer fabrication to testing and packaging, each operation changes what comes next. Understanding these connections helps explain why better results in one task do not always improve the factory as a whole.
+Our focus is wafer fabrication and the equipment, production and facility operations that support it. The wider route to testing and packaging provides context for understanding how fabrication decisions affect later outcomes.
 
 <p align="center"><img src="docs/assets/wafer-to-chip.jpg" width="1000" alt="From a bare wafer through repeated fabrication, testing and packaging to finished chips."></p>
 
