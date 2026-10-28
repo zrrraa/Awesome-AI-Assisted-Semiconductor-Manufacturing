@@ -82,7 +82,7 @@ Choose a manufacturing question and follow its research. Each entry includes the
 
 ## 💡 From manufacturing data to manufacturing decisions
 
-Our focus is wafer fabrication and the equipment, production and facility operations that support it. The wider route to testing and packaging provides context for understanding how fabrication decisions affect later outcomes.
+From wafer fabrication to testing and packaging, each operation changes what comes next. Understanding these connections helps explain why better results in one task do not always improve the factory as a whole.
 
 <p align="center"><img src="docs/assets/wafer-to-chip.jpg" width="1000" alt="From a bare wafer through repeated fabrication, testing and packaging to finished chips."></p>
 
